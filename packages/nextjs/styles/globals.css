@@ -118,4 +118,465 @@
 .link:hover {
   opacity: 80%;
 }
-  
+
+/* NIUMA WORKS: contest-built game interface, warm paper / ink / workstation colors. */
+:root {
+  --paper: #f6f1e7;
+  --ink: #292d25;
+  --muted: #62665a;
+  --donkey: #d5e6b5;
+  --horse: #cae3ef;
+  --cow: #f0cbb8;
+  --line: #b9b9a7;
+  --color-base-100: #fffaf0;
+  --color-base-200: #f6f1e7;
+  --color-base-300: #e8e4d6;
+  --color-base-content: #292d25;
+  --color-primary: #d5e6b5;
+  --color-primary-content: #292d25;
+  --color-secondary: #cae3ef;
+  --color-secondary-content: #292d25;
+}
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+  margin: 0;
+}
+body {
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+}
+.niuma-shell {
+  min-height: 100svh;
+  background: var(--paper);
+}
+.niuma-shell .btn {
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+  min-height: 44px;
+  height: auto;
+  padding: 10px 16px;
+  font-size: 14px;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s;
+}
+.niuma-shell .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 4px 0 var(--ink);
+}
+.niuma-shell .btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0 0 0 var(--ink);
+}
+.niuma-shell .btn:disabled {
+  opacity: 0.5;
+  transform: none;
+  box-shadow: none;
+}
+.niuma-shell .btn-primary {
+  background: var(--donkey);
+  color: var(--ink);
+}
+.niuma-shell .btn-outline {
+  background: transparent;
+  color: var(--ink);
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #536f40;
+  outline-offset: 4px;
+}
+.work-header {
+  height: 80px;
+  padding: 0 4vw;
+  border-bottom: 1.5px solid var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: var(--paper);
+}
+.work-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 21px;
+  line-height: 1.2;
+  text-decoration: none;
+}
+.work-brand small {
+  display: block;
+  font-family: "Press Start 2P", monospace;
+  font-size: 8px;
+  margin-top: 7px;
+  letter-spacing: 0;
+}
+.brand-pixels {
+  background: var(--donkey);
+  width: 36px;
+  height: 38px;
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-family: monospace;
+  font-size: 26px;
+  text-align: center;
+  line-height: 32px;
+}
+.work-header nav {
+  display: flex;
+  gap: 24px;
+}
+.work-header nav a {
+  font-size: 15px;
+  padding: 12px 0;
+}
+.work-header nav a[aria-current] {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.header-wallet {
+  margin-left: auto;
+}
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: -80px;
+  z-index: 1000;
+  padding: 16px;
+  background: var(--ink);
+  color: var(--paper);
+}
+.skip-link:focus {
+  top: 12px;
+}
+.play-page {
+  padding: 32px 4vw 40px;
+  max-width: 1600px;
+  margin: auto;
+}
+.play-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.play-heading h1 {
+  font-size: clamp(24px, 2.8vw, 38px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -1px;
+}
+.character-switch {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.play-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 296px;
+  gap: 24px;
+  align-items: start;
+}
+.game-section {
+  min-width: 0;
+}
+.arena-wrap {
+  position: relative;
+  border: 2px solid var(--ink);
+  box-shadow: 5px 5px 0 #bbbda9;
+  height: min(68svh, 660px);
+  min-height: 400px;
+  overflow: hidden;
+  background: #eee9db;
+}
+.arena-canvas {
+  width: 100%;
+  height: 100%;
+}
+.arena-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.arena-hud {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Press Start 2P", monospace;
+  font-size: 23px;
+  pointer-events: none;
+}
+.arena-hud span {
+  padding: 14px;
+  background: #fffaf0;
+  border: 1.5px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.arena-hud small {
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+.arena-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  text-align: center;
+  background: #f6f1e7e8;
+  z-index: 2;
+}
+.arena-loading.error {
+  color: #9d3828;
+}
+.direction-pad {
+  position: absolute;
+  left: 20px;
+  bottom: 24px;
+  display: grid;
+  grid-template-columns: 48px 48px 48px;
+  grid-template-rows: 48px 48px;
+  gap: 7px;
+}
+.direction {
+  background: #fffaf0e8;
+  border: 1.5px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  font-size: 24px;
+  touch-action: none;
+  user-select: none;
+  cursor: pointer;
+}
+.direction:active {
+  background: var(--donkey);
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+.direction-w {
+  grid-column: 2;
+}
+.direction-a {
+  grid-column: 1;
+  grid-row: 2;
+}
+.direction-s {
+  grid-column: 2;
+  grid-row: 2;
+}
+.direction-d {
+  grid-column: 3;
+  grid-row: 2;
+}
+.arena-instruction {
+  position: absolute;
+  right: 20px;
+  bottom: 24px;
+  font-size: 13px;
+  padding: 8px;
+  background: #f6f1e7df;
+}
+.game-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-top: 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.motion-choice {
+  display: flex;
+  gap: 10px;
+}
+.play-panel {
+  border: 1.5px solid var(--ink);
+  padding: 24px;
+  background: #fffaf0;
+  box-shadow: 4px 4px 0 #d7d2c5;
+}
+.panel-label {
+  font-weight: 800;
+  font-size: 17px;
+  margin-bottom: 16px;
+}
+.play-panel p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+.wallet-balance {
+  font-family: "Press Start 2P", monospace;
+  font-size: 21px !important;
+  margin: 20px 0 !important;
+}
+.wallet-balance small {
+  font: 14px Arial;
+}
+.full-width {
+  width: 100%;
+}
+.game-facts {
+  margin: 24px 0;
+}
+.game-facts > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid #d8d5c8;
+  padding: 12px 0;
+  font-size: 13px;
+}
+.game-facts dt {
+  color: var(--muted);
+}
+.game-facts dd {
+  text-align: right;
+  font-weight: 600;
+  margin: 0;
+}
+.small-note {
+  font-size: 13px !important;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.run-receipt {
+  border-top: 1px solid var(--ink);
+  margin-top: 24px;
+  padding-top: 20px;
+}
+.run-receipt small {
+  display: block;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.receipt-hash {
+  display: block;
+  overflow-wrap: anywhere;
+  font: 12px/1.8 monospace;
+}
+.field-error {
+  background: #f8e4d8;
+  color: #8a3321;
+  padding: 12px;
+  border: 1px solid #ba7564;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 1023px) {
+  .play-layout {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 16px;
+  }
+  .play-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .arena-wrap {
+    height: 60svh;
+  }
+  .arena-instruction {
+    display: none;
+  }
+  .play-panel {
+    padding: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .work-header {
+    height: 72px;
+    padding: 0 16px;
+    gap: 16px;
+  }
+  .work-brand {
+    font-size: 17px;
+  }
+  .brand-pixels {
+    width: 28px;
+    height: 32px;
+    font-size: 21px;
+    line-height: 27px;
+  }
+  .work-brand small {
+    font-size: 6px;
+  }
+  .work-header nav {
+    display: none;
+  }
+  .header-wallet {
+    font-size: 12px;
+  }
+  .play-page {
+    padding: 24px 16px 40px;
+  }
+  .play-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .game-section,
+  .play-panel {
+    width: 100%;
+  }
+  .arena-wrap {
+    height: 55svh;
+    min-height: 360px;
+    box-shadow: 3px 3px 0 #bbbda9;
+  }
+  .arena-hud {
+    left: 12px;
+    right: 12px;
+    top: 12px;
+    font-size: 18px;
+  }
+  .arena-hud span {
+    padding: 12px;
+  }
+  .direction-pad {
+    left: 14px;
+    bottom: 18px;
+    grid-template-columns: 46px 46px 46px;
+    grid-template-rows: 46px 46px;
+  }
+  .game-toolbar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .character-switch .btn {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+  .play-heading h1 {
+    font-size: 26px;
+  }
+  .character-switch {
+    gap: 8px;
+  }
+  .play-panel {
+    padding: 24px;
+  }
+  .play-panel .game-facts {
+    margin: 20px 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .niuma-shell * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

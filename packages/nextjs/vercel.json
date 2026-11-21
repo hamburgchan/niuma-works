@@ -1,3 +1,7 @@
 {
-  "installCommand": "yarn install"
+  "env": {
+    "FAUCET_ENABLED": "true",
+    "GENERATION_ENABLED": "true",
+    "BLOB_ACCESS": "public"
+  }
 }

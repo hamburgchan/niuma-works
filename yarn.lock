@@ -1607,6 +1607,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/press-start-2p@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@fontsource/press-start-2p@npm:5.3.0"
+  checksum: 10/0eddfa709c4629bc0ea2735916e52c863e4413a372bc55c98c29e0c496c92e5a97da1dc504d925acf080dab583b28cffc0a0b21fd82f940ae67dd91e30b45d73
+  languageName: node
+  linkType: hard
+
 "@gar/promise-retry@npm:^1.0.0, @gar/promise-retry@npm:^1.0.2":
   version: 1.0.3
   resolution: "@gar/promise-retry@npm:1.0.3"
@@ -4004,6 +4011,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@se-2/nextjs@workspace:packages/nextjs"
   dependencies:
+    "@fontsource/press-start-2p": "npm:^5.3.0"
     "@heroicons/react": "npm:~2.2.0"
     "@napi-rs/canvas": "npm:^1.1.1"
     "@rainbow-me/rainbowkit": "npm:2.2.11"

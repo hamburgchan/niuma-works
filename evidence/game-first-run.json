@@ -1,0 +1,42 @@
+{
+  "at": "2026-11-21T03:56:39.319378+00:00",
+  "chainId": 10143,
+  "transactions": [
+    {
+      "kind": "faucet",
+      "hash": "0xe3008ca89c571a0893054bcc613e1ea3325b63e66f2ecc95ddf348ed923dc322",
+      "status": "CONFIRMED",
+      "sender": "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+      "to": "0xD4FaB6129F14470E7C46f8cD6f59c1aBc9c489d2",
+      "nonce": 2,
+      "valueWei": "30000000000000000",
+      "gasLimit": 21000,
+      "gasUsed": 21000,
+      "chargedGasWei": "2142000000000000",
+      "blockNumber": 81476656
+    },
+    {
+      "kind": "finishRun",
+      "hash": "0x6cbbd280a7ed0926d78f79d972373ccfd99e89cb8f8aa05460059d5eae7b79a7",
+      "status": "CONFIRMED",
+      "sender": "0xD4FaB6129F14470E7C46f8cD6f59c1aBc9c489d2",
+      "to": "0x8ecF351db2eA99aa32BEf4bA2686Fd0bFefF8abB",
+      "nonce": 0,
+      "valueWei": "1000000000000000",
+      "gasLimit": 121916,
+      "gasUsed": 121916,
+      "chargedGasWei": "12435432000000000",
+      "blockNumber": 81477148,
+      "event": {
+        "characterId": 4,
+        "player": "0xD4FaB6129F14470E7C46f8cD6f59c1aBc9c489d2",
+        "stars": 1,
+        "timeMs": 25956,
+        "ownerShare": 900000000000000
+      },
+      "browserObservedConfirmationMs": 2569,
+      "timingSource": "Observed local browser UI; submit request to successful receipt, not a chain finality measurement"
+    }
+  ],
+  "duplicateFaucetCheck": "Same browser address returned original hash; UI showed 0.03 MON received, no second transfer"
+}

@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-21T03:47:57.885776+00:00",
+  "claim": {
+    "hash": "0xe3008ca89c571a0893054bcc613e1ea3325b63e66f2ecc95ddf348ed923dc322",
+    "nonce": 2,
+    "state": "PRE_BROADCAST",
+    "address": "0xD4FaB6129F14470E7C46f8cD6f59c1aBc9c489d2",
+    "amountWei": "30000000000000000",
+    "createdAt": 1795232696292
+  },
+  "reservedWei": "30000000000000000"
+}
