@@ -1,4 +1,4 @@
-import { put } from "@vercel/blob";
+import { BlobNotFoundError, put } from "@vercel/blob";
 import { randomInt } from "node:crypto";
 import "server-only";
 import { type Hash, encodeFunctionData, keccak256, parseEther, verifyMessage } from "viem";
@@ -119,7 +119,7 @@ export async function runBotBatch(body: {
   // A global control record also prevents two owner-approved batches overlapping.
   const controlPath = `${BOT_ROOT}/control.json`;
   const controlSnapshot = await freshBlob(controlPath).catch(error => {
-    if (error?.name === "BlobNotFoundError") return null;
+    if (error instanceof BlobNotFoundError) return null;
     throw error;
   });
   const previous =

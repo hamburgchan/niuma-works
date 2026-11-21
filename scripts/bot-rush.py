@@ -27,7 +27,10 @@ try:
         save(RUNTIME / "bot-rush-last.json", dict(batchId=batch_id, count=args.n, url=args.url, state="REQUESTING"))
         print(json.dumps(dict(batchId=batch_id, count=args.n, state="REQUESTING")), flush=True)
         response = httpx.post(f"{args.url}/api/bots", json=dict(batchId=batch_id, count=args.n, issuedAt=issued, signature=signature), timeout=360)
-    response.raise_for_status()
+    if not response.is_success:
+        try: detail = response.json().get("error", f"HTTP {response.status_code}")
+        except ValueError: detail = f"HTTP {response.status_code} before JSON response"
+        raise ValueError(detail)
     result = response.json()
     batch = result.get("batch")
     if not batch: raise ValueError(result.get("error", "No batch returned"))
