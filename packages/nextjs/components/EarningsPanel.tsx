@@ -104,7 +104,7 @@ export function EarningsPanel() {
   return (
     <section className="earnings-panel">
       <p className="eyebrow">OWNER PAYSLIP</p>
-      <h1>老板的工资条</h1>
+      <h1>进货老板的工资条</h1>
       <p>培养费分账和各角色工资先记入合约，提现后才进入当前钱包。</p>
       <p className="earnings-amount">
         {address && balance !== undefined ? formatEther(balance) : "—"}

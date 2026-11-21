@@ -2,7 +2,7 @@
   {
     "id": 1,
     "orderId": 1,
-    "name": "骡子新员工",
+    "name": "骡丝钉",
     "slug": "mule",
     "url": "https://niuma-works.vercel.app/chars/03db298a4353a53541216e7233f35c4c1034f2ba5c4e92e8f6f5d702477b3d95.png",
     "sha256": "03db298a4353a53541216e7233f35c4c1034f2ba5c4e92e8f6f5d702477b3d95",
@@ -30,7 +30,7 @@
   {
     "id": 2,
     "orderId": 2,
-    "name": "羊驼实习生",
+    "name": "驼延症",
     "slug": "alpaca",
     "url": "https://niuma-works.vercel.app/chars/22a86b203d813da65ced72e3f062dd5209c56f44a445a2ec80af3e762b243fd9.png",
     "sha256": "22a86b203d813da65ced72e3f062dd5209c56f44a445a2ec80af3e762b243fd9",
@@ -58,7 +58,7 @@
   {
     "id": 3,
     "orderId": 3,
-    "name": "加班程序员",
+    "name": "码喽",
     "slug": "programmer",
     "url": "https://niuma-works.vercel.app/chars/e56a0c745ae252769e868b26c1383a5eab516bbaa3fff34a88e7b278891846c4.png",
     "sha256": "e56a0c745ae252769e868b26c1383a5eab516bbaa3fff34a88e7b278891846c4",

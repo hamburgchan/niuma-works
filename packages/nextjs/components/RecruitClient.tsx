@@ -45,7 +45,7 @@ function Archive({ employee, stats }: { employee: (typeof DEMO_EMPLOYEES)[number
           <dd>{stats?.shifts ?? "—"} 班</dd>
         </div>
         <div>
-          <dt>给老板挣的工资</dt>
+          <dt>给进货老板挣的工资</dt>
           <dd>{stats ? formatEther(BigInt(stats.ownerWagesWei)) : "—"} MON</dd>
         </div>
       </dl>

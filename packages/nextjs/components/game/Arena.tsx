@@ -133,6 +133,22 @@ export function Arena(props: Props) {
     const shadow = paperShadow(1.1);
     scene.add(shadow);
     const colleagues: THREE.Group[] = [];
+    const leaderTitles: THREE.Sprite[] = [];
+    const hoverRay = new THREE.Raycaster();
+    let hoveredLeader = -1;
+    const hoverLeader = (event: PointerEvent) => {
+      const rect = renderer.domElement.getBoundingClientRect();
+      hoverRay.setFromCamera(
+        new THREE.Vector2(
+          ((event.clientX - rect.left) / rect.width) * 2 - 1,
+          (-(event.clientY - rect.top) / rect.height) * 2 + 1,
+        ),
+        camera,
+      );
+      const hit = hoverRay.intersectObjects(colleagues, true)[0];
+      hoveredLeader = hit ? Number(hit.object.parent?.userData.leaderIndex ?? -1) : -1;
+    };
+    renderer.domElement.addEventListener("pointermove", hoverLeader);
     const badge = new THREE.Sprite(
       new THREE.SpriteMaterial({ map: labelTexture(`${props.employeeName}  #${props.characterId}`), depthTest: false }),
     );
@@ -146,6 +162,7 @@ export function Arena(props: Props) {
           return;
         }
         const colleague = paperFigure(map.image, 2.4);
+        colleague.userData.leaderIndex = i;
         map.dispose();
         colleague.position.set(-6 + i * 6, 0, -6.5);
         colleagues.push(colleague);
@@ -154,11 +171,11 @@ export function Arena(props: Props) {
         colleagueShadow.position.set(-6 + i * 6, -0.045, -6.5);
         scene.add(colleagueShadow);
       });
-      const title = new THREE.Sprite(
-        new THREE.SpriteMaterial({ map: labelTexture(["驴 · 造身体", "马 · 教走路", "牛 · 发工牌"][i]) }),
-      );
+      const title = new THREE.Sprite(new THREE.SpriteMaterial({ map: labelTexture(["驴组长", "马经理", "牛总"][i]) }));
       title.scale.set(2.25, 0.42, 1);
       title.position.set(-6 + i * 6, 2.7, -6.5);
+      title.visible = false;
+      leaderTitles[i] = title;
       scene.add(title);
     }
     let model: THREE.Group | undefined;
@@ -310,6 +327,9 @@ export function Arena(props: Props) {
       shadow.position.x = actor.position.x;
       shadow.position.z = actor.position.z;
       for (const colleague of colleagues) colleague.quaternion.copy(camera.quaternion);
+      leaderTitles.forEach((title, i) => {
+        title.visible = hoveredLeader === i;
+      });
       for (const star of stars) star.position.y = 0.7 + Math.sin(time * 0.003 + star.position.x) * 0.08;
       camera.position.lerp(new THREE.Vector3(actor.position.x, 7.5, actor.position.z + 10), Math.min(1, dt * 6));
       camera.lookAt(actor.position.x, 0.4, actor.position.z);
@@ -342,6 +362,7 @@ export function Arena(props: Props) {
         }
       });
       renderer.dispose();
+      renderer.domElement.removeEventListener("pointermove", hoverLeader);
       renderer.domElement.remove();
     };
   }, [props.url, props.sha256, props.employeeName, props.characterId]);

@@ -12,12 +12,12 @@ export function NiumaHeader() {
       <a className="skip-link" href="#main">
         跳到主要内容
       </a>
-      <Link className="work-brand" href="/" aria-label="牛马人才市场首页">
+      <Link className="work-brand" href="/" aria-label="牛马批发部首页">
         <span className="brand-pixels" aria-hidden="true">
           N
         </span>
         <span>
-          牛马人才市场<small>NIUMA WORKS</small>
+          牛马批发部<small>NIUMA WORKS</small>
         </span>
       </Link>
       <nav aria-label="主导航">

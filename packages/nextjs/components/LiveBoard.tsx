@@ -149,7 +149,7 @@ export function LiveBoard() {
                     </>
                   ) : (
                     <>
-                      <strong>招聘单 #{event.args.orderId} 已验收</strong>
+                      <strong>进货单 #{event.args.orderId} 已验收</strong>
                       <p>驴、马、牛与平台的培养费已分账记入可提余额</p>
                     </>
                   )}

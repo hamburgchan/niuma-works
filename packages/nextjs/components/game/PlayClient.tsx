@@ -365,7 +365,7 @@ export function PlayClient({
                   {
                     submitting: "正在提交本局…",
                     pending: "交易已发出，等待回执…",
-                    confirmed: `工资 +${record.ownerShareWei ? formatEther(BigInt(record.ownerShareWei)) : "—"} MON 已发给老板`,
+                    confirmed: `工资 +${record.ownerShareWei ? formatEther(BigInt(record.ownerShareWei)) : "—"} MON 已发给进货老板`,
                     unknown: "提交状态待核实",
                     reverted: "交易执行失败",
                   }[record.status]

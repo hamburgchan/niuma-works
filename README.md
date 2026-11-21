@@ -1,20 +1,20 @@
-# NIUMA WORKS · 牛马人才市场
+# NIUMA WORKS · 牛马批发部
 
-三名纸片新牛马在 three.js 工坊里打一班工，六张工单、一笔链上工资。培养费托管，交付 PNG 指纹登记，验收后按 50/20/20/10 分给驴、马、牛和平台；每局给角色老板记入 90% 工资。
+三名纸片新牛马在 three.js 工坊里打一班工，六张工单、一笔链上工资。培养费托管，交付 PNG 指纹登记，验收后按 50/20/20/10 分给驴、马、牛和平台；每局给进货老板记入 90% 工资。
 
-公网：[人才市场](https://niuma-works.vercel.app) · [上工](https://niuma-works.vercel.app/play/1) · [工资大屏](https://niuma-works.vercel.app/live) · [入职档案](https://niuma-works.vercel.app/orders) · [老板工资条](https://niuma-works.vercel.app/earnings)
+公网：[牛马批发部](https://niuma-works.vercel.app) · [上工](https://niuma-works.vercel.app/play/1) · [工资大屏](https://niuma-works.vercel.app/live) · [入职档案](https://niuma-works.vercel.app/orders) · [老板工资条](https://niuma-works.vercel.app/earnings)
 
 ## 比赛合规
 
 主办方已于 10:47 前宣布开赛（参赛者确认）。仓库首次提交时间为 2026-11-21 10:47（北京时间），精确时间 10:47:30+08:00，提交 `541e967db7d9e9a61d2a53f702c5ebbe86d06be6`。产品代码与演示素材均开赛后制作；赛前核实脚本、图片和 sample.glb 未复制进仓库。基于 Scaffold-ETH 2 / create-eth 2.0.23 的 Foundry 样板，工坊游戏开赛后从零写，未修改任何现成游戏。
 
-## 当前演示：V2、静态 PNG、暂停招聘
+## 当前演示：V2、静态 PNG、暂停进货
 
 演示只使用 [NiumaWorksV2](https://testnet.monadexplorer.com/address/0xcE94FDE4016D7b930b61bEF1474Df1458D1355cC)，源码验证成功，证据 `evidence/deployment-v2.json`、`evidence/verification-v2.json`。
 
-骡子新员工 #1、羊驼实习生 #2、加班程序员 #3，均为 NIUMA WORKS 团队自拟描述，来源 **chatgpt 手动生成**。三张立绘经四边保守 flood fill 去背景、最近邻缩放，高 512px，分别 124910、139644、130691 字节。羊驼内部米白卷毛与程序员贴纸边保留。原文件字节与 SHA-256 不变，存于 `/chars/<sha256>.png`，V2 链上 URI 直接登记公开静态地址。每名员工重新 order → deliver → approve，三笔交易、四方金额与无鉴权下载校验见 `evidence/v2/orders/1.json` 至 `3.json`。浏览器独立重算 SHA-256 并与链上核对。
+骡丝钉 #1、驼延症 #2、码喽 #3，均为 NIUMA WORKS 团队自拟描述，来源 **chatgpt 手动生成**。三张立绘经四边保守 flood fill 去背景、最近邻缩放，高 512px，分别 124910、139644、130691 字节。羊驼内部米白卷毛与程序员贴纸边保留。原文件字节与 SHA-256 不变，存于 `/chars/<sha256>.png`，V2 链上 URI 直接登记公开静态地址。每名员工重新 order → deliver → approve，三笔交易、四方金额与无鉴权下载校验见 `evidence/v2/orders/1.json` 至 `3.json`。浏览器独立重算 SHA-256 并与链上核对。
 
-**项目运行不依赖 Vercel Blob；现场不做生成。** Hobby 存储用量超限，用户确认到 2026-12-21 才恢复。招聘页现为“新牛马入职档案”，输入框显示“暂停招聘”；API 返回 410，不调用 Pollinations。生成 worker 已停用。页面、动态大屏与订单 API 均不读取 Blob。`/live` 使用真实链上事件，附只读链上扫描生成的种子、按闭合区块段保存的 Next Data Cache、15 秒进程缓存与 CDN 缓存；浏览器每 15 秒更新，无额外事件 watcher。
+**项目运行不依赖 Vercel Blob；现场不做生成。** Hobby 存储用量超限，用户确认到 2026-12-21 才恢复。进货页现为“新牛马入职档案”，输入框显示“暂停进货”；API 返回 410，不调用 Pollinations。生成 worker 已停用。页面、动态大屏与订单 API 均不读取 Blob。`/live` 使用真实链上事件，附只读链上扫描生成的种子、按闭合区块段保存的 Next Data Cache、15 秒进程缓存与 CDN 缓存；浏览器每 15 秒更新，无额外事件 watcher。
 
 自动领币暂时暂停：旧的防重支付账本在 Blob，当前不会用无持久化的 serverless 内存代替。请向页面显示的临时钱包预充测试 MON，或连接已有测试币的钱包。历史每班约 0.0096 MON；V2 冷启动首局约 0.0122 MON，后续依状态变化，开工前会按当前 gas 估算。0.03 MON 约 2–3 班。
 
