@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { createKeyboardInput } from "~~/utils/game-input";
 import type { RunResult } from "~~/utils/niuma";
 
 type Props = {
@@ -125,21 +126,32 @@ export function Arena(props: Props) {
     const observer = new ResizeObserver(resize);
     observer.observe(element);
     resize();
+    const keyboard = createKeyboardInput();
     const keyDown = (event: KeyboardEvent) => {
+      const target = event.target;
       if (
-        ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "w", "a", "s", "d", "W", "A", "S", "D"].includes(event.key)
-      ) {
+        target instanceof HTMLElement &&
+        (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))
+      )
+        return;
+      if (keyboard.down(event.code, performance.now())) {
         event.preventDefault();
-        controls.current.add(event.key.toLowerCase());
       }
     };
     const keyUp = (event: KeyboardEvent) => {
-      controls.current.delete(event.key.toLowerCase());
+      keyboard.up(event.code);
     };
-    const clear = () => controls.current.clear();
+    const clear = () => {
+      controls.current.clear();
+      keyboard.clear();
+    };
+    const visibility = () => {
+      if (document.hidden) clear();
+    };
     window.addEventListener("keydown", keyDown);
     window.addEventListener("keyup", keyUp);
     window.addEventListener("blur", clear);
+    document.addEventListener("visibilitychange", visibility);
     const abort = new AbortController();
     async function load() {
       try {
@@ -196,8 +208,8 @@ export function Arena(props: Props) {
       let moving = false;
       if (state.playing && !run.current.ended) {
         const keys = controls.current;
-        const x = Number(keys.has("d") || keys.has("arrowright")) - Number(keys.has("a") || keys.has("arrowleft"));
-        const z = Number(keys.has("s") || keys.has("arrowdown")) - Number(keys.has("w") || keys.has("arrowup"));
+        const x = Number(keys.has("d") || keyboard.has("d", time)) - Number(keys.has("a") || keyboard.has("a", time));
+        const z = Number(keys.has("s") || keyboard.has("s", time)) - Number(keys.has("w") || keyboard.has("w", time));
         moving = !!(x || z);
         if (moving) {
           const direction = new THREE.Vector3(x, 0, z).normalize();
@@ -242,6 +254,8 @@ export function Arena(props: Props) {
       window.removeEventListener("keydown", keyDown);
       window.removeEventListener("keyup", keyUp);
       window.removeEventListener("blur", clear);
+      document.removeEventListener("visibilitychange", visibility);
+      clear();
       scene.traverse(object => {
         if (object instanceof THREE.Mesh) {
           object.geometry.dispose();

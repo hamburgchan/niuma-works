@@ -1,0 +1,46 @@
+{
+  "orderId": 5,
+  "prompt": "一个戴着黄色安全帽、扛着扳手的胖土豆工人",
+  "generationPrompt": "A chubby potato worker wearing a yellow hard hat, carrying a wrench, single character, full body, front view, plain white background, stylized game character, isolated, no text",
+  "source": "NIUMA WORKS 团队自拟",
+  "seed": 43,
+  "mode": "generated",
+  "createdAt": "2026-11-21T04:28:18.903711+00:00",
+  "status": "refunded-withdrawable",
+  "spaces": [
+    "black-forest-labs/FLUX.1-schnell",
+    "trellis-community/TRELLIS"
+  ],
+  "gpuAttemptStarted": "2026-11-21T04:28:30.864992+00:00",
+  "fluxEventId": null,
+  "error": "You have exceeded your ZeroGPU runs limit. Subscribe to Hugging Face PRO to get 40 min of ZeroGPU quota a day - https://huggingface.co/subscribe/pro?from=ZeroGPU",
+  "failedAt": "2026-11-21T04:28:33.384289+00:00",
+  "cancelTransaction": {
+    "hash": "0x850d66fd02083e4f04fcee38d9f344d4859a6d83099040093fefc27abceb4da2",
+    "sender": "0x9A291f35836992494904Ee5De83DfAABcF7876aD",
+    "nonce": 4,
+    "gasLimit": 69726,
+    "valueWei": "0",
+    "startedAt": "2026-11-21T04:28:35.105584+00:00",
+    "state": "CONFIRMED",
+    "blockNumber": 81484866,
+    "gasUsed": 69726,
+    "effectiveGasPriceWei": "102000000000",
+    "confirmedAt": "2026-11-21T04:28:37.002699+00:00",
+    "chargedFeeWei": "7112052000000000"
+  },
+  "orderTransaction": {
+    "hash": "0xaa9e1118581deb2a48895a659c80ea70912506d0c0e744c8f828bbf48ba0fad8",
+    "sender": "0xb561475586d95612121d3806A86d930d1a3d414a",
+    "nonce": 8,
+    "gasLimit": 238946,
+    "valueWei": "10000000000000000",
+    "startedAt": "2026-11-21T04:28:15.630650+00:00",
+    "state": "CONFIRMED",
+    "blockNumber": 81484802,
+    "gasUsed": 238946,
+    "effectiveGasPriceWei": "102000000000",
+    "confirmedAt": "2026-11-21T04:28:16.309715+00:00",
+    "chargedFeeWei": "24372492000000000"
+  }
+}

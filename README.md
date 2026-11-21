@@ -1,6 +1,8 @@
-# NIUMA WORKS · 牛马工坊
+# NIUMA WORKS · 牛马人才市场
 
-Game Jam teams commission a playable 3D character. Monad testnet holds the order payment and distributes it across three workstations and the platform after acceptance.
+说一句话招一名新牛马，三头老牛马负责培养，新牛马上工后每班给老板记入可提工资。培养费由 Monad 测试网合约托管，验收后按工位分账。
+
+公网：[人才市场](https://niuma-works.vercel.app)、[上工](https://niuma-works.vercel.app/play/4)。本地 worker 负责生成与 operator 交付。
 
 Created after the organizer's start announcement for Monad Blitz Guangzhou, 2026-11-21, using create-eth 2.0.23 (Scaffold-ETH 2, Foundry).
 
@@ -10,7 +12,9 @@ Created after the organizer's start announcement for Monad Blitz Guangzhou, 2026
 
 ## Current status
 
-Stages 1–2: contract deployed on Monad testnet (10143); three newly generated characters have completed real order, delivery and acceptance. `forge test -vv` passes 17 tests (including 256 fuzz cases); see `evidence/foundry-test.txt`. Full transaction links and GLB hashes: [evidence/orders.md](evidence/orders.md).
+合约已部署在 Monad 测试网（10143），原有三个角色完成了真实订单、交付和验收。删除样板合约后 `forge test -vv` 为 16 passed、0 failed（含 256 次 fuzz）；见 `evidence/foundry-test-stage3-cleanup.txt`。交易与文件指纹见 [evidence/orders.md](evidence/orders.md)。
+
+**P0 替换进行中：**旧角色 1、2、3、4 存在背景方板外观问题，不作为修复后的交付证明。管线已加入本机 rembg 去背景及透明区域检查。2026-11-21 12:28 重生成时 HF 返回 ZeroGPU 额度耗尽，订单 5 已取消，0.01 MON 全额记入买家可提退款余额，尚未生成新角色。不会把旧模型标为新模型。失败证据见 `evidence/orders/5-generation-failed.json`。
 
 - Contract: [`0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb`](https://testnet.monadexplorer.com/address/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb)
 - Deployment: [`0xd70b1d03a9cb0d7adc979a085c0fce451ca89d2390a0082baa5477fbf439208a`](https://testnet.monadexplorer.com/tx/0xd70b1d03a9cb0d7adc979a085c0fce451ca89d2390a0082baa5477fbf439208a)
