@@ -1,0 +1,49 @@
+{
+  "at": "2026-11-21T07:34:22.783088+00:00",
+  "codeCommit": "501e768",
+  "pages": {
+    "/play/1": 200,
+    "/play/2": 200,
+    "/play/3": 200,
+    "/orders": 200,
+    "/live": 200
+  },
+  "runCount": 241,
+  "settlementCount": 244,
+  "catchingUp": false,
+  "browserPlayHash": "0xa107465989098092c287591d8c2f021290b75cca411454ae9f64c1f9bf276cde",
+  "browserTimingMs": 2389,
+  "stressComparisons": [
+    {
+      "mode": "hot",
+      "count": 100,
+      "sent": 100,
+      "successful": 100,
+      "failed": 0,
+      "unknown": 0,
+      "averageMs": 3067,
+      "p95Ms": 3067,
+      "maxSameBlock": 40,
+      "peakTxPerSecond": 40,
+      "rpcFailureCount": 0,
+      "chainFailureCount": 0,
+      "transactionResubmissions": 0
+    },
+    {
+      "mode": "spread",
+      "count": 100,
+      "sent": 100,
+      "successful": 100,
+      "failed": 0,
+      "unknown": 0,
+      "averageMs": 3239,
+      "p95Ms": 3239,
+      "maxSameBlock": 40,
+      "peakTxPerSecond": 40,
+      "rpcFailureCount": 0,
+      "chainFailureCount": 0,
+      "transactionResubmissions": 0
+    }
+  ],
+  "scope": "Public HTTP and browser UI acceptance; gameplay actor was Codex browser automation, not an onsite human or physical phone"
+}

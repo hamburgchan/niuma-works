@@ -17,5 +17,6 @@
   "timingSource": "Observed public UI: submission request to successful receipt; not finality",
   "keyboard": "Held Right 700ms then Up 900ms; one work order collected",
   "owner": "0xb561475586d95612121d3806A86d930d1a3d414a",
-  "ownerClaimableWei": "216900000000000000"
+  "ownerClaimableWei": "216900000000000000",
+  "actor": "Codex browser UI automation; no claim of a human participant or physical phone"
 }
