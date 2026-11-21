@@ -10,6 +10,7 @@ export function EarningsPanel() {
   const { address, chainId } = useAccount();
   const client = usePublicClient({ chainId: 10143 });
   const [lookup, setLookup] = useState("");
+  const [viewOwner, setViewOwner] = useState(false);
   const { data: first } = useScaffoldReadContract({
     contractName: "NiumaWorks",
     functionName: "characters",
@@ -29,7 +30,8 @@ export function EarningsPanel() {
     watch: false,
   });
   const defaultOwner = first?.[0];
-  const requested = address || lookup || defaultOwner;
+  const viewingSelf = Boolean(address && !viewOwner);
+  const requested = (viewingSelf ? address : undefined) || lookup || defaultOwner;
   const viewedAddress = requested && isAddress(requested) ? (requested as Address) : undefined;
   const [wages, setWages] = useState<{ characterId: number; ownerWagesWei: string }[] | null>(null);
   useEffect(() => {
@@ -93,6 +95,8 @@ export function EarningsPanel() {
     );
   };
   useEffect(() => {
+    setViewOwner(false);
+    setLookup("");
     original.current = null;
     setHash(null);
     setConfirmed(false);
@@ -113,7 +117,7 @@ export function EarningsPanel() {
     }
   }, [address]);
   async function withdraw() {
-    if (!address || !client || busy || blocked) return;
+    if (!address || viewedAddress?.toLowerCase() !== address.toLowerCase() || !client || busy || blocked) return;
     setBusy(true);
     setError("");
     try {
@@ -173,13 +177,26 @@ export function EarningsPanel() {
           aria-label="查看包工头地址"
           value={requested || ""}
           onChange={event => setLookup(event.target.value)}
-          readOnly={Boolean(address)}
+          readOnly={viewingSelf}
           placeholder="0x…"
         />
       </label>
       <p className="small-note">
-        {address ? "当前显示已连接的钱包。" : "无需连接钱包即可只读查询；默认显示三只牛马的包工头。"}
+        {viewingSelf
+          ? "当前显示已连接的钱包。雇主付费，牛马的包工头收工钱。"
+          : "无需连接钱包即可只读查询；默认显示三只牛马的包工头。"}
       </p>
+      {address && defaultOwner && address.toLowerCase() !== defaultOwner.toLowerCase() && (
+        <button
+          className="btn btn-outline"
+          onClick={() => {
+            setViewOwner(!viewOwner);
+            setLookup("");
+          }}
+        >
+          {viewOwner ? "查看我的地址" : "查看三只牛马的包工头"}
+        </button>
+      )}
       {viewedAddress && (
         <a className="link receipt-hash" href={`${EXPLORER}/address/${viewedAddress}`} target="_blank" rel="noreferrer">
           {viewedAddress}
@@ -194,11 +211,20 @@ export function EarningsPanel() {
         {totalWages !== null ? formatEther(totalWages) : "—"}
         <small> MON 累计工钱</small>
       </p>
-      {!address && <p>连接这个地址的钱包后即可提现；只读查看不会发交易。</p>}
+      {(!address || viewedAddress?.toLowerCase() !== address.toLowerCase()) && (
+        <p>连接这个地址的钱包后即可提现；只读查看不会发交易。</p>
+      )}
       <button
         className="btn btn-primary"
         onClick={withdraw}
-        disabled={!address || balance === undefined || balance === 0n || busy || blocked}
+        disabled={
+          !address ||
+          viewedAddress?.toLowerCase() !== address.toLowerCase() ||
+          balance === undefined ||
+          balance === 0n ||
+          busy ||
+          blocked
+        }
       >
         {busy ? "提现处理中…" : "提现到当前钱包"}
       </button>
