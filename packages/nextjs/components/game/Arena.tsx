@@ -74,6 +74,7 @@ export function Arena(props: Props) {
   const [error, setError] = useState("");
   const [hud, setHud] = useState({ stars: 0, seconds: 60 });
   const [ready, setReady] = useState(false);
+  const [stunned, setStunned] = useState(false);
   const run = useRef({ key: -1, start: 0, ended: false, stars: 0, signal: 0 });
 
   useEffect(() => {
@@ -134,6 +135,12 @@ export function Arena(props: Props) {
     scene.add(shadow);
     const colleagues: THREE.Group[] = [];
     const leaderTitles: THREE.Sprite[] = [];
+    const leaderBubbles: THREE.Sprite[] = [];
+    const pitches = ["年轻人多吃点苦", "下季度给你涨薪", "这个需求很简单", "我们是一家人"];
+    let stunnedUntil = 0,
+      wasStunned = false;
+    const contacts = new Set<number>();
+    const bubbleUntil = [0, 0, 0];
     const hoverRay = new THREE.Raycaster();
     let hoveredLeader = -1;
     const hoverLeader = (event: PointerEvent) => {
@@ -149,6 +156,10 @@ export function Arena(props: Props) {
       hoveredLeader = hit ? Number(hit.object.parent?.userData.leaderIndex ?? -1) : -1;
     };
     renderer.domElement.addEventListener("pointermove", hoverLeader);
+    const leaveLeader = () => {
+      hoveredLeader = -1;
+    };
+    renderer.domElement.addEventListener("pointerleave", leaveLeader);
     const badge = new THREE.Sprite(
       new THREE.SpriteMaterial({ map: labelTexture(`${props.employeeName}  #${props.characterId}`), depthTest: false }),
     );
@@ -168,6 +179,7 @@ export function Arena(props: Props) {
         colleagues.push(colleague);
         scene.add(colleague);
         const colleagueShadow = paperShadow(1.5);
+        colleague.userData.shadow = colleagueShadow;
         colleagueShadow.position.set(-6 + i * 6, -0.045, -6.5);
         scene.add(colleagueShadow);
       });
@@ -177,6 +189,13 @@ export function Arena(props: Props) {
       title.visible = false;
       leaderTitles[i] = title;
       scene.add(title);
+      const bubble = new THREE.Sprite(
+        new THREE.SpriteMaterial({ map: labelTexture(`画饼：${pitches[i]}`), depthTest: false }),
+      );
+      bubble.scale.set(3.8, 0.6, 1);
+      bubble.visible = false;
+      leaderBubbles[i] = bubble;
+      scene.add(bubble);
     }
     let model: THREE.Group | undefined;
     const documentTexture = paperTexture();
@@ -268,23 +287,46 @@ export function Arena(props: Props) {
       previous = time;
       const state = latest.current;
       const movement = keyboard.consume(time);
+      for (const colleague of colleagues) {
+        const i = Number(colleague.userData.leaderIndex);
+        colleague.position.x = -5 + i * 5 + Math.sin(time * 0.00035 + i * 2) * 1.2;
+        colleague.position.z = -5.5 + Math.sin(time * 0.00025 + i) * 0.85;
+        const leaderShadow = colleague.userData.shadow as THREE.Mesh;
+        leaderShadow.position.x = colleague.position.x;
+        leaderShadow.position.z = colleague.position.z;
+      }
       if (state.playing && run.current.key !== state.runKey) {
         run.current = { key: state.runKey, start: time, ended: false, stars: 0, signal: state.finishSignal };
         actor.position.set(0, 0, 0);
         stars.forEach(star => (star.visible = true));
         setHud({ stars: 0, seconds: 60 });
+        stunnedUntil = 0;
+        contacts.clear();
       }
       let moving = false;
       if (state.playing && !run.current.ended) {
         const beforeX = actor.position.x,
           beforeZ = actor.position.z;
         const { x, z } = movement;
-        moving = !!(x || z);
+        moving = !!(x || z) && time >= stunnedUntil;
         if (moving) {
           const direction = new THREE.Vector3(x, 0, z);
           actor.position.addScaledVector(direction, 4.3);
           actor.position.x = THREE.MathUtils.clamp(actor.position.x, -7.7, 7.7);
           actor.position.z = THREE.MathUtils.clamp(actor.position.z, -7.7, 7.7);
+        }
+        for (const colleague of colleagues) {
+          const i = Number(colleague.userData.leaderIndex);
+          const touching =
+            Math.hypot(actor.position.x - colleague.position.x, actor.position.z - colleague.position.z) < 1;
+          if (touching && !contacts.has(i)) {
+            stunnedUntil = Math.max(stunnedUntil, time + 1000);
+            bubbleUntil[i] = time + 2600;
+            const bubble = leaderBubbles[i];
+            bubble.material.map?.dispose();
+            bubble.material.map = labelTexture(`画饼：${pitches[Math.floor(Math.random() * pitches.length)]}`);
+            contacts.add(i);
+          } else if (!touching) contacts.delete(i);
         }
         for (const star of stars) {
           const dx = actor.position.x - beforeX,
@@ -327,9 +369,18 @@ export function Arena(props: Props) {
       shadow.position.x = actor.position.x;
       shadow.position.z = actor.position.z;
       for (const colleague of colleagues) colleague.quaternion.copy(camera.quaternion);
-      leaderTitles.forEach((title, i) => {
-        title.visible = hoveredLeader === i;
-      });
+      for (const colleague of colleagues) {
+        const i = Number(colleague.userData.leaderIndex);
+        leaderTitles[i].position.set(colleague.position.x, 2.7, colleague.position.z);
+        leaderBubbles[i].position.set(colleague.position.x, 3, colleague.position.z);
+        leaderTitles[i].visible = hoveredLeader === i && time >= bubbleUntil[i];
+        leaderBubbles[i].visible = time < bubbleUntil[i];
+      }
+      const frozen = state.playing && !run.current.ended && time < stunnedUntil;
+      if (frozen !== wasStunned) {
+        wasStunned = frozen;
+        setStunned(frozen);
+      }
       for (const star of stars) star.position.y = 0.7 + Math.sin(time * 0.003 + star.position.x) * 0.08;
       camera.position.lerp(new THREE.Vector3(actor.position.x, 7.5, actor.position.z + 10), Math.min(1, dt * 6));
       camera.lookAt(actor.position.x, 0.4, actor.position.z);
@@ -363,6 +414,7 @@ export function Arena(props: Props) {
       });
       renderer.dispose();
       renderer.domElement.removeEventListener("pointermove", hoverLeader);
+      renderer.domElement.removeEventListener("pointerleave", leaveLeader);
       renderer.domElement.remove();
     };
   }, [props.url, props.sha256, props.employeeName, props.characterId]);
@@ -415,6 +467,11 @@ export function Arena(props: Props) {
         {direction("d", "向右移动")}
       </div>
       <span className="arena-instruction">WASD / 方向键 / 屏幕方向按钮</span>
+      {stunned && (
+        <div className="leader-stun" role="status">
+          听领导画饼中…（1 秒）
+        </div>
+      )}
     </div>
   );
 }

@@ -124,6 +124,20 @@
   background: #e1ead3;
   box-shadow: 5px 5px 0 #292d25;
 }
+.leader-stun {
+  position: absolute;
+  left: 50%;
+  bottom: 86px;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  background: #fff5d9;
+  color: #292d25;
+  border: 2px solid #292d25;
+  box-shadow: 3px 3px 0 #292d25;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+}
 .bot-stats {
   display: flex;
   gap: 20px;
