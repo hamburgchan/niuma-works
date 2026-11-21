@@ -1,0 +1,17 @@
+test_glb_rejects_truncation_and_external_dependencies (test_worker.WorkerSafetyTest.test_glb_rejects_truncation_and_external_dependencies) ... ok
+test_started_gpu_job_cannot_submit_again (test_worker.WorkerSafetyTest.test_started_gpu_job_cannot_submit_again) ... ok
+test_unknown_transaction_does_not_resend (test_worker.WorkerSafetyTest.test_unknown_transaction_does_not_resend) ... ERROR
+
+======================================================================
+ERROR: test_unknown_transaction_does_not_resend (test_worker.WorkerSafetyTest.test_unknown_transaction_does_not_resend)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\monad\niuma-works\scripts\test_worker.py", line 45, in test_unknown_transaction_does_not_resend
+    w3.eth.get_transaction_receipt.side_effect = TransactionNotFound()
+                                                 ~~~~~~~~~~~~~~~~~~~^^
+TypeError: Web3RPCError.__init__() missing 1 required positional argument: 'message'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.006s
+
+FAILED (errors=1)

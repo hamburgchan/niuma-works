@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-21T03:13:47.792066+00:00",
+  "checks": [
+    {
+      "name": "reject-mismatched-prompt",
+      "status": "PASS",
+      "http": 400
+    },
+    {
+      "name": "reject-nonbuyer-signature",
+      "status": "PASS",
+      "http": 400
+    },
+    {
+      "name": "signed-start-and-repeat-is-existing",
+      "status": "PASS",
+      "firstHttp": 202,
+      "secondHttp": 200
+    },
+    {
+      "name": "read-real-order-progress",
+      "status": "PASS",
+      "chainStatus": "Funded",
+      "worker": "local"
+    }
+  ],
+  "status": "PASS",
+  "orderId": 3,
+  "gpuCallsByApi": 0,
+  "scope": "Real HTTP, chain reads and Blob queue. GPU generation and operator delivery run in the separate local worker."
+}

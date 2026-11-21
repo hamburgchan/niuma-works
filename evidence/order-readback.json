@@ -1,0 +1,64 @@
+{
+  "at": "2026-11-21T03:17:40.602765+00:00",
+  "status": "PASS",
+  "orders": [
+    {
+      "orderId": 1,
+      "characterId": 1,
+      "status": "Paid",
+      "publicUrl": "https://pucrpvafibawmypd.public.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/1/b4bd053694f48fc7dfb139d03b2f2a4adee6eaa77deb1d188a4789525b8e895d.glb",
+      "sha256": "b4bd053694f48fc7dfb139d03b2f2a4adee6eaa77deb1d188a4789525b8e895d",
+      "bytes": 1241632,
+      "transactions": [
+        "0x3a99be8c11dae977fdf740e3ce22b4875755d0aa6eec9f9741510ba39502d3bf",
+        "0x83dd442c16d222fd8104672b95b706ed6f265d22a95c517c3cd23c988cd6605c",
+        "0x502b91f3f9a18b51cbdc835cd93be1b7e5348d4f3c7c5a610d4cdb3487bbb20e"
+      ],
+      "splitWei": [
+        "5000000000000000",
+        "2000000000000000",
+        "2000000000000000",
+        "1000000000000000"
+      ]
+    },
+    {
+      "orderId": 2,
+      "characterId": 2,
+      "status": "Paid",
+      "publicUrl": "https://pucrpvafibawmypd.public.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/2/3e1a5353ce437259f486d208f2335705b7e5b89038af42c773a7aa0239fb3502.glb",
+      "sha256": "3e1a5353ce437259f486d208f2335705b7e5b89038af42c773a7aa0239fb3502",
+      "bytes": 1986368,
+      "transactions": [
+        "0x3c518182e903013a52d151c71fd97f08ca824b0717740852872e5c1299066249",
+        "0x135702985946440d3b305db88d744d835cde6d43dafeee8c6fd7e65681eef7f5",
+        "0xabf41afc20853d5e96281b01c961be76fb3f83ff1f4b7913e874bc16b20f8f45"
+      ],
+      "splitWei": [
+        "5000000000000000",
+        "2000000000000000",
+        "2000000000000000",
+        "1000000000000000"
+      ]
+    },
+    {
+      "orderId": 3,
+      "characterId": 3,
+      "status": "Paid",
+      "publicUrl": "https://pucrpvafibawmypd.public.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/3/69ef13725922649b1b4a4ace9731ea683678eb0e0f0543887e3583a7651887b9.glb",
+      "sha256": "69ef13725922649b1b4a4ace9731ea683678eb0e0f0543887e3583a7651887b9",
+      "bytes": 1499960,
+      "transactions": [
+        "0xc4b70e5b1ac853d3727186fe0ce83b8c8b5b0aafba39f7f02433f8d4835e8a1e",
+        "0x2f53a9a5626990801687adacaa3430561faf0a7b4948d64f560ff66943d58a4a",
+        "0x835966121cfb1b6f7a0eca92f27dfa34dc2ad0c8f73c76f65c1ea54582eb4752"
+      ],
+      "splitWei": [
+        "5000000000000000",
+        "2000000000000000",
+        "2000000000000000",
+        "1000000000000000"
+      ]
+    }
+  ],
+  "withdrawableDeployerWei": "30000000000000000"
+}

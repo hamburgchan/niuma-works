@@ -1,0 +1,120 @@
+test_glb_rejects_truncation_and_external_dependencies (test_worker.WorkerSafetyTest.test_glb_rejects_truncation_and_external_dependencies) ... ERROR
+test_started_gpu_job_cannot_submit_again (test_worker.WorkerSafetyTest.test_started_gpu_job_cannot_submit_again) ... ok
+test_unknown_transaction_does_not_resend (test_worker.WorkerSafetyTest.test_unknown_transaction_does_not_resend) ... ERROR
+
+======================================================================
+ERROR: test_glb_rejects_truncation_and_external_dependencies (test_worker.WorkerSafetyTest.test_glb_rejects_truncation_and_external_dependencies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\monad\niuma-works\scripts\test_worker.py", line 21, in test_glb_rejects_truncation_and_external_dependencies
+    path.write_bytes(data)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "D:\Python313\Lib\pathlib\_abc.py", line 641, in write_bytes
+    with self.open(mode='wb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "D:\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\丘梦婷\\AppData\\Local\\Temp\\tmpk1r651wq\\asset.glb'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 369, in walk
+PermissionError: [WinError 5] 拒绝访问。: 'C:\\Users\\丘梦婷\\AppData\\Local\\Temp\\tmpk1r651wq'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\monad\niuma-works\scripts\test_worker.py", line 18, in test_glb_rejects_truncation_and_external_dependencies
+    with tempfile.TemporaryDirectory() as folder:
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Python313\Lib\tempfile.py", line 951, in __exit__
+    self.cleanup()
+    ~~~~~~~~~~~~^^
+  File "D:\Python313\Lib\tempfile.py", line 955, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python313\Lib\tempfile.py", line 935, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\Python313\Lib\shutil.py", line 790, in rmtree
+    return _rmtree_unsafe(path, onexc)
+  File "D:\Python313\Lib\shutil.py", line 613, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 372, in walk
+  File "D:\Python313\Lib\shutil.py", line 611, in onerror
+    onexc(os.scandir, err.filename, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python313\Lib\tempfile.py", line 907, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "D:\Python313\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python313\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 拒绝访问。: 'C:\\Users\\丘梦婷\\AppData\\Local\\Temp\\tmpk1r651wq'
+
+======================================================================
+ERROR: test_unknown_transaction_does_not_resend (test_worker.WorkerSafetyTest.test_unknown_transaction_does_not_resend)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\monad\niuma-works\scripts\test_worker.py", line 34, in test_unknown_transaction_does_not_resend
+    niuma.save(Path(folder) / "transactions/original.json", record)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\monad\niuma-works\scripts\niuma.py", line 36, in save
+    path.parent.mkdir(parents=True, exist_ok=True)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python313\Lib\pathlib\_local.py", line 722, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] 拒绝访问。: 'C:\\Users\\丘梦婷\\AppData\\Local\\Temp\\tmp5psplzux\\transactions'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 369, in walk
+PermissionError: [WinError 5] 拒绝访问。: 'C:\\Users\\丘梦婷\\AppData\\Local\\Temp\\tmp5psplzux'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\monad\niuma-works\scripts\test_worker.py", line 32, in test_unknown_transaction_does_not_resend
+    with tempfile.TemporaryDirectory() as folder, patch.object(niuma, "RUNTIME", Path(folder)):
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Python313\Lib\tempfile.py", line 951, in __exit__
+    self.cleanup()
+    ~~~~~~~~~~~~^^
+  File "D:\Python313\Lib\tempfile.py", line 955, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python313\Lib\tempfile.py", line 935, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\Python313\Lib\shutil.py", line 790, in rmtree
+    return _rmtree_unsafe(path, onexc)
+  File "D:\Python313\Lib\shutil.py", line 613, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 372, in walk
+  File "D:\Python313\Lib\shutil.py", line 611, in onerror
+    onexc(os.scandir, err.filename, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python313\Lib\tempfile.py", line 907, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "D:\Python313\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python313\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 拒绝访问。: 'C:\\Users\\丘梦婷\\AppData\\Local\\Temp\\tmp5psplzux'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.015s
+
+FAILED (errors=2)

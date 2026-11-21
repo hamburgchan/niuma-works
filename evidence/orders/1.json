@@ -1,0 +1,106 @@
+{
+  "orderId": 1,
+  "prompt": "一个戴着黄色安全帽、扛着扳手的胖土豆工人",
+  "generationPrompt": "A chubby potato worker wearing a yellow hard hat, carrying a wrench, single character, full body, front view, plain white background, stylized game character, isolated, no text",
+  "source": "NIUMA WORKS 团队自拟",
+  "seed": 43,
+  "mode": "generated",
+  "createdAt": "2026-11-21T03:06:26.174954+00:00",
+  "status": "paid",
+  "spaces": [
+    "black-forest-labs/FLUX.1-schnell",
+    "trellis-community/TRELLIS"
+  ],
+  "failedAt": "2026-11-21T03:06:37.115292+00:00",
+  "incidents": [
+    {
+      "at": "2026-11-21T03:06:37.115292+00:00",
+      "error": "Vercel Blob: Cannot use public access on a private store. The store is configured with private access.",
+      "reconciliation": "Progress publish failed before flux.submit; no GPU request occurred. Continue the same order with private Blob access.",
+      "reconciledAt": "2026-11-21T03:07:43.171000+00:00"
+    }
+  ],
+  "gpuAttemptStarted": "2026-11-21T03:07:59.293061+00:00",
+  "fluxEventId": null,
+  "fluxSeconds": 5.231,
+  "trellisEventId": null,
+  "trellisSeconds": 50.397,
+  "generationFinishedAt": "2026-11-21T03:08:56.122171+00:00",
+  "bytes": 1241632,
+  "sha256": "b4bd053694f48fc7dfb139d03b2f2a4adee6eaa77deb1d188a4789525b8e895d",
+  "meshes": 1,
+  "textures": 1,
+  "url": "https://xflbkb7wcpkuxgfx.private.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/1/b4bd053694f48fc7dfb139d03b2f2a4adee6eaa77deb1d188a4789525b8e895d.glb",
+  "blobAccess": "private",
+  "downloadedSha256": "b4bd053694f48fc7dfb139d03b2f2a4adee6eaa77deb1d188a4789525b8e895d",
+  "deliverTransaction": {
+    "hash": "0x83dd442c16d222fd8104672b95b706ed6f265d22a95c517c3cd23c988cd6605c",
+    "sender": "0x9A291f35836992494904Ee5De83DfAABcF7876aD",
+    "nonce": 0,
+    "gasLimit": 313187,
+    "valueWei": "0",
+    "startedAt": "2026-11-21T03:09:49.694543+00:00",
+    "state": "CONFIRMED",
+    "blockNumber": 81470028,
+    "gasUsed": 313187,
+    "effectiveGasPriceWei": "102000000000",
+    "confirmedAt": "2026-11-21T03:09:50.430589+00:00",
+    "chargedFeeWei": "31945074000000000"
+  },
+  "characterId": 1,
+  "approveTransaction": {
+    "hash": "0x502b91f3f9a18b51cbdc835cd93be1b7e5348d4f3c7c5a610d4cdb3487bbb20e",
+    "sender": "0xb561475586d95612121d3806A86d930d1a3d414a",
+    "nonce": 1,
+    "gasLimit": 95815,
+    "valueWei": "0",
+    "startedAt": "2026-11-21T03:09:55.302474+00:00",
+    "state": "CONFIRMED",
+    "blockNumber": 81470047,
+    "gasUsed": 95815,
+    "effectiveGasPriceWei": "102000000000",
+    "confirmedAt": "2026-11-21T03:09:57.055823+00:00",
+    "chargedFeeWei": "9773130000000000"
+  },
+  "onchainSha256": "b4bd053694f48fc7dfb139d03b2f2a4adee6eaa77deb1d188a4789525b8e895d",
+  "progressUrl": "https://xflbkb7wcpkuxgfx.private.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/1/progress.json",
+  "orderTransaction": {
+    "hash": "0x3a99be8c11dae977fdf740e3ce22b4875755d0aa6eec9f9741510ba39502d3bf",
+    "sender": "0xb561475586d95612121d3806A86d930d1a3d414a",
+    "nonce": 0,
+    "gasLimit": 257794,
+    "valueWei": "10000000000000000",
+    "startedAt": "2026-11-21T03:06:05.911476+00:00",
+    "state": "CONFIRMED",
+    "blockNumber": 81469319,
+    "gasUsed": 257794,
+    "effectiveGasPriceWei": "102000000000",
+    "confirmedAt": "2026-11-21T03:06:06.587058+00:00",
+    "chargedFeeWei": "26294988000000000"
+  },
+  "publicUrl": "https://pucrpvafibawmypd.public.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/1/b4bd053694f48fc7dfb139d03b2f2a4adee6eaa77deb1d188a4789525b8e895d.glb",
+  "publicMirrorPublishedAt": "2026-11-21T03:11:42.788859+00:00",
+  "originalOnchainUri": "https://xflbkb7wcpkuxgfx.private.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/1/b4bd053694f48fc7dfb139d03b2f2a4adee6eaa77deb1d188a4789525b8e895d.glb",
+  "publicDownloadedSha256": "b4bd053694f48fc7dfb139d03b2f2a4adee6eaa77deb1d188a4789525b8e895d",
+  "finalPublicDownload": {
+    "at": "2026-11-21T03:17:28.411550+00:00",
+    "unauthenticated": true,
+    "bytes": 1241632,
+    "sha256": "b4bd053694f48fc7dfb139d03b2f2a4adee6eaa77deb1d188a4789525b8e895d",
+    "onchainMatch": true
+  },
+  "paidEvent": {
+    "recipients": [
+      "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+      "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+      "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+      "0x88e79c388E1EaA6fc0AB876456D75037598F16e4"
+    ],
+    "amountsWei": [
+      "5000000000000000",
+      "2000000000000000",
+      "2000000000000000",
+      "1000000000000000"
+    ]
+  }
+}

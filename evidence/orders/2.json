@@ -1,0 +1,93 @@
+{
+  "orderId": 2,
+  "prompt": "一只穿着宇航服、表情呆滞的柴犬",
+  "generationPrompt": "A Shiba Inu dog in an astronaut spacesuit, with a blank vacant expression, single character, full body, front view, plain white background, stylized game character, isolated, no text",
+  "source": "NIUMA WORKS 团队自拟",
+  "seed": 44,
+  "mode": "generated",
+  "createdAt": "2026-11-21T03:11:56.886435+00:00",
+  "status": "paid",
+  "spaces": [
+    "black-forest-labs/FLUX.1-schnell",
+    "trellis-community/TRELLIS"
+  ],
+  "gpuAttemptStarted": "2026-11-21T03:12:08.994432+00:00",
+  "fluxEventId": null,
+  "fluxSeconds": 9.739,
+  "trellisEventId": null,
+  "trellisSeconds": 62.516,
+  "generationFinishedAt": "2026-11-21T03:13:22.648730+00:00",
+  "bytes": 1986368,
+  "sha256": "3e1a5353ce437259f486d208f2335705b7e5b89038af42c773a7aa0239fb3502",
+  "meshes": 1,
+  "textures": 1,
+  "url": "https://pucrpvafibawmypd.public.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/2/3e1a5353ce437259f486d208f2335705b7e5b89038af42c773a7aa0239fb3502.glb",
+  "blobAccess": "public",
+  "downloadedSha256": "3e1a5353ce437259f486d208f2335705b7e5b89038af42c773a7aa0239fb3502",
+  "deliverTransaction": {
+    "hash": "0x135702985946440d3b305db88d744d835cde6d43dafeee8c6fd7e65681eef7f5",
+    "sender": "0x9A291f35836992494904Ee5De83DfAABcF7876aD",
+    "nonce": 1,
+    "gasLimit": 294325,
+    "valueWei": "0",
+    "startedAt": "2026-11-21T03:13:48.010207+00:00",
+    "state": "CONFIRMED",
+    "blockNumber": 81470767,
+    "gasUsed": 294325,
+    "effectiveGasPriceWei": "102000000000",
+    "confirmedAt": "2026-11-21T03:13:48.615140+00:00",
+    "chargedFeeWei": "30021150000000000"
+  },
+  "characterId": 2,
+  "approveTransaction": {
+    "hash": "0xabf41afc20853d5e96281b01c961be76fb3f83ff1f4b7913e874bc16b20f8f45",
+    "sender": "0xb561475586d95612121d3806A86d930d1a3d414a",
+    "nonce": 4,
+    "gasLimit": 77040,
+    "valueWei": "0",
+    "startedAt": "2026-11-21T03:13:51.515786+00:00",
+    "state": "CONFIRMED",
+    "blockNumber": 81470779,
+    "gasUsed": 77040,
+    "effectiveGasPriceWei": "102000000000",
+    "confirmedAt": "2026-11-21T03:13:52.160062+00:00",
+    "chargedFeeWei": "7858080000000000"
+  },
+  "onchainSha256": "3e1a5353ce437259f486d208f2335705b7e5b89038af42c773a7aa0239fb3502",
+  "progressUrl": "https://pucrpvafibawmypd.public.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/2/progress.json",
+  "orderTransaction": {
+    "hash": "0x3c518182e903013a52d151c71fd97f08ca824b0717740852872e5c1299066249",
+    "sender": "0xb561475586d95612121d3806A86d930d1a3d414a",
+    "nonce": 2,
+    "gasLimit": 238946,
+    "valueWei": "10000000000000000",
+    "startedAt": "2026-11-21T03:11:52.781627+00:00",
+    "state": "CONFIRMED",
+    "blockNumber": 81470416,
+    "gasUsed": 238946,
+    "effectiveGasPriceWei": "102000000000",
+    "confirmedAt": "2026-11-21T03:11:54.798781+00:00",
+    "chargedFeeWei": "24372492000000000"
+  },
+  "finalPublicDownload": {
+    "at": "2026-11-21T03:17:34.549593+00:00",
+    "unauthenticated": true,
+    "bytes": 1986368,
+    "sha256": "3e1a5353ce437259f486d208f2335705b7e5b89038af42c773a7aa0239fb3502",
+    "onchainMatch": true
+  },
+  "paidEvent": {
+    "recipients": [
+      "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+      "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+      "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+      "0x88e79c388E1EaA6fc0AB876456D75037598F16e4"
+    ],
+    "amountsWei": [
+      "5000000000000000",
+      "2000000000000000",
+      "2000000000000000",
+      "1000000000000000"
+    ]
+  }
+}

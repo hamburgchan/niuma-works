@@ -1,0 +1,16 @@
+{
+  "loader": "three@0.176.0 GLTFLoader",
+  "status": "PASS",
+  "bytes": 1241632,
+  "sha256": "b4bd053694f48fc7dfb139d03b2f2a4adee6eaa77deb1d188a4789525b8e895d",
+  "meshes": 1,
+  "textures": 1,
+  "vertices": 10364,
+  "size": [
+    1.0034304857254028,
+    1.0014532804489136,
+    0.1943916380405426
+  ],
+  "animations": 0,
+  "scope": "Geometry parsing and texture decoding; no browser WebGL rendering claim"
+}
