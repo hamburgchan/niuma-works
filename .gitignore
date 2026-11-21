@@ -21,3 +21,12 @@ node_modules
 
 # cli
 dist
+
+# Local credentials and runtime records
+.env*
+!.env.example
+.mojo/
+.runtime/
+evidence/private/
+__pycache__/
+.venv/

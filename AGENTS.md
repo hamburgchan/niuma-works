@@ -2,6 +2,18 @@
 
 This file provides guidance to coding agents working in this repository.
 
+## NIUMA WORKS contest scope
+
+- The organizer's start announcement was confirmed by the user on 2026-11-21. Stages 1 and 2 are authorized; later stages require their work order.
+- Use this Scaffold-ETH 2 Foundry layout, Monad testnet (10143), and the existing burner connector. Do not replace these with another stack.
+- Use local MONSKILLS routing from D:/monad/.agents/skills/monskill/SKILL.md before relevant local topic skills.
+- Read private keys only from local environment files. Never print, commit, or send them to any service. Only sign Monad testnet transactions.
+- No pre-start verification scripts, sample GLB, or images may be copied into this repository or used as demo characters.
+- Reimplement generation here after the start: FLUX.1-schnell -> trellis-community/TRELLIS. Fallback: user-uploaded GLB. Do not use Hunyuan3D-2.
+- Do not call the creative mentor again today. Do not invent the description or identity of another onsite team.
+- Stage files explicitly, never git add -A. Keep .env* ignored except .env.example.
+- Deadline: 2026-11-21 18:30 Asia/Shanghai. Stop new features at 16:30; prepare submission by 18:00. Submission requires the user's review of concrete materials.
+
 ## Project Overview
 
 Scaffold-ETH 2 (SE-2) is a starter kit for building dApps on Ethereum. It comes in **two flavors** based on the Solidity framework:
