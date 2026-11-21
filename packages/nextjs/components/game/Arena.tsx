@@ -209,7 +209,11 @@ export function Arena(props: Props) {
     const abort = new AbortController();
     async function load() {
       try {
-        const response = await fetch(props.url, { signal: abort.signal });
+        const response = await fetch(
+          props.url.includes("blob.vercel-storage.com") ? `/chars/${props.sha256.replace(/^0x/, "")}.png` : props.url,
+          { signal: abort.signal },
+        ).catch(() => null);
+        if (!response) throw new Error("透明 PNG 下载失败");
         if (!response.ok) throw new Error("透明 PNG 下载失败");
         const bytes = await response.arrayBuffer();
         const digest = Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", bytes)))

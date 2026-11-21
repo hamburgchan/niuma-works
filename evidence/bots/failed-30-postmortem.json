@@ -1,0 +1,324 @@
+{
+  "at": "2026-11-21T06:47:43.366263+00:00",
+  "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+  "status": "FAILED_PRESERVED",
+  "fundedWei": "360000000000000000",
+  "fundedMON": "0.36",
+  "unrecoverableWei": "360000000000000000",
+  "privateKeys": "LOST: prior implementation kept keys only in request memory; cannot recover funds",
+  "observedFailure": "All 30 HTTP transport failures occurred before signed hash and broadcast timestamp were recorded. No finishRun was sent. Exact failing read method/HTTP status was not retained.",
+  "nonceFinding": "All original accounts remain nonce 0",
+  "gasFinding": "Read-only batched estimates succeed",
+  "signatureFinding": "No signed finishRun hash was recorded; no evidence of rejected signature or execution revert",
+  "rootCauseLimit": "Transport failure before signing is confirmed. Whether rate limit, timeout or connection error caused it is UNKNOWN; do not claim HTTP 429.",
+  "fix": [
+    "One JSON-RPC HTTP batch per preparation/broadcast/read stage, no 30-way separate HTTP fanout",
+    "Paid/gas/budget and signing checks before funding",
+    "Original hashes durably stored before barrier broadcast",
+    "Temporary private keys persisted outside repository until every row is terminal; unknown outcomes retain keys",
+    "HTTP errors retain status and stage; no payment retries"
+  ],
+  "httpStatus": 200,
+  "rows": [
+    {
+      "address": "0x68Fc2E349d59277FcABC8e319C28039bbED6C1Ed",
+      "fundingHash": "0x86b9ed62acba31863d191b4dfa6d514bd430afc5ce9c5b159c777fa4679583e2",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x6fd30CAD8894f3e86783c54c65DD8610a461D296",
+      "fundingHash": "0x357a265dcbf529b01265ee4defb07572497096776cbd6b4293279299f1cd7cd1",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x0Ad09C3b068d24ed31bd68897E86bDf9052D4cAb",
+      "fundingHash": "0x546d7c70eb35464e7a36f0ad276b6dbc67519264a8f108a6ae9f1740f0ee88ce",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76832,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0xF2FC70993CFFEe3C47fb7a63cbC0CFE4F267ed49",
+      "fundingHash": "0x72777a79a1ef29f41896553b9b1b2ad4810450877d751dbaaac057129cffb4f1",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x60471438c96335CA293E4Dec6Abe33F1DC432018",
+      "fundingHash": "0xd43f34474aef80ff40c0be62ebe37d90fd0d8b81293448a1da1c2674ccfd045e",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0xb3B85d4030e4ec50569dB405Aa7fD6538fCDeA06",
+      "fundingHash": "0x0a89267639d19bd551e932d1196f530ba04ff17c4bda346c4f58f6ddb18f2595",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76867,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0xfD26DF78E4D5eAa75b28aa8d324f6e3452fd28c7",
+      "fundingHash": "0xc1d2d571cc7eb4b79b9536a9492449f8158e3dc340613c49a1f559b9144a917a",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76867,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x38F239ca2e473E92dF622560eaB91865Cc7e237A",
+      "fundingHash": "0x29bb24f021c3d5677c5d2915cb475a04e232f84bd38becdfdd473840dad1b3b8",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x8E76DbBE436786eB73cE6ccF41C32268702C4a8c",
+      "fundingHash": "0xf40185da0c1c03ac1281c8924c36370b4a5b5149dfb4e18c82aada5c06a76b81",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76867,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x15BcD8a65E34FBb44224F26E75A3C3A360AaFa73",
+      "fundingHash": "0x874cfc1e0a275b024e4337177b861c4a80eb7d8a783ecad79674a25b73b66c78",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76832,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0xc739F4C8D234d9A8D4254038E6E20cd1C8A998d6",
+      "fundingHash": "0xf93fc469c96d89661d351f8e0780624f5c43dc7cadb5af7246a31a0fadb9a432",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76867,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0xca25207a6E6DdFEAECfcC99ED3868473E0883751",
+      "fundingHash": "0xda8cac8bd85a2cfbe7608623db2f745be30def2ec764c22bb52b02a99e95a7ca",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76832,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x4925dd1fB3b1F4C55469f4947516533A9e62c022",
+      "fundingHash": "0x4abd8c87f25b70cb01068f550a82c6af7302c2f8b51bff560ff3290420152557",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x1dB0F8159dA9653901d0Ab4dfba2ec589013D6b2",
+      "fundingHash": "0xb5ce1f5b05e5b67c11f93e211d7075e51915f812c1d72c35ea0f9f3d763e1dfc",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x97acAE0b8Ea894d9018C25F474FEF19054fc781C",
+      "fundingHash": "0xdfe3e160390cdc80568f2c6f2d212d6b4cc35e0bb7812e65d7e4ce7f2de440a7",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76832,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x53dB37CC1807a83Ca5760A8f9912640D23b22A9D",
+      "fundingHash": "0xcbe4cf74d6fd8bb3ce80465e772abdec65609c0f93adf8572d5abb362cf9d2d3",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76832,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x336f5B69Ff62c29E0d5Ecbd2d4F99238B86702A9",
+      "fundingHash": "0x70a05e9d81cc01a7278273d19c2d550740b374397edd04f45fe80d27bfe8d18a",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76867,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x4305C0159B6D100517856525c34E04B8c1585C33",
+      "fundingHash": "0x97a5d7863055589cf65c4e2afed286a746a51e974090fcdfef272447b5462918",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76832,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x0eEDb95D9BC12a6cF12c1C9A1389B96B7397fDeb",
+      "fundingHash": "0x48b851b3c61c55b7e32fe18ca5fb70cc0b0de1d447e4034df628552ef11684ed",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0xDE502119C8d2aF0d56D00eb14BAeC36ADbfafC26",
+      "fundingHash": "0xba61e80febcf39a35332b390b147462a946b552d0c01ba09e8c113ed57137ac3",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0xFC9C8D9cAFE9d7a1753fC491Ef36c91d8ED93b26",
+      "fundingHash": "0x500a32e521a9f106875f62224ee28e12fdabc2d054daf82d6c9ce739c76ee007",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76832,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0xa52F763Ad9adBc3f0311C8b7fAD9d4b4E7cb9A97",
+      "fundingHash": "0x49ae03a439ea98a83e61c997484351a8d350c23c124134c70141a51d919913b8",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x7e4F20AAEcD6c4EF6B3105c2b5EB5F84FE58cB07",
+      "fundingHash": "0x2085fc6d977a786c5dae2305899efab4f774d1058c2d59586b81dda1c669e628",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x27A9529c1aC34F72Fd749eCB215903eB0720B1Ba",
+      "fundingHash": "0xd12b72f54514a7e6f966d299c56455b84694e11674e848391f9c0ef5e030f873",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76832,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0xb42f53Cd614516827Ac801240d447E5B19aCAB65",
+      "fundingHash": "0xe0fdf59a7ffc485824cd2519c1023e2f0af4c1258cdd6cf7e31074d1d1ba942d",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x83D3dCB11907AB81994aeE089f139e22dCe2ecd4",
+      "fundingHash": "0x1d6bbda59398d7a7b719b0a3a52b9454a2f067640f90eba12bf8daa344d9e6cc",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x0b35216dC5f8453B37330A46d1587440a6b64648",
+      "fundingHash": "0x99e83bc9096c5d5da77f255cb80249c775be38244cff9e955d77360e936c834f",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76867,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x0d4688790690B5b7F5377A9d64275478050AC6B6",
+      "fundingHash": "0x7ec7069061b7bd9dd0be37e8988e8f1e670b1b98014fcb1f2600166a02e84dce",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76832,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0xBD9dE6CF70fd10acDCdc594cfa0d94a1C06348b4",
+      "fundingHash": "0x5c5d5f7a4e25dd2b7fbc9f3e4a4e664c6c1ef659f2759fdffe1dc2cbeec949bb",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76709,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    },
+    {
+      "address": "0x2b243159F633a4Fa78c6B76BcB56C43809705753",
+      "fundingHash": "0x3aea60e4d48c56be2a50960c0b0923cd70be2ed4bfb396129ea3aed1826152b4",
+      "nonce": 0,
+      "balanceWei": "12000000000000000",
+      "estimateGas": 76832,
+      "originalError": "HTTP request failed.",
+      "signedHashPresent": false,
+      "broadcastTimestampPresent": false
+    }
+  ]
+}

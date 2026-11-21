@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-21T07:10:39.269804+00:00",
+  "foundry": {
+    "passed": 34,
+    "failed": 0,
+    "log": "evidence/foundry-v2-test.txt"
+  },
+  "gameInput": {
+    "passed": 7,
+    "failed": 0,
+    "scope": "held direction, tap floor, blur, mixed keys, frame rate, touch"
+  },
+  "typescript": "PASS",
+  "eslint": "PASS zero errors/warnings after --fix",
+  "productionBuild": "PASS evidence/next-build-v2-release.txt",
+  "historicalFailuresPreserved": [
+    "evidence/next-build-v2-final.txt"
+  ],
+  "privateKeyFilesRemaining": 0,
+  "scope": "Local checks only; browser/public acceptance recorded separately"
+}

@@ -1,5 +1,122 @@
 @import "tailwindcss";
 
+.arena-mirror { position:absolute; left:16px; top:86px; background:#fff8df; color:#555b43; padding:5px 8px; font-size:11px; }
+
+.recruit-page,
+.earnings-panel {
+  max-width: 1280px;
+  padding: 48px 5vw;
+  margin: auto;
+}
+.recruit-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.recruit-form,
+.recruit-delivery {
+  border: 2px solid var(--ink);
+  background: #fffaf0;
+  padding: 28px;
+  min-width: 0;
+}
+.recruit-form label {
+  font-weight: 800;
+  font-size: 20px;
+  display: block;
+  margin-bottom: 16px;
+}
+.recruit-form textarea {
+  border: 2px solid var(--ink);
+  padding: 14px;
+  width: 100%;
+  resize: vertical;
+  background: #f6f1e7;
+  font-size: 16px;
+}
+.recruit-form h2,
+.recruit-delivery h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 20px 0;
+}
+.recruit-delivery h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 32px;
+}
+.recruit-progress {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+}
+.recruit-progress li {
+  border: 1px solid #bcbba9;
+  padding: 14px;
+  display: flex;
+  gap: 16px;
+}
+.recruit-progress .done {
+  background: #dde8c8;
+  border-color: #536f40;
+}
+.recruit-progress .active {
+  background: #ffe5ac;
+  border-color: #a58037;
+}
+.recruit-delivery .paper-image {
+  height: 380px;
+}
+.recruit-delivery .paper-image img {
+  height: 350px;
+}
+.empty-paper {
+  min-height: 320px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 24px;
+  border: 1px dashed #a8ac98;
+}
+.empty-paper > span {
+  font-family: "Press Start 2P", monospace;
+  font-size: 70px;
+  color: #a8ac98;
+}
+.fingerprint {
+  overflow-wrap: anywhere;
+  font-family: monospace;
+}
+.earnings-panel h1 {
+  font-size: clamp(32px, 5vw, 60px);
+  font-weight: 900;
+}
+.earnings-amount {
+  font-size: 42px;
+  font-family: monospace;
+  margin: 36px 0;
+}
+.earnings-amount small {
+  display: block;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+@media (max-width: 800px) {
+  .recruit-layout {
+    grid-template-columns: 1fr;
+  }
+  .recruit-form,
+  .recruit-delivery {
+    padding: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .market-hero .link {
+    display: block;
+    margin-top: 20px;
+  }
+}
+
 .bot-rush {
   margin: 40px 0;
   padding: 24px;

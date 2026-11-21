@@ -4,7 +4,6 @@ import Link from "next/link";
 import { QRCodeSVG } from "qrcode.react";
 import { formatEther } from "viem";
 import { BotRush } from "~~/components/BotRush";
-import { useScaffoldWatchContractEvent } from "~~/hooks/scaffold-eth";
 import { CHARACTER_NAMES, DEMO_CHARACTERS, EXPLORER, shortAddress } from "~~/utils/niuma";
 import type { LiveEvent } from "~~/utils/niuma-live";
 
@@ -38,23 +37,9 @@ export function LiveBoard() {
   useEffect(() => {
     setOrigin(window.location.origin);
     void refresh();
-    const timer = setInterval(refresh, 3000);
+    const timer = setInterval(refresh, 15000);
     return () => clearInterval(timer);
   }, [refresh]);
-  useScaffoldWatchContractEvent({
-    contractName: "NiumaWorks",
-    eventName: "RunFinished",
-    onLogs: () => {
-      void refresh();
-    },
-  });
-  useScaffoldWatchContractEvent({
-    contractName: "NiumaWorks",
-    eventName: "Paid",
-    onLogs: () => {
-      void refresh();
-    },
-  });
   return (
     <div className="live-page">
       <div className="play-heading">
@@ -62,7 +47,9 @@ export function LiveBoard() {
           <p className="eyebrow">NIUMA WORKS / LIVE</p>
           <h1>老板，工资到账了。</h1>
         </div>
-        <span className="live-indicator">● {error ? "重连中" : data?.catchingUp ? "正在同步历史" : "每 3 秒更新"}</span>
+        <span className="live-indicator">
+          ● {error ? "重连中" : data?.catchingUp ? "正在同步历史" : "每 15 秒更新"}
+        </span>
       </div>
       <div className="live-stats">
         <div>

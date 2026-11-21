@@ -1,11 +1,10 @@
-import { BlobNotFoundError, BlobPreconditionFailedError, put } from "@vercel/blob";
 import "server-only";
 import { type Hash, decodeEventLog } from "viem";
+import batches from "~~/contracts/botResults.json";
+import seed from "~~/contracts/liveSeed.json";
 import { DEMO_CHARACTERS, DEMO_EMPLOYEES } from "~~/utils/niuma";
-import { access, client, deployment, freshBlob, putState, readRecord } from "~~/utils/niuma-server";
+import { client, deployment } from "~~/utils/niuma-server";
 
-const ROOT = `niuma/${deployment.address.toLowerCase()}/live`;
-const PATH = `${ROOT}/events-v1.json`;
 export type LiveEvent = {
   robotEmployer?: boolean;
   id: string;
@@ -15,139 +14,114 @@ export type LiveEvent = {
   event: "Paid" | "RunFinished";
   args: Record<string, string | string[]>;
 };
-type Cache = { cursor: number; events: LiveEvent[] };
-async function cache(): Promise<{ value: Cache; etag?: string }> {
-  try {
-    const blob = await freshBlob(PATH);
-    if (blob?.statusCode === 200)
-      return { value: JSON.parse(await new Response(blob.stream).text()), etag: blob.blob.etag };
-  } catch (error) {
-    if (!(error instanceof BlobNotFoundError)) throw error;
-  }
-  return { value: { cursor: deployment.deployedOnBlock, events: [] } };
-}
-let pending: Promise<Cache & { latestBlock: number }> | undefined;
+type Batch = { contract: string; rows: { hash?: string; elapsedMs?: number; state: string }[] };
+const currentBatches = batches as Batch[];
+const events = new Map<string, LiveEvent>();
+// The read-only publisher validates decoded event schemas; JSON imports widen the event discriminant.
+for (const event of seed.events as unknown as LiveEvent[])
+  if (seed.contract.toLowerCase() === deployment.address.toLowerCase()) events.set(event.id, event);
+let cursor =
+  seed.contract.toLowerCase() === deployment.address.toLowerCase() ? seed.cursor : deployment.deployedOnBlock;
+let cached: Awaited<ReturnType<typeof refresh>> | undefined,
+  expires = 0,
+  pending: Promise<Awaited<ReturnType<typeof refresh>>> | undefined;
+const latency = new Map<string, number>();
+for (const batch of currentBatches.filter(b => b.contract.toLowerCase() === deployment.address.toLowerCase()))
+  for (const row of batch.rows)
+    if (row.hash && row.state === "CONFIRMED" && row.elapsedMs) latency.set(row.hash.toLowerCase(), row.elapsedMs);
 async function refresh() {
-  const { value, etag } = await cache();
-  const latestBlock = Number(await client.getBlockNumber({ cacheTime: 0 }));
-  // Read recent events even while the historical cursor is catching up. Each
-  // RPC query remains <=100 blocks; transport batches the independent reads.
+  const latestBlock = Number(await client.getBlockNumber({ cacheTime: 10000 }));
   const ranges = Array.from(
-    { length: Math.min(16, Math.max(0, Math.ceil((latestBlock - value.cursor + 1) / 100))) },
-    (_, i) => ({
-      start: value.cursor + i * 100,
-      end: Math.min(value.cursor + i * 100 + 99, latestBlock),
-    }),
+    { length: Math.min(16, Math.max(0, Math.ceil((latestBlock - cursor + 1) / 100))) },
+    (_, i) => ({ start: cursor + i * 100, end: Math.min(cursor + i * 100 + 99, latestBlock) }),
   );
+  const recent = { start: Math.max(deployment.deployedOnBlock, latestBlock - 99), end: latestBlock };
   const chunks = await Promise.all(
-    [...ranges, { start: Math.max(deployment.deployedOnBlock, latestBlock - 99), end: latestBlock }].map(range =>
-      client.getLogs({
-        address: deployment.address,
-        fromBlock: BigInt(range.start),
-        toBlock: BigInt(range.end),
-      }),
+    [...ranges, recent].map(r =>
+      client.getLogs({ address: deployment.address, fromBlock: BigInt(r.start), toBlock: BigInt(r.end) }),
     ),
   );
-  for (const logs of chunks) {
+  for (const logs of chunks)
     for (const log of logs) {
       try {
-        const decoded = decodeEventLog({ abi: deployment.abi, data: log.data, topics: log.topics });
-        if (decoded.eventName !== "Paid" && decoded.eventName !== "RunFinished") continue;
+        const d = decodeEventLog({ abi: deployment.abi, data: log.data, topics: log.topics });
+        if (d.eventName !== "Paid" && d.eventName !== "RunFinished") continue;
         const id = `${log.transactionHash}:${log.logIndex}`;
-        if (value.events.some(event => event.id === id)) continue;
-        value.events.push({
+        events.set(id, {
           id,
           hash: log.transactionHash,
           blockNumber: Number(log.blockNumber),
           logIndex: log.logIndex,
-          event: decoded.eventName,
-          args: JSON.parse(JSON.stringify(decoded.args, (_, v) => (typeof v === "bigint" ? v.toString() : v))),
+          event: d.eventName,
+          args: JSON.parse(JSON.stringify(d.args, (_, v) => (typeof v === "bigint" ? v.toString() : v))),
         });
       } catch {
-        /* Other contract events are outside this feed. */
+        /* Ignore unrelated contract events. */
       }
     }
-  }
-  if (ranges.length) value.cursor = ranges[ranges.length - 1].end + 1;
-  value.events.sort((a, b) => a.blockNumber - b.blockNumber || a.logIndex - b.logIndex);
-  try {
-    await putState(PATH, JSON.stringify(value), etag);
-  } catch (error) {
-    if (error instanceof BlobPreconditionFailedError) return { ...(await cache()).value, latestBlock };
-    throw error;
-  }
-  return { ...value, latestBlock };
-}
-export async function liveData() {
-  if (!pending)
-    pending = refresh().finally(() => {
-      pending = undefined;
-    });
-  const data = await pending;
-  const demoEvents = data.events.filter(event =>
-    event.event === "RunFinished"
-      ? DEMO_CHARACTERS.includes(Number(event.args.characterId))
-      : DEMO_EMPLOYEES.some(employee => employee.orderId === Number(event.args.orderId)),
-  );
-  const recent = await Promise.all(
-    demoEvents
-      .slice(-60)
-      .reverse()
-      .map(async event => ({
-        ...event,
-        robotEmployer:
-          event.event === "RunFinished" &&
-          !!(await readRecord(`niuma/${deployment.address.toLowerCase()}/bots/runs/${event.hash}.json`)),
-      })),
-  );
-  const timings = await Promise.all(
-    recent.map(async event => ({ hash: event.hash, value: await readRecord(`${ROOT}/latency/${event.hash}.json`) })),
-  );
-  const latency: Record<string, number> = {};
-  timings.forEach(item => {
-    if (typeof item.value?.elapsedMs === "number") latency[item.hash] = item.value.elapsedMs;
-  });
-  const runs = demoEvents.filter(event => event.event === "RunFinished");
-  const labor = new Map<
-    string,
-    { characterId: number; shifts: number; fullAttendance: number; ownerWagesWei: string }
-  >();
-  for (const event of runs) {
-    const id = String(event.args.characterId);
-    const value = labor.get(id) || { characterId: Number(id), shifts: 0, fullAttendance: 0, ownerWagesWei: "0" };
-    value.shifts++;
-    if (Number(event.args.stars) === 6) value.fullAttendance++;
-    value.ownerWagesWei = (BigInt(value.ownerWagesWei) + BigInt(String(event.args.ownerShare))).toString();
-    labor.set(id, value);
-  }
-  const best = new Map<string, LiveEvent>();
-  for (const event of runs) {
-    const key = `${event.args.characterId}:${event.args.player}`;
-    const previous = best.get(key);
-    if (
-      !previous ||
-      Number(event.args.stars) > Number(previous.args.stars) ||
-      (event.args.stars === previous.args.stars && Number(event.args.timeMs) < Number(previous.args.timeMs))
+  if (ranges.length) cursor = ranges.at(-1)!.end + 1;
+  const all = [...events.values()]
+    .filter(e =>
+      e.event === "RunFinished"
+        ? DEMO_CHARACTERS.includes(Number(e.args.characterId))
+        : DEMO_EMPLOYEES.some(d => d.orderId === Number(e.args.orderId)),
     )
-      best.set(key, event);
+    .sort((a, b) => a.blockNumber - b.blockNumber || a.logIndex - b.logIndex);
+  const robots = new Set(
+    currentBatches
+      .filter(b => b.contract.toLowerCase() === deployment.address.toLowerCase())
+      .flatMap(b => b.rows.map(r => r.hash?.toLowerCase()).filter(Boolean)),
+  );
+  const runs = all.filter(e => e.event === "RunFinished");
+  const recentEvents = all
+    .slice(-100)
+    .reverse()
+    .map(e => ({ ...e, robotEmployer: robots.has(e.hash.toLowerCase()) }));
+  const timings: Record<string, number> = {};
+  for (const e of recentEvents) {
+    const ms = latency.get(e.hash.toLowerCase());
+    if (ms) timings[e.hash] = ms;
   }
-  const samples = Object.values(latency);
+  const samples = Object.values(timings);
+  const laborLeaders = DEMO_CHARACTERS.map(id => {
+    const own = runs.filter(e => Number(e.args.characterId) === id);
+    return {
+      characterId: id,
+      shifts: own.length,
+      fullAttendance: own.filter(e => Number(e.args.stars) === 6).length,
+      ownerWagesWei: own.reduce((sum, e) => sum + BigInt(String(e.args.ownerShare)), 0n).toString(),
+    };
+  });
   return {
-    events: recent,
-    rankings: [...best.values()].sort(
-      (a, b) => Number(b.args.stars) - Number(a.args.stars) || Number(a.args.timeMs) - Number(b.args.timeMs),
-    ),
+    events: recentEvents,
+    rankings: [],
     runCount: runs.length,
-    laborLeaders: [...labor.values()].sort((a, b) => b.fullAttendance - a.fullAttendance || b.shifts - a.shifts),
-    settlementCount: demoEvents.length,
-    latency,
+    settlementCount: all.length,
+    latency: timings,
     latencySamples: samples.length,
     averageMs: samples.length ? Math.round(samples.reduce((a, b) => a + b, 0) / samples.length) : null,
-    indexedThrough: data.cursor - 1,
-    latestBlock: data.latestBlock,
-    catchingUp: data.cursor <= data.latestBlock,
+    laborLeaders,
+    indexedThrough: cursor - 1,
+    latestBlock,
+    catchingUp: cursor <= latestBlock,
     updatedAt: new Date().toISOString(),
+    source: "on-chain events; immutable receipt seed plus 15-second process cache",
+    timingPersistence: "Browser samples are process-local; robot samples are published evidence",
   };
+}
+export async function liveData() {
+  if (cached && Date.now() < expires) return cached;
+  if (!pending)
+    pending = refresh()
+      .then(value => {
+        cached = value;
+        expires = Date.now() + 15000;
+        return value;
+      })
+      .finally(() => {
+        pending = undefined;
+      });
+  return pending;
 }
 export async function recordLatency(hash: unknown, elapsedMs: unknown) {
   if (
@@ -163,24 +137,17 @@ export async function recordLatency(hash: unknown, elapsedMs: unknown) {
   if (receipt.status !== "success" || receipt.to?.toLowerCase() !== deployment.address.toLowerCase())
     throw new Error("Successful game receipt required");
   const game = receipt.logs.some(log => {
-    if (log.address.toLowerCase() !== deployment.address.toLowerCase()) return false;
     try {
-      return decodeEventLog({ abi: deployment.abi, topics: log.topics, data: log.data }).eventName === "RunFinished";
+      return (
+        log.address.toLowerCase() === deployment.address.toLowerCase() &&
+        decodeEventLog({ abi: deployment.abi, topics: log.topics, data: log.data }).eventName === "RunFinished"
+      );
     } catch {
       return false;
     }
   });
-  if (!game) throw new Error("Game receipt required");
-  const path = `${ROOT}/latency/${hash.toLowerCase()}.json`;
-  if (await readRecord(path)) return { existing: true };
-  try {
-    await put(
-      path,
-      JSON.stringify({ hash, elapsedMs, source: "browser-reported", recordedAt: new Date().toISOString() }),
-      { access, contentType: "application/json", allowOverwrite: false, cacheControlMaxAge: 60 },
-    );
-  } catch (error) {
-    if (!(await readRecord(path))) throw error;
-  }
-  return { recorded: true };
+  if (!game) throw new Error("RunFinished required");
+  if (latency.size > 1000) latency.delete(latency.keys().next().value!);
+  if (!latency.has(hash.toLowerCase())) latency.set(hash.toLowerCase(), elapsedMs);
+  return { recorded: true, durable: false, source: "browser-reported, process cache" };
 }

@@ -1,0 +1,12 @@
+# Retired generation tools, not required by the current application. Do not run onsite.
+gradio_client==2.7.2
+rembg[cpu]==2.0.87
+python-dotenv==1.2.4
+web3==7.16.0
+vercel-blob==0.6.2
+Pillow==13.0.0
+transformers==5.23.0
+sentencepiece==0.2.3
+sacremoses==0.2.0
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.15.0+cpu

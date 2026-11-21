@@ -1,0 +1,25 @@
+▲ Next.js 16.2.12 (Turbopack)
+
+  Creating an optimized production build ...
+/*! 🌼 daisyUI 5.5.19 */
+✓ Compiled successfully in 13.1s
+  Running TypeScript ...
+Failed to type check.
+
+./utils/niuma-live.ts:20:21
+Type error: Conversion of type '({ id: string; hash: string; blockNumber: number; logIndex: number; event: string; args: { orderId: string; recipients: string[]; amounts: string[]; characterId?: undefined; player?: undefined; stars?: undefined; timeMs?: undefined; ownerShare?: undefined; }; } | { ...; })[]' to type 'LiveEvent[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ id: string; hash: string; blockNumber: number; logIndex: number; event: string; args: { orderId: string; recipients: string[]; amounts: string[]; characterId?: undefined; player?: undefined; stars?: undefined; timeMs?: undefined; ownerShare?: undefined; }; } | { ...; }' is not comparable to type 'LiveEvent'.
+    Type '{ id: string; hash: string; blockNumber: number; logIndex: number; event: string; args: { characterId: string; player: string; stars: string; timeMs: string; ownerShare: string; orderId?: undefined; recipients?: undefined; amounts?: undefined; }; }' is not comparable to type 'LiveEvent'.
+      Types of property 'args' are incompatible.
+        Type '{ characterId: string; player: string; stars: string; timeMs: string; ownerShare: string; orderId?: undefined; recipients?: undefined; amounts?: undefined; }' is not comparable to type 'Record<string, string | string[]>'.
+          Property '"orderId"' is incompatible with index signature.
+            Type 'undefined' is not comparable to type 'string | string[]'.
+
+  18 | const currentBatches = batches as Batch[];
+  19 | const events = new Map<string, LiveEvent>();
+> 20 | for (const event of seed.events as LiveEvent[])
+     |                     ^
+  21 |   if (seed.contract.toLowerCase() === deployment.address.toLowerCase()) events.set(event.i...
+  22 | let cursor =
+  23 |   seed.contract.toLowerCase() === deployment.address.toLowerCase() ? seed.cursor : deploym...
+Next.js build worker exited with code: 1 and signal: null

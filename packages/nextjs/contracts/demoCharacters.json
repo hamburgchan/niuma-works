@@ -1,41 +1,86 @@
 [
   {
-    "id": 5,
-    "orderId": 6,
+    "id": 1,
+    "orderId": 1,
     "name": "骡子新员工",
     "slug": "mule",
-    "url": "https://pucrpvafibawmypd.public.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/6/chatgpt-manual/03db298a4353a53541216e7233f35c4c1034f2ba5c4e92e8f6f5d702477b3d95.png",
+    "url": "https://niuma-works.vercel.app/chars/03db298a4353a53541216e7233f35c4c1034f2ba5c4e92e8f6f5d702477b3d95.png",
     "sha256": "03db298a4353a53541216e7233f35c4c1034f2ba5c4e92e8f6f5d702477b3d95",
+    "prompt": "a mule office worker in blue overalls",
     "source": "NIUMA WORKS 团队自拟",
     "generationSource": "chatgpt 手动生成",
     "assetType": "png",
     "bytes": 124910,
-    "approveHash": "0xe5ecbe17c5485361f646f43c241305fcf81a9d9b387557ce97e6009edb336c97"
+    "orderHash": "0xea87f9d5a9ca37cd5a1b38bfd497f027530acd221f6d85c5e3a96db9e8b3f868",
+    "deliverHash": "0x7417ab04aaecf926bf66eff49054d5a5b099f6eac0ab8b982458443fa1432a93",
+    "approveHash": "0xe2511228c44f657956dc0e789f71a6a5d666624784dd89ad1a1aee61fd0eb7b4",
+    "splitAmountsWei": [
+      "5000000000000000",
+      "2000000000000000",
+      "2000000000000000",
+      "1000000000000000"
+    ],
+    "recipients": [
+      "0xF7D425b71b7CAFC4553A99fF99bB8eC76672aD02",
+      "0x0C682dcE86e98585194977e2abBe63956cc4065F",
+      "0x45B5802923aD6e25F8EABcC49D141853e7A81265",
+      "0x613E15917Ab21dd7357369e625b3C78294A87ECa"
+    ]
   },
   {
-    "id": 6,
-    "orderId": 7,
+    "id": 2,
+    "orderId": 2,
     "name": "羊驼实习生",
     "slug": "alpaca",
-    "url": "https://pucrpvafibawmypd.public.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/7/chatgpt-manual/22a86b203d813da65ced72e3f062dd5209c56f44a445a2ec80af3e762b243fd9.png",
+    "url": "https://niuma-works.vercel.app/chars/22a86b203d813da65ced72e3f062dd5209c56f44a445a2ec80af3e762b243fd9.png",
     "sha256": "22a86b203d813da65ced72e3f062dd5209c56f44a445a2ec80af3e762b243fd9",
+    "prompt": "a fluffy alpaca intern holding a coffee cup",
     "source": "NIUMA WORKS 团队自拟",
     "generationSource": "chatgpt 手动生成",
     "assetType": "png",
     "bytes": 139644,
-    "approveHash": "0x61da253492db7c207e5472e5fcf2c3672b6be30ba2f1696aa904efb18def4fe5"
+    "orderHash": "0xb5c1bc4fc742de6afe8f874d36b437c2b600fdc837850b46c601aa89f9bb3852",
+    "deliverHash": "0x086efd895183e9130d10e7c514663dfbfb4339cda58f4c5093d3584ded485573",
+    "approveHash": "0xdb1e2736b63d1fb986f008726527e51db5f3af96081b85a7db1e689563e313d6",
+    "splitAmountsWei": [
+      "5000000000000000",
+      "2000000000000000",
+      "2000000000000000",
+      "1000000000000000"
+    ],
+    "recipients": [
+      "0xF7D425b71b7CAFC4553A99fF99bB8eC76672aD02",
+      "0x0C682dcE86e98585194977e2abBe63956cc4065F",
+      "0x45B5802923aD6e25F8EABcC49D141853e7A81265",
+      "0x613E15917Ab21dd7357369e625b3C78294A87ECa"
+    ]
   },
   {
-    "id": 7,
-    "orderId": 8,
+    "id": 3,
+    "orderId": 3,
     "name": "加班程序员",
     "slug": "programmer",
-    "url": "https://pucrpvafibawmypd.public.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/8/chatgpt-manual/e56a0c745ae252769e868b26c1383a5eab516bbaa3fff34a88e7b278891846c4.png",
+    "url": "https://niuma-works.vercel.app/chars/e56a0c745ae252769e868b26c1383a5eab516bbaa3fff34a88e7b278891846c4.png",
     "sha256": "e56a0c745ae252769e868b26c1383a5eab516bbaa3fff34a88e7b278891846c4",
+    "prompt": "a tired programmer with dark eye circles holding a thermos",
     "source": "NIUMA WORKS 团队自拟",
     "generationSource": "chatgpt 手动生成",
     "assetType": "png",
     "bytes": 130691,
-    "approveHash": "0xfbbc2acd32745c970b6a2011960a27a19b82ca16b94c862bc00dbf3855e2bc56"
+    "orderHash": "0x3e3d2672b86aee056f48f8a312d6ffda9a2ae6a92e4820d2adb25fb2a39eec76",
+    "deliverHash": "0x6d3ef69972a2e8fa118d9861ef170b8af38138bd7f562ddf0ddbc54d7e5a731f",
+    "approveHash": "0x1a776f22486645b2ce3df85dd56fa9ed31995c484e51940f6dd7c1e8d4130926",
+    "splitAmountsWei": [
+      "5000000000000000",
+      "2000000000000000",
+      "2000000000000000",
+      "1000000000000000"
+    ],
+    "recipients": [
+      "0xF7D425b71b7CAFC4553A99fF99bB8eC76672aD02",
+      "0x0C682dcE86e98585194977e2abBe63956cc4065F",
+      "0x45B5802923aD6e25F8EABcC49D141853e7A81265",
+      "0x613E15917Ab21dd7357369e625b3C78294A87ECa"
+    ]
   }
 ]

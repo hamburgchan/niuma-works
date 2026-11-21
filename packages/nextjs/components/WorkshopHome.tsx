@@ -41,7 +41,7 @@ function Employee({ employee }: { employee: (typeof DEMO_EMPLOYEES)[number] }) {
         <Link href={`/play/${employee.id}`} className="btn btn-primary">
           雇它上一班 →
         </Link>
-        <a className="link" href={employee.url} target="_blank" rel="noreferrer">
+        <a className="link" href={`/api/characters/${employee.id}/asset`} target="_blank" rel="noreferrer">
           下载 PNG ↗
         </a>
       </div>
@@ -66,6 +66,9 @@ export function WorkshopHome() {
           </Link>
           <Link className="btn btn-outline" href="/live">
             看老板工资流水
+          </Link>
+          <Link className="link" href="/orders">
+            查看新牛马入职档案 →
           </Link>
         </div>
         <div className="station-wall" aria-label="三头老牛马工位墙">
@@ -109,7 +112,10 @@ export function WorkshopHome() {
       </section>
       <section className="market-terms">
         <h2>一班工作，给老板发工资。</h2>
-        <p>每班游玩费 0.001 测试 MON；90% 记入角色老板的可提余额，10% 记入平台。移动与领工单不上链，下班只结算一笔。</p>
+        <p>
+          每班游玩费 0.001 测试 MON；90% 记入角色老板的可提余额，10% 在 sweep
+          时统一记入平台。移动与领工单不上链，下班只结算一笔。
+        </p>
         <p>每班约 0.0096 MON（含 gas），领取一次测试币可以上约 3 班，以实际估算为准。</p>
         <p>
           立绘为 chatgpt 手动生成、四边 flood fill 去背景的透明 PNG；动作是预制程序化动作。文件 SHA-256

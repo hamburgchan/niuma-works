@@ -8,13 +8,13 @@ import numpy as np
 from PIL import Image, ImageFilter
 
 
-def prepare(source, destination, preserve_sticker=False):
+def prepare(source, destination, preserve_sticker=False, minimum_channel=236):
     image = Image.open(source).convert("RGBA")
     rgba = np.array(image)
     rgb = rgba[:, :, :3].astype(np.int16)
     # Only near-neutral, near-white pixels connected to the four edges are removed.
     # Interior cream wool and eyes are never selected merely by their color.
-    eligible = (rgb.min(2) >= 236) & ((rgb.max(2) - rgb.min(2)) <= 14)
+    eligible = (rgb.min(2) >= minimum_channel) & ((rgb.max(2) - rgb.min(2)) <= 14)
     eligible |= rgba[:, :, 3] == 0
     height, width = eligible.shape
     removed = np.zeros((height, width), dtype=bool)
@@ -50,7 +50,7 @@ def prepare(source, destination, preserve_sticker=False):
     destination.parent.mkdir(parents=True, exist_ok=True)
     result.save(destination, optimize=True)
     info = validate(destination)
-    info.update(method="four-edge flood fill", minimumChannel=236, maximumChroma=14,
+    info.update(method="four-edge flood fill", minimumChannel=minimum_channel, maximumChroma=14,
                 preservesInteriorLightRegions=True, preserveSticker=preserve_sticker,
                 resize="nearest-neighbor", removedBackgroundPixels=int(removed.sum()))
     return info
@@ -64,7 +64,10 @@ def validate(path):
         if image.mode != "RGBA": raise ValueError("RGBA PNG required")
         if image.getchannel("A").getextrema() != (0, 255): raise ValueError("Transparent background and opaque foreground required")
         if image.height != 512 or len(data) > 300000: raise ValueError("Asset must be 512px high and under 300KB")
-        return dict(bytes=len(data), sha256=hashlib.sha256(data).hexdigest(), width=image.width, height=image.height, assetType="png")
+        histogram = image.getchannel("A").histogram()
+        transparent_fraction = sum(histogram[:16]) / (image.width * image.height)
+        if transparent_fraction < 0.18: raise ValueError("Background removal insufficient: less than 18% transparent canvas")
+        return dict(bytes=len(data), sha256=hashlib.sha256(data).hexdigest(), width=image.width, height=image.height, assetType="png", transparentFraction=round(transparent_fraction,4))
 
 
 if __name__ == "__main__":

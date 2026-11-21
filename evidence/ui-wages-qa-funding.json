@@ -1,0 +1,12 @@
+{
+  "hash": "0xbbc53de5a104ee97561531faf913e6d4651d8f27313a23025f1ef2027dff16a1",
+  "sender": "0xb561475586d95612121d3806A86d930d1a3d414a",
+  "recipient": "0xD4FaB6129F14470E7C46f8cD6f59c1aBc9c489d2",
+  "nonce": 16,
+  "amountWei": "30000000000000000",
+  "gasLimit": 21000,
+  "state": "CONFIRMED",
+  "startedAt": "2026-11-21T06:17:21.048236+00:00",
+  "purpose": "Recruitment UI test; separate from faucet and bot budgets",
+  "blockNumber": 81505335
+}

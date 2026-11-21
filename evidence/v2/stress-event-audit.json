@@ -1,0 +1,1688 @@
+{
+  "at": "2026-11-21T07:01:18.061295+00:00",
+  "contract": "0xcE94FDE4016D7b930b61bEF1474Df1458D1355cC",
+  "verifiedRunEvents": 240,
+  "scope": "Original transaction hash, player, character and stars checked against chain events; not an independent performance replication",
+  "rows": [
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x1ba1b3df7e5d7f1e298e07d38393a44f70b6d88f17b1846b833c6badf67afaff",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x7d7003128a73114b537f9d23323e617b8f83a0062db52f5c9dcea999f61e9bbc",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x35e7bbaa199eee2b1b119020a05c4d92bd95247252e8a321916aaab335fe6fa9",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x89a6d77fd2a6bd59af1fcfbbedaba6e53118a4f0a8456b488231f48c796fc298",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x581b36de44c1d9662b72c5c5f1540123ae849506108e04f38f164edd27ca2d2b",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x8507756482a6302ffb4eee08033d220b36bd2848385f8e22f4e5f3ff72ae0156",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x6b4878f1cce352e7956b55d179a211114a7af5b52719b3f23b236e32718d2ef6",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0xd122f7ed517409b37c5346c0db674ce41a40baadf3806f330299f2cbd51e8de5",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0xb71fd9e794c85cdbc5a19d00f25b98e490a568c7431fe3b6d548ee450455141c",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x9ade6beaed1f8e3550536ff492b2343470ad33d5e5414870a8c33ee9cabadc3b",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x0d433c6a49535021f007bc031351174648e729ecd5986b0d7d962bda98ea6e1c",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0xc3c0df75739b56d4495b97c6d28094d61b9065f1bcbca59932b60cf8c1ec0920",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x256b3ca7da5f7d5f0979ab16fc492d8568ec08f27465703101c383390635a6e0",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x0d81f1c1088413be0238e27d829998d8a710baea88902ccd8b6d89453d6ab190",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x989a1e7d60313daa45247f1fa7191ba211c263457f739f09b689ce08b4d9c13b",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x3a8f7eab4dd51c3fbea4cb3f0ec4aab0f331ecc3cbd90c6313a088b98dbc9163",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0xa6ca8ee949a177f029559fa748cdf43d6f8b2a36d29d2122d287b944448cb779",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0xfee8e848a610919c88dd6d2e2fa29f965a707e7bf4a79f851fa2736978adfbb8",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x5eba434a1b3bb18f1fca6a49baa0019e5433f7acdf2d37a4ccdbd0abd6c349fe",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "624c35f6-d692-4f15-9037-c72d9f6d7cd8",
+      "hash": "0x6b3b0951d6229bccd22cbfe98f66c201ed81dfb7736cefebd74e83c6d2383325",
+      "characterId": 1,
+      "blockNumber": 81511980,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0xf37246bbec4d2aa6376493caaf44ca3107d1568e28123aeef4b541b148edd0fe",
+      "characterId": 1,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0x8e22e9ed9df73fea32488cdea5cc66f865d12989b07c76ccb91e23a11b72d9b9",
+      "characterId": 2,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0x5b2c431b542f9a34ae63145fcacd7be3e0e6ea99d151e4fb4e90dbd068dc5c71",
+      "characterId": 3,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0x32ae30281cb8c7f3be592fe50aee0528db2b767a4378550065cb97684f407755",
+      "characterId": 1,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0x1c7149ad3fdeeea470d218ba67e06bac8a40952c950f1e040801e42cde531221",
+      "characterId": 2,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0xaa211d93c882a31f2c757778b39dced82625c4ee541c9177573515822e61865a",
+      "characterId": 3,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0xf2a5ecd00a01484d419b4f16051efe31c6ef54187407baef54b340f953760226",
+      "characterId": 1,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0xe9e65a508637eaf6557d116603aaff463b5edf12e794467711f427c7ecd4f9b0",
+      "characterId": 2,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0xb2fba0263c2ad03831c502732066641f6594eb6554c9f7ac53684f6cf007aada",
+      "characterId": 3,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0x70c5e172f529019e324f16a75964059eb3fd782a35abe91aa10cccfef12d8485",
+      "characterId": 1,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0xd2948b6c627a7940250fbb93f6cf049dfa8112d4f0df49604cd6129948d6159f",
+      "characterId": 2,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0xecbecf9b1d6df00d399f06af0bb768ebbc499165f6a8af4707672a5ec16092df",
+      "characterId": 3,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0x2864f1e0bf34ffb1aee3662aab07d92648462ad2b110b985fb752582b9842f85",
+      "characterId": 1,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0xf591063b7669cb023af168fb70b05aa06047442cc60944731cfd3ea1a180937a",
+      "characterId": 2,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0xe42bba51f02db0b82e6837a96416adec2d442a118cb6f3659bb3c244308ef880",
+      "characterId": 3,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0x11df108c10fccea463d1e31ad6d9eeb84f8a8186de885bec9dc08a4a36b512cc",
+      "characterId": 1,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0x82c923406bf77166d64f757033459224df757ee4e4a26073c12a8d83bb478981",
+      "characterId": 2,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0x1e673b8fcb5feef5bb9788b3b9ff946770cf61ab33a6cc5a1b61f77d1ba09ee7",
+      "characterId": 3,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0xfe71a55632c7132a36cef0111e4e45857f04c67e6d7c746b05412699664f358b",
+      "characterId": 1,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "19e3a8b4-0366-4faf-9cab-a4cee6e16755",
+      "hash": "0x94adf968d77b75f88428cc1537dd4b87f37540471a77c6e6f68387e1f8f34702",
+      "characterId": 2,
+      "blockNumber": 81512262,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x9e8228573b5614e3cd7f4f783d1f2408da3fee614ef07aa51dfa42d6ef9af4a5",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x632215630e86b24d0c2e6737af4186b8f1b3d5b9fdf67fb34cdf1348734dc4c5",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x02684a290b2a3c830c0d3373803900f4e8e401c9f39638a5cd3bf24278fc227b",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xb6787ff5f1c37335b733577d1719edc2b1fbf3f0699b4c8192f3b2d3df6fd9f2",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xc5af938c9759475c0df14ea114b2e27e04d9c822cef220de82f8ad91faa7e52e",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x55898d2f2b36d530bd321c95deb0424a1457053b04e014a52259ac983cf0b944",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x9ddddebb848df703589a3203e25faa328370863ffce9306c0d5510157ccf7825",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x48f021e646a9d27800f6aa06f9c972d5f2a139639b5b57eeb03ed48d89a69b59",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x2b8d73d0fa13fca6a805f78a3039ff41e3bf22fa2026eb1099f8b5e99f7bb4d9",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x2b6fd460800f6b821e69d81bb6c834a30aba0f9700691246f8d6609c74639dfa",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xbf240929fbece6d2e64beee14d8d4147d9b55ed9f109a0b36f9449534530c413",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x250ca209c4a710e7ad6eee9941c5b5bdab5880bb47271cdfca93ae36803b720d",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x169d74985c06fa02ea44ade0fd1e3121050ac0e459fb05e7209ab33519b6f560",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xcbc9a78f1bdd1af678507becd1e6fe022f69e8a90157f051e4e2ab579a6ba517",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xbc1f0bff8faaa2f54b16c8f246264215072e08f0815a49b86dac0820dd6a25ab",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xf9e22d6c6d43e9da3a03d1e858e482ac91e7528eb13a26de3901b0f0194da4f4",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x332e962a19212f603546cee7e7ed908fc3ba518f9ba0773685fee6c58e66306e",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xcc3909638490ec0863ba9671ea9ffbaed90a838adb692130bb2cd4f10b97b8be",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x2e534e3aa8fdb2b5574231ff6ea3fcf40db0b7af85395ab3a32a01ee376d6638",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x4a652cfb02fda8de56fa8a521250211142f793b8b7ce1a808496fbe2b8f72c38",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xa35550c8ed0e0b7735cb8817c50a80111683e51000411cfa06f453bd6b4f03ce",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x9986e51d51b53971ae1ecbf908430945cef8fa867901daefa566ef589a5f13aa",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xae85080abd933ff70beb058b761a525d912faa59d871a27b5a0c8ea366f279dd",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xa55f550f1f944c3d4c53c154a5667cc5a01879a91fb70c6b9b7e4dc5df00161d",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x0c1a837bd93956dcd28ac1c1e8de1f23cf565bfc4522b9a9b0034d8b5cfc2a47",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x0627dca0a5be89322f4b710e26db7fb9d0ee7da8505c82bf1518f14c092aec9c",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xbcfe70dd3fbbbdaa8f8dbb17aa8b764c943c09889bbeca35edfc672429925eab",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xff88eac35454a39c211bbe57cbde14e3a41ea1d4b504e41ea68b83230af50fb0",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xd2e21e696ef98dd2476d3403f982232ad67bc1bbb60099165e57309871b04f54",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x59f5a9e3f91385c0a140d39856c90a1ef580509c22bc3996459ec2b940c292c5",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x08b5665b36aa3e007359e5192a3fe61508417a9bb3590ce7222e1f8b7edd3850",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xe1ba048bcce1d580d01ce52938849d14cce20f737f9f5fff4833808917c40c00",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x2961fcf99d8d125752e7e81fb7af4ceefa97ca01b1fc66fe167d9cd1f67aafb9",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x3a2ba27b15ebcda07541809cbd4c37b597dede7416ddac0cbe4dcbfa5513a9ff",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x831d01832686777dfd03240d532a1d06d4303a1e5fdb6b2388cecaf7750badc8",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xd7731b25cc366abeaacb1fd7c3e3c56dc2db2c7358ac088c8a74973c2ba2e7af",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x5c905ba83dbe1c2e1017af634272d6e7f34e042362afa2f6a4eeb0a42dea5803",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xd311e442d28dc814f7199a426417e692b3abe4e0605f484aaeb487b09b41e352",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x29d5b1effc2cc45263a2c363cd4f4520713f6a7eb1d666ef61f52c2b2c4b3cdf",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xd3859335667d5233c245ec1b144cc315167fcd0d467c7a155233a74e3067058f",
+      "characterId": 1,
+      "blockNumber": 81512875,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x1c904421b4d8e2387569f41327e24852bcbf32023c177d478ee571c50d1ff901",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xd551e8d4d38dd49025eebc980b7b877a9918c88bf7a0ff405eed43af1d04954e",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xc4f3424ab66fc04a6da2320085795112171978a5f8963e08a4ed8a1d0a2782d9",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x95c69549af8ae7a01a15ffd259f6083c9124f742d1955b909f86f8fa2a0061ee",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x50421ccc230b1fe7514424d50fa158f5d2de779b00b67aab26ec56170ab08c2b",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xc864be5d71ad996c155763160925b780d6a9102313a4311a21710f47c6951a13",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x2358df8ac6fa703bd71a16c979954fac525d51cab1f33ecdbeb28dcf6cd45e2a",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x6c370c4c2be6a2443586dc8e2a1502c2f940238473e87d387862e020f659cd67",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x7823ad535554ba1747aa2da719cd20822ceb32c2186f85fbe699613673dcd011",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x6e91f6d428de6d1f50549c4b880f490a1a56d86b7474f868e77990c7c49b3087",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xa923ba20d94936db3c17fc4a0550ab6b1c2a4c0ad01433395d1cf3fa4211840d",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x02161a859ba381997e8e4fc4d96d02b28b4baece05b1d8b482935e38fc65169a",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x38f4fae0b9d9df52b0b80a91ea52cfd546ebda8f73d51381bc7ffe44aa3ffa8a",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x8f11e3a1ade16010c2c8ed309bcf4b91b93fd4e600fb4efed879ef49d0ed0205",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xb9e740c44828d17f656366131de2ce53cacfa3666db35d10a92179494b0c6089",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x7ceb4070d3338b1cb4c6f96630356624437e9028e3c8d80a9e77cb1c6df43666",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x7babd8559662f0fe5138baa66d6d43037dad0dab8ed4c06f2914ff7d5bd82143",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xc140ccad0471231f1b3c1927d779846b8f486c8eeb5d6344a7684c81001c5655",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x998126f3b6ded5737e4d9f3efaab4d2f497c498e6e56b12b2a2c0cc91579fb4f",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x169953281a067689e2afba4d21782f02e96dffd42cbc90de355c5a1cd0237aad",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x7710b46a84250acafc1acbda875430d81782a80d8f442f167887c89e2fa5d4de",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xcabb24955201f3afb0517a40d89db04a2550d345a27ea869fee695847bb555c0",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x436d6f630f296191a700af87adeaf89afbe67b78e2847c3748f0016d1cd67585",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xfd7577a8b5444372c9e842627bc1556634df2f2ea9a5d9c8c9bf861956dff003",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x88c5a084cc78414bc148f3b6b8d115ce3b066c3c1bcc8abc83f3675d19756ba5",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x8062dc1cf9d0f714c30f4ec14851f75d9d65c690deaa133be37bfb14e43d7722",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x4e81f6257e09fd19736d684ce86e2ad17200c2ee2f813b66b3aac30df64e9843",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x2cb94aba4d475826781cb063e3c0af9f2b9a6ec71bb9b00f6155c8ef6f37aa46",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xf224f41ab7a3190a25247421bc094644e71584bdf036aa5731eb52c5e4f47c1d",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x50e265bab2500ece985340072ecfb5d1c329730179b348012d86bc13776ef3cb",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x4e3d0928bb966a30c6d21ce780821eea02a27816dbb72241a5935d696f05e405",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xa7912dfe1d68abb2a5f387d3870b3a1c5c622c490e4a4e25c1da7e6ab909ee05",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x99da66de46a54b79ec88361f6d90787da27b310141d493fd8c02ce6cc469d946",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xd2aeb09f70150f2fb6b1ee14a4acecd9bfbd48d0f7da6bb3e0c1d5fa817756f0",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xd1762b7f6278850afb6462bad07343f122ab44ed87dcfe0525c246c499d3b159",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xabf5bae6fb21ad2f018046271fddb311af7d4a968d23e01030e31d62beb7c220",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x8a99b6140ab613a53de18bae9de38fa30411e15433370a429cdc4d82ff385756",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x090c65a10c3fb912c9f60bcb6c15d0ef68e81edefd50f212c2bb8435bff0a787",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x2b01a95df0836470f3f5657ab6de84d1eaec2104e8ebd5f07046ace0920d5466",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xb8abb0aac814a658cd460948f355b519864a68ee6b78fb698a2196a93b45dece",
+      "characterId": 1,
+      "blockNumber": 81512878,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x89d29c1cb296f9726d7fc1b6692bf79032567461c87e1790af69cffdf039fc8d",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x8130669ea647bb25d41991352cc6b68a145018dc3595cb448c3014c4d1d68e7c",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x2a2045c70827fb0700a9c00e7cda99f3daa27d41123a37fad2ba5f9bd96bfcaf",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xd4a7417fbb3ea5563c70eeb7c28eb8acf4f838214d759fccf1a75e8ec49819c8",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xedbbf95eb6f70f0f29e6c691fcb80322d1acdcaa61309f1783c54366c3696710",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xc2b3c41a643bf4e9d7f25706195e2f779dd40c33b0ab040cf1177e61ae0d5e6c",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x33827f614502cec2888d3e4a38c64d1023628cc964aaa58b50124f61196872ba",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xaf573777a6851e122567958b504dc4b3437693ca65cc7e94af677ffdea956839",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x4ab9e299e9849c7c194067964fc8b7c6c58253b95f522291a3db90567d37e762",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xa490e4f713ba48c670cc1b2d02dba4193a7a7476d059d0f03f74e3b1ab644f21",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x2e97f518bdbf3d57f11a5ff53217be4e6c479266dd79470b73ee2d6b2de48d77",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x0e72b6dd32d4b8b97f3aaecf0bcd050d2da234767474c05aceedaa2a95a67342",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xa458e30c158539c8c7b8b9c85c2a00c4687905227b2f108cfd435d6c2bbf2f51",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xecb8be8b84c698009a69b91c7b82ff516c8f7b8d580d757f6b220372d57f3bb8",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xf228c6e05599b782a1d52b83ef673026636f836b71417b33b890aab94171f268",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xe2f593ac9d044ae8b5b4504652c6eecba074808bea23073807e08587725ce1d3",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xbdbb6fa79a9782c1f98ae553f19284847d3aeb031aaab2caaf2e75ff68f8ef07",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0x745a29aadba31ea89ae3fcdab98affb1ce506133d3e6dd8a0b5f22013b0d98c5",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xee090b7dddf6bbcda3d802465fdba97924096382c858e978f8e38bd59e44a94e",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0f0a1ef9-5876-4ec4-83b6-ec09a40abd60",
+      "hash": "0xf0aa33368103a98583caed7b6907811a1da4614c572e3bd158286567ffe0679e",
+      "characterId": 1,
+      "blockNumber": 81512880,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x33d13daf780dd49cc3d00f4db7c35506baf8a27cebe067234e4313d879b0d727",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x9c6121aa1cce07b91f36ba834c0d28b20775e6a0dd6a32fe73774f4162ff38a5",
+      "characterId": 2,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x89ad7188846dc5578af564634bc6e1663f66c0e2063cedfd8296299e2017604a",
+      "characterId": 3,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x1176ca8613135d56b8fad10b1553df1f22275e41785dd5e705c8cf49801568fe",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x1bde4a6f16f8cd20ecc787ba12de24d2a5912306fb9ae08b9cb19451b1dca6c2",
+      "characterId": 2,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xccab8bee952bc317beee19ab7c42198550d09ac87b857b4e5ab603bae7ba82ec",
+      "characterId": 3,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xb355a55f380eb47319219f919df2d3fbc96fa8decab2bfe8bac81a9088c55e4c",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x2341fb88724f3f97ce87b85eae94780ceb366972919813e0b0e8337592194867",
+      "characterId": 2,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xd813dad29f1340cde64a60ac95a909ab2714c111a2139460e45af0a4f03496f0",
+      "characterId": 3,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xf4169de2ae2a9ce4678770da010201b170343474ecea4c6ced5dd7f647d777db",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xce4eeb4b27dac5c9befa4e1c84b3482ee93ac6bd8ce8b49ad6bee6eb9dd287ad",
+      "characterId": 2,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x58cceced206a92fc4536620778c3dd7aeaf2c173953f6e9e0a2fc44e1500acf7",
+      "characterId": 3,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x1b2222dbd46af5a9d069dc00246ae71bcc3ce23e61970971c77ea2ff56540281",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xd3b9013ccb997139edd6fedec8a8904cded132ba7d5afcbf5142a8df4d827593",
+      "characterId": 2,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xaac40b254dd096e76556125af2bfee95f30585d39ad8a2239c7b9988e84882c9",
+      "characterId": 3,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xf47c660db9d6a077483015eef011d0b1714ab94c2bee269d9ec0e07535493f40",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x2bd4eee86c4e9a7de95408a250a5e755108937abea10846686cb21362c01e352",
+      "characterId": 2,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xf6a4505b37f044a20df6fd4ce739f40e39da3a5641e946ab6c83b2b161dd0ce0",
+      "characterId": 3,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x2a1ba7a010526f22e826360f77cb30eb4e02d26f30522621bf938c8d3156f1af",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x7fb31f2f4661a9b235e584fde92fbce4596de20a2e312f53159538c6c052ce29",
+      "characterId": 2,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xa99564f7c682424a8af8a850f49d8a86b8da911a5f4ab0fd6a93a927187301fb",
+      "characterId": 3,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x632a84df72c4c4dd9fb8dcbf97b76d215ba2a9398f5093ee5cfc8634dc344107",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x763bac29dc757bf9d6d84ed596ba7e3faef5b67c8d5f7f210fc9930c10ca69d1",
+      "characterId": 2,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xe15bcb800c756ccea8b154788c8a6922e116e3eddac0867a7c96d94bbe39de06",
+      "characterId": 3,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xf2dec0f5b37a21c329883c29f430108c3402cf2ad8ab8f6d8871420f811a233c",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x56dd6a9016d78b8e0e0cf37613df2a3e6204607e621bed4ba1d5fed1eb75d0a2",
+      "characterId": 2,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x9833e182e27d71e6c998e8ac1cf9f3c4495744855db85999146397047c1bbb54",
+      "characterId": 3,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xd8d4fc14e4f483db5e129447b913bb8441c444f026d3b3693a4eca06ff6cd738",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x9afee8fccc60dfa3783bfaeb07372512135fcb372ed3b54b145a391b30098d8c",
+      "characterId": 2,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x0a522a6340c73742fc8f8e87e85aa87da190e1529f84c935ec67444ace415ff1",
+      "characterId": 3,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x412e395f8110e4ad6316197c803667b69d05dca8e351c6282cc88bdf4415a668",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x88024b820073a9b7a6419ab34da8117473f5c059503f7556017b8081e891e12a",
+      "characterId": 2,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x7c0d61a40e65008db2d78149f0ef5431065330fb74e002af535ba724a3b309a2",
+      "characterId": 3,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x5645fd073f93800db44b762fbef516cf7c7ffb7293659b6fc14552cd79d5ff65",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x50b7ac8abe2eefac22025f937f545bf73e2cae7f8c22ecf3efc1aa86ccbe3dc4",
+      "characterId": 2,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xa5b4005981d89fc92d52ab070a74cc7cc4187e5510ee70958a8edd64bd438aab",
+      "characterId": 3,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x58529ab6d61c9f50babbef95202d1e2b0f7889fbc3c98c58fca7cb0ca3e2f5b1",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x6cdbd01def9253707a00a8936f62b5288312eb81d34bf4ce149ff813b4dd036f",
+      "characterId": 2,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x0eab38e90c959d173f937322e4acf46c042552d17ac05b30a99cf36136daa9ef",
+      "characterId": 3,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x139c7fe487d4cef37bc9270becbc96817d8dc69102e14535a0e50c5154bf5b71",
+      "characterId": 1,
+      "blockNumber": 81513495,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x1e2d64cefbbe0211aa3789eca02c220fcce91da042736dc5068d2ac57baa151d",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xa8793859fe202764c03620e257d1a1db4f4eb5e2a898a9b129d22036c46fc327",
+      "characterId": 3,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x1e1b1363c5228b5f10dc4e67d25d9749016cd1a65245ef25f4bf64d48117d0b5",
+      "characterId": 1,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x2b9200abd30625c35f99c3066afb706c34c3b40e66415697086efc6a574d4b13",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x938cb1e7eb7d96a350e4618c44cccaa5eae17576a02e55e3ae068df4c632a251",
+      "characterId": 3,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xb38962e0d21395b7cf58838504990ab32a6de0bf817a13eebb1a7c89e1590162",
+      "characterId": 1,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x0f503532716053ab761ea74289b95091ea57525de7f8a8883ce2ec7851526646",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xc81141c6b3db656ffec26d634942fbd549ff56e254e3bf92214cdff6623f21e1",
+      "characterId": 3,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x52ef7faca3f66e23559555dd050cf18b5a598e82191fb8e8595a6f284b78fb65",
+      "characterId": 1,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x7f2415d723cddba51660a82d368de334dfa4cdaaf4417714c08284eb7436c463",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x74e67efedf6a04d1e6de9c861c045dc8d32085b864235600f618760250a931b0",
+      "characterId": 3,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x9f6a468a50e4d1d4dc114e0018c439e3fcd81832cd9eb6cda67a97fc3ceb5422",
+      "characterId": 1,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x9c3c7cc83eca925dc52f6b22bb57f4dace21c13aefad02816d5a68dc6cb7b1eb",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xafcdfe6f3f7b6c992c96e94eca59971124ccbada62589faeb9e71172f5435784",
+      "characterId": 3,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x94047beedac25df386e1c55af00c193d2f89b0d2795f5d1f7fc3aa47356cc86c",
+      "characterId": 1,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x7bd050c71544ac3fdcadc54b6deb03f965c730b6905ea722850cb22741fefdfe",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x80da32a1f8b18a9c68e288f2e23cd20e57cbcffade125cafbf99ce092a6ee4ee",
+      "characterId": 3,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x20d9151a6a32a3aa74f69b80a2a7c196a2544768dcb6ecc4fd8176107b500930",
+      "characterId": 1,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x32021f1ea5d277a60ecb477c2ead2fce5b18ab8eb8465116ff810ecbd740e5ce",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x5a2dc3edf6244cf208ccf4a274eece57cd21387e98576f886c8e9e9cccaeb3f5",
+      "characterId": 3,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x604d6533bc4e35b699813cdd5d15d646f9589e3fa4ea2d07cf9a6401ff4128f1",
+      "characterId": 1,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x7bcd89340805f4eb0e2946a697ff19ca51af62993c6646aacb68a930ca3c39b6",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x0e51138990ddaa2c93d4efe2a7ce28864ee96dc6976c5c6046fbbf05b50b0e06",
+      "characterId": 3,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x349685bcf3de9e345b7f9707a4d6cecff91a6293bb688096ad29c9e35c6a9313",
+      "characterId": 1,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x0f9a4b1747cb5894b4022aff33a9157d7bf58bf5abeea3cb511dbf2790298ca9",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xe8f8d4a513422e6387ec013313a0bae00ce5700d67979c6cd440d6e292150e04",
+      "characterId": 3,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x70e41cbe8b33b785ce5cf49e979ce978faf1b77fc49cbd9577fa11dddffa8b3e",
+      "characterId": 1,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x4c4d3b4c042bc8cc2174ae3e382a5bbf7e4ff911d59e3ab07c9833bd03ddea9c",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xc623ad578ccee3e298b5f9ef97ad30636dbe927fb984faa11ae78fdba13fcdc7",
+      "characterId": 3,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x145f892ae8701fcc44a66d5f364c4d19653a9ba67b05852420a3fb4ca358b8ce",
+      "characterId": 1,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x038cbdb87446919b87156d0b57e8a628a8bcc9efb5460224efcf62dd63ebabe9",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xca062c157fc366b9b125f0a6b393591ecfde14af29a07f76cca91cb76b683c72",
+      "characterId": 3,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xb7ea7c023665b47d6ed515ab0be6dd61e47147d3d7ce3da04d28aa9f4ffff9ac",
+      "characterId": 1,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x708bec7c2a692d8a30941b020444450f89c9a523bd7ce85ef4cc1112e5e943e6",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x19ac154240c10e125ca597ccb2560eceb70849eb3e70feb01a0d53a309a7dba6",
+      "characterId": 3,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x8d8f991923f4cb94daff45b2813dcee5722f2a738908cdc53bc45396c7430095",
+      "characterId": 1,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xa46487bf45ad7e947cb749d695d1900d09dbc2fc0ef5f4a13a7f29b241d0ddda",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x157b34c8a7b0e7de0ae2e46417b7bd04526e0aea6194ae1b942dcd31b1df2c0f",
+      "characterId": 3,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xf2626553c8d53204fbb947f25db5bb0be45a5aa96c932323603c1920f761b14d",
+      "characterId": 1,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x4bd45651f757e8a4999f9d524c27eea43f4515a8a50efe948c9464e8e0f6771e",
+      "characterId": 2,
+      "blockNumber": 81513498,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x46620bd7d119859b532c4491400dcdf57198b55edb96c10a9f5e9fc9481ff702",
+      "characterId": 3,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xc04afef6b0fff4920a97668d24fc97585812176798e853eb68a7ef5782f4a3e1",
+      "characterId": 1,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xe7be6d90db6480ce6bf82472bf4789e697812ae0e2443fa8e3eb08a845dd3091",
+      "characterId": 2,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x9cc18cebd0d16e38b2d4d027048fbcc303a5233efdbada47a571603dd1d2cc7d",
+      "characterId": 3,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xe5697a187015965266f84ec4b285c2da7345e37ac7967b0c6fa0ee09b39ad02b",
+      "characterId": 1,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xfb68793ca1e5e412bd2bb4719c0c26f7ff330c49c9d87ca43a6f26fb150282d8",
+      "characterId": 2,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xa2acfe15494de41c83a3fafb92fa2c20b1426765fd136b7bcefad242f136e46d",
+      "characterId": 3,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x53c83266bc41e009a997190615c58c39ee4fb325bbbae74366001871299f6562",
+      "characterId": 1,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x6ce990dc5c2c4b84fe67eab4e21a1cc28e6ff5a0ca5e43c12537bcb5df9e1637",
+      "characterId": 2,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x3e73438aa76d75345a67d7afffa48c686f99d6ac32368f67e1f5255024982193",
+      "characterId": 3,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x012ee67bf477fe0a7b3dd2fd8a5e8ab99f758076caba5d790a340db4d50b83b5",
+      "characterId": 1,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x5123c269407f1ce42ddfe28f833fe65ef8ef1d19ee3b3d2e2a6accf3edc80cc7",
+      "characterId": 2,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x6756cafe1660f0319a10b0ee561525e7bc6120001b211803153c42e31404246a",
+      "characterId": 3,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x435dea6fe1b5b73aef75e82fcb2a4908bed92f7a152adb8776cc41f03bcfeff6",
+      "characterId": 1,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x79f7727dcd4bd116a34644b81818910c12cde7423bfc1f58cb00047f7faf34e9",
+      "characterId": 2,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x55fc5099e86060a994a22ba0d6cda98bd6b2427c0676be9ffdbe79c961b806fa",
+      "characterId": 3,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xbf14501a3ed39837f3f93f1f90c501bb18d59a55854baf2362692bf7160a0a5f",
+      "characterId": 1,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x267c8275c4ba2b371aa6193bbd9e12307739060597948ad6efabbadf8d84a4f8",
+      "characterId": 2,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0xe6fc711be320eedfb1097388b01f23a2476f29c68380553a35a9f055483dd6ab",
+      "characterId": 3,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "0913a686-49e0-4a46-9299-41e44ce143fa",
+      "hash": "0x0d4a813e825877b24f0b8f36bed8951a7799d73ebe4f05fefffbd748963a6100",
+      "characterId": 1,
+      "blockNumber": 81513500,
+      "ownerShareWei": "900000000000000"
+    }
+  ]
+}

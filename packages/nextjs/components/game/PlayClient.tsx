@@ -29,14 +29,23 @@ type RunRecord = RunResult & {
   nonce: number;
   blockNumber: string;
 };
-const STORAGE = "niuma-current-run-v1";
+const STORAGE = `niuma-current-run-${NIUMA.address.toLowerCase()}`;
 
-export function PlayClient({ characterId }: { characterId: number }) {
+export function PlayClient({
+  characterId,
+  employeeName,
+  generationSource,
+}: {
+  characterId: number;
+  employeeName?: string;
+  generationSource?: string;
+}) {
+  const name = employeeName || CHARACTER_NAMES[characterId] || `新牛马 #${characterId}`;
   const { address, chainId, connector } = useAccount();
   const { connectors, connectAsync } = useConnect();
   const { switchChainAsync } = useSwitchChain();
   const publicClient = usePublicClient({ chainId: 10143 });
-  const balance = useBalance({ address, chainId: 10143, query: { refetchInterval: 4000 } });
+  const balance = useBalance({ address, chainId: 10143, query: { refetchInterval: 15000 } });
   const character = useScaffoldReadContract({
     contractName: "NiumaWorks",
     functionName: "characters",
@@ -236,7 +245,7 @@ export function PlayClient({ characterId }: { characterId: number }) {
       <div className="play-heading">
         <div>
           <p className="eyebrow">一班 60 秒 · 六张工单 · 一笔工资结算</p>
-          <h1>{CHARACTER_NAMES[characterId] || `新牛马 #${characterId}`}，该上工了。</h1>
+          <h1>{name}，该上工了。</h1>
         </div>
         <div className="character-switch" aria-label="切换角色">
           {DEMO_CHARACTERS.map(id => (
@@ -255,7 +264,7 @@ export function PlayClient({ characterId }: { characterId: number }) {
           {data && data[2] ? (
             <Arena
               url={data[2]}
-              employeeName={CHARACTER_NAMES[characterId] || "新牛马"}
+              employeeName={name}
               characterId={characterId}
               sha256={data[1]}
               playing={playing}
@@ -300,8 +309,9 @@ export function PlayClient({ characterId }: { characterId: number }) {
         <aside className="play-panel">
           <div className="panel-label">本机临时钱包</div>
           <p className="small-note">
-            来源：{DEMO_EMPLOYEES.find(item => item.id === characterId)?.generationSource || "用户委托"} · 透明 PNG
-            纸片人
+            来源：
+            {generationSource || DEMO_EMPLOYEES.find(item => item.id === characterId)?.generationSource || "用户委托"} ·
+            透明 PNG 纸片人
           </p>
           {!address || !isBurner ? (
             <>

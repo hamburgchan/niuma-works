@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-21T06:10:48.455810+00:00",
+  "manualCutouts": {
+    "mule": {
+      "bytes": 124910,
+      "sha256": "03db298a4353a53541216e7233f35c4c1034f2ba5c4e92e8f6f5d702477b3d95",
+      "width": 239,
+      "height": 512,
+      "assetType": "png",
+      "transparentFraction": 0.2888
+    },
+    "alpaca": {
+      "bytes": 139644,
+      "sha256": "22a86b203d813da65ced72e3f062dd5209c56f44a445a2ec80af3e762b243fd9",
+      "width": 263,
+      "height": 512,
+      "assetType": "png",
+      "transparentFraction": 0.2928
+    },
+    "programmer": {
+      "bytes": 130691,
+      "sha256": "e56a0c745ae252769e868b26c1383a5eab516bbaa3fff34a88e7b278891846c4",
+      "width": 263,
+      "height": 512,
+      "assetType": "png",
+      "transparentFraction": 0.3495
+    }
+  },
+  "rejectedOldQaOrder9": "Background removal insufficient: less than 18% transparent canvas",
+  "status": "PASS_MANUAL_AND_REJECTION_CHECK",
+  "rejectedBoardShapedRembg": "Foreground isolation quality check failed; use procedural fallback"
+}

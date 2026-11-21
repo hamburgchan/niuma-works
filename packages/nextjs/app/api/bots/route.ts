@@ -1,22 +1,18 @@
-import { BOT_ROOT, runBotBatch } from "~~/utils/niuma-bots";
-import { json, readRecord } from "~~/utils/niuma-server";
+import batches from "~~/contracts/botResults.json";
+import { deployment, json } from "~~/utils/niuma-server";
 
-export const runtime = "nodejs";
-export const maxDuration = 300;
-export async function GET(request: Request) {
-  try {
-    const requested = new URL(request.url).searchParams.get("id");
-    const id = requested || (await readRecord(`${BOT_ROOT}/latest.json`))?.batchId;
-    if (typeof id !== "string" || !/^[0-9a-f-]{36}$/.test(id)) return json({ batch: null });
-    return json({ batch: await readRecord(`${BOT_ROOT}/batches/${id}.json`) });
-  } catch {
-    return json({ error: "Bot batch unavailable" }, 503);
-  }
+export async function GET() {
+  const current = batches.filter(batch => batch.contract.toLowerCase() === deployment.address.toLowerCase());
+  return Response.json(
+    {
+      batch: current.at(-1) || null,
+      comparisons: ["hot", "spread"].map(mode => current.filter(batch => batch.mode === mode).at(-1)).filter(Boolean),
+      storageAvailable: false,
+      localWorker: true,
+    },
+    { headers: { "Cache-Control": "public, s-maxage=15, stale-while-revalidate=30" } },
+  );
 }
-export async function POST(request: Request) {
-  try {
-    return json({ batch: await runBotBatch(await request.json()) });
-  } catch (error) {
-    return json({ error: error instanceof Error ? error.message.slice(0, 240) : "Bot batch failed" }, 400);
-  }
+export async function POST() {
+  return json({ error: "机器人由本地 worker 执行，请运行 scripts/bot-rush.ps1；服务端不保存私钥或支付队列。" }, 503);
 }

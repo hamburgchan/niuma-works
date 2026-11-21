@@ -1,0 +1,54 @@
+
+D:\monad\niuma-works\packages\nextjs\components\LiveBoard.tsx
+   21:18   warning  Replace `characterId:number;shifts:number;fullAttendance:number;ownerWagesWei:string` with `·characterId:·number;·shifts:·number;·fullAttendance:·number;·ownerWagesWei:·string·`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 prettier/prettier
+   89:23   warning  Replace `·value={`${origin}/play/${DEMO_CHARACTERS[0]}`}·size={240}·level="M"·marginSize={2}·title="打开新牛马上工页面"` with `⏎··············value={`${origin}/play/${DEMO_CHARACTERS[0]}`}⏎··············size={240}⏎··············level="M"⏎··············marginSize={2}⏎··············title="打开新牛马上工页面"⏎···········`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    prettier/prettier
+  114:112  warning  Insert `{"·"}⏎·······················`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            prettier/prettier
+  121:64   warning  Replace `·?·`${data.latency[event.hash]}·ms·到账`·:·"到账计时未采集"}` with `⏎··························?·`${data.latency[event.hash]}·ms·到账`⏎··························:·"到账计时未采集"}{"·"}⏎·······················`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         prettier/prettier
+  146:24   warning  Replace `()=>{const·item=data.laborLeaders.find(value=>value.characterId===id);return·<dl·className="game-facts"><div><dt>全勤班次</dt><dd>{item?.fullAttendance·??·0}</dd></div><div><dt>累计班次</dt><dd>{item?.shifts·??·0}</dd></div><div><dt>老板累计工资</dt><dd>{formatEther(BigInt(item?.ownerWagesWei·||·"0"))}·MON</dd></div></dl>;})()·:·<p>正在读取已确认工资…</p>` with `⏎················(()·=>·{⏎··················const·item·=·data.laborLeaders.find(value·=>·value.characterId·===·id);⏎··················return·(⏎····················<dl·className="game-facts">⏎······················<div>⏎························<dt>全勤班次</dt>⏎························<dd>{item?.fullAttendance·??·0}</dd>⏎······················</div>⏎······················<div>⏎························<dt>累计班次</dt>⏎························<dd>{item?.shifts·??·0}</dd>⏎······················</div>⏎······················<div>⏎························<dt>老板累计工资</dt>⏎························<dd>{formatEther(BigInt(item?.ownerWagesWei·||·"0"))}·MON</dd>⏎······················</div>⏎····················</dl>⏎··················);⏎················})()⏎··············)·:·(⏎················<p>正在读取已确认工资…</p>⏎··············)`  prettier/prettier
+
+D:\monad\niuma-works\packages\nextjs\utils\niuma-live.ts
+   82:25  warning  Replace `string,{characterId:number;shifts:number;fullAttendance:number;ownerWagesWei:string}` with `⏎····string,⏎····{·characterId:·number;·shifts:·number;·fullAttendance:·number;·ownerWagesWei:·string·}⏎··`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     prettier/prettier
+   83:6   warning  Replace `(const·event·of·runs){const·id=String(event.args.characterId);const·value=labor.get(id)||{characterId:Number(id),shifts:0,fullAttendance:0,ownerWagesWei:"0"};value.shifts++;if(Number(event.args.stars)===6)value.fullAttendance++;value.ownerWagesWei=(BigInt(value.ownerWagesWei)+BigInt(String(event.args.ownerShare))).toString();labor.set(id,value);` with `·(const·event·of·runs)·{⏎····const·id·=·String(event.args.characterId);⏎····const·value·=·labor.get(id)·||·{·characterId:·Number(id),·shifts:·0,·fullAttendance:·0,·ownerWagesWei:·"0"·};⏎····value.shifts++;⏎····if·(Number(event.args.stars)·===·6)·value.fullAttendance++;⏎····value.ownerWagesWei·=·(BigInt(value.ownerWagesWei)·+·BigInt(String(event.args.ownerShare))).toString();⏎····labor.set(id,·value);⏎··`  prettier/prettier
+  102:18  warning  Replace `[...labor.values()].sort((a,b)=>b.fullAttendance-a.fullAttendance·||·b.shifts-` with `·[...labor.values()].sort((a,·b)·=>·b.fullAttendance·-·a.fullAttendance·||·b.shifts·-·`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               prettier/prettier
+
+✖ 8 problems (0 errors, 8 warnings)
+  0 errors and 8 warnings potentially fixable with the `--fix` option.
+
+▲ Next.js 16.2.12 (Turbopack)
+
+  Creating an optimized production build ...
+/*! 🌼 daisyUI 5.5.19 */
+✓ Compiled successfully in 56s
+  Running TypeScript ...
+  Finished TypeScript in 38.7s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/11) ...
+  Generating static pages using 7 workers (2/11) 
+  Generating static pages using 7 workers (5/11) 
+  Generating static pages using 7 workers (8/11) 
+✓ Generating static pages using 7 workers (11/11) in 2.0s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/characters/[characterId]/asset
+├ ƒ /api/faucet
+├ ƒ /api/live
+├ ƒ /api/orders/[orderId]
+├ ƒ /api/orders/[orderId]/start
+├ ƒ /api/runs/latency
+├ ○ /blockexplorer
+├ ● /blockexplorer/address/[address]
+│ └ /blockexplorer/address/0x0000000000000000000000000000000000000000
+├ ● /blockexplorer/transaction/[txHash]
+│ └ /blockexplorer/transaction/0x0000000000000000000000000000000000000000
+├ ○ /debug
+├ ○ /live
+└ ƒ /play/[characterId]
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -5,7 +5,9 @@ export const runtime = "nodejs";
 export const maxDuration = 60;
 export async function GET() {
   try {
-    return json(await liveData());
+    return Response.json(await liveData(), {
+      headers: { "Cache-Control": "public, s-maxage=15, stale-while-revalidate=30" },
+    });
   } catch (error) {
     console.error(
       "Live sync failed",

@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-21T07:09:28.598249+00:00",
+  "contract": "0x8ecF351db2eA99aa32BEf4bA2686Fd0bFefF8abB",
+  "orderId": 10,
+  "chainStatus": "Paid",
+  "characterId": 9,
+  "approveHash": "0x4ed870f04ba8fe6bcb8f247090a57074d67c0cef13405dd530e60158fdec87aa",
+  "scope": "Read-only reconciliation of the original QA order; not a new approval"
+}
