@@ -268,8 +268,7 @@ export function BotRush() {
       {batch && (
         <details>
           <summary>
-            最近批次 {batch.batchId}：{batch.successful}/{batch.count} 成功 · 总耗时 {(batch.totalMs / 1000).toFixed(1)}
-            s
+            本批交易明细：{batch.successful}/{batch.count} 成功 · 总耗时 {(batch.totalMs / 1000).toFixed(1)}s
           </summary>
           <ol className="bot-results">
             {batch.rows.map(row => (
