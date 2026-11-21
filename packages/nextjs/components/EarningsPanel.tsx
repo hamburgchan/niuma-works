@@ -34,13 +34,28 @@ export function EarningsPanel() {
   const [wages, setWages] = useState<{ characterId: number; ownerWagesWei: string }[] | null>(null);
   useEffect(() => {
     const abort = new AbortController();
-    void fetch("/api/live", { signal: abort.signal })
-      .then(r => (r.ok ? r.json() : null))
-      .then(data => {
-        if (data && !data.catchingUp) setWages(data.laborLeaders);
-      })
-      .catch(() => {});
-    return () => abort.abort();
+    let inflight = false;
+    const refresh = async () => {
+      if (inflight || abort.signal.aborted) return;
+      inflight = true;
+      try {
+        const response = await fetch("/api/live", { signal: abort.signal });
+        if (response.ok) {
+          const data = await response.json();
+          if (!data.catchingUp && !abort.signal.aborted) setWages(data.laborLeaders);
+        }
+      } catch {
+        /* Retain the last verified amount and retry later. */
+      } finally {
+        inflight = false;
+      }
+    };
+    void refresh();
+    const timer = setInterval(refresh, 15000);
+    return () => {
+      abort.abort();
+      clearInterval(timer);
+    };
   }, []);
   const owners = [first, second, third];
   const totalWages =

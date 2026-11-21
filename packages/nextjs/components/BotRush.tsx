@@ -241,6 +241,9 @@ export function BotRush() {
         峰值按成功交易的区块时间秒分组；到账计时含公共 RPC 与轮询延迟。此处不是 Monad
         吞吐上限或最终性证明。最近批次与区块墙均由真实链上回执核对。
       </p>
+      {batch?.mode === "server-spread-recovered" && (
+        <p className="small-note">本批包含中断恢复与等待，不作为性能样本；首次 RPC 计时未采集。</p>
+      )}
       {batch && (
         <div className="bot-stats" aria-label="最近批次统计">
           <span>

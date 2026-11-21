@@ -1,6 +1,6 @@
 {
   "contract": "0xcE94FDE4016D7b930b61bEF1474Df1458D1355cC",
-  "cursor": 81531393,
+  "cursor": 81542386,
   "events": [
     {
       "id": "0xe2511228c44f657956dc0e789f71a6a5d666624784dd89ad1a1aee61fd0eb7b4:53",
@@ -4897,8 +4897,4250 @@
         "timeMs": "60000",
         "ownerShare": "900000000000000"
       }
+    },
+    {
+      "id": "0x61e7dc0bbe58d2d6797433aebc1a999c8e781aa23e56f31d98b6ac8386fcafc0:46",
+      "hash": "0x61e7dc0bbe58d2d6797433aebc1a999c8e781aa23e56f31d98b6ac8386fcafc0",
+      "blockNumber": 81533783,
+      "logIndex": 46,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x8a610ce5967C28435DC81500e2e381A5CAC59Ddd",
+        "stars": "6",
+        "timeMs": "14945",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x802dc3bb9339442eeade44df3494d2b745ae9f42abb5b24c4903e18d39e7c350:1",
+      "hash": "0x802dc3bb9339442eeade44df3494d2b745ae9f42abb5b24c4903e18d39e7c350",
+      "blockNumber": 81533964,
+      "logIndex": 1,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xd17620AaF35A0Ca25450ab066C978AB29C904087",
+        "stars": "5",
+        "timeMs": "44984",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x9ea9ef9b74d63b64dae311e5686bb9734dad666001633c4aa7878f14497c0b91:2",
+      "hash": "0x9ea9ef9b74d63b64dae311e5686bb9734dad666001633c4aa7878f14497c0b91",
+      "blockNumber": 81533964,
+      "logIndex": 2,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xf8F257e3179b5DAe1Bb6625c30Ccfbb152463702",
+        "stars": "5",
+        "timeMs": "37662",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x6ef57f7171c92b21a7fdecebf75c493fc8dbdbb635263134f7e6ca50449faeb0:3",
+      "hash": "0x6ef57f7171c92b21a7fdecebf75c493fc8dbdbb635263134f7e6ca50449faeb0",
+      "blockNumber": 81533964,
+      "logIndex": 3,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xfd74942AF53a8c821B9C8337c6f9F5D143d509d3",
+        "stars": "4",
+        "timeMs": "29383",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe226ec3fd5a8f7c83a49bd4cfa40a0e81f43f641da58e5736a44c409257d651e:4",
+      "hash": "0xe226ec3fd5a8f7c83a49bd4cfa40a0e81f43f641da58e5736a44c409257d651e",
+      "blockNumber": 81533964,
+      "logIndex": 4,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x356417645872f94065bc79861B39Dd524a21695f",
+        "stars": "5",
+        "timeMs": "23510",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xb55a2dd21971b12e127fd86ae6538d9798823245ff4757f649e319739a692e35:5",
+      "hash": "0xb55a2dd21971b12e127fd86ae6538d9798823245ff4757f649e319739a692e35",
+      "blockNumber": 81533964,
+      "logIndex": 5,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xCF684D98b63DAf9CD5913CA076Ae90517ba655E4",
+        "stars": "4",
+        "timeMs": "32395",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1ac7b8784396b2cedafca6cb92edea8629b7e9605fe6791f334cb8d17ee0f54d:6",
+      "hash": "0x1ac7b8784396b2cedafca6cb92edea8629b7e9605fe6791f334cb8d17ee0f54d",
+      "blockNumber": 81533964,
+      "logIndex": 6,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xC3E0F0266edd07FF1690e91A13f2a91CaBB718AC",
+        "stars": "4",
+        "timeMs": "21144",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x6b6327c212bd2fbc131c01174b48244e9097085ef8c6be79893ffdb18985df04:1",
+      "hash": "0x6b6327c212bd2fbc131c01174b48244e9097085ef8c6be79893ffdb18985df04",
+      "blockNumber": 81533968,
+      "logIndex": 1,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x458755331cF898B13dd81E14D79C4A6081f1a1Ca",
+        "stars": "4",
+        "timeMs": "58706",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x98c2bb2fccaa54651159e60cfb73bfa67c7532281c7bd47010624574deda82e0:2",
+      "hash": "0x98c2bb2fccaa54651159e60cfb73bfa67c7532281c7bd47010624574deda82e0",
+      "blockNumber": 81533968,
+      "logIndex": 2,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x8329422462a39460077851a160Df49e850664704",
+        "stars": "3",
+        "timeMs": "19066",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xb49ece220dc79c4efa7bd83e37557e8bfb6db2a71586bed91e84b957f3e8e080:3",
+      "hash": "0xb49ece220dc79c4efa7bd83e37557e8bfb6db2a71586bed91e84b957f3e8e080",
+      "blockNumber": 81533968,
+      "logIndex": 3,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x6c63d2CB3222B71b18636D3ee89c693Da8748dD9",
+        "stars": "5",
+        "timeMs": "59848",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x015382cd5a19b9bb0a6538f4fea886b0061075ef597c27da818cd04f16d5a043:4",
+      "hash": "0x015382cd5a19b9bb0a6538f4fea886b0061075ef597c27da818cd04f16d5a043",
+      "blockNumber": 81533968,
+      "logIndex": 4,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x457a532DD847434E7b71DD66b5AD70BEeebf4fc9",
+        "stars": "4",
+        "timeMs": "58096",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x6c4e3e98cabf31986001ca191fe59336cff5d04d14cfdc23a74220fe362b925c:5",
+      "hash": "0x6c4e3e98cabf31986001ca191fe59336cff5d04d14cfdc23a74220fe362b925c",
+      "blockNumber": 81533968,
+      "logIndex": 5,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x01FD8e50C7fEeda419A4A9cDe1089E4A1d1Bf7dB",
+        "stars": "5",
+        "timeMs": "23344",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x7882820f7a6ed56c9204db2ea44cd365d7664032f5f0da2cd47b9ac61c66d07d:6",
+      "hash": "0x7882820f7a6ed56c9204db2ea44cd365d7664032f5f0da2cd47b9ac61c66d07d",
+      "blockNumber": 81533968,
+      "logIndex": 6,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xf581B9B63e46DE8A5024f1926e129f32Cd9F2399",
+        "stars": "3",
+        "timeMs": "20325",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xb974442a2a32d63ebae1672d8695b7fd0d73634e20768b9709da36ed2ec19363:7",
+      "hash": "0xb974442a2a32d63ebae1672d8695b7fd0d73634e20768b9709da36ed2ec19363",
+      "blockNumber": 81533968,
+      "logIndex": 7,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xDC3A18706B7100f98Ef77C1a07EA278Ce6BaAd49",
+        "stars": "5",
+        "timeMs": "43854",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xa880a2150ba025317af228a1d1bc8d11158af60e656e13509f345e61139f57ae:8",
+      "hash": "0xa880a2150ba025317af228a1d1bc8d11158af60e656e13509f345e61139f57ae",
+      "blockNumber": 81533968,
+      "logIndex": 8,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x0B5e36B326b7A6a67611f6A3Ef6d6da3DbE5763A",
+        "stars": "5",
+        "timeMs": "29711",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x5485c5c26fe06f4f8696f31f1925b520a4b487bca5509b827f39dde5e57d7473:10",
+      "hash": "0x5485c5c26fe06f4f8696f31f1925b520a4b487bca5509b827f39dde5e57d7473",
+      "blockNumber": 81533969,
+      "logIndex": 10,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x72edf242a02fE9194686705674689687Ce16AB36",
+        "stars": "3",
+        "timeMs": "42520",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x82eb3365ae527589872725f742a3c555d91bf54b2a4a388b9591f50fd673836e:11",
+      "hash": "0x82eb3365ae527589872725f742a3c555d91bf54b2a4a388b9591f50fd673836e",
+      "blockNumber": 81533969,
+      "logIndex": 11,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x37B24A1328Fe2A6409F9ebc2f96973F68DcdaEF4",
+        "stars": "4",
+        "timeMs": "18721",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1c5d7d6b934d98e446e2b1a9d5a9f404f84092f19a5ddec418e6fca525a17a50:1",
+      "hash": "0x1c5d7d6b934d98e446e2b1a9d5a9f404f84092f19a5ddec418e6fca525a17a50",
+      "blockNumber": 81533973,
+      "logIndex": 1,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x8526C9200C119554eddeAC5ff563F428a8aeF22F",
+        "stars": "5",
+        "timeMs": "19461",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe94a44c2bc028c633b22d8cc2f8337df7e6b42fefc9b935b29b60d11a63de8af:2",
+      "hash": "0xe94a44c2bc028c633b22d8cc2f8337df7e6b42fefc9b935b29b60d11a63de8af",
+      "blockNumber": 81533973,
+      "logIndex": 2,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x983A743Cd0883Ebc6c52C557dd839B7AEF1f9525",
+        "stars": "4",
+        "timeMs": "39329",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xa5ec0d356dea379f2b9b86a4d25dfd050eb51b457e6f4e144720616f762027d5:3",
+      "hash": "0xa5ec0d356dea379f2b9b86a4d25dfd050eb51b457e6f4e144720616f762027d5",
+      "blockNumber": 81533973,
+      "logIndex": 3,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x6D0eA4bB9811A717a1f68be9E2402d4fc43D9FDC",
+        "stars": "6",
+        "timeMs": "50237",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xbda22c3e3235d647ae5873462f33c5a681900d819f2a207839a6b57141da9fa1:4",
+      "hash": "0xbda22c3e3235d647ae5873462f33c5a681900d819f2a207839a6b57141da9fa1",
+      "blockNumber": 81533973,
+      "logIndex": 4,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x4C78D421b20CA091bf54C6f3104bdfAE68697f39",
+        "stars": "5",
+        "timeMs": "38060",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x8bb79c5fb3a20e08e9b06ac4f0c982acea86ea15549ba36afbc599a6b12d78c5:5",
+      "hash": "0x8bb79c5fb3a20e08e9b06ac4f0c982acea86ea15549ba36afbc599a6b12d78c5",
+      "blockNumber": 81533973,
+      "logIndex": 5,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xe3811C07F523f6FE332C9b13B7acB5eb19d1f2Bc",
+        "stars": "4",
+        "timeMs": "18440",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x48e89909268227fd08bee2bf1205b8732a8e6980ce6e2105cf664b403a96ba75:6",
+      "hash": "0x48e89909268227fd08bee2bf1205b8732a8e6980ce6e2105cf664b403a96ba75",
+      "blockNumber": 81533973,
+      "logIndex": 6,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x6E0bE47846b630b2D9B89FaD366F6cBa12d13937",
+        "stars": "4",
+        "timeMs": "19547",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x2c66f59d6e8ecf085e0873db3859f5e6ad8fb3f0f6adda413a335f1256da574c:7",
+      "hash": "0x2c66f59d6e8ecf085e0873db3859f5e6ad8fb3f0f6adda413a335f1256da574c",
+      "blockNumber": 81533973,
+      "logIndex": 7,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x8A009a8B5e1b0a7E3AED902bfc8A3590497f0Bf2",
+        "stars": "6",
+        "timeMs": "22413",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xb557dceff3c4efeea84de48bad91add426744de7ef202227965a51c2be04065a:8",
+      "hash": "0xb557dceff3c4efeea84de48bad91add426744de7ef202227965a51c2be04065a",
+      "blockNumber": 81533973,
+      "logIndex": 8,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xf5856E1F1b16C0AcC70B33670996395cf09072fE",
+        "stars": "5",
+        "timeMs": "58258",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x2e890dde4dd2c3ddf6caa2412e9201d1fc02aecc89d03ad987be2e97ffcecf51:9",
+      "hash": "0x2e890dde4dd2c3ddf6caa2412e9201d1fc02aecc89d03ad987be2e97ffcecf51",
+      "blockNumber": 81533973,
+      "logIndex": 9,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xA5f20c050110262A06dC9453342F7821FeB603C6",
+        "stars": "4",
+        "timeMs": "49899",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xf0c049b9c1f7fb814796ad224808fcb4dac14dc2edcf0182db73790a564b7db6:10",
+      "hash": "0xf0c049b9c1f7fb814796ad224808fcb4dac14dc2edcf0182db73790a564b7db6",
+      "blockNumber": 81533973,
+      "logIndex": 10,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xA89C897eBac3454ebBF8b2537cEdD68D332Fb120",
+        "stars": "4",
+        "timeMs": "33251",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xb6ae5d0b43a6905ed198c91e026382e58827d21f3d542d4147d9a93fa6985a55:70",
+      "hash": "0xb6ae5d0b43a6905ed198c91e026382e58827d21f3d542d4147d9a93fa6985a55",
+      "blockNumber": 81533974,
+      "logIndex": 70,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xa4Bd0Ac6E4038749ff11Df3fC969609Ff9A1eFE7",
+        "stars": "6",
+        "timeMs": "42350",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x52ff996b4fd3bfc72251f38c3ce8ddfe1e2d02625a07b67e592e3a362e293c35:71",
+      "hash": "0x52ff996b4fd3bfc72251f38c3ce8ddfe1e2d02625a07b67e592e3a362e293c35",
+      "blockNumber": 81533974,
+      "logIndex": 71,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x68F6044b961d0694efFfA236aA31fbec0D9E1690",
+        "stars": "4",
+        "timeMs": "57099",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xdefc62a0790b0f965cc71065b8b163faa9eb7937d68e059ccc1c49bba94030ed:39",
+      "hash": "0xdefc62a0790b0f965cc71065b8b163faa9eb7937d68e059ccc1c49bba94030ed",
+      "blockNumber": 81533978,
+      "logIndex": 39,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x580251234AbF7742C773Bf5758E60273b9b774fA",
+        "stars": "5",
+        "timeMs": "16959",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x99d719466b5d84faa25d284c54233edc80a0882dff577c2d11192567444f1e02:40",
+      "hash": "0x99d719466b5d84faa25d284c54233edc80a0882dff577c2d11192567444f1e02",
+      "blockNumber": 81533978,
+      "logIndex": 40,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xA6578652b8d761B3a75f66E572ccdE0D191f188b",
+        "stars": "6",
+        "timeMs": "18502",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xd0583e6d662d8d15153f2b66e6d93da73375da6331cb9903d714e90b6df1fddc:41",
+      "hash": "0xd0583e6d662d8d15153f2b66e6d93da73375da6331cb9903d714e90b6df1fddc",
+      "blockNumber": 81533978,
+      "logIndex": 41,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xc9D05AC0EFBb0941fedafc1c6Dafe93D06d3C694",
+        "stars": "3",
+        "timeMs": "21816",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xaa9087ad89c2b6f7281d394a6cae0df660a3325c3aafbb4235a8831bf76dbf14:42",
+      "hash": "0xaa9087ad89c2b6f7281d394a6cae0df660a3325c3aafbb4235a8831bf76dbf14",
+      "blockNumber": 81533978,
+      "logIndex": 42,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x9EEc82eBF15F7630d9ba136Bdcd365386400279d",
+        "stars": "4",
+        "timeMs": "39332",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xde62ec9145308bd9e311a11f06c8203f52b8649d1e046f97513cd64f4e8a9987:43",
+      "hash": "0xde62ec9145308bd9e311a11f06c8203f52b8649d1e046f97513cd64f4e8a9987",
+      "blockNumber": 81533978,
+      "logIndex": 43,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xa9a5B03f77A1aB740F871A8cf52E09958fbF1ECF",
+        "stars": "6",
+        "timeMs": "41425",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xb9996c833b419fce75ee838d35b284b5aace6f27f92e7bcb7a99cb14982ddd0b:44",
+      "hash": "0xb9996c833b419fce75ee838d35b284b5aace6f27f92e7bcb7a99cb14982ddd0b",
+      "blockNumber": 81533978,
+      "logIndex": 44,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xbDF4c7dDff5650B98240F04b06c3e676A3fa1667",
+        "stars": "5",
+        "timeMs": "17076",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x9ecf1624a40494e56e782e44f5d81b03ea021bb4637b7e17a8b8002c3fbdf249:45",
+      "hash": "0x9ecf1624a40494e56e782e44f5d81b03ea021bb4637b7e17a8b8002c3fbdf249",
+      "blockNumber": 81533978,
+      "logIndex": 45,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x9d5fd2B420754527d52f3D9DB0C7745cf5299A7b",
+        "stars": "3",
+        "timeMs": "33110",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x8ad6dee9e0bc3c7aafd9be5cabc55957824f2f576e21f0144945b6d68b163707:46",
+      "hash": "0x8ad6dee9e0bc3c7aafd9be5cabc55957824f2f576e21f0144945b6d68b163707",
+      "blockNumber": 81533978,
+      "logIndex": 46,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x1DD8aEC0ae39F45366c672F6e91171D230343c69",
+        "stars": "3",
+        "timeMs": "30100",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xd68404138ab09b5c7b1c9c1d4135a6f88d381c9fd35ef0dfb840813fcea04673:12",
+      "hash": "0xd68404138ab09b5c7b1c9c1d4135a6f88d381c9fd35ef0dfb840813fcea04673",
+      "blockNumber": 81533979,
+      "logIndex": 12,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x97793DCc5cAbF676c1774467eA87F612029F7526",
+        "stars": "4",
+        "timeMs": "48423",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xcfb59b4d45a00c6c0c3747c9cb7466649275a32696217517a9b94d535844f1dd:13",
+      "hash": "0xcfb59b4d45a00c6c0c3747c9cb7466649275a32696217517a9b94d535844f1dd",
+      "blockNumber": 81533979,
+      "logIndex": 13,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x63Acf25e669CCE5A5C90cfDC16D8c1F45bf53Ed6",
+        "stars": "4",
+        "timeMs": "50915",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc2d8becc5b8589429b1883c0877b5a1c981a1fbcaa8b62d37d2b961f10c488ec:37",
+      "hash": "0xc2d8becc5b8589429b1883c0877b5a1c981a1fbcaa8b62d37d2b961f10c488ec",
+      "blockNumber": 81533983,
+      "logIndex": 37,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x09f77A67B3651719E61579173166138Db3827db9",
+        "stars": "6",
+        "timeMs": "31642",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xedc8917ece6e3d4cdc12e53ed692f581e59d625ed94860a734c5d663b4fac90c:38",
+      "hash": "0xedc8917ece6e3d4cdc12e53ed692f581e59d625ed94860a734c5d663b4fac90c",
+      "blockNumber": 81533983,
+      "logIndex": 38,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x98847a7c76B10c7a511cf2a5DcF110fF4f101866",
+        "stars": "6",
+        "timeMs": "34497",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x0cfe168e8c75442bf299ac91ea0d32a5f1b80c6c5ff2184b83312ac55b3217c4:39",
+      "hash": "0x0cfe168e8c75442bf299ac91ea0d32a5f1b80c6c5ff2184b83312ac55b3217c4",
+      "blockNumber": 81533983,
+      "logIndex": 39,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xb6d27e10cDc9854fE7b47C60509c6f828469894b",
+        "stars": "5",
+        "timeMs": "42524",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x018d79f1f1953e0cc6a8c0964779442de1debf1a0a88dd5e2a4d23b751a5ade9:40",
+      "hash": "0x018d79f1f1953e0cc6a8c0964779442de1debf1a0a88dd5e2a4d23b751a5ade9",
+      "blockNumber": 81533983,
+      "logIndex": 40,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x3EC00f7Be6736Be621575096Cdd6763d437287a2",
+        "stars": "5",
+        "timeMs": "21662",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x584569c3c78f625ccc7adb8eadaeed1dfae98e3cad43de1f8544e4c7c086755b:41",
+      "hash": "0x584569c3c78f625ccc7adb8eadaeed1dfae98e3cad43de1f8544e4c7c086755b",
+      "blockNumber": 81533983,
+      "logIndex": 41,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xD4AEe673943AFCC6D5E8533704DA3c4dB0A2fa67",
+        "stars": "4",
+        "timeMs": "30573",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x72ad2c6ab07fcafe9bf6cfa2eb8b6c130394d32ccf8a68055611f6f0171fb1ed:42",
+      "hash": "0x72ad2c6ab07fcafe9bf6cfa2eb8b6c130394d32ccf8a68055611f6f0171fb1ed",
+      "blockNumber": 81533983,
+      "logIndex": 42,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xCB016f5ab9121A513e2e88046699Ac5c964788e4",
+        "stars": "3",
+        "timeMs": "35730",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x223e80b7d206128878f1b9238b9d6895231ca3a767bf5da36b2960257980bb23:43",
+      "hash": "0x223e80b7d206128878f1b9238b9d6895231ca3a767bf5da36b2960257980bb23",
+      "blockNumber": 81533983,
+      "logIndex": 43,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xccf7a5cFb5DDBDbEa28ce779e695268Cd6a27cD3",
+        "stars": "6",
+        "timeMs": "30143",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xac5a038598f141403e73622a157b48230ff547e41aa6346e9734ab633585035e:44",
+      "hash": "0xac5a038598f141403e73622a157b48230ff547e41aa6346e9734ab633585035e",
+      "blockNumber": 81533983,
+      "logIndex": 44,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x6f7fe89c5600ba51381045CB768B149bbeCBeBBB",
+        "stars": "4",
+        "timeMs": "40888",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xaef0e30c723396a645f062685ab2cb49300943b3f0fb401a0a3f94c1e9fb7cd6:45",
+      "hash": "0xaef0e30c723396a645f062685ab2cb49300943b3f0fb401a0a3f94c1e9fb7cd6",
+      "blockNumber": 81533983,
+      "logIndex": 45,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x00d62E33789897193936BbEa1E2dA94625C2f476",
+        "stars": "5",
+        "timeMs": "48207",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe84cac357a2b8c6818efe9c6998c56baaa2dcb8d0b7171856db6a8a6459ce44c:46",
+      "hash": "0xe84cac357a2b8c6818efe9c6998c56baaa2dcb8d0b7171856db6a8a6459ce44c",
+      "blockNumber": 81533983,
+      "logIndex": 46,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x65E082d90Ff38A655386E371F758370F5Bf0C9F7",
+        "stars": "5",
+        "timeMs": "49355",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc05e1010d8ea2d527ecaedebe83bc75e0eecdc71b38024982c97dac1bc093e76:8",
+      "hash": "0xc05e1010d8ea2d527ecaedebe83bc75e0eecdc71b38024982c97dac1bc093e76",
+      "blockNumber": 81533984,
+      "logIndex": 8,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x570645B05c778aD9Fa7ee665Cb263a2F880b1b27",
+        "stars": "4",
+        "timeMs": "30829",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xf354ce37f5f9b764a6f8fc67138f66ce8514bfabad2983811b029aac3fc5d3fc:9",
+      "hash": "0xf354ce37f5f9b764a6f8fc67138f66ce8514bfabad2983811b029aac3fc5d3fc",
+      "blockNumber": 81533984,
+      "logIndex": 9,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xeA5CB501a97ade37AB4559A0DeD15FcBeb426DA2",
+        "stars": "3",
+        "timeMs": "27336",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x5dac26d0a92f67592c0ed9cb707164daa4dfd3f69730acf7cc9c22b125a48082:44",
+      "hash": "0x5dac26d0a92f67592c0ed9cb707164daa4dfd3f69730acf7cc9c22b125a48082",
+      "blockNumber": 81533988,
+      "logIndex": 44,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x637Bb8639d2b966f917d1Ec1a1dA597d48D5afd2",
+        "stars": "3",
+        "timeMs": "50638",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x98ce690cbd7edd1969fa753cf1267a9aaa4660f79a1aaef2ce95b6db613631bc:45",
+      "hash": "0x98ce690cbd7edd1969fa753cf1267a9aaa4660f79a1aaef2ce95b6db613631bc",
+      "blockNumber": 81533988,
+      "logIndex": 45,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x3Cc00b46358813CfBb48c396F7307e0960A989a3",
+        "stars": "6",
+        "timeMs": "27334",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc74906dac4554cefe28418096cea4ccf36179f4011ca6ec0d4e61354c4c86880:46",
+      "hash": "0xc74906dac4554cefe28418096cea4ccf36179f4011ca6ec0d4e61354c4c86880",
+      "blockNumber": 81533988,
+      "logIndex": 46,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x40090C20bb0505Ec9900E1F36Fa3e8aB3A323cA0",
+        "stars": "5",
+        "timeMs": "28464",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x30274ab365c243936c29e6c5fc8ec89feb22ffd8b71f2c3e44b6e0ffe0095f54:47",
+      "hash": "0x30274ab365c243936c29e6c5fc8ec89feb22ffd8b71f2c3e44b6e0ffe0095f54",
+      "blockNumber": 81533988,
+      "logIndex": 47,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x3337fCbaDbbF9b9A0bbdcC71743C07aDcBC37F01",
+        "stars": "4",
+        "timeMs": "43273",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1860f3e2a1d78b0d3caef57032eab9e032f025441235bbacdd3cb359b001b260:48",
+      "hash": "0x1860f3e2a1d78b0d3caef57032eab9e032f025441235bbacdd3cb359b001b260",
+      "blockNumber": 81533988,
+      "logIndex": 48,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x0d5420317aafd4B217B6f7Fe6B2965faFd542E85",
+        "stars": "5",
+        "timeMs": "32939",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x7e87194e9bc25ec637f42c52b372214672944ceb2b3c00bbfac2ed07ce0aae04:49",
+      "hash": "0x7e87194e9bc25ec637f42c52b372214672944ceb2b3c00bbfac2ed07ce0aae04",
+      "blockNumber": 81533988,
+      "logIndex": 49,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x41538a6916D170853abf3af0213AC32C35b9a87B",
+        "stars": "3",
+        "timeMs": "43140",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x20d522e26c6e28b8e09432337f862c81f95eb7c69ae86b7466606c20341e49d0:50",
+      "hash": "0x20d522e26c6e28b8e09432337f862c81f95eb7c69ae86b7466606c20341e49d0",
+      "blockNumber": 81533988,
+      "logIndex": 50,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x6623311e719821e4751a806307B7Dc99d344D533",
+        "stars": "3",
+        "timeMs": "52585",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x326736c39104a5a8be4d9464e3c9281d585615304fe9fc94fa50387acd662ed8:51",
+      "hash": "0x326736c39104a5a8be4d9464e3c9281d585615304fe9fc94fa50387acd662ed8",
+      "blockNumber": 81533988,
+      "logIndex": 51,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x9131AF279655334B8ae4b4213C8C1Fe755a74523",
+        "stars": "6",
+        "timeMs": "32790",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc548a91817b7ebf2233c5fedd786e41618e6629b9328b3f3bc35a82d9f624f84:10",
+      "hash": "0xc548a91817b7ebf2233c5fedd786e41618e6629b9328b3f3bc35a82d9f624f84",
+      "blockNumber": 81533992,
+      "logIndex": 10,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x9cB5b18B7C217Aa692f26BDCC6F30C7d3b798831",
+        "stars": "5",
+        "timeMs": "42652",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x50724744974f71c96617beb612f0a5282dbbb67c487fd676f2594cf93c59fc30:11",
+      "hash": "0x50724744974f71c96617beb612f0a5282dbbb67c487fd676f2594cf93c59fc30",
+      "blockNumber": 81533992,
+      "logIndex": 11,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x2E9d5372ca578624273dceE3F7a3B4c2264cdF6E",
+        "stars": "3",
+        "timeMs": "24333",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x12c8e66b539227524f4617faa2754a4d2064871bcd2079622c5c70b03880990d:12",
+      "hash": "0x12c8e66b539227524f4617faa2754a4d2064871bcd2079622c5c70b03880990d",
+      "blockNumber": 81533992,
+      "logIndex": 12,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x8072b79870F9341A8f52562B674D88f4D8c1F147",
+        "stars": "5",
+        "timeMs": "21502",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x48a92c067ded6101861e98353cea7d2ee5d45a18b78b46135ca23873a53de3ea:13",
+      "hash": "0x48a92c067ded6101861e98353cea7d2ee5d45a18b78b46135ca23873a53de3ea",
+      "blockNumber": 81533992,
+      "logIndex": 13,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xf3Df2DDfBD236FB7a97AA8BDEf80F2117aB8b80E",
+        "stars": "6",
+        "timeMs": "31912",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1b6bca2082fe7ef2d34a5f9cb16d4b7b8f22931770769275b2b30f28cf3b9183:14",
+      "hash": "0x1b6bca2082fe7ef2d34a5f9cb16d4b7b8f22931770769275b2b30f28cf3b9183",
+      "blockNumber": 81533992,
+      "logIndex": 14,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x64e989156fa1Ba583c18976572C1B4599fad17D5",
+        "stars": "6",
+        "timeMs": "32526",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1f831402dde63620587e211a55e6099152619e204785b219c432c4fac65cbdc9:15",
+      "hash": "0x1f831402dde63620587e211a55e6099152619e204785b219c432c4fac65cbdc9",
+      "blockNumber": 81533992,
+      "logIndex": 15,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x4D3164b10B38A8d3d2b59166B607F67e6EbB046B",
+        "stars": "3",
+        "timeMs": "34594",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x497e0cf70946df06a4aafffed7457c1ca9da8dbe43291023e0c86139c0edf132:3",
+      "hash": "0x497e0cf70946df06a4aafffed7457c1ca9da8dbe43291023e0c86139c0edf132",
+      "blockNumber": 81533993,
+      "logIndex": 3,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x1610Edba00fAaa1aB485f1C8B982206019918259",
+        "stars": "4",
+        "timeMs": "32304",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x9b6d7294d1d6dc65ca22e34dcc772e1d6e3ee38f2d9bb1fa5a0e7204cf6e1797:4",
+      "hash": "0x9b6d7294d1d6dc65ca22e34dcc772e1d6e3ee38f2d9bb1fa5a0e7204cf6e1797",
+      "blockNumber": 81533993,
+      "logIndex": 4,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x702E51dF2fF08195aad5c6f2B5dbddAB85D64C48",
+        "stars": "3",
+        "timeMs": "32334",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x256748c15934623a177efc7b077a73caf543e90d23a150b4e9965c77d94e2ca5:5",
+      "hash": "0x256748c15934623a177efc7b077a73caf543e90d23a150b4e9965c77d94e2ca5",
+      "blockNumber": 81533993,
+      "logIndex": 5,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x40bd55fbf67433A78BA3e8Cca15728856191c10a",
+        "stars": "4",
+        "timeMs": "21154",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xbce5297ee6e9ee9aca69c5bd1cf2e4cb5c51948b1664a402e56885fea67a2cec:6",
+      "hash": "0xbce5297ee6e9ee9aca69c5bd1cf2e4cb5c51948b1664a402e56885fea67a2cec",
+      "blockNumber": 81533993,
+      "logIndex": 6,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x6a71cA7cd3308415e23698c6D4eCd1e6F6DCE63b",
+        "stars": "3",
+        "timeMs": "24553",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x037e021e2d0cbaf0bf97d54f635a675e0f20e3716da93bb131ca883c8de81519:66",
+      "hash": "0x037e021e2d0cbaf0bf97d54f635a675e0f20e3716da93bb131ca883c8de81519",
+      "blockNumber": 81533997,
+      "logIndex": 66,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xa3abCa5e196886bA90A9849FA38f159989b3bbB2",
+        "stars": "4",
+        "timeMs": "32391",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x003059d9aaf7be77f13d10a0d55eeb66c05c5e22935664e2b91f729ae0c89519:67",
+      "hash": "0x003059d9aaf7be77f13d10a0d55eeb66c05c5e22935664e2b91f729ae0c89519",
+      "blockNumber": 81533997,
+      "logIndex": 67,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x80AE24A6A1F98A67f7c90112763dc411d6EdA8b2",
+        "stars": "5",
+        "timeMs": "21893",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xa021c6920c4d850ec6d7cf3053870beaee9789e390c83d6c441294c6c0341d90:68",
+      "hash": "0xa021c6920c4d850ec6d7cf3053870beaee9789e390c83d6c441294c6c0341d90",
+      "blockNumber": 81533997,
+      "logIndex": 68,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x5CC0C8F23F810FE1a181D6e173252De657819Da7",
+        "stars": "4",
+        "timeMs": "16390",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x3056d8328e226aace10899faec16541af8cd1a89d8e5aaacfbd3a5fcdb389d7d:69",
+      "hash": "0x3056d8328e226aace10899faec16541af8cd1a89d8e5aaacfbd3a5fcdb389d7d",
+      "blockNumber": 81533997,
+      "logIndex": 69,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xBCCdA22bDb0A8ddad21A51e899DB8566191A40ac",
+        "stars": "3",
+        "timeMs": "45163",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc7eb6e0938e8dba462d2883ba1a13a7f13f84d22ae1f238d2613e1e5d81eb6e1:70",
+      "hash": "0xc7eb6e0938e8dba462d2883ba1a13a7f13f84d22ae1f238d2613e1e5d81eb6e1",
+      "blockNumber": 81533997,
+      "logIndex": 70,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xAec151C7201E11954AB715120028472Fe4FE2469",
+        "stars": "5",
+        "timeMs": "45328",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x51d8f8796bd9b6e9d00bc2a7e226762f789a82802e8709a6d9a183d3c7932976:71",
+      "hash": "0x51d8f8796bd9b6e9d00bc2a7e226762f789a82802e8709a6d9a183d3c7932976",
+      "blockNumber": 81533997,
+      "logIndex": 71,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x081C0137aB553639843b62aBE504817D5e9118f4",
+        "stars": "5",
+        "timeMs": "38168",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x3753179d8185b520a354872c4409f5289e74ee3de86a02be88f46764a29c3a7d:1",
+      "hash": "0x3753179d8185b520a354872c4409f5289e74ee3de86a02be88f46764a29c3a7d",
+      "blockNumber": 81533998,
+      "logIndex": 1,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x0f3f7b0E76BDAC2ae6aDDc3Bcaabd13cb715F426",
+        "stars": "6",
+        "timeMs": "17973",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc7235ea2b0d0bac9e951a3feadef339264a41749f8b591f040583d305d41df79:2",
+      "hash": "0xc7235ea2b0d0bac9e951a3feadef339264a41749f8b591f040583d305d41df79",
+      "blockNumber": 81533998,
+      "logIndex": 2,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x7f4249B77cF9cc53ceB012d0853915724E899FD8",
+        "stars": "6",
+        "timeMs": "23287",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x2e0213c87b13adb568fbe0f17ca0e6db4007bedbb0fc19ad6b387eb4bae4d36f:3",
+      "hash": "0x2e0213c87b13adb568fbe0f17ca0e6db4007bedbb0fc19ad6b387eb4bae4d36f",
+      "blockNumber": 81533998,
+      "logIndex": 3,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x3A070c80997d8ED8C876c1eCBEDB4f9254Ff5022",
+        "stars": "5",
+        "timeMs": "32841",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1974ee7aa574ac31073204ae5f0b7f62aa9e595c7ec2507bedee764232dbf30e:4",
+      "hash": "0x1974ee7aa574ac31073204ae5f0b7f62aa9e595c7ec2507bedee764232dbf30e",
+      "blockNumber": 81533998,
+      "logIndex": 4,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xD146287eEDC6F5156ad5CEbDe4a001EC6EfD4eB3",
+        "stars": "6",
+        "timeMs": "42063",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xd1cc7be37543ea6b9b07cf4fe69471e942200ed0d0b8c6383fdbaa81ed8c93ee:5",
+      "hash": "0xd1cc7be37543ea6b9b07cf4fe69471e942200ed0d0b8c6383fdbaa81ed8c93ee",
+      "blockNumber": 81533998,
+      "logIndex": 5,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xBD068855a3063202c9f3207C89a7E2E75926b6A1",
+        "stars": "5",
+        "timeMs": "46173",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x67280aa400d6fd6791433ec7cf9cd4bcc524158a5e96451f8372771f4be7babc:6",
+      "hash": "0x67280aa400d6fd6791433ec7cf9cd4bcc524158a5e96451f8372771f4be7babc",
+      "blockNumber": 81533998,
+      "logIndex": 6,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x8222b5A6411563acc742703fc9fd21eC26b856e9",
+        "stars": "5",
+        "timeMs": "39039",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x5f146ab999ef1167bc6dc1272ef49f5cc3683c24ea1e70cf50cee53db26852b2:66",
+      "hash": "0x5f146ab999ef1167bc6dc1272ef49f5cc3683c24ea1e70cf50cee53db26852b2",
+      "blockNumber": 81534002,
+      "logIndex": 66,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x3F81D957f872f0A0DAf9f53E830a6f419D7274f9",
+        "stars": "6",
+        "timeMs": "34817",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x5ce9b57f508e8b3bbdb07c31ab7f4f6abd734da3d334de68dbd75f46ffc693a2:67",
+      "hash": "0x5ce9b57f508e8b3bbdb07c31ab7f4f6abd734da3d334de68dbd75f46ffc693a2",
+      "blockNumber": 81534002,
+      "logIndex": 67,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x2C2817178E1fE1f91209eF09744ac6D5Ba0540ab",
+        "stars": "5",
+        "timeMs": "36398",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xeacaa711d372f01c6e974568e9472543fc17892c3e69f0b663c9247a559de826:68",
+      "hash": "0xeacaa711d372f01c6e974568e9472543fc17892c3e69f0b663c9247a559de826",
+      "blockNumber": 81534002,
+      "logIndex": 68,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xa1A3Be62442C2f411c63cCC20F6427640561D428",
+        "stars": "5",
+        "timeMs": "21680",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1a638b3aeacb9ad8c74bd62431e2a5076b010315f2fe4605b25d8e0cc2c92940:69",
+      "hash": "0x1a638b3aeacb9ad8c74bd62431e2a5076b010315f2fe4605b25d8e0cc2c92940",
+      "blockNumber": 81534002,
+      "logIndex": 69,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xBeB5cFB6F329dDa2513F03D17205C8Fc26A2914d",
+        "stars": "5",
+        "timeMs": "34432",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xf6287fe554015665bfc6d04e94fc3bdf2b5252f4c03053aad14d021b32a64f7d:70",
+      "hash": "0xf6287fe554015665bfc6d04e94fc3bdf2b5252f4c03053aad14d021b32a64f7d",
+      "blockNumber": 81534002,
+      "logIndex": 70,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x424185aF9BFe7bCE185D243ace923905bb38617b",
+        "stars": "5",
+        "timeMs": "41242",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x846b0683128f1cd9b1dcd73b6825bcd017b787bfffbe619e002419105661c246:71",
+      "hash": "0x846b0683128f1cd9b1dcd73b6825bcd017b787bfffbe619e002419105661c246",
+      "blockNumber": 81534002,
+      "logIndex": 71,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x98E60212Bd8A17f6A14efd106DAa1C45c7cC9614",
+        "stars": "3",
+        "timeMs": "46477",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1776b3011c44589ff8468942806e7a98b7808950c440acd43437d56fd6902d1f:6",
+      "hash": "0x1776b3011c44589ff8468942806e7a98b7808950c440acd43437d56fd6902d1f",
+      "blockNumber": 81534003,
+      "logIndex": 6,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x5ac01cd4A432f345422e8a6c4d1a09cF853e39BA",
+        "stars": "4",
+        "timeMs": "57914",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe8d63f08ca539f121d4e1e821cb041e14a8e28b2f6917f51c2cde1209cd8ac76:7",
+      "hash": "0xe8d63f08ca539f121d4e1e821cb041e14a8e28b2f6917f51c2cde1209cd8ac76",
+      "blockNumber": 81534003,
+      "logIndex": 7,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x969A329C217E505973CA151506d6d2e6E6FAbE75",
+        "stars": "3",
+        "timeMs": "30849",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x05ce37a6a0c6c7f1c46a70d3ccb2b2f74cdb1b71e7ff5951ef729749595ee89d:76",
+      "hash": "0x05ce37a6a0c6c7f1c46a70d3ccb2b2f74cdb1b71e7ff5951ef729749595ee89d",
+      "blockNumber": 81534006,
+      "logIndex": 76,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xFACEfea0D9AAE710451Fb36A0014C5348e4C23eB",
+        "stars": "5",
+        "timeMs": "29760",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x7bba60d7d560012dcbe45291bbecb50a1b1600baee716f5690522f025577bcf7:77",
+      "hash": "0x7bba60d7d560012dcbe45291bbecb50a1b1600baee716f5690522f025577bcf7",
+      "blockNumber": 81534006,
+      "logIndex": 77,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x1735c38668e100C1Ad645A49662BDE3C922B1cb7",
+        "stars": "6",
+        "timeMs": "33590",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x6f00eff5c70f9eff6d07270def5f0884e68820c3b4fe709047e8fa5f88bd61d1:6",
+      "hash": "0x6f00eff5c70f9eff6d07270def5f0884e68820c3b4fe709047e8fa5f88bd61d1",
+      "blockNumber": 81534007,
+      "logIndex": 6,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xaf7e1C714acF75AeF6705A5D117D62bA74EfD716",
+        "stars": "3",
+        "timeMs": "19348",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc958c31d21facba5e3a44adae0bacb4a04c1dc608802974ee50715bb72f13796:7",
+      "hash": "0xc958c31d21facba5e3a44adae0bacb4a04c1dc608802974ee50715bb72f13796",
+      "blockNumber": 81534007,
+      "logIndex": 7,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xd5dC7632a00C942eEe427e743DD5BaBBf23Af056",
+        "stars": "3",
+        "timeMs": "23958",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1501b85dfc0e86403f3377f66b75ed0cc2fe1849aa70e708e4818f3ec7e80b97:8",
+      "hash": "0x1501b85dfc0e86403f3377f66b75ed0cc2fe1849aa70e708e4818f3ec7e80b97",
+      "blockNumber": 81534007,
+      "logIndex": 8,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xd149089aB990460C3D200d62Ffb38FeC58533505",
+        "stars": "5",
+        "timeMs": "22726",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x42236113f81ef0fdfa5f4d7cf04336a249e04f66a12ef7ea8838b05a706fe994:9",
+      "hash": "0x42236113f81ef0fdfa5f4d7cf04336a249e04f66a12ef7ea8838b05a706fe994",
+      "blockNumber": 81534007,
+      "logIndex": 9,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xc73884ff9D38aD191661CA0BB0b3c4C20FeD9Da0",
+        "stars": "3",
+        "timeMs": "29392",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x33e27f1884f581a3e031367e8ae550d6236b80e1de438b78c55e105aa80305bd:10",
+      "hash": "0x33e27f1884f581a3e031367e8ae550d6236b80e1de438b78c55e105aa80305bd",
+      "blockNumber": 81534007,
+      "logIndex": 10,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xAAF6076857A3c69f5F14e57756617f527b2f3E37",
+        "stars": "3",
+        "timeMs": "34464",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xba4ccaff2c44fb112acbf1cac776be95cbb43006dcd8f8d747ce1675e05da964:11",
+      "hash": "0xba4ccaff2c44fb112acbf1cac776be95cbb43006dcd8f8d747ce1675e05da964",
+      "blockNumber": 81534007,
+      "logIndex": 11,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x1b6A4aD4EeF4A9A35A01609e967288ae2C7DD575",
+        "stars": "5",
+        "timeMs": "23423",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x00227b3769f1ae7e3a3b23f69c73b90d10cb82fb4e1270849d168222513567d9:12",
+      "hash": "0x00227b3769f1ae7e3a3b23f69c73b90d10cb82fb4e1270849d168222513567d9",
+      "blockNumber": 81534007,
+      "logIndex": 12,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x960Fe1c4Dc87C3165A5123D017a72D4C51707f46",
+        "stars": "5",
+        "timeMs": "33995",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xd5699391b5fd7c4f16f9445002663520fcb593e3c061b4e306f6b7d9d816ab0d:13",
+      "hash": "0xd5699391b5fd7c4f16f9445002663520fcb593e3c061b4e306f6b7d9d816ab0d",
+      "blockNumber": 81534007,
+      "logIndex": 13,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x26B33F217e8fA6276207146667ef1c3c27E77782",
+        "stars": "4",
+        "timeMs": "45779",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xa00d9fe3cd6d204e1abc598c5bd2dd3cc5ed59312374fa3eae47bbdadd9f519f:34",
+      "hash": "0xa00d9fe3cd6d204e1abc598c5bd2dd3cc5ed59312374fa3eae47bbdadd9f519f",
+      "blockNumber": 81534011,
+      "logIndex": 34,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x758aC0F6Fc784FF7e34D01BF6afE509739EEf296",
+        "stars": "4",
+        "timeMs": "26480",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x9f64114ef9a58e94d4215459c52035705d69883906c95e0dd0ae1058d1f69ec2:35",
+      "hash": "0x9f64114ef9a58e94d4215459c52035705d69883906c95e0dd0ae1058d1f69ec2",
+      "blockNumber": 81534011,
+      "logIndex": 35,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xa7cE1449C0ca555cD9a79DB379A3eceA3c0acdd1",
+        "stars": "4",
+        "timeMs": "57992",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x9869743a18e3cfcfa0922275f6fb6239b14344445bcb4f7c734a90a20d0cea5d:3",
+      "hash": "0x9869743a18e3cfcfa0922275f6fb6239b14344445bcb4f7c734a90a20d0cea5d",
+      "blockNumber": 81536841,
+      "logIndex": 3,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x12AA40Ee8e955D5d45b1538a828b073B7c7bB82E",
+        "stars": "4",
+        "timeMs": "28928",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xbd9b15a93c1519a3bf16017884d6d3aa14f925085fd81deb4cfc38b5905fc7a0:4",
+      "hash": "0xbd9b15a93c1519a3bf16017884d6d3aa14f925085fd81deb4cfc38b5905fc7a0",
+      "blockNumber": 81536841,
+      "logIndex": 4,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x5019F6981716FC3195708151dF37c4CF631DF576",
+        "stars": "6",
+        "timeMs": "23645",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x4141f9d799891a71dd38431c8ac103b47dc78d90ea5707bea6448a9f17ebb38c:5",
+      "hash": "0x4141f9d799891a71dd38431c8ac103b47dc78d90ea5707bea6448a9f17ebb38c",
+      "blockNumber": 81536841,
+      "logIndex": 5,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x9f29C5cE59B74570c01B2d005349CB6A067eb7b2",
+        "stars": "4",
+        "timeMs": "34578",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xea6a7e7ffb83f2190694a1e16d423222efd41e3c050634902b6cf903256984cc:6",
+      "hash": "0xea6a7e7ffb83f2190694a1e16d423222efd41e3c050634902b6cf903256984cc",
+      "blockNumber": 81536841,
+      "logIndex": 6,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x09b0fFFB2573AbdC8C272A2c3405A97338F67D88",
+        "stars": "5",
+        "timeMs": "42287",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xa77a8d7d5c34357b2d364aa711500fb33e5e89c2d22c95f73563332380252160:7",
+      "hash": "0xa77a8d7d5c34357b2d364aa711500fb33e5e89c2d22c95f73563332380252160",
+      "blockNumber": 81536841,
+      "logIndex": 7,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x38eD512Ac4eC31B006189322e4b3a4498971b45a",
+        "stars": "5",
+        "timeMs": "31124",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xb57c47659451a29ac3108303a968cc79f1a84eebff84ecc6f01dba91e5277a37:8",
+      "hash": "0xb57c47659451a29ac3108303a968cc79f1a84eebff84ecc6f01dba91e5277a37",
+      "blockNumber": 81536841,
+      "logIndex": 8,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x3e0f612CFf1d263aCDf6078D12A57F388fef23DB",
+        "stars": "6",
+        "timeMs": "45837",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x92500b3af3c7efd78e48038d718259fe7959dcd67c4acbac6ddd74432f0f57ab:9",
+      "hash": "0x92500b3af3c7efd78e48038d718259fe7959dcd67c4acbac6ddd74432f0f57ab",
+      "blockNumber": 81536841,
+      "logIndex": 9,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x13d94Cfaf6b95cf27867E54a0F3D1Cae807b58Cc",
+        "stars": "5",
+        "timeMs": "28291",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xf742018e8ef8604a213fed8196c66d565653b1f3c49927f4ea96e61075d89bbc:10",
+      "hash": "0xf742018e8ef8604a213fed8196c66d565653b1f3c49927f4ea96e61075d89bbc",
+      "blockNumber": 81536841,
+      "logIndex": 10,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xcf043dC85B51D8fa445D136a00775fDAb2FAaeBd",
+        "stars": "5",
+        "timeMs": "18811",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x2e32713162d78f06144f003c37868b70e455605f0c166420e957293cda8985b5:11",
+      "hash": "0x2e32713162d78f06144f003c37868b70e455605f0c166420e957293cda8985b5",
+      "blockNumber": 81536841,
+      "logIndex": 11,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xCAFB055144E079ED5C2C020B5A1E4152c6bf00f6",
+        "stars": "3",
+        "timeMs": "19036",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xf6592a9fa68a2dc53213e6b1fc8561f95a542fceffbe022a5d16a05fef7092fd:12",
+      "hash": "0xf6592a9fa68a2dc53213e6b1fc8561f95a542fceffbe022a5d16a05fef7092fd",
+      "blockNumber": 81536841,
+      "logIndex": 12,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xE9D1f4edc67e36Bef05Eb5550bcA130970A38a76",
+        "stars": "6",
+        "timeMs": "47534",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x5bd12754af985342b9e9b43640755709aa924213ad5520f166ca049f51bf5063:13",
+      "hash": "0x5bd12754af985342b9e9b43640755709aa924213ad5520f166ca049f51bf5063",
+      "blockNumber": 81536841,
+      "logIndex": 13,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x9BeF6B5745a246b16eE1B1603DF9aCcDc743577F",
+        "stars": "3",
+        "timeMs": "31299",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x67eb9ec34edf885573b92e9fa27ee33d98c25580bf75b71b34a65cd81572b732:14",
+      "hash": "0x67eb9ec34edf885573b92e9fa27ee33d98c25580bf75b71b34a65cd81572b732",
+      "blockNumber": 81536841,
+      "logIndex": 14,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x2E9f204cee505b662bC30C4e9D3B58F29594212a",
+        "stars": "4",
+        "timeMs": "37004",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x095afef289440e47a02b77ec05de49e90d88f348329da402be2a9a791d229844:15",
+      "hash": "0x095afef289440e47a02b77ec05de49e90d88f348329da402be2a9a791d229844",
+      "blockNumber": 81536841,
+      "logIndex": 15,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x9A2708bEd7171A7fdc2ade8566b3a708055D8Ae2",
+        "stars": "4",
+        "timeMs": "38708",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x795ab996b6ddd4ab558abbfdcda30ca8db47808aff07d3b50410bd96b267011b:16",
+      "hash": "0x795ab996b6ddd4ab558abbfdcda30ca8db47808aff07d3b50410bd96b267011b",
+      "blockNumber": 81536841,
+      "logIndex": 16,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x475eBDf1216e77Dad66ea342fDFCF0443C946D59",
+        "stars": "4",
+        "timeMs": "18680",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x542bc8896b378116058b8e653abd1e7d0f187c785339f55da731bafa1cd999c7:17",
+      "hash": "0x542bc8896b378116058b8e653abd1e7d0f187c785339f55da731bafa1cd999c7",
+      "blockNumber": 81536841,
+      "logIndex": 17,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xAD26dbc6F931ba7DB47971416A8a5e1EBE476eC6",
+        "stars": "5",
+        "timeMs": "24653",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe59aaa1484dded6b1b8e8e5cc13a5043a05b7f9b0b8804744d0e429e82e39c99:18",
+      "hash": "0xe59aaa1484dded6b1b8e8e5cc13a5043a05b7f9b0b8804744d0e429e82e39c99",
+      "blockNumber": 81536841,
+      "logIndex": 18,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x5245b70B350a8852a02bd7C6E6214a0b63573843",
+        "stars": "5",
+        "timeMs": "37410",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x0a099de36ea485c917ea89bfb092b0bb8e449cc0a94b6aaf6499064a2a44c57f:19",
+      "hash": "0x0a099de36ea485c917ea89bfb092b0bb8e449cc0a94b6aaf6499064a2a44c57f",
+      "blockNumber": 81536841,
+      "logIndex": 19,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x76F0dD4856bC0Ec62c54E55272152e3eC5f489a7",
+        "stars": "3",
+        "timeMs": "53589",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x617b87513076d823b2e0e049d68df0a5fc856646e7e98d391588e1ccd2c5d150:20",
+      "hash": "0x617b87513076d823b2e0e049d68df0a5fc856646e7e98d391588e1ccd2c5d150",
+      "blockNumber": 81536841,
+      "logIndex": 20,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x0D2e5db626b5d1A10DE6A05EFC88D180FBC11Cc8",
+        "stars": "6",
+        "timeMs": "43234",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x058be812244d716f644238f1a256a0c4bdb637cc88c6595d6f83853030bb7c4f:21",
+      "hash": "0x058be812244d716f644238f1a256a0c4bdb637cc88c6595d6f83853030bb7c4f",
+      "blockNumber": 81536841,
+      "logIndex": 21,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x960Ec7eBBB463F5bD943057b0e8ff7b43e362F77",
+        "stars": "4",
+        "timeMs": "28369",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe0c6f2767efd0a4572c6d7c8a7fd2caa8beeda0d7e5c91a57560d13571c033e0:22",
+      "hash": "0xe0c6f2767efd0a4572c6d7c8a7fd2caa8beeda0d7e5c91a57560d13571c033e0",
+      "blockNumber": 81536841,
+      "logIndex": 22,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xD495E1d89AB3AE10c6673cDd8825cbd62EbbD637",
+        "stars": "4",
+        "timeMs": "47728",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x9be113cbcaa277844590fe529b893984f643259b2c937ca2885d096ab315d894:1",
+      "hash": "0x9be113cbcaa277844590fe529b893984f643259b2c937ca2885d096ab315d894",
+      "blockNumber": 81536842,
+      "logIndex": 1,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xC14A99f37fF7Dc17cb3cfE90959cDF6cdD8AB6d1",
+        "stars": "5",
+        "timeMs": "20451",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x6edd2dbe641568cf1bf50b9023ea25da202412870c32e8f91031b5f21b61e594:2",
+      "hash": "0x6edd2dbe641568cf1bf50b9023ea25da202412870c32e8f91031b5f21b61e594",
+      "blockNumber": 81536842,
+      "logIndex": 2,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x30f1BD7F11934A1316c69aA69089751509D619cb",
+        "stars": "6",
+        "timeMs": "16781",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x98fc9e77ae3afa4ca452fe7dbb89de1d9edbd028efc2983cd02e456079e878b8:3",
+      "hash": "0x98fc9e77ae3afa4ca452fe7dbb89de1d9edbd028efc2983cd02e456079e878b8",
+      "blockNumber": 81536842,
+      "logIndex": 3,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x16E349995eB0962F6812Aa54fb183F494D69ae36",
+        "stars": "5",
+        "timeMs": "56156",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x16ab9f09743f0e53784f6307b4d1f009721a7c45fdd9d5a5cd12c05ebd1236cf:4",
+      "hash": "0x16ab9f09743f0e53784f6307b4d1f009721a7c45fdd9d5a5cd12c05ebd1236cf",
+      "blockNumber": 81536842,
+      "logIndex": 4,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x1E9598abe8792D2175D387B9A9B20aD03C8013d9",
+        "stars": "5",
+        "timeMs": "41536",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1e2537458b7f95c8748e14f817be1239f723a9c94f4e3c30794ddc8bdbb95ee4:5",
+      "hash": "0x1e2537458b7f95c8748e14f817be1239f723a9c94f4e3c30794ddc8bdbb95ee4",
+      "blockNumber": 81536842,
+      "logIndex": 5,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x60eb3B66441a82147Ad9425FC3B6102Ae62335F0",
+        "stars": "5",
+        "timeMs": "43009",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x954dc9803b0dfc47bb12684e6ec97f1e60fb3cb910321f0305306891198260d9:6",
+      "hash": "0x954dc9803b0dfc47bb12684e6ec97f1e60fb3cb910321f0305306891198260d9",
+      "blockNumber": 81536842,
+      "logIndex": 6,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x3a99fC17dc14f706be5d939B1a9187d525F80856",
+        "stars": "4",
+        "timeMs": "47451",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xb78223c233d2e82983db39b7cdd27c29510cc60ba3470b9da354394566c53409:7",
+      "hash": "0xb78223c233d2e82983db39b7cdd27c29510cc60ba3470b9da354394566c53409",
+      "blockNumber": 81536842,
+      "logIndex": 7,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x8f7c2e55F75C87D5a240314f13De02bfb923B9AC",
+        "stars": "6",
+        "timeMs": "16778",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x957e12d4c8375560223ede8a8dd77ed1d5372bc7b32d2b706558041c8f6e1c85:8",
+      "hash": "0x957e12d4c8375560223ede8a8dd77ed1d5372bc7b32d2b706558041c8f6e1c85",
+      "blockNumber": 81536842,
+      "logIndex": 8,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xBBFA9f33860f657da0A524114fE7bfe0F9cD157e",
+        "stars": "4",
+        "timeMs": "48772",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc574c6959db394fb91f11b0d6ddfb1623364d7eb66efef362f37fe8e053604cd:9",
+      "hash": "0xc574c6959db394fb91f11b0d6ddfb1623364d7eb66efef362f37fe8e053604cd",
+      "blockNumber": 81536842,
+      "logIndex": 9,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x9d1dCbe7A2eED6F5dEDAB52955912f3ae1B04797",
+        "stars": "6",
+        "timeMs": "17431",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x0c22c31ca27b2fabc03302f75c5f66ec4092f4261a21a32ec2a4a9b4adf851fd:10",
+      "hash": "0x0c22c31ca27b2fabc03302f75c5f66ec4092f4261a21a32ec2a4a9b4adf851fd",
+      "blockNumber": 81536842,
+      "logIndex": 10,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xb2c2d4850C64860486e222273a6D4E2f800336cb",
+        "stars": "3",
+        "timeMs": "28517",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xb31355923782a2c91d3e80ac0b400632e85c251d73b4c0293db592e407f253b7:11",
+      "hash": "0xb31355923782a2c91d3e80ac0b400632e85c251d73b4c0293db592e407f253b7",
+      "blockNumber": 81536842,
+      "logIndex": 11,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x0b70cf4d1e4bCD6A8E092b51060ec7d0791E9E6F",
+        "stars": "4",
+        "timeMs": "28229",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc850a685f95fbc1e3ac6e39dc0eaed8516da21836de8836fab738e985a2d5321:12",
+      "hash": "0xc850a685f95fbc1e3ac6e39dc0eaed8516da21836de8836fab738e985a2d5321",
+      "blockNumber": 81536842,
+      "logIndex": 12,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xE9492667c262135E5cf58fAec006A0Ec9485EAd7",
+        "stars": "5",
+        "timeMs": "46483",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xdec6fa63119ce5c619b74bf2dff961f8626d0c1c470af4a74f73f5533d25eaab:13",
+      "hash": "0xdec6fa63119ce5c619b74bf2dff961f8626d0c1c470af4a74f73f5533d25eaab",
+      "blockNumber": 81536842,
+      "logIndex": 13,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x851524Bec91FfDd76C2DD829013Ad5f8a535cd44",
+        "stars": "3",
+        "timeMs": "51306",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x702f81c121c8aad1fa3e85ccf578c3d08418f2630da0117f4b1ec38a7a5565c7:14",
+      "hash": "0x702f81c121c8aad1fa3e85ccf578c3d08418f2630da0117f4b1ec38a7a5565c7",
+      "blockNumber": 81536842,
+      "logIndex": 14,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xe17a3C552C6DE1885dA7D5E5DbBa2e9F145cA943",
+        "stars": "6",
+        "timeMs": "28067",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x44ee9f7c64b830bc58bd4c233bb99cbd6810a43011c3bd312585162a9e9c88bb:15",
+      "hash": "0x44ee9f7c64b830bc58bd4c233bb99cbd6810a43011c3bd312585162a9e9c88bb",
+      "blockNumber": 81536842,
+      "logIndex": 15,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x215Bc84Af38B3Fb332b35EC80f57aE034691DA5a",
+        "stars": "4",
+        "timeMs": "21590",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xba67e6b7c0a7a2cb7a583c5bb0183bf5d8c74d09c3d3b8aef402d1cde6fd1601:16",
+      "hash": "0xba67e6b7c0a7a2cb7a583c5bb0183bf5d8c74d09c3d3b8aef402d1cde6fd1601",
+      "blockNumber": 81536842,
+      "logIndex": 16,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xF9604e29A7f592De98D6e3aE946a89bFBc9651d9",
+        "stars": "5",
+        "timeMs": "31015",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xa59eae0b6caf53b4c49f4907a103ca8db81022a3394075bdcfd79a03ea0d5a48:17",
+      "hash": "0xa59eae0b6caf53b4c49f4907a103ca8db81022a3394075bdcfd79a03ea0d5a48",
+      "blockNumber": 81536842,
+      "logIndex": 17,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xfb8b5ef83601499582C52a7e3C3Fe39B8bCBbc39",
+        "stars": "3",
+        "timeMs": "16889",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x2d0a74f9a6d01e4d3837cd22fdbf58aae2751e119818afa9a9ce3614be54abda:18",
+      "hash": "0x2d0a74f9a6d01e4d3837cd22fdbf58aae2751e119818afa9a9ce3614be54abda",
+      "blockNumber": 81536842,
+      "logIndex": 18,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x493777eaaE75B40a9bC2176e5A73406C531b3C4B",
+        "stars": "4",
+        "timeMs": "35942",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x91f66deaa826a566fd1448f3c0bfccd7835a0e905a0fdbd1bf3cf49f5f6772a0:19",
+      "hash": "0x91f66deaa826a566fd1448f3c0bfccd7835a0e905a0fdbd1bf3cf49f5f6772a0",
+      "blockNumber": 81536842,
+      "logIndex": 19,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x9E5C23F75ea455786Fc36fB64C8F5757A14cA71E",
+        "stars": "6",
+        "timeMs": "31372",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe430a775f5042689df65a45f03bede625e80da26e74d959c76945fbe29541892:20",
+      "hash": "0xe430a775f5042689df65a45f03bede625e80da26e74d959c76945fbe29541892",
+      "blockNumber": 81536842,
+      "logIndex": 20,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xe9622c18DB1912fe99E24fA53F1a3691E79b5b83",
+        "stars": "5",
+        "timeMs": "19693",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x91f47c07a5bb9d8d6a8b095464252f9c0702a8307413938c3c6fef164c8a3ca9:42",
+      "hash": "0x91f47c07a5bb9d8d6a8b095464252f9c0702a8307413938c3c6fef164c8a3ca9",
+      "blockNumber": 81536843,
+      "logIndex": 42,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xD1B8363dE01CDC4dcC6D249Dc99054Bd142FCF37",
+        "stars": "6",
+        "timeMs": "23843",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x750c11f8d8370196b151e551117abf8725f89355100ae97d0390881369477f22:43",
+      "hash": "0x750c11f8d8370196b151e551117abf8725f89355100ae97d0390881369477f22",
+      "blockNumber": 81536843,
+      "logIndex": 43,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xa559ee07A2DE4D598527c93806c9400c9D43b134",
+        "stars": "4",
+        "timeMs": "57086",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x97e281f889e614b9a53756232267657206071e0dd108e8f9b82ce134f9826eb7:44",
+      "hash": "0x97e281f889e614b9a53756232267657206071e0dd108e8f9b82ce134f9826eb7",
+      "blockNumber": 81536843,
+      "logIndex": 44,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xDA3156db3a7D334d30CE749811e3c34aF5F24D91",
+        "stars": "4",
+        "timeMs": "27370",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x9aa64fc933e0cf730815102a9ecda174faddff41755a9f4710fcdb96aeede24e:45",
+      "hash": "0x9aa64fc933e0cf730815102a9ecda174faddff41755a9f4710fcdb96aeede24e",
+      "blockNumber": 81536843,
+      "logIndex": 45,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x919217f45123d60597405ABF833C3dBFB0F98Cdd",
+        "stars": "5",
+        "timeMs": "30682",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x210200d3a62ce71f91442cdd9e550d8e12196cfb7e68b1f15a5ef74cbf070aba:46",
+      "hash": "0x210200d3a62ce71f91442cdd9e550d8e12196cfb7e68b1f15a5ef74cbf070aba",
+      "blockNumber": 81536843,
+      "logIndex": 46,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x984cdC38c468a0F72d5d28232a1FC7ECF3f260ea",
+        "stars": "3",
+        "timeMs": "41554",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x9dbdaf5d765527c46857baf1739e2942f5a94b04b7f610ddabf50b9c30e04de1:47",
+      "hash": "0x9dbdaf5d765527c46857baf1739e2942f5a94b04b7f610ddabf50b9c30e04de1",
+      "blockNumber": 81536843,
+      "logIndex": 47,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x5Bc7554bDf26532205D5B1babB834348d5375C8D",
+        "stars": "3",
+        "timeMs": "56385",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x90e17bff109b4f5f83afe78ed25b59a95651e28fdff613fd6bdd200a448c7e65:48",
+      "hash": "0x90e17bff109b4f5f83afe78ed25b59a95651e28fdff613fd6bdd200a448c7e65",
+      "blockNumber": 81536843,
+      "logIndex": 48,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x0B61914FEaaf262E6593fdD44A1B4ae2c007C075",
+        "stars": "3",
+        "timeMs": "25930",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x551518480fb25b6f9598f6663463f2b0a92cc0db0e8a1c2625a7e4f776ab4166:49",
+      "hash": "0x551518480fb25b6f9598f6663463f2b0a92cc0db0e8a1c2625a7e4f776ab4166",
+      "blockNumber": 81536843,
+      "logIndex": 49,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x8b2f5b06E6D9B5E714d4E73Ed29b16A2Ce43EAAD",
+        "stars": "3",
+        "timeMs": "32021",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xcf84fb2b46d718b2491af50980d5dd7918c5e42e60532ca2fac5858b9a4c851c:50",
+      "hash": "0xcf84fb2b46d718b2491af50980d5dd7918c5e42e60532ca2fac5858b9a4c851c",
+      "blockNumber": 81536843,
+      "logIndex": 50,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xA8CFCfb3abcB33238aB138425d6313b82b158A57",
+        "stars": "3",
+        "timeMs": "27471",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x0883ddfe7c3ce90c0e7497589272dcae44cbb770966101859dedaf5ecad5ba9c:51",
+      "hash": "0x0883ddfe7c3ce90c0e7497589272dcae44cbb770966101859dedaf5ecad5ba9c",
+      "blockNumber": 81536843,
+      "logIndex": 51,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x494d44D5D188Fa9961d583303Bf1593DB21b0650",
+        "stars": "3",
+        "timeMs": "51624",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x02d0135e2fa6b84691bcd280b4d21872907150011b2b052ba12fb5688fc8338a:52",
+      "hash": "0x02d0135e2fa6b84691bcd280b4d21872907150011b2b052ba12fb5688fc8338a",
+      "blockNumber": 81536843,
+      "logIndex": 52,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x8DBbE0ed2DA4eAC33560D05Cb80bA6834CFE64bF",
+        "stars": "5",
+        "timeMs": "57832",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x71d4bb3c5205f5331de5991b6b4271fe25228ade787c15fffd2024cad923ce21:53",
+      "hash": "0x71d4bb3c5205f5331de5991b6b4271fe25228ade787c15fffd2024cad923ce21",
+      "blockNumber": 81536843,
+      "logIndex": 53,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xDdf363Aac76997e720C32DC811e4C4522D06fdbA",
+        "stars": "5",
+        "timeMs": "30642",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x89c3f724cb61ee7fddcb0f2b4a846ff8c0307062b422a636246c5602e6e25f07:54",
+      "hash": "0x89c3f724cb61ee7fddcb0f2b4a846ff8c0307062b422a636246c5602e6e25f07",
+      "blockNumber": 81536843,
+      "logIndex": 54,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xd0E8989D86B4e0Be463f1CC17F19751F5Dae5d2e",
+        "stars": "3",
+        "timeMs": "42010",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x5db9368752ac413df4d00b29476dd3f366d62cc154c98f4b90c9b3f84c976892:55",
+      "hash": "0x5db9368752ac413df4d00b29476dd3f366d62cc154c98f4b90c9b3f84c976892",
+      "blockNumber": 81536843,
+      "logIndex": 55,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xF0163A32D02860D1f342d7a1E06780bb6a264Ba9",
+        "stars": "6",
+        "timeMs": "44266",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x7ca04b0dcea50a528a4881e5c719cfd4cf038f39f4299aa36d95a9242d18cab0:56",
+      "hash": "0x7ca04b0dcea50a528a4881e5c719cfd4cf038f39f4299aa36d95a9242d18cab0",
+      "blockNumber": 81536843,
+      "logIndex": 56,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x49bE0A38d4F43Bae7ded009208f53aa14Ee5D1d5",
+        "stars": "5",
+        "timeMs": "17522",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xddf8aad63d337e33f5a14059295f528f7dd970382207273d2c35be036757c9c0:57",
+      "hash": "0xddf8aad63d337e33f5a14059295f528f7dd970382207273d2c35be036757c9c0",
+      "blockNumber": 81536843,
+      "logIndex": 57,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x497A7B562252586763F9278B9550201D09DA1592",
+        "stars": "4",
+        "timeMs": "18291",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xf0f9836bd12e5612b312a32d7ba5a8fc88e6a1f9992fb3dcbdec2101c5d9a79c:58",
+      "hash": "0xf0f9836bd12e5612b312a32d7ba5a8fc88e6a1f9992fb3dcbdec2101c5d9a79c",
+      "blockNumber": 81536843,
+      "logIndex": 58,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xF3535EE43ad9A6b23b61f8D957035c379DB848eF",
+        "stars": "6",
+        "timeMs": "32703",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xcacf992296c3d570bfebf5674a16321dda1b479495397a738bd7e11d73af2988:59",
+      "hash": "0xcacf992296c3d570bfebf5674a16321dda1b479495397a738bd7e11d73af2988",
+      "blockNumber": 81536843,
+      "logIndex": 59,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x0dFc8023D0B3924Ad05098fB239aD19A020e0757",
+        "stars": "3",
+        "timeMs": "22222",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xf630b1e40159d7139777e2291e014035fceb5f4fbb8482e44bf4310c02d24b9e:60",
+      "hash": "0xf630b1e40159d7139777e2291e014035fceb5f4fbb8482e44bf4310c02d24b9e",
+      "blockNumber": 81536843,
+      "logIndex": 60,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x4E4872335dB63Da4Dc7fb14ebd40F7A6ef689D39",
+        "stars": "5",
+        "timeMs": "21026",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x17df681edf255c8ba6fcab2ae726fc8162c5a69cbee36dda935e55c7a3e446c1:61",
+      "hash": "0x17df681edf255c8ba6fcab2ae726fc8162c5a69cbee36dda935e55c7a3e446c1",
+      "blockNumber": 81536843,
+      "logIndex": 61,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x4294e9135bABF236E4280Af6084FF5FF5036Af05",
+        "stars": "4",
+        "timeMs": "21240",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xff4f8f8f19f6ecdf09270eefb644799c10b372dfb41016a84e831802881281ee:17",
+      "hash": "0xff4f8f8f19f6ecdf09270eefb644799c10b372dfb41016a84e831802881281ee",
+      "blockNumber": 81536845,
+      "logIndex": 17,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x6A5d210B48b3989bb1C00C7C98dc85264b28666E",
+        "stars": "5",
+        "timeMs": "35138",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x7fbe2cc6c422043eee29357970f626e1573571fb843b47a9b985e9f68a4f2f65:18",
+      "hash": "0x7fbe2cc6c422043eee29357970f626e1573571fb843b47a9b985e9f68a4f2f65",
+      "blockNumber": 81536845,
+      "logIndex": 18,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x32A09eF2E054d27f1c6ed1c6972ce65B0aD721b8",
+        "stars": "6",
+        "timeMs": "31816",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x0da58d1483c830ec501ac96181ab6d3db8a50785a9beada85b04e322ca2e2948:19",
+      "hash": "0x0da58d1483c830ec501ac96181ab6d3db8a50785a9beada85b04e322ca2e2948",
+      "blockNumber": 81536845,
+      "logIndex": 19,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x89526399aD75142AAD84FE608F88153C017a2420",
+        "stars": "5",
+        "timeMs": "16589",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x7cc807bfeb804116127d4c75027fb4d87381899fa9f021eed924ae93968b4d09:20",
+      "hash": "0x7cc807bfeb804116127d4c75027fb4d87381899fa9f021eed924ae93968b4d09",
+      "blockNumber": 81536845,
+      "logIndex": 20,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xC456c9533B3F5cDd296f5e009bA9CD37448D85Cc",
+        "stars": "3",
+        "timeMs": "36946",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xf232210de1ce312fa908b9d696b2318cddaa1757ccd05f91823f898ecf097422:21",
+      "hash": "0xf232210de1ce312fa908b9d696b2318cddaa1757ccd05f91823f898ecf097422",
+      "blockNumber": 81536845,
+      "logIndex": 21,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x38cE43783593DaA12E2dC81a8CfF98CB4fAAED74",
+        "stars": "6",
+        "timeMs": "31123",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xf4c3827961798b546494839b23b526fcdb22d64c1eef02d4aceb8dedf86fd23a:22",
+      "hash": "0xf4c3827961798b546494839b23b526fcdb22d64c1eef02d4aceb8dedf86fd23a",
+      "blockNumber": 81536845,
+      "logIndex": 22,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x3F4B0E04d9A23ce2715e914349582c24c8Ec9117",
+        "stars": "5",
+        "timeMs": "55524",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xdf0afffd6ee2423a77f44717005d8a32952a722c6c0c77cdcd085d2a80d88bfd:23",
+      "hash": "0xdf0afffd6ee2423a77f44717005d8a32952a722c6c0c77cdcd085d2a80d88bfd",
+      "blockNumber": 81536845,
+      "logIndex": 23,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xDB5c1CE4Db363c4ebd8D20868dc3D24c363483EA",
+        "stars": "6",
+        "timeMs": "29306",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x6f3228fa1238a94ec169f1fc89f2ed5e32db073db7c6119fbcddb0be83900627:24",
+      "hash": "0x6f3228fa1238a94ec169f1fc89f2ed5e32db073db7c6119fbcddb0be83900627",
+      "blockNumber": 81536845,
+      "logIndex": 24,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x3AEb26F2a525CDB4E9103Cb573Aad4124549a9Be",
+        "stars": "6",
+        "timeMs": "22066",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1aa7e4189b22e19e15968fac51052370723464770b2056901cbe0dec6ad9f717:25",
+      "hash": "0x1aa7e4189b22e19e15968fac51052370723464770b2056901cbe0dec6ad9f717",
+      "blockNumber": 81536845,
+      "logIndex": 25,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xB14D0D7C75d1B4D5930291A77d93456d7c55C742",
+        "stars": "6",
+        "timeMs": "54645",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc590e7444829713b6abfdbdbd78352081b6434ee44550b20e66d43af63e85e4a:26",
+      "hash": "0xc590e7444829713b6abfdbdbd78352081b6434ee44550b20e66d43af63e85e4a",
+      "blockNumber": 81536845,
+      "logIndex": 26,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x9bD254B51B026304F7d5DF7ae822b173E532f141",
+        "stars": "6",
+        "timeMs": "31262",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x0450af76d4ab8ea46b76465faa891f598be16182dff8917d4bd2881aaf98bcfc:27",
+      "hash": "0x0450af76d4ab8ea46b76465faa891f598be16182dff8917d4bd2881aaf98bcfc",
+      "blockNumber": 81536845,
+      "logIndex": 27,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xaf6805F42f2aE5c78955F77BD0775350B88F7904",
+        "stars": "4",
+        "timeMs": "20784",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x426b8f50ea7bd6ce25b870a1a5adf9465b3fdf4fcd0fc46667980e890d1b0bfd:28",
+      "hash": "0x426b8f50ea7bd6ce25b870a1a5adf9465b3fdf4fcd0fc46667980e890d1b0bfd",
+      "blockNumber": 81536845,
+      "logIndex": 28,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xD5F895922A5B3E07F77B64e9a4578a45d82637Fd",
+        "stars": "5",
+        "timeMs": "32883",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x4abcc821902956a79572d5d6687836051101e60ae39a8449d45838c5ad97db51:29",
+      "hash": "0x4abcc821902956a79572d5d6687836051101e60ae39a8449d45838c5ad97db51",
+      "blockNumber": 81536845,
+      "logIndex": 29,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x6c26a8d247Ee1B87D9D6fea4bB2EC7277A60Df43",
+        "stars": "6",
+        "timeMs": "30909",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1a26cf8dfb65c12175a6aef49a0078460fb143b5b84c00e06d17dad426e0ed14:30",
+      "hash": "0x1a26cf8dfb65c12175a6aef49a0078460fb143b5b84c00e06d17dad426e0ed14",
+      "blockNumber": 81536845,
+      "logIndex": 30,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x3c9CB6Be42b06e65c54D08688553C0bFA90B6b2d",
+        "stars": "6",
+        "timeMs": "32196",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x5ee181035c97696601ed73168bb9f7b3176e6a7af034efb59af256768eacf5b2:31",
+      "hash": "0x5ee181035c97696601ed73168bb9f7b3176e6a7af034efb59af256768eacf5b2",
+      "blockNumber": 81536845,
+      "logIndex": 31,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x7DAfEd49518C706400841327a2f30702A6A1A5f8",
+        "stars": "3",
+        "timeMs": "35295",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x772c86eef9e9c07a4b197f9a0581c4a4f2540a5fb94d3a8346ad46a2cf734174:32",
+      "hash": "0x772c86eef9e9c07a4b197f9a0581c4a4f2540a5fb94d3a8346ad46a2cf734174",
+      "blockNumber": 81536845,
+      "logIndex": 32,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x9d3c9E10bc978A9BFd6db7f43B746D02F4429E5b",
+        "stars": "4",
+        "timeMs": "50094",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x4ed2c8ddc11a1c59d256569b917014c136a582ffe6ce5f5c6354d9dd196bacc2:33",
+      "hash": "0x4ed2c8ddc11a1c59d256569b917014c136a582ffe6ce5f5c6354d9dd196bacc2",
+      "blockNumber": 81536845,
+      "logIndex": 33,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x7E19eD97EF03a5089839D94b12424862E3159283",
+        "stars": "6",
+        "timeMs": "17028",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x41fe9a6e01fee4e594b7768064464974c6ae730ea1012242d737acdafbc9b81e:34",
+      "hash": "0x41fe9a6e01fee4e594b7768064464974c6ae730ea1012242d737acdafbc9b81e",
+      "blockNumber": 81536845,
+      "logIndex": 34,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x2FcB0Ce5a5cb71aaF6C3bC73f50A529Cc5902D4A",
+        "stars": "3",
+        "timeMs": "20878",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x8466a081cef5df79fb59af74373796c906ef5ce17df8389794a8bc708cfb697b:35",
+      "hash": "0x8466a081cef5df79fb59af74373796c906ef5ce17df8389794a8bc708cfb697b",
+      "blockNumber": 81536845,
+      "logIndex": 35,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x0af13b8d1C3cb96FF3CD01b9f2ADbB9CdFC39fF8",
+        "stars": "5",
+        "timeMs": "32115",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x482980586ccee79f4860fce9df73db5e50593898dec1dc754026211ea18c842c:36",
+      "hash": "0x482980586ccee79f4860fce9df73db5e50593898dec1dc754026211ea18c842c",
+      "blockNumber": 81536845,
+      "logIndex": 36,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x7560d21585fD9B27C5249B1b12D82Df654AB271b",
+        "stars": "4",
+        "timeMs": "48032",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x90640d966ba0c9b90fc1ab7bfcae8caaa9ef60c9ce2ecb9fe8eaed21a64203ad:5",
+      "hash": "0x90640d966ba0c9b90fc1ab7bfcae8caaa9ef60c9ce2ecb9fe8eaed21a64203ad",
+      "blockNumber": 81536849,
+      "logIndex": 5,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x249B282E090598d8A38d462780465Fb0031DD1b1",
+        "stars": "5",
+        "timeMs": "32152",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xcf4a5b47a0154f42663dee5b3205da3e875a9ae9e4aeafe1b70f4df272f4dce4:6",
+      "hash": "0xcf4a5b47a0154f42663dee5b3205da3e875a9ae9e4aeafe1b70f4df272f4dce4",
+      "blockNumber": 81536849,
+      "logIndex": 6,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x8be7C1F3fca26a1e26348aff8768B4B158dE4bF0",
+        "stars": "6",
+        "timeMs": "34704",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x0b5e835ec7b43729fa6b23e1ddb4ab29535cae8e61059126bc90babddb0ce95e:7",
+      "hash": "0x0b5e835ec7b43729fa6b23e1ddb4ab29535cae8e61059126bc90babddb0ce95e",
+      "blockNumber": 81536849,
+      "logIndex": 7,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x7bf15c1a49D4160A33B80D31891b4f096514B826",
+        "stars": "5",
+        "timeMs": "47467",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x25af7e0ced0da3ae77a64f72ee366c2821766a16d9f544ab151293027dddb668:8",
+      "hash": "0x25af7e0ced0da3ae77a64f72ee366c2821766a16d9f544ab151293027dddb668",
+      "blockNumber": 81536849,
+      "logIndex": 8,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x8BbCaaF02D560EeEb0c202912735FAd45b9f128C",
+        "stars": "3",
+        "timeMs": "25687",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x38aaeb534d13684c0944073a6108c9325a03244706c2ec3b906cd153afcd9781:9",
+      "hash": "0x38aaeb534d13684c0944073a6108c9325a03244706c2ec3b906cd153afcd9781",
+      "blockNumber": 81536849,
+      "logIndex": 9,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x751fE4ce8F779C79CB5DBeb9225f117F54b37b30",
+        "stars": "4",
+        "timeMs": "24742",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xadc17dc268326acf4c4059b4b61f3e3bd7331f255f88c2f9a46afbaaae13ba6c:10",
+      "hash": "0xadc17dc268326acf4c4059b4b61f3e3bd7331f255f88c2f9a46afbaaae13ba6c",
+      "blockNumber": 81536849,
+      "logIndex": 10,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x61912b50b312c5019061833fa35FAF8d0d505548",
+        "stars": "6",
+        "timeMs": "34952",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x9239543e2966fc94116fb77b3941e0193b853cfd92a192e858766e2884727642:11",
+      "hash": "0x9239543e2966fc94116fb77b3941e0193b853cfd92a192e858766e2884727642",
+      "blockNumber": 81536849,
+      "logIndex": 11,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x7441e95076B1AE020e2A72ea0a9D47837200AadD",
+        "stars": "6",
+        "timeMs": "17390",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xd266cf4e65486f44960fc89543cbd9108e0bf2056325a7820f4b26bab9b0f948:12",
+      "hash": "0xd266cf4e65486f44960fc89543cbd9108e0bf2056325a7820f4b26bab9b0f948",
+      "blockNumber": 81536849,
+      "logIndex": 12,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xc4b33EcaeC6f5D3f44BdF31317e915EC87C91AB3",
+        "stars": "5",
+        "timeMs": "47225",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x4418e0c8224649e4eb3bdde9ee7dfed6d2053ad6e098154495fbd1be57cd3aee:13",
+      "hash": "0x4418e0c8224649e4eb3bdde9ee7dfed6d2053ad6e098154495fbd1be57cd3aee",
+      "blockNumber": 81536849,
+      "logIndex": 13,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xaa5f9C84C2e6919Cd345CB6b7e28D06415365Cde",
+        "stars": "5",
+        "timeMs": "24350",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x3edec45da687b5536ee45407a72886f8089c429f7dad97a1c59102c5ed179aaf:14",
+      "hash": "0x3edec45da687b5536ee45407a72886f8089c429f7dad97a1c59102c5ed179aaf",
+      "blockNumber": 81536849,
+      "logIndex": 14,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x1697410B07Be8592a61c6c4CDbC0B86E94Fc0fB3",
+        "stars": "5",
+        "timeMs": "22755",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x26c0b8428d5a03c3f92eb1c77ef303d563dd22e4f77b6b242dd4c71885dab0ff:15",
+      "hash": "0x26c0b8428d5a03c3f92eb1c77ef303d563dd22e4f77b6b242dd4c71885dab0ff",
+      "blockNumber": 81536849,
+      "logIndex": 15,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x74E6166A56d7E675b7f93b361F3F86bf32d56037",
+        "stars": "3",
+        "timeMs": "22625",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x0884e92d05675e6d87b26922f400a94a48597fa634c69530dbcfc5aeebade750:16",
+      "hash": "0x0884e92d05675e6d87b26922f400a94a48597fa634c69530dbcfc5aeebade750",
+      "blockNumber": 81536849,
+      "logIndex": 16,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xe4D4e968101af35d14F32A0669ff35c7622dCB4a",
+        "stars": "4",
+        "timeMs": "18263",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x64c1b8812de41a3c7f6c1408590a3bfd021c238aaac534adf6614f38537e1ee2:17",
+      "hash": "0x64c1b8812de41a3c7f6c1408590a3bfd021c238aaac534adf6614f38537e1ee2",
+      "blockNumber": 81536849,
+      "logIndex": 17,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x85c1e94876b15CE992E50e706353D152f4BD7C78",
+        "stars": "3",
+        "timeMs": "23136",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x45ca5b6d3df1f30d596e99d892566a01d40792989ee85a771f6b5afe3331eef8:18",
+      "hash": "0x45ca5b6d3df1f30d596e99d892566a01d40792989ee85a771f6b5afe3331eef8",
+      "blockNumber": 81536849,
+      "logIndex": 18,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x39CC95C3769b2331B67b67195Ef0F553126Ec2Ee",
+        "stars": "3",
+        "timeMs": "24118",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x737f307ebefbb5d8e15a3dab0979eefdab1f285c80ebcd9fdb507a25abb47581:19",
+      "hash": "0x737f307ebefbb5d8e15a3dab0979eefdab1f285c80ebcd9fdb507a25abb47581",
+      "blockNumber": 81536849,
+      "logIndex": 19,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x01aD1dF8ceC71ffE00C9Fd5249a78CCCc5DB5a58",
+        "stars": "6",
+        "timeMs": "27495",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x7d196f662c441b3f6b7ff4b9370b379fd2d4e908010b52423a33959fda9de301:20",
+      "hash": "0x7d196f662c441b3f6b7ff4b9370b379fd2d4e908010b52423a33959fda9de301",
+      "blockNumber": 81536849,
+      "logIndex": 20,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x5dE4ABB1fedFcbE30F8C12fdbb793Bd049a9aEbB",
+        "stars": "5",
+        "timeMs": "46421",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x5dd38450a41110370b3be2fd136a9f8575d8b5c492079b95518c286373aee46a:21",
+      "hash": "0x5dd38450a41110370b3be2fd136a9f8575d8b5c492079b95518c286373aee46a",
+      "blockNumber": 81536849,
+      "logIndex": 21,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xb1CD310C8aA4E3311FDd6765A9268DfC8aBd724B",
+        "stars": "5",
+        "timeMs": "28707",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x06539b605d927b2ce40946e975b7c105927a10c7e84d0c3bb0dd989df4ff6b45:22",
+      "hash": "0x06539b605d927b2ce40946e975b7c105927a10c7e84d0c3bb0dd989df4ff6b45",
+      "blockNumber": 81536849,
+      "logIndex": 22,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x25A561a8B7E23780a456b4C68faDCB61308b0aEd",
+        "stars": "4",
+        "timeMs": "35333",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1a01b43010e39e3ee6e894b9beb2e7d353307f1c3581cd4d33b2986c52fe5cfd:23",
+      "hash": "0x1a01b43010e39e3ee6e894b9beb2e7d353307f1c3581cd4d33b2986c52fe5cfd",
+      "blockNumber": 81536849,
+      "logIndex": 23,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xf7bd75e9Cb788585D288259084EaFC2946221771",
+        "stars": "3",
+        "timeMs": "46628",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x82325e33c32f4531a4fdafca356939e2d0d5cf12180acc87526414b1c8cd137c:24",
+      "hash": "0x82325e33c32f4531a4fdafca356939e2d0d5cf12180acc87526414b1c8cd137c",
+      "blockNumber": 81536849,
+      "logIndex": 24,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x02ae5F1fD04256c94Fa0eED16fD97d54ffb25054",
+        "stars": "6",
+        "timeMs": "24768",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x487b32e5f09578dceb61541257833c2217c42d4bf9ffa810c74b988a38fd65be:42",
+      "hash": "0x487b32e5f09578dceb61541257833c2217c42d4bf9ffa810c74b988a38fd65be",
+      "blockNumber": 81539253,
+      "logIndex": 42,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x48AF554844B0A6041E217946c85d97c65e19E381",
+        "stars": "6",
+        "timeMs": "18460",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x2ed2fa1a969e5a2a1c20f3c8331e0c4a8b0875272ae8bd17c89360cc8767370c:43",
+      "hash": "0x2ed2fa1a969e5a2a1c20f3c8331e0c4a8b0875272ae8bd17c89360cc8767370c",
+      "blockNumber": 81539253,
+      "logIndex": 43,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x0e19e1aC255D5ec2eb2019112180811610bF766d",
+        "stars": "5",
+        "timeMs": "52337",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x7297e7fa1b19c1551d1e0ae9f11c03451b4824745bebc8090dab5ba090d99cd7:44",
+      "hash": "0x7297e7fa1b19c1551d1e0ae9f11c03451b4824745bebc8090dab5ba090d99cd7",
+      "blockNumber": 81539253,
+      "logIndex": 44,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x9970a88AAeE781aE3500419aF8fdb72E8a51fc9f",
+        "stars": "5",
+        "timeMs": "28433",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xbe1f0d4fb5d37b2f5a420c9d3aa06ebfc0611ad7ef87c706fb49747c4a460889:45",
+      "hash": "0xbe1f0d4fb5d37b2f5a420c9d3aa06ebfc0611ad7ef87c706fb49747c4a460889",
+      "blockNumber": 81539253,
+      "logIndex": 45,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xb132efF709bf2874C1fEdeCb291234f91098aD97",
+        "stars": "4",
+        "timeMs": "39744",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x6e7726696fa4d6bbccf4edd36cebe822dee9d0753fdb6a937be6bd0292ce4340:46",
+      "hash": "0x6e7726696fa4d6bbccf4edd36cebe822dee9d0753fdb6a937be6bd0292ce4340",
+      "blockNumber": 81539253,
+      "logIndex": 46,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x39f47a5bEB69EeE89EF3B6F456B8235738cd85f4",
+        "stars": "4",
+        "timeMs": "26925",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xb07f094ff641f5772a62d610f6771add32ee42f47cea47d5c4345208e62e0b61:47",
+      "hash": "0xb07f094ff641f5772a62d610f6771add32ee42f47cea47d5c4345208e62e0b61",
+      "blockNumber": 81539253,
+      "logIndex": 47,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x0dA0E5dF45eecd90dbFf88Ae378fDd7649f0cBa0",
+        "stars": "5",
+        "timeMs": "24621",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x5673068ca94297b476321d298953eb6c18fba16b3c7ab11523275c55478364c3:48",
+      "hash": "0x5673068ca94297b476321d298953eb6c18fba16b3c7ab11523275c55478364c3",
+      "blockNumber": 81539253,
+      "logIndex": 48,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x99eFc8858C6e5eB69916dB1e41ad954fdfC0ca4F",
+        "stars": "4",
+        "timeMs": "20385",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x36c3b05a441b3010eff0eb722a2d7238e1f20da6f76bf5881bf18f9604a05db2:49",
+      "hash": "0x36c3b05a441b3010eff0eb722a2d7238e1f20da6f76bf5881bf18f9604a05db2",
+      "blockNumber": 81539253,
+      "logIndex": 49,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xBfAd81CD15f02d44afff61adEF35E9b5d0F1597E",
+        "stars": "4",
+        "timeMs": "37766",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe2e753174fb115d2cfe27ac92f73eb347ef2e73885112c331f7fbdb2660a78d3:50",
+      "hash": "0xe2e753174fb115d2cfe27ac92f73eb347ef2e73885112c331f7fbdb2660a78d3",
+      "blockNumber": 81539253,
+      "logIndex": 50,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x827501eF6467585c801C61f75b1f6B279d6b525f",
+        "stars": "5",
+        "timeMs": "22304",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x9b5befde53b897bdab6b3198262986dfc045d2bf020ed9a5d6831d2b18f7b06d:51",
+      "hash": "0x9b5befde53b897bdab6b3198262986dfc045d2bf020ed9a5d6831d2b18f7b06d",
+      "blockNumber": 81539253,
+      "logIndex": 51,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x15B1b3bF81A9fafA7f2156324dA8a0D0D974eF6A",
+        "stars": "5",
+        "timeMs": "27557",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x931d19ab46630fe75265a8d98df9d7fa10503bb271c603bfb3d735142f75701f:52",
+      "hash": "0x931d19ab46630fe75265a8d98df9d7fa10503bb271c603bfb3d735142f75701f",
+      "blockNumber": 81539253,
+      "logIndex": 52,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xeC7C2c3cfe39c466c0cD02ff862D1C45b1d0E1e3",
+        "stars": "4",
+        "timeMs": "24021",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x0650c8d50e6a2542c8df29bb68caa2b6b51bfb29acfc2e8b5d27406f32725749:53",
+      "hash": "0x0650c8d50e6a2542c8df29bb68caa2b6b51bfb29acfc2e8b5d27406f32725749",
+      "blockNumber": 81539253,
+      "logIndex": 53,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xefd3C36ddb93326451C9fB1346890c375Ce67aF7",
+        "stars": "6",
+        "timeMs": "53388",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x81c50a5b5f26663c055ba83c75705350b85b51fb978543682d67ef6e32191b2f:54",
+      "hash": "0x81c50a5b5f26663c055ba83c75705350b85b51fb978543682d67ef6e32191b2f",
+      "blockNumber": 81539253,
+      "logIndex": 54,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xA5091BD63a05EDA8a6238A7d90FF5FA9D78d6B55",
+        "stars": "4",
+        "timeMs": "19193",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x26fc6156da188b61c1c6b0e59440eee5065a0d6a819d7b8f2993b9c36fc19b30:55",
+      "hash": "0x26fc6156da188b61c1c6b0e59440eee5065a0d6a819d7b8f2993b9c36fc19b30",
+      "blockNumber": 81539253,
+      "logIndex": 55,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x32D5FDA5caCc4E766801D0E147d90267BAF7A3fF",
+        "stars": "4",
+        "timeMs": "18776",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe6fa01ed2cd277b5cb34e8079b20b0b31630008854690ab15f92ae08de91535c:56",
+      "hash": "0xe6fa01ed2cd277b5cb34e8079b20b0b31630008854690ab15f92ae08de91535c",
+      "blockNumber": 81539253,
+      "logIndex": 56,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x9d1d720B766067eD55B163C33aC0625bE0c8e1c4",
+        "stars": "4",
+        "timeMs": "33918",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x6e2c4a9fb94324a7e4829a09420a11e96113bfcbee52af3f13799e051f2e5d39:57",
+      "hash": "0x6e2c4a9fb94324a7e4829a09420a11e96113bfcbee52af3f13799e051f2e5d39",
+      "blockNumber": 81539253,
+      "logIndex": 57,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x21E8f04d21357B6A740293B4FA9bC9213572fe47",
+        "stars": "3",
+        "timeMs": "37794",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc23332be236d5b37209142898e87fcbd58503651f569e3c3066f5870c1ecb53c:58",
+      "hash": "0xc23332be236d5b37209142898e87fcbd58503651f569e3c3066f5870c1ecb53c",
+      "blockNumber": 81539253,
+      "logIndex": 58,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xF40592527DE7fD62DcC0Ed7D0C7964Cf99a830e7",
+        "stars": "6",
+        "timeMs": "23570",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xa46ea1f37f816d713ca8f28de771733f9a0f7e10620ebc3031219a8d43e4ef36:59",
+      "hash": "0xa46ea1f37f816d713ca8f28de771733f9a0f7e10620ebc3031219a8d43e4ef36",
+      "blockNumber": 81539253,
+      "logIndex": 59,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x6Ab815391Ea89860F2234ab0e74fa88EDC04B3F8",
+        "stars": "3",
+        "timeMs": "26933",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xf07152db60ab3f1d328da18dd894fc5f08fc39f3a30580d85662ae7cc5be613e:60",
+      "hash": "0xf07152db60ab3f1d328da18dd894fc5f08fc39f3a30580d85662ae7cc5be613e",
+      "blockNumber": 81539253,
+      "logIndex": 60,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x13479ad6b87EFDf97B6055AB790ba72AB3bdd6C7",
+        "stars": "5",
+        "timeMs": "22410",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x6e471cec6ee56df1d5d1d5a89e710a4eb2190ee8241d17d69b52f3e51ed0a99b:61",
+      "hash": "0x6e471cec6ee56df1d5d1d5a89e710a4eb2190ee8241d17d69b52f3e51ed0a99b",
+      "blockNumber": 81539253,
+      "logIndex": 61,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xA1D87edddFAB1Bc3be27C0e71695CC702E44d659",
+        "stars": "6",
+        "timeMs": "56761",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xa645c905021a44f1c70eaed3b6451e7035d013c29b345b35ba25af1827d5955e:100",
+      "hash": "0xa645c905021a44f1c70eaed3b6451e7035d013c29b345b35ba25af1827d5955e",
+      "blockNumber": 81539262,
+      "logIndex": 100,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xF01D4B78cF29bCc85aE7a6418F1456737f95B171",
+        "stars": "4",
+        "timeMs": "16733",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xf4430fc0b9aef291bacf2052cfe5593ccb4a3a89c235c26961478b6230307322:101",
+      "hash": "0xf4430fc0b9aef291bacf2052cfe5593ccb4a3a89c235c26961478b6230307322",
+      "blockNumber": 81539262,
+      "logIndex": 101,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x8ae05F20AB56B33dB4182Ee3D309eA634Bc1918e",
+        "stars": "5",
+        "timeMs": "27904",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xf323d92ba23f54d565a868f5a09f75de2b58c61957f2ce601187cf80415577c0:102",
+      "hash": "0xf323d92ba23f54d565a868f5a09f75de2b58c61957f2ce601187cf80415577c0",
+      "blockNumber": 81539262,
+      "logIndex": 102,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x3768E2e8442Bf4aC506Bd3C1D8a391D9aB1C91E9",
+        "stars": "6",
+        "timeMs": "58775",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x07c9e2641544d5463db29d363c0fc33c5903a0ee6ddbbed62217b5e05f6e2707:103",
+      "hash": "0x07c9e2641544d5463db29d363c0fc33c5903a0ee6ddbbed62217b5e05f6e2707",
+      "blockNumber": 81539262,
+      "logIndex": 103,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x029928b3C83b1398475dF9098277AE401d6c78E2",
+        "stars": "4",
+        "timeMs": "24845",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x669244a5c14c9301284eb60564d1c162004d3998b125d9cd39e776b169b8b032:104",
+      "hash": "0x669244a5c14c9301284eb60564d1c162004d3998b125d9cd39e776b169b8b032",
+      "blockNumber": 81539262,
+      "logIndex": 104,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xF9bbf980080c33725572FF75b86ec1Ef7bb1F0D9",
+        "stars": "4",
+        "timeMs": "59239",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x917526685167d74c772057e20bb275b260e2e40288baa92c9bf76be873a7a0ae:105",
+      "hash": "0x917526685167d74c772057e20bb275b260e2e40288baa92c9bf76be873a7a0ae",
+      "blockNumber": 81539262,
+      "logIndex": 105,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x5775F47B1ad1e7DC0aA9380D0067Ad67ed098E6D",
+        "stars": "3",
+        "timeMs": "56658",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc349d78a10e47ab7ea0804ec80e25684a00f8acc4211263a14698b3b6654dfd5:106",
+      "hash": "0xc349d78a10e47ab7ea0804ec80e25684a00f8acc4211263a14698b3b6654dfd5",
+      "blockNumber": 81539262,
+      "logIndex": 106,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x9EBe362d060b61D6f728e820859EAA71EcB72C7C",
+        "stars": "5",
+        "timeMs": "44728",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x7215a6081d39ccbee752a695de6912894ea029dfb21926cd2df6ec2aadd5efa5:107",
+      "hash": "0x7215a6081d39ccbee752a695de6912894ea029dfb21926cd2df6ec2aadd5efa5",
+      "blockNumber": 81539262,
+      "logIndex": 107,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xF406Ce8cC922076536e127E5b1891553D3f5597E",
+        "stars": "5",
+        "timeMs": "19454",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xa1e43f4e22dd9ff8c8c61533dc301f2223f1befed78969657285a5dfde4155f8:108",
+      "hash": "0xa1e43f4e22dd9ff8c8c61533dc301f2223f1befed78969657285a5dfde4155f8",
+      "blockNumber": 81539262,
+      "logIndex": 108,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x330F090daf38B6c050F73Dc8Ed3Fb5ceE991CD8E",
+        "stars": "3",
+        "timeMs": "59014",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x4ee48f7939404c8c4dfd7983ee41d97963a35560d0eab3cc25095b897243d704:109",
+      "hash": "0x4ee48f7939404c8c4dfd7983ee41d97963a35560d0eab3cc25095b897243d704",
+      "blockNumber": 81539262,
+      "logIndex": 109,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x5A2c571E1aF72Be2d1d98Cf30b64c110a94AA0fd",
+        "stars": "5",
+        "timeMs": "53621",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xeda523b154441fbc4212efd332f201016b1df81aba2394ab85df1f489dfef007:110",
+      "hash": "0xeda523b154441fbc4212efd332f201016b1df81aba2394ab85df1f489dfef007",
+      "blockNumber": 81539262,
+      "logIndex": 110,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x6eD9454729C0F73A6FC4eBCEDf580B8Dd33520E1",
+        "stars": "4",
+        "timeMs": "27183",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x63ceccb23cb49c28aebe083497200fc0067249d8614368f5a2c9a653223d77a1:111",
+      "hash": "0x63ceccb23cb49c28aebe083497200fc0067249d8614368f5a2c9a653223d77a1",
+      "blockNumber": 81539262,
+      "logIndex": 111,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xC53E79111810365df3676e2f3a0353b3ABDCaf2c",
+        "stars": "4",
+        "timeMs": "25659",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xb6c2a0684db93afa337e59e8e2a48d66ccb71be38c6ab52229a196d1bbf0a0c1:112",
+      "hash": "0xb6c2a0684db93afa337e59e8e2a48d66ccb71be38c6ab52229a196d1bbf0a0c1",
+      "blockNumber": 81539262,
+      "logIndex": 112,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xc362cCaA16034eF0B2D7D7df85425722F955A5A9",
+        "stars": "3",
+        "timeMs": "15237",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x4801274141edcc4fa8d8cc1903ebcfefe9d2697ff5766937dd1abad6accfb43b:113",
+      "hash": "0x4801274141edcc4fa8d8cc1903ebcfefe9d2697ff5766937dd1abad6accfb43b",
+      "blockNumber": 81539262,
+      "logIndex": 113,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xAdb995f87Ccdb49258A4e06096F3b8E78255580f",
+        "stars": "6",
+        "timeMs": "33919",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x18de955d6ffa157f5cdea8902b008899930f78075a49d00e7b29e0e0a280a7ee:114",
+      "hash": "0x18de955d6ffa157f5cdea8902b008899930f78075a49d00e7b29e0e0a280a7ee",
+      "blockNumber": 81539262,
+      "logIndex": 114,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x49851bC83645Cb8cDFBB1101ECcD6C7A76459379",
+        "stars": "5",
+        "timeMs": "29306",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x614566edadc20ab05c5af486deb318041224c6ff53a01cc493add093917a9c4c:115",
+      "hash": "0x614566edadc20ab05c5af486deb318041224c6ff53a01cc493add093917a9c4c",
+      "blockNumber": 81539262,
+      "logIndex": 115,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xC7859b0DBf174bdd351aDb0c51F2Da7287bffa25",
+        "stars": "3",
+        "timeMs": "57554",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe98e0a270bff4364bcd819aa405b215060e1676eb166796003240f52031094e3:116",
+      "hash": "0xe98e0a270bff4364bcd819aa405b215060e1676eb166796003240f52031094e3",
+      "blockNumber": 81539262,
+      "logIndex": 116,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x73ABCA9A36aef0b7840d0B2C864120a14e681D4D",
+        "stars": "4",
+        "timeMs": "21669",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x3b8f03aed4449c79c752879de8e6122c84ea43331434095633101bb3345b14c1:117",
+      "hash": "0x3b8f03aed4449c79c752879de8e6122c84ea43331434095633101bb3345b14c1",
+      "blockNumber": 81539262,
+      "logIndex": 117,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x140d9e769024E882913B2365183271B19Cc7ed7f",
+        "stars": "5",
+        "timeMs": "45901",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x9bd668393651098c177e58dc27ccb657ebda4b517e877b5ce7ccfd93317c8968:118",
+      "hash": "0x9bd668393651098c177e58dc27ccb657ebda4b517e877b5ce7ccfd93317c8968",
+      "blockNumber": 81539262,
+      "logIndex": 118,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x6871e60217f149b2A92830f5f7439baC44B191cD",
+        "stars": "3",
+        "timeMs": "21964",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x1f04a8eb64807a7e056cb697ace160a6bdfd847a3ab1f3b4f8099d9e9574c82d:119",
+      "hash": "0x1f04a8eb64807a7e056cb697ace160a6bdfd847a3ab1f3b4f8099d9e9574c82d",
+      "blockNumber": 81539262,
+      "logIndex": 119,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xCAc64767a8c7435Ac9C46B06bC7d28d8212897aa",
+        "stars": "4",
+        "timeMs": "49595",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xdaf896bb724c7c4cfa2de2f57738237c06a9ad87ee4fbad3db2f8d708d49b85e:84",
+      "hash": "0xdaf896bb724c7c4cfa2de2f57738237c06a9ad87ee4fbad3db2f8d708d49b85e",
+      "blockNumber": 81539274,
+      "logIndex": 84,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x30BE72FD750DeEB69Df7892ed9CdE462C1d3291B",
+        "stars": "6",
+        "timeMs": "24025",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x5ad1c1183327363e84c9a5f518861408ffd933b3643c3fe9d568642b51ca9103:85",
+      "hash": "0x5ad1c1183327363e84c9a5f518861408ffd933b3643c3fe9d568642b51ca9103",
+      "blockNumber": 81539274,
+      "logIndex": 85,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x50A58b94D71451067B008f3940F42c29F813Cbe0",
+        "stars": "6",
+        "timeMs": "37334",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xfc7be6a7bd01e932ffc9b0c8a08b85838f796a8fadfcca50bcdff9d1bc397231:86",
+      "hash": "0xfc7be6a7bd01e932ffc9b0c8a08b85838f796a8fadfcca50bcdff9d1bc397231",
+      "blockNumber": 81539274,
+      "logIndex": 86,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xB111F323324810f1E94B1aF6BA8DD9D733C310C9",
+        "stars": "3",
+        "timeMs": "53734",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xcc361389c6e1bd3aca83045d90b8b525a8a8bd97b443a238bfd4aa15d7d41ebb:87",
+      "hash": "0xcc361389c6e1bd3aca83045d90b8b525a8a8bd97b443a238bfd4aa15d7d41ebb",
+      "blockNumber": 81539274,
+      "logIndex": 87,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x87e373299DeFe6E49D9713A1E2a9821EAA998C23",
+        "stars": "3",
+        "timeMs": "38128",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xa343e221f62489a571a43106f3c4cd389eca3f7b79e080afcdb67b94ff3b8543:88",
+      "hash": "0xa343e221f62489a571a43106f3c4cd389eca3f7b79e080afcdb67b94ff3b8543",
+      "blockNumber": 81539274,
+      "logIndex": 88,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xB3442695b965853d5a5718F816317863e510Db35",
+        "stars": "6",
+        "timeMs": "50620",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xea1655c95bfe786d073b0af9033dc7304b7ae3160fa549cdb3835bf0f1f4b3d0:89",
+      "hash": "0xea1655c95bfe786d073b0af9033dc7304b7ae3160fa549cdb3835bf0f1f4b3d0",
+      "blockNumber": 81539274,
+      "logIndex": 89,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x4864dA39b5f1B3399DD4Bd3C0841F0a585405188",
+        "stars": "6",
+        "timeMs": "57060",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x36f6740e811ef0a5b0ca8bb1298c5d342631c92df0fd1adb7ac3d7a38df2076a:90",
+      "hash": "0x36f6740e811ef0a5b0ca8bb1298c5d342631c92df0fd1adb7ac3d7a38df2076a",
+      "blockNumber": 81539274,
+      "logIndex": 90,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x7eB62448D0912579AbC40552184F9d21955ae684",
+        "stars": "4",
+        "timeMs": "20030",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xf9f8aef171dc8dea655eb7ebb2cf293192ca22249b9513c5bc2a6b6f59298c46:91",
+      "hash": "0xf9f8aef171dc8dea655eb7ebb2cf293192ca22249b9513c5bc2a6b6f59298c46",
+      "blockNumber": 81539274,
+      "logIndex": 91,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x810572e925e7B2CB62AC25cE75488B7bCd9Ad3EA",
+        "stars": "6",
+        "timeMs": "26787",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x56e9dd755fb123553af09b7aa80082dc326706af92ed80f828fb92c7e06f7f8e:92",
+      "hash": "0x56e9dd755fb123553af09b7aa80082dc326706af92ed80f828fb92c7e06f7f8e",
+      "blockNumber": 81539274,
+      "logIndex": 92,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xA735d79a5ba599b953b55423ECe04f30a4B28b45",
+        "stars": "5",
+        "timeMs": "18059",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x2b48d020dd042d7722edc627591004c6fd6978d171233e0325afba066797910e:93",
+      "hash": "0x2b48d020dd042d7722edc627591004c6fd6978d171233e0325afba066797910e",
+      "blockNumber": 81539274,
+      "logIndex": 93,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xB64F0cf01D7890666CCA9CB6AbcB5c48836377DB",
+        "stars": "5",
+        "timeMs": "26366",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x32534ac590088a793042faf058e81d699c7b2f4ba0aa6e9aa59acd92930fa8ee:94",
+      "hash": "0x32534ac590088a793042faf058e81d699c7b2f4ba0aa6e9aa59acd92930fa8ee",
+      "blockNumber": 81539274,
+      "logIndex": 94,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x96f91d16Ca69d5092C62Bf15FF3a240e3890B058",
+        "stars": "3",
+        "timeMs": "27290",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x25a1c004ce9927b0cede5b35ce19eb4ddcd744f805981d45daf59883d215576d:95",
+      "hash": "0x25a1c004ce9927b0cede5b35ce19eb4ddcd744f805981d45daf59883d215576d",
+      "blockNumber": 81539274,
+      "logIndex": 95,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xBc0Ca821e87884d3Bb5912e0A3340706150E4084",
+        "stars": "4",
+        "timeMs": "53630",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x6a73a525d0ae73c9b6749917ddd78ef17d4d8a94ab30a0016d186622916739b4:96",
+      "hash": "0x6a73a525d0ae73c9b6749917ddd78ef17d4d8a94ab30a0016d186622916739b4",
+      "blockNumber": 81539274,
+      "logIndex": 96,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xd70D3E06218968bcd0DEe92441112b8F25A67A18",
+        "stars": "6",
+        "timeMs": "32138",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc74aad8160443d9dcdb365c19d0bde2e34897ea519d8b3f3dc322c11042a95e5:97",
+      "hash": "0xc74aad8160443d9dcdb365c19d0bde2e34897ea519d8b3f3dc322c11042a95e5",
+      "blockNumber": 81539274,
+      "logIndex": 97,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xc7D6c71499951Cc3E8CAE699D2c6A6EDB43EDD45",
+        "stars": "6",
+        "timeMs": "52011",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x411b9d7a25e3d9a39c13cba9e0ed9eb3d2c4539d8a6bead317a3d637996ad5bd:98",
+      "hash": "0x411b9d7a25e3d9a39c13cba9e0ed9eb3d2c4539d8a6bead317a3d637996ad5bd",
+      "blockNumber": 81539274,
+      "logIndex": 98,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x75D011745E2e2e41740B3201d89dd46aE9630aA9",
+        "stars": "3",
+        "timeMs": "25905",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xc8cd470af500d9973fcbac858d66d8c0e031190441f5164ab7c573c3a636c111:99",
+      "hash": "0xc8cd470af500d9973fcbac858d66d8c0e031190441f5164ab7c573c3a636c111",
+      "blockNumber": 81539274,
+      "logIndex": 99,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x3B03cBF3b889fC7e17EC70Cd203cEf28B5dc847d",
+        "stars": "6",
+        "timeMs": "25862",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xd5a5ff5ad365926d1bdf777c0c87ed328eb4de33b6dff591e6333521a1243748:100",
+      "hash": "0xd5a5ff5ad365926d1bdf777c0c87ed328eb4de33b6dff591e6333521a1243748",
+      "blockNumber": 81539274,
+      "logIndex": 100,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x6D2ba8c8e488e23eBf5EB9D80595974100CC04AA",
+        "stars": "3",
+        "timeMs": "23353",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xd8db9dca560ad6d31ea15d4195d82d105e6893dba65ea65d0fb2242ed071b64b:101",
+      "hash": "0xd8db9dca560ad6d31ea15d4195d82d105e6893dba65ea65d0fb2242ed071b64b",
+      "blockNumber": 81539274,
+      "logIndex": 101,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x2B6f4725C643eFe8e1E4F9C474847Cea3A986256",
+        "stars": "5",
+        "timeMs": "21696",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xab8f3f3122ceb1812991dff77fc62ec4a8cf77caf6ef242e86c4c16b7ac55ce3:102",
+      "hash": "0xab8f3f3122ceb1812991dff77fc62ec4a8cf77caf6ef242e86c4c16b7ac55ce3",
+      "blockNumber": 81539274,
+      "logIndex": 102,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x1DC53C553538CDe866a148F66f2E6d1e25464C7D",
+        "stars": "5",
+        "timeMs": "45417",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x89d78656ff22c967469ec57eda46af8ccffd419b7b5fe36b9b039c90d499f724:103",
+      "hash": "0x89d78656ff22c967469ec57eda46af8ccffd419b7b5fe36b9b039c90d499f724",
+      "blockNumber": 81539274,
+      "logIndex": 103,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x759A0528D8F66F3a46b4C429bAd313513DA4587a",
+        "stars": "6",
+        "timeMs": "24723",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x82a7688a3dee3e0c472da847d46413e75f9e6aa6d12ff0dc6fdc16141183461c:31",
+      "hash": "0x82a7688a3dee3e0c472da847d46413e75f9e6aa6d12ff0dc6fdc16141183461c",
+      "blockNumber": 81539283,
+      "logIndex": 31,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x330F336c07D63388f30D43D33356f5F3000951D9",
+        "stars": "5",
+        "timeMs": "16825",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x91de0c99e239b1dfc04cee6e8d892f9b35d12f9812b73f37a3dd4e3bc2208eb2:32",
+      "hash": "0x91de0c99e239b1dfc04cee6e8d892f9b35d12f9812b73f37a3dd4e3bc2208eb2",
+      "blockNumber": 81539283,
+      "logIndex": 32,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x1E7ee0aeF1D6f00fB343ab5E69a2085aD837ED59",
+        "stars": "4",
+        "timeMs": "29687",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xd24101efe49222c54cb86d25f51329fbb741f4d91d11cad2a5fff6cffb718307:33",
+      "hash": "0xd24101efe49222c54cb86d25f51329fbb741f4d91d11cad2a5fff6cffb718307",
+      "blockNumber": 81539283,
+      "logIndex": 33,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x48cD01b461d1a41428b98415237EEDb3e2d5FE93",
+        "stars": "6",
+        "timeMs": "43832",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x549277cbf372ad203112c9a724c1831eb564d80d0b1e69cb2aad3f221d216115:34",
+      "hash": "0x549277cbf372ad203112c9a724c1831eb564d80d0b1e69cb2aad3f221d216115",
+      "blockNumber": 81539283,
+      "logIndex": 34,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xE20A2efFA2dA39741baf0748f345c9a627dB951B",
+        "stars": "4",
+        "timeMs": "44217",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x7e18049e6ff57117672f2fe99461475296bd3f700e5c3f21c848c7308bb2b080:35",
+      "hash": "0x7e18049e6ff57117672f2fe99461475296bd3f700e5c3f21c848c7308bb2b080",
+      "blockNumber": 81539283,
+      "logIndex": 35,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x62721a16E51BF66415A936b2929eD9412cCF292a",
+        "stars": "6",
+        "timeMs": "29810",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x3e5771e9bf77c027b80cfacaba435694d50da84a1728ccd5bb96c54938d4517a:36",
+      "hash": "0x3e5771e9bf77c027b80cfacaba435694d50da84a1728ccd5bb96c54938d4517a",
+      "blockNumber": 81539283,
+      "logIndex": 36,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x82C4D703aB883433fEc0F359e85D42D6214b294f",
+        "stars": "5",
+        "timeMs": "28934",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x859a8e42e7f91d2d7f0e91f34dab314cdc19a90bf64799fbdca79b66fac26ec9:37",
+      "hash": "0x859a8e42e7f91d2d7f0e91f34dab314cdc19a90bf64799fbdca79b66fac26ec9",
+      "blockNumber": 81539283,
+      "logIndex": 37,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x5da3c52a3E2812086fAe250d959E610FD0B49eCC",
+        "stars": "4",
+        "timeMs": "29486",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xa2befdabc42bd09ad2ef07e1656c98eebdcf27fd21dfdd40c5e32513f171f8a7:38",
+      "hash": "0xa2befdabc42bd09ad2ef07e1656c98eebdcf27fd21dfdd40c5e32513f171f8a7",
+      "blockNumber": 81539283,
+      "logIndex": 38,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x1E9e15B227e5aF0C971CD4b2b469934760Ae1C2A",
+        "stars": "6",
+        "timeMs": "40967",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x8d1ff1df7dd35800cd8c2dbd53f60e8e7fd5c779bc00c0f1fbe883a96edfa06e:39",
+      "hash": "0x8d1ff1df7dd35800cd8c2dbd53f60e8e7fd5c779bc00c0f1fbe883a96edfa06e",
+      "blockNumber": 81539283,
+      "logIndex": 39,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x1257b2918C02C421b1aD2945d25f761157D2ad3A",
+        "stars": "6",
+        "timeMs": "15569",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x2c25730440e23f9a90c2fb56d1ffc5d2042c73de03451f22d070dee657607c91:40",
+      "hash": "0x2c25730440e23f9a90c2fb56d1ffc5d2042c73de03451f22d070dee657607c91",
+      "blockNumber": 81539283,
+      "logIndex": 40,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x06A4Fd546A17aF09bA17267E70D24dd5Ce456282",
+        "stars": "3",
+        "timeMs": "41968",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xd399ba24a498f116af621b87facde6fcd41b331f9b44814b7de204653b5a4481:41",
+      "hash": "0xd399ba24a498f116af621b87facde6fcd41b331f9b44814b7de204653b5a4481",
+      "blockNumber": 81539283,
+      "logIndex": 41,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x308BcaF56D0Ab4982f2e8A7e2343a88d6e204A62",
+        "stars": "5",
+        "timeMs": "18084",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe01225cbd6c6ea39da29dc23d4dd23d14b53f9a66df101227ca907fa6510468d:42",
+      "hash": "0xe01225cbd6c6ea39da29dc23d4dd23d14b53f9a66df101227ca907fa6510468d",
+      "blockNumber": 81539283,
+      "logIndex": 42,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xAf2BF5220B8951dbf875fBf4b181ec2EEBa7a880",
+        "stars": "4",
+        "timeMs": "19083",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xa4c7f06f6f35149620a742e6f78d10acbcf7ddba68c5ed6b84cd141a423675ae:43",
+      "hash": "0xa4c7f06f6f35149620a742e6f78d10acbcf7ddba68c5ed6b84cd141a423675ae",
+      "blockNumber": 81539283,
+      "logIndex": 43,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x42b4a3b30062f2a0d6bE4aBd994142E82080Fd2a",
+        "stars": "5",
+        "timeMs": "21947",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe28bcceecef4c9dba47962398ed6353b5a7fa2f3be7041d805ed75adc668b877:44",
+      "hash": "0xe28bcceecef4c9dba47962398ed6353b5a7fa2f3be7041d805ed75adc668b877",
+      "blockNumber": 81539283,
+      "logIndex": 44,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x0F70cf98A0d8e63FE7eb9A1397Fa10AD3af8A3f5",
+        "stars": "5",
+        "timeMs": "48386",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x4fd9a1ee2432b4acb44caf8ba134885384a680be80eb098d5c46899bed2cc75f:45",
+      "hash": "0x4fd9a1ee2432b4acb44caf8ba134885384a680be80eb098d5c46899bed2cc75f",
+      "blockNumber": 81539283,
+      "logIndex": 45,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xBf8631bB99F182EEbb8b5236257abeaAb6C8c428",
+        "stars": "3",
+        "timeMs": "46960",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x2be3e379e48fca6570ac975b3514f2c1a04a9ddfd0c003142f43bbffdda38d8b:46",
+      "hash": "0x2be3e379e48fca6570ac975b3514f2c1a04a9ddfd0c003142f43bbffdda38d8b",
+      "blockNumber": 81539283,
+      "logIndex": 46,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xC2C75b9E8F4715a766d3E94866a8280fA834037C",
+        "stars": "4",
+        "timeMs": "27913",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x71e3911e7a45d1bee197fe959f08f4c2608c4cf2d8d5a79837952edc653f287c:47",
+      "hash": "0x71e3911e7a45d1bee197fe959f08f4c2608c4cf2d8d5a79837952edc653f287c",
+      "blockNumber": 81539283,
+      "logIndex": 47,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x73Ab65a03a926076663d1F208265ec8c2DBcdE63",
+        "stars": "3",
+        "timeMs": "20221",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x11f5af62f23ed98d188ad0e840d4d7a937b6608dcd7f8f9afc199c13057deaf6:48",
+      "hash": "0x11f5af62f23ed98d188ad0e840d4d7a937b6608dcd7f8f9afc199c13057deaf6",
+      "blockNumber": 81539283,
+      "logIndex": 48,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x0389d80e564EDCC9072790dD7c3cdDe9b40F5947",
+        "stars": "6",
+        "timeMs": "53264",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x02d5bd4dc2801577c98821e4c426d2fefc71b0f2c3e24fc6e58cf8b418835343:49",
+      "hash": "0x02d5bd4dc2801577c98821e4c426d2fefc71b0f2c3e24fc6e58cf8b418835343",
+      "blockNumber": 81539283,
+      "logIndex": 49,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xC089972f522300cca8cAB9B33beACDb093A9Df23",
+        "stars": "6",
+        "timeMs": "16556",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x5c3f7608ba487fcb83fcf2e0c27fc0e83aba011b824f172fbf113c6ba6937412:50",
+      "hash": "0x5c3f7608ba487fcb83fcf2e0c27fc0e83aba011b824f172fbf113c6ba6937412",
+      "blockNumber": 81539283,
+      "logIndex": 50,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x0E8a2646C86aa027FF1261Cb814d39Ab2b61e796",
+        "stars": "6",
+        "timeMs": "50542",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xd3fb77f21950e801fd99a5cf318fa2b1f958c6cae88e8ec6ac03d1db32b8b4d3:1",
+      "hash": "0xd3fb77f21950e801fd99a5cf318fa2b1f958c6cae88e8ec6ac03d1db32b8b4d3",
+      "blockNumber": 81539515,
+      "logIndex": 1,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xA5b3113e5719F80df0aad9F0Bba4E8A8AFF9CD49",
+        "stars": "6",
+        "timeMs": "13911",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x9beb5b049e069db34c683ba7377e340ab8785b15819411e0d689a4efc6322f15:69",
+      "hash": "0x9beb5b049e069db34c683ba7377e340ab8785b15819411e0d689a4efc6322f15",
+      "blockNumber": 81539619,
+      "logIndex": 69,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xA5b3113e5719F80df0aad9F0Bba4E8A8AFF9CD49",
+        "stars": "6",
+        "timeMs": "20678",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xd42835a957f61c4aa865ad7c88dcb2aaf3b1318af4fcd2b073ccdf06a23bb66e:34",
+      "hash": "0xd42835a957f61c4aa865ad7c88dcb2aaf3b1318af4fcd2b073ccdf06a23bb66e",
+      "blockNumber": 81541869,
+      "logIndex": 34,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x85eaa7d15b75A5694cBD99d85caEcC45F8C159bF",
+        "stars": "5",
+        "timeMs": "25204",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x870c891f160d3c61bf15ff73a16de391a547feb95d1b2e0f82509f342537cc31:35",
+      "hash": "0x870c891f160d3c61bf15ff73a16de391a547feb95d1b2e0f82509f342537cc31",
+      "blockNumber": 81541869,
+      "logIndex": 35,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x74bb87c764F816E9fCad6Fd9D846264974Ce48c3",
+        "stars": "4",
+        "timeMs": "20355",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x459c9b499d0e804a35910e7c3bf33767c5a20c51791b5f7b5fbef07ade543921:36",
+      "hash": "0x459c9b499d0e804a35910e7c3bf33767c5a20c51791b5f7b5fbef07ade543921",
+      "blockNumber": 81541869,
+      "logIndex": 36,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x3c74d60c4bDe2f2f916E11c9715d79307b38857A",
+        "stars": "6",
+        "timeMs": "21587",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x7b03945051e02ff2e38fd19e9094c824677e612b34daf59ea63886152af0a56d:37",
+      "hash": "0x7b03945051e02ff2e38fd19e9094c824677e612b34daf59ea63886152af0a56d",
+      "blockNumber": 81541869,
+      "logIndex": 37,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xd0d94B73b51493693A372eE15318C88492FCF96e",
+        "stars": "4",
+        "timeMs": "45938",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x0bb3101006a0a593b573e428c8fc83ce09e33102da345465bdad68455618e471:38",
+      "hash": "0x0bb3101006a0a593b573e428c8fc83ce09e33102da345465bdad68455618e471",
+      "blockNumber": 81541869,
+      "logIndex": 38,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xe4f489416197aBaf6639f615aD819e55f405CCd1",
+        "stars": "5",
+        "timeMs": "59778",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x310e0c86feb32ad15669f547db611f8fcd30d7ee0c15c915d5ddb451df67378d:39",
+      "hash": "0x310e0c86feb32ad15669f547db611f8fcd30d7ee0c15c915d5ddb451df67378d",
+      "blockNumber": 81541869,
+      "logIndex": 39,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x025A03C554a8BBe933965fD27955Bc62a4e8ECE4",
+        "stars": "4",
+        "timeMs": "47450",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xb0b5b55deb9a1b40a88b7de070c2131e74a5f72667098c15b2d6c33ac08a9b97:40",
+      "hash": "0xb0b5b55deb9a1b40a88b7de070c2131e74a5f72667098c15b2d6c33ac08a9b97",
+      "blockNumber": 81541869,
+      "logIndex": 40,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xD3ECc2D4AD03bA8E2b01a057215CE55ef42c7883",
+        "stars": "5",
+        "timeMs": "51440",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x73227a7a5777776fc433f61534980b3e596f7c1a9311843a02640cba02beab1f:41",
+      "hash": "0x73227a7a5777776fc433f61534980b3e596f7c1a9311843a02640cba02beab1f",
+      "blockNumber": 81541869,
+      "logIndex": 41,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x84d092c7B09f558303515Ca0A4541759077B371b",
+        "stars": "6",
+        "timeMs": "58698",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x679ae3eddb82e1880660dffcd7b0eb4c9d03855f0b01afb6ddc1d5b8b343364f:42",
+      "hash": "0x679ae3eddb82e1880660dffcd7b0eb4c9d03855f0b01afb6ddc1d5b8b343364f",
+      "blockNumber": 81541869,
+      "logIndex": 42,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xD56B1ED54D62898c02Ee7D8073b072Fa3a176c4D",
+        "stars": "3",
+        "timeMs": "49456",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe20a3a096d4a0fecf7d67d1af8be3f0a2afb60824a0436e1856974cfbb0780aa:43",
+      "hash": "0xe20a3a096d4a0fecf7d67d1af8be3f0a2afb60824a0436e1856974cfbb0780aa",
+      "blockNumber": 81541869,
+      "logIndex": 43,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x7BEdBA377d54a94c0f3Ff9c0203eACD1D9B76ec9",
+        "stars": "3",
+        "timeMs": "34717",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xd8d7e9ce3778bf1e1a4000cde6c59ca2ff01b58ed341cc671225dc7ead9aaef4:44",
+      "hash": "0xd8d7e9ce3778bf1e1a4000cde6c59ca2ff01b58ed341cc671225dc7ead9aaef4",
+      "blockNumber": 81541869,
+      "logIndex": 44,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x10d965F3b3C2A3cbCb4fDb8b0cd51f8fa5F23A7d",
+        "stars": "6",
+        "timeMs": "34601",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x4ee3290ac414fc4c61883ff5a90d374358197c50a80cbed0c7cc77b478460901:45",
+      "hash": "0x4ee3290ac414fc4c61883ff5a90d374358197c50a80cbed0c7cc77b478460901",
+      "blockNumber": 81541869,
+      "logIndex": 45,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xe0f7Caa11b36aDA79550Bb9476F0DD5AB3D38b68",
+        "stars": "4",
+        "timeMs": "33487",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x935c83c1808b07c805cf0788bfaf453da4feb57fd78349efc3195e51978e81c2:46",
+      "hash": "0x935c83c1808b07c805cf0788bfaf453da4feb57fd78349efc3195e51978e81c2",
+      "blockNumber": 81541869,
+      "logIndex": 46,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xd042C5FBEb5BD9aAbBDbc0f9DD14042B86aDc730",
+        "stars": "4",
+        "timeMs": "34244",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x11c9ea33b3f10b732210f942bf95062c5a187b6d24c24db87fae3b0bb6c62ea7:47",
+      "hash": "0x11c9ea33b3f10b732210f942bf95062c5a187b6d24c24db87fae3b0bb6c62ea7",
+      "blockNumber": 81541869,
+      "logIndex": 47,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x6e452542bA1865B86d721B2D45f0799D503Afe5f",
+        "stars": "3",
+        "timeMs": "33500",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x6849916cebed090ada258407319d08ea2ca93cba55f13931bd2c9a0acd7f485f:48",
+      "hash": "0x6849916cebed090ada258407319d08ea2ca93cba55f13931bd2c9a0acd7f485f",
+      "blockNumber": 81541869,
+      "logIndex": 48,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0x1567Cc1c73A9263ef2efd4D80bBe13Da5f958324",
+        "stars": "6",
+        "timeMs": "51122",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x742076560852eb33fdb94048702f473066bf4f85ff22d086f17abe496a80bba3:49",
+      "hash": "0x742076560852eb33fdb94048702f473066bf4f85ff22d086f17abe496a80bba3",
+      "blockNumber": 81541869,
+      "logIndex": 49,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0x52be0048f0bEbf91C895fc50DfC8e52eeB367797",
+        "stars": "3",
+        "timeMs": "29408",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x0551024f644f07a6de215b1a683c99781e90c906ee7327c333640b7258f1c6ff:50",
+      "hash": "0x0551024f644f07a6de215b1a683c99781e90c906ee7327c333640b7258f1c6ff",
+      "blockNumber": 81541869,
+      "logIndex": 50,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xAEd51ad09c53fDA2df21a7220EC15c261a58CfAE",
+        "stars": "4",
+        "timeMs": "26834",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x2936fa909909781e3cbd8181eaa5770acf0572ecd1a9980000e792ce4d01a22c:51",
+      "hash": "0x2936fa909909781e3cbd8181eaa5770acf0572ecd1a9980000e792ce4d01a22c",
+      "blockNumber": 81541869,
+      "logIndex": 51,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "2",
+        "player": "0xC8D75e84C7B0Cc9E076237dAb2Cd80296e9316c8",
+        "stars": "4",
+        "timeMs": "40154",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x3ab0d5bd9e1c29a75d4bf9a4d52074fed27b81a155d14979bd20326304c33d45:52",
+      "hash": "0x3ab0d5bd9e1c29a75d4bf9a4d52074fed27b81a155d14979bd20326304c33d45",
+      "blockNumber": 81541869,
+      "logIndex": 52,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0xa689AeDC27defAcED56C9A45C3E2bbe299D76cCF",
+        "stars": "5",
+        "timeMs": "36341",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x05649028f321937eb6a4513897f6667a908c1711aa1c5be1db554c988fd70d17:53",
+      "hash": "0x05649028f321937eb6a4513897f6667a908c1711aa1c5be1db554c988fd70d17",
+      "blockNumber": 81541869,
+      "logIndex": 53,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x82BceAf1B9B04a528027b425B139d0dDF0A4B4dD",
+        "stars": "6",
+        "timeMs": "34940",
+        "ownerShare": "900000000000000"
+      }
     }
   ],
   "source": "Monad testnet eth_getLogs; 100-block ranges; read-only",
-  "at": "2026-11-21T08:36:02.205858+00:00"
+  "at": "2026-11-21T09:34:16.280142+00:00"
 }

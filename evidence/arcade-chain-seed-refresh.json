@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-21T09:34:16.286320+00:00",
+  "scope": "Read-only official RPC incremental event and robot-address seed refresh; no transactions",
+  "fromBlock": 81531393,
+  "throughBlock": 81542385,
+  "eventsBefore": 348,
+  "eventsAfter": 651,
+  "runEvents": 648,
+  "onChainRuns": 648,
+  "robotAddresses": 400,
+  "ownerAddresses": [
+    "0xb561475586d95612121d3806A86d930d1a3d414a",
+    "0xb561475586d95612121d3806A86d930d1a3d414a",
+    "0xb561475586d95612121d3806A86d930d1a3d414a"
+  ],
+  "ownerWagesWei": "583200000000000000"
+}

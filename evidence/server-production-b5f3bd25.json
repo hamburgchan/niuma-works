@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-21T09:20:46.553543+00:00",
+  "scope": "Read-only production chain-backed result; user entered real code, agent never knew it",
+  "batch": {
+    "batchId": "0xb5f3bd25bda080de3a3cee5bb921a68bc7530bbc6e3b77a03b5bb31e1d8acdf8",
+    "count": 100,
+    "phase": "UNRESOLVED",
+    "startedAt": 1795252645,
+    "rows": [],
+    "sent": 0,
+    "successful": 0,
+    "failed": 0,
+    "unknown": 100,
+    "averageMs": null,
+    "totalMs": 0
+  },
+  "userExperience": "User replied 目前看可以 on 2026-11-21 after live test"
+}
