@@ -56,7 +56,9 @@ export function BotRush() {
         const value = await response.json();
         if (!response.ok) throw new Error(value.error || "暂未收到新回执");
         if (abort.signal.aborted) return;
-        setProgress(value);
+        setProgress(previous =>
+          previous && previous.batchId === value.batchId && previous.confirmed > value.confirmed ? previous : value,
+        );
         setProgressError("");
         window.dispatchEvent(new CustomEvent("niuma-bot-receipts", { detail: value }));
       } catch (error) {
@@ -71,7 +73,7 @@ export function BotRush() {
       abort.abort();
       if (timer) clearInterval(timer);
     };
-  }, [prepared, busy, batch?.phase]);
+  }, [prepared, busy, batch]);
   async function release() {
     busyRef.current = true;
     setBusy(true);

@@ -352,6 +352,7 @@ export function PlayClient({
               {busy ? "正在处理…" : blocked ? "等待上一班工资确认" : "上工"}
             </button>
           )}
+          <p className="small-note">你是雇主：付 0.001 MON，下班后 90% 归包工头</p>
           {cost && !playing && (
             <p className="small-note">本局预计总额约 {Number(cost).toFixed(5)} MON，以实际 gas 为准。</p>
           )}

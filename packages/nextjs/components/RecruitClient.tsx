@@ -48,45 +48,45 @@ function Archive({ employee, stats }: { employee: (typeof DEMO_EMPLOYEES)[number
       </dl>
       <details>
         <summary>链上凭证</summary>
+        <h3>链上身份证</h3>
         <p className="eyebrow">
           EMPLOYEE #{employee.id} · {order?.[3] === 2 ? "✓ 已入职" : "核对链上状态中"}
         </p>
-
-        <p className={verified ? "hash-pass" : "small-note"}>
-          {verified ? "✓ 浏览器 SHA-256 与链上交付一致" : "正在核对 SHA-256…"}
+        <p>
+          包工头：
+          {character ? (
+            <a
+              className="link receipt-hash"
+              href={`${EXPLORER}/address/${character[0]}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {character[0]}
+            </a>
+          ) : (
+            "读取中…"
+          )}
         </p>
-        <ol>
-          {[
-            ["下单", employee.orderHash],
-            ["交付", employee.deliverHash],
-            ["验收", employee.approveHash],
-          ].map(([label, hash]) => (
-            <li key={label}>
-              <a className="link" href={`${EXPLORER}/tx/${hash}`} target="_blank" rel="noreferrer">
-                {label}交易 ↗
-              </a>
-            </li>
-          ))}
-        </ol>
-        <h3>培养费四方分账</h3>
-        <dl>
-          {["驴 · 50%", "马 · 20%", "牛 · 20%", "平台 · 10%"].map((label, i) => (
-            <div key={label}>
-              <dt>{label}</dt>
-              <dd>
-                {formatEther(BigInt(employee.splitAmountsWei[i]))} MON ·{" "}
-                <a
-                  className="link"
-                  href={`${EXPLORER}/address/${employee.recipients[i]}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {employee.recipients[i].slice(0, 8)}… ↗
+        <p className={verified ? "hash-pass" : "small-note"}>
+          {verified ? "形象指纹 ✓ · 浏览器 SHA-256 与链上一致" : "正在核对形象指纹…"}
+        </p>
+        {character && <code className="receipt-hash">{character[1]}</code>}
+        <details>
+          <summary>招聘记录</summary>
+          <ol>
+            {[
+              ["下单", employee.orderHash],
+              ["交付", employee.deliverHash],
+              ["入职确认", employee.approveHash],
+            ].map(([label, hash]) => (
+              <li key={label}>
+                <a className="link" href={`${EXPLORER}/tx/${hash}`} target="_blank" rel="noreferrer">
+                  {label}记录 ↗
                 </a>
-              </dd>
-            </div>
-          ))}
-        </dl>
+              </li>
+            ))}
+          </ol>
+        </details>
       </details>
       <Link className="btn btn-primary" href={`/play/${employee.id}`}>
         雇它上一班

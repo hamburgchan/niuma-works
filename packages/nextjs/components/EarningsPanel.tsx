@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { type Hash, formatEther } from "viem";
+import { type Address, type Hash, formatEther, isAddress } from "viem";
 import { useAccount, usePublicClient } from "wagmi";
 import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 import { EXPLORER, NIUMA } from "~~/utils/niuma";
@@ -9,10 +9,55 @@ import { getParsedError } from "~~/utils/scaffold-eth";
 export function EarningsPanel() {
   const { address, chainId } = useAccount();
   const client = usePublicClient({ chainId: 10143 });
+  const [lookup, setLookup] = useState("");
+  const { data: first } = useScaffoldReadContract({
+    contractName: "NiumaWorks",
+    functionName: "characters",
+    args: [1n],
+    watch: false,
+  });
+  const { data: second } = useScaffoldReadContract({
+    contractName: "NiumaWorks",
+    functionName: "characters",
+    args: [2n],
+    watch: false,
+  });
+  const { data: third } = useScaffoldReadContract({
+    contractName: "NiumaWorks",
+    functionName: "characters",
+    args: [3n],
+    watch: false,
+  });
+  const defaultOwner = first?.[0];
+  const requested = address || lookup || defaultOwner;
+  const viewedAddress = requested && isAddress(requested) ? (requested as Address) : undefined;
+  const [wages, setWages] = useState<{ characterId: number; ownerWagesWei: string }[] | null>(null);
+  useEffect(() => {
+    const abort = new AbortController();
+    void fetch("/api/live", { signal: abort.signal })
+      .then(r => (r.ok ? r.json() : null))
+      .then(data => {
+        if (data && !data.catchingUp) setWages(data.laborLeaders);
+      })
+      .catch(() => {});
+    return () => abort.abort();
+  }, []);
+  const owners = [first, second, third];
+  const totalWages =
+    viewedAddress && owners.every(Boolean) && wages && wages.length === 3
+      ? wages.reduce(
+          (sum, item) =>
+            sum +
+            (owners[item.characterId - 1]?.[0].toLowerCase() === viewedAddress.toLowerCase()
+              ? BigInt(item.ownerWagesWei)
+              : 0n),
+          0n,
+        )
+      : null;
   const { data: balance, refetch } = useScaffoldReadContract({
     contractName: "NiumaWorks",
     functionName: "claimable",
-    args: [address],
+    args: [viewedAddress],
     watch: false,
   });
   const { writeContractAsync } = useScaffoldWriteContract({ contractName: "NiumaWorks", disableSimulate: true });
@@ -105,12 +150,36 @@ export function EarningsPanel() {
     <section className="earnings-panel">
       <p className="eyebrow">OWNER PAYSLIP</p>
       <h1>包工头的账本</h1>
-      <p>培养费分账和各角色工资先记入合约，提现后才进入当前钱包。</p>
+      <p>每班工钱实时记入包工头的链上可提余额，提现后进入钱包。</p>
+      <label className="block">
+        查看包工头地址
+        <input
+          className="input input-bordered full-width receipt-hash"
+          aria-label="查看包工头地址"
+          value={requested || ""}
+          onChange={event => setLookup(event.target.value)}
+          readOnly={Boolean(address)}
+          placeholder="0x…"
+        />
+      </label>
+      <p className="small-note">
+        {address ? "当前显示已连接的钱包。" : "无需连接钱包即可只读查询；默认显示三只牛马的包工头。"}
+      </p>
+      {viewedAddress && (
+        <a className="link receipt-hash" href={`${EXPLORER}/address/${viewedAddress}`} target="_blank" rel="noreferrer">
+          {viewedAddress}
+        </a>
+      )}
+      {requested && !viewedAddress && <p className="field-error">请输入有效地址。</p>}
       <p className="earnings-amount">
-        {address && balance !== undefined ? formatEther(balance) : "—"}
+        {viewedAddress && balance !== undefined ? formatEther(balance) : "—"}
         <small> MON 可提现</small>
       </p>
-      {!address && <p>请在右上角连接要查工资的钱包。</p>}
+      <p className="earnings-amount">
+        {totalWages !== null ? formatEther(totalWages) : "—"}
+        <small> MON 累计工钱</small>
+      </p>
+      {!address && <p>连接这个地址的钱包后即可提现；只读查看不会发交易。</p>}
       <button
         className="btn btn-primary"
         onClick={withdraw}

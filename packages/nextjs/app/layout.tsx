@@ -8,7 +8,7 @@ import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
 export const metadata = getMetadata({
   title: "牛马批发部 · NIUMA WORKS",
-  description: "今天当牛马，明天当包工头。三名纸片牛马上工，六张工单，一笔链上工资。",
+  description: "链上投币街机：牛马按班出租，每一班在 Monad 上实时分账。今天当牛马，明天当包工头。",
 });
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {

@@ -22,7 +22,7 @@ function Employee({ employee }: { employee: (typeof DEMO_EMPLOYEES)[number] }) {
     <article className="employee-card">
       <div className="employee-top">
         <span>EMPLOYEE #{employee.id}</span>
-        <span>{order ? (order[3] === 2 ? "✓ 已入职" : "待验收") : "读取链上状态…"}</span>
+        <span>{order ? (order[3] === 2 ? "✓ 已入职" : "待入职确认") : "读取链上状态…"}</span>
       </div>
       {data ? (
         <PaperPreview url={data[2]} sha256={data[1]} name={employee.name} proofCollapsed />
@@ -48,6 +48,7 @@ export function WorkshopHome() {
     <div className="market-home">
       <section className="market-hero" data-enter>
         <div>
+          <p className="market-positioning">链上投币街机：牛马按班出租，每一班在 Monad 上实时分账</p>
           <p className="eyebrow">NIUMA WORKS / MONAD TESTNET</p>
           <h1>牛马批发部</h1>
           <p className="market-tagline">今天当牛马，明天当包工头。</p>
@@ -62,16 +63,12 @@ export function WorkshopHome() {
             招一只牛马 →
           </Link>
         </div>
-        <div className="station-wall" aria-label="三位领导">
-          {[
-            { pet: "donkey", name: "驴组长", line: "年轻人多吃点苦。" },
-            { pet: "horse", name: "马经理", line: "下季度给你涨薪。" },
-            { pet: "cow", name: "牛总", line: "我们是一家人。" },
-          ].map((pet, i) => (
-            <article className={`old-employee old-employee-${i}`} key={pet.pet} title={pet.name}>
-              <span>{pet.name}</span>
-              <Image src={`/pets/${pet.pet}.png`} alt={pet.name} width={400} height={450} priority />
-              <p>{pet.line}</p>
+        <div className="station-wall" aria-label="按班出租的三只牛马">
+          {DEMO_EMPLOYEES.map((employee, i) => (
+            <article className={`old-employee old-employee-${i}`} key={employee.id}>
+              <span>{employee.name}</span>
+              <Image src={`/chars/${employee.sha256}.png`} alt={employee.name} width={300} height={512} priority />
+              <p>0.001 MON / 班</p>
             </article>
           ))}
         </div>

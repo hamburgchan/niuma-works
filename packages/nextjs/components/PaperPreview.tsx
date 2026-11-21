@@ -38,7 +38,7 @@ export function PaperPreview({
           [...new Uint8Array(bytes.slice(0, 8))].map(v => v.toString(16).padStart(2, "0")).join("") !==
           "89504e470d0a1a0a"
         )
-          throw new Error("交付文件不是 PNG，暂不开放验收");
+          throw new Error("形象文件不是 PNG，检查未通过");
         if (abort.signal.aborted) return;
         objectUrl = URL.createObjectURL(new Blob([bytes], { type: "image/png" }));
         const bitmap = await createImageBitmap(new Blob([bytes], { type: "image/png" }));
@@ -52,7 +52,7 @@ export function PaperPreview({
         let transparent = 0;
         for (let i = 3; i < pixels.length; i += 4) if (pixels[i] < 16) transparent++;
         if (transparent / (canvas.width * canvas.height) < 0.18) {
-          setState({ image: objectUrl, message: "✓ SHA-256 一致；透明背景不足，暂不开放验收", valid: false });
+          setState({ image: objectUrl, message: "✓ SHA-256 一致；透明背景不足，检查未通过", valid: false });
           onVerified?.(false);
           return;
         }

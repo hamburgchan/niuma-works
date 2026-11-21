@@ -124,7 +124,7 @@ export function LiveBoard() {
           <strong>{data?.runCount ?? "—"}</strong>
         </div>
         <div>
-          <small>链上结算交易 / 培养费 + 工资</small>
+          <small>链上结算交易</small>
           <strong>{data?.settlementCount ?? "—"}</strong>
         </div>
         <div>
@@ -189,8 +189,8 @@ export function LiveBoard() {
                     </>
                   ) : (
                     <>
-                      <strong>招一只牛马单 #{event.args.orderId} 已验收</strong>
-                      <p>驴、马、牛与平台的培养费已分账记入可提余额</p>
+                      <strong>牛马 #{event.args.orderId} 入职记录</strong>
+                      <p>招聘记录已在链上确认</p>
                     </>
                   )}
                   <a className="link" href={`${EXPLORER}/tx/${event.hash}`} target="_blank" rel="noreferrer">

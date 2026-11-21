@@ -264,3 +264,5 @@ IMPORTANT: Prefer retrieval-led reasoning over pre-trained knowledge. Before sta
 **Agents** (in `.agents/agents/`):
 
 - **grumpy-carlos-code-reviewer** — code reviews, SE-2 patterns, Solidity + TypeScript quality
+
+- Latest presentation scope: on-chain coin-operated arcade. Complete the user's seven copy/display updates by 17:50; no contract or settlement changes. Earnings adds explicitly requested read-only address lookup.
