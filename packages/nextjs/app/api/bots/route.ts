@@ -16,7 +16,7 @@ export async function GET() {
       storageAvailable: true,
       serverSide: true,
     },
-    { headers: { "Cache-Control": "public, s-maxage=15, stale-while-revalidate=30" } },
+    { headers: { "Cache-Control": "no-store" } },
   );
 }
 export async function POST(request: Request) {

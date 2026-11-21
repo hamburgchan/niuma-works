@@ -17,11 +17,12 @@ export function BotRush() {
   useEffect(() => {
     const refresh = async () => {
       try {
-        const r = await fetch("/api/bots");
+        const r = await fetch("/api/bots", { cache: "no-store" });
         if (r.ok) {
           const d = await r.json();
           if (!busyRef.current) {
             setBatch(d.batch);
+            setProgress(previous => (previous?.batchId === d.batch?.batchId ? previous : null));
             if (d.batch?.fundingHash)
               setPrepared({
                 batchId: d.batch.batchId,
@@ -41,7 +42,7 @@ export function BotRush() {
     return () => clearInterval(timer);
   }, []);
   useEffect(() => {
-    if (!prepared) return;
+    if (!prepared || (!busy && batch?.phase === "COMPLETE")) return;
     const abort = new AbortController();
     let inflight = false;
     async function refreshProgress() {
@@ -110,6 +111,18 @@ export function BotRush() {
       busyRef.current = false;
     }
   }
+  const shown =
+    progress ||
+    (batch?.blocks
+      ? {
+          confirmed: batch.successful + batch.failed,
+          successful: batch.successful,
+          failed: batch.failed,
+          blockCount: batch.blockCount,
+          chainSpanSeconds: batch.chainSpanSeconds,
+          blocks: batch.blocks,
+        }
+      : null);
   return (
     <section className="bot-rush">
       <div className="section-heading">
@@ -135,22 +148,22 @@ export function BotRush() {
       <p>每 10 分钟最多一批，每批最多 100 个机器人雇主。机器人上报 3–6 单、15–60 秒，不实际操作游戏。</p>
       <div className="batch-chain-summary" aria-live="polite">
         <strong>
-          {progress
-            ? `${progress.confirmed} 笔落在 ${progress.blockCount} 个区块，链上用时 ${progress.chainSpanSeconds} 秒`
+          {shown
+            ? `${shown.confirmed} 笔落在 ${shown.blockCount} 个区块，链上用时 ${shown.chainSpanSeconds} 秒`
             : "链上区块统计等待本批真实回执"}
         </strong>
         <p>
           {prepared
-            ? progress
-              ? `已确认 ${progress.confirmed}/${prepared.count}`
+            ? shown
+              ? `已确认 ${shown.confirmed}/${prepared.count}`
               : `正在核对原批次 / ${prepared.count}`
             : "输入口令后开始本批次"}
-          {progress ? ` · 成功 ${progress.successful} · 失败 ${progress.failed}` : ""}
+          {shown ? ` · 成功 ${shown.successful} · 失败 ${shown.failed}` : ""}
         </p>
         <small>链上用时 = 本批首末入块的时间戳差；一个区块可为 0 秒，不代表零延迟或最终性。</small>
       </div>
       <div className="block-wall" aria-label="真实区块墙">
-        {(progress?.blocks || batch?.blocks || []).map(block => (
+        {(shown?.blocks || batch?.blocks || []).map(block => (
           <div className="block-cell" key={block.number}>
             <strong>#{block.number}</strong>
             <span>
