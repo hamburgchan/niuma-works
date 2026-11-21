@@ -9,11 +9,12 @@ This file provides guidance to coding agents working in this repository.
 - Use local MONSKILLS routing from D:/monad/.agents/skills/monskill/SKILL.md before relevant local topic skills.
 - Read private keys only from local environment files. Never print, commit, or send them to any service. Only sign Monad testnet transactions.
 - No pre-start verification scripts, sample GLB, or images may be copied into this repository or used as demo characters.
-- Deliver transparent PNG paper cutout characters. Demo characters are post-start manually generated illustrations uploaded by the user (source: chatgpt 手动生成). Live recruitment uses Pollinations; failures fall back to deterministic procedural abstract pixel characters, labeled honestly.
+- Deliver transparent PNG paper cutout characters. Demo characters are post-start manually generated illustrations uploaded by the user (source: chatgpt 手动生成). Onsite recruitment is paused. Do not call Pollinations, HF, or Blob. Serve exact-hash PNGs from /chars/<sha256>.png; use V2 for demos. Historical generation evidence must remain intact.
 - Remove backgrounds with conservative edge-connected flood fill, preserve interior light fur and sticker outlines, then resize with nearest-neighbor interpolation. Keep the three.js workshop with outlined, slightly thick billboard characters.
 - FLUX -> TRELLIS and GLB uploads are retired historical verification routes, not active generation or demo routes. Do not call 3D generation services.
 - Do not call the creative mentor again today. Do not invent the description or identity of another onsite team.
 - Stage files explicitly, never git add -A. Keep .env* ignored except .env.example.
+- V2 + hot/spread stress-test hard stop: 2026-11-21 15:45 Asia/Shanghai; stop unfinished work then and retain the runnable version.
 - Deadline: 2026-11-21 18:30 Asia/Shanghai. Stop new features at 16:30; prepare submission by 18:00. Submission requires the user's review of concrete materials.
 
 ## Project Overview
