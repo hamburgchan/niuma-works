@@ -1,0 +1,9 @@
+test_429_and_connection_retry_exact_original_raw (__main__.RetryTests.test_429_and_connection_retry_exact_original_raw) ... ok
+test_already_known_waits_for_original_receipt (__main__.RetryTests.test_already_known_waits_for_original_receipt) ... ok
+test_http_400_is_not_retried_or_called_chain_revert (__main__.RetryTests.test_http_400_is_not_retried_or_called_chain_revert) ... ok
+test_retry_bound_preserves_unknown (__main__.RetryTests.test_retry_bound_preserves_unknown) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.024s
+
+OK

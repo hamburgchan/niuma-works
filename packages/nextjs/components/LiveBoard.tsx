@@ -28,7 +28,29 @@ export function LiveBoard() {
     try {
       const response = await fetch("/api/live", { cache: "no-store" });
       if (!response.ok) throw new Error();
-      setData(await response.json());
+      const next: Feed = await response.json();
+      // Only attach local browser timing to an event already verified by the chain feed.
+      try {
+        const history: { hash?: string; elapsedMs?: number; status?: string }[] = JSON.parse(
+          localStorage.getItem("niuma-run-history-v1") || "[]",
+        );
+        for (const run of history)
+          if (
+            run.hash &&
+            run.status === "confirmed" &&
+            typeof run.elapsedMs === "number" &&
+            run.elapsedMs > 0 &&
+            run.elapsedMs <= 120000 &&
+            next.events.some(event => event.hash.toLowerCase() === run.hash!.toLowerCase())
+          )
+            next.latency[run.hash] = run.elapsedMs;
+        const samples = Object.values(next.latency);
+        next.latencySamples = samples.length;
+        next.averageMs = samples.length ? Math.round(samples.reduce((sum, ms) => sum + ms, 0) / samples.length) : null;
+      } catch {
+        /* Keep chain events and published timing if local history is unavailable. */
+      }
+      setData(next);
       setError("");
     } catch {
       setError("暂时无法更新，保留上次已确认的结果。");

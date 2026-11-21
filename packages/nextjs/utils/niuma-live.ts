@@ -1,6 +1,8 @@
+import { unstable_cache } from "next/cache";
 import "server-only";
 import { type Hash, decodeEventLog } from "viem";
 import batches from "~~/contracts/botResults.json";
+import humanTimings from "~~/contracts/humanTimings.json";
 import seed from "~~/contracts/liveSeed.json";
 import { DEMO_CHARACTERS, DEMO_EMPLOYEES } from "~~/utils/niuma";
 import { client, deployment } from "~~/utils/niuma-server";
@@ -26,40 +28,62 @@ let cached: Awaited<ReturnType<typeof refresh>> | undefined,
   expires = 0,
   pending: Promise<Awaited<ReturnType<typeof refresh>>> | undefined;
 const latency = new Map<string, number>();
+for (const [hash, elapsedMs] of Object.entries(humanTimings))
+  if ([...events.values()].some(event => event.hash.toLowerCase() === hash.toLowerCase()))
+    latency.set(hash.toLowerCase(), elapsedMs);
 for (const batch of currentBatches.filter(b => b.contract.toLowerCase() === deployment.address.toLowerCase()))
   for (const row of batch.rows)
     if (row.hash && row.state === "CONFIRMED" && row.elapsedMs) latency.set(row.hash.toLowerCase(), row.elapsedMs);
+async function readRange(start: number, end: number): Promise<LiveEvent[]> {
+  const logs = await client.getLogs({ address: deployment.address, fromBlock: BigInt(start), toBlock: BigInt(end) });
+  const decoded: LiveEvent[] = [];
+  for (const log of logs) {
+    try {
+      const d = decodeEventLog({ abi: deployment.abi, data: log.data, topics: log.topics });
+      if (d.eventName !== "Paid" && d.eventName !== "RunFinished") continue;
+      const id = `${log.transactionHash}:${log.logIndex}`;
+      decoded.push({
+        id,
+        hash: log.transactionHash,
+        blockNumber: Number(log.blockNumber),
+        logIndex: log.logIndex,
+        event: d.eventName,
+        args: JSON.parse(JSON.stringify(d.args, (_, v) => (typeof v === "bigint" ? v.toString() : v))),
+      });
+    } catch {
+      /* Ignore unrelated contract events. */
+    }
+  }
+  return decoded;
+}
+// Next Data Cache persists closed block ranges across serverless instances; no Blob SDK/store.
+const closedRange = unstable_cache(readRange, ["niuma-v2-event-ranges", deployment.address], { revalidate: 3600 });
 async function refresh() {
   const latestBlock = Number(await client.getBlockNumber({ cacheTime: 10000 }));
-  const ranges = Array.from(
-    { length: Math.min(16, Math.max(0, Math.ceil((latestBlock - cursor + 1) / 100))) },
-    (_, i) => ({ start: cursor + i * 100, end: Math.min(cursor + i * 100 + 99, latestBlock) }),
-  );
-  const recent = { start: Math.max(deployment.deployedOnBlock, latestBlock - 99), end: latestBlock };
+  const first =
+    seed.contract.toLowerCase() === deployment.address.toLowerCase()
+      ? Math.max(seed.cursor, deployment.deployedOnBlock)
+      : deployment.deployedOnBlock;
+  const ranges = Array.from({ length: Math.max(0, Math.ceil((latestBlock - first + 1) / 100)) }, (_, i) => ({
+    start: first + i * 100,
+    end: Math.min(first + i * 100 + 99, latestBlock),
+  }));
   const chunks = await Promise.all(
-    [...ranges, recent].map(r =>
-      client.getLogs({ address: deployment.address, fromBlock: BigInt(r.start), toBlock: BigInt(r.end) }),
+    ranges.map(r => (r.end < latestBlock - 100 ? closedRange(r.start, r.end) : readRange(r.start, r.end))),
+  );
+  for (const chunk of chunks) for (const event of chunk) events.set(event.id, event);
+  cursor = latestBlock + 1;
+  const characters = await Promise.all(
+    DEMO_CHARACTERS.map(id =>
+      client.readContract({
+        ...deployment,
+        functionName: "characters",
+        args: [BigInt(id)],
+        blockNumber: BigInt(latestBlock),
+      }),
     ),
   );
-  for (const logs of chunks)
-    for (const log of logs) {
-      try {
-        const d = decodeEventLog({ abi: deployment.abi, data: log.data, topics: log.topics });
-        if (d.eventName !== "Paid" && d.eventName !== "RunFinished") continue;
-        const id = `${log.transactionHash}:${log.logIndex}`;
-        events.set(id, {
-          id,
-          hash: log.transactionHash,
-          blockNumber: Number(log.blockNumber),
-          logIndex: log.logIndex,
-          event: d.eventName,
-          args: JSON.parse(JSON.stringify(d.args, (_, v) => (typeof v === "bigint" ? v.toString() : v))),
-        });
-      } catch {
-        /* Ignore unrelated contract events. */
-      }
-    }
-  if (ranges.length) cursor = ranges.at(-1)!.end + 1;
+  const onChainRuns = characters.reduce((sum, c) => sum + Number(c[6]), 0);
   const all = [...events.values()]
     .filter(e =>
       e.event === "RunFinished"
@@ -87,7 +111,7 @@ async function refresh() {
     const own = runs.filter(e => Number(e.args.characterId) === id);
     return {
       characterId: id,
-      shifts: own.length,
+      shifts: Number(characters[DEMO_CHARACTERS.indexOf(id)][6]),
       fullAttendance: own.filter(e => Number(e.args.stars) === 6).length,
       ownerWagesWei: own.reduce((sum, e) => sum + BigInt(String(e.args.ownerShare)), 0n).toString(),
     };
@@ -95,15 +119,15 @@ async function refresh() {
   return {
     events: recentEvents,
     rankings: [],
-    runCount: runs.length,
-    settlementCount: all.length,
+    runCount: onChainRuns,
+    settlementCount: onChainRuns + all.filter(event => event.event === "Paid").length,
     latency: timings,
     latencySamples: samples.length,
     averageMs: samples.length ? Math.round(samples.reduce((a, b) => a + b, 0) / samples.length) : null,
     laborLeaders,
     indexedThrough: cursor - 1,
     latestBlock,
-    catchingUp: cursor <= latestBlock,
+    catchingUp: runs.length !== onChainRuns,
     updatedAt: new Date().toISOString(),
     source: "on-chain events; immutable receipt seed plus 15-second process cache",
     timingPersistence: "Browser samples are process-local; robot samples are published evidence",

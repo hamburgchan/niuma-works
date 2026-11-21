@@ -1,6 +1,6 @@
 {
   "contract": "0xcE94FDE4016D7b930b61bEF1474Df1458D1355cC",
-  "cursor": 81513627,
+  "cursor": 81518580,
   "events": [
     {
       "id": "0xe2511228c44f657956dc0e789f71a6a5d666624784dd89ad1a1aee61fd0eb7b4:53",
@@ -3427,8 +3427,22 @@
         "timeMs": "34210",
         "ownerShare": "900000000000000"
       }
+    },
+    {
+      "id": "0xa107465989098092c287591d8c2f021290b75cca411454ae9f64c1f9bf276cde:5",
+      "hash": "0xa107465989098092c287591d8c2f021290b75cca411454ae9f64c1f9bf276cde",
+      "blockNumber": 81516571,
+      "logIndex": 5,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "1",
+        "player": "0x2d5FC86Ccb4dC23AC5c686374C56aB02a139bBBA",
+        "stars": "1",
+        "timeMs": "35222",
+        "ownerShare": "900000000000000"
+      }
     }
   ],
   "source": "Monad testnet eth_getLogs; 100-block ranges; read-only",
-  "at": "2026-11-21T07:01:18.053402+00:00"
+  "at": "2026-11-21T07:27:39.681101+00:00"
 }

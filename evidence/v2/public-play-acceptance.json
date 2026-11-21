@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-21T07:18:04.877965+00:00",
+  "scope": "Real public desktop browser game; not a mobile-device claim",
+  "hash": "0xa107465989098092c287591d8c2f021290b75cca411454ae9f64c1f9bf276cde",
+  "contract": "0xcE94FDE4016D7b930b61bEF1474Df1458D1355cC",
+  "sender": "0x2d5FC86Ccb4dC23AC5c686374C56aB02a139bBBA",
+  "status": true,
+  "blockNumber": 81516571,
+  "characterId": 1,
+  "stars": 1,
+  "timeMs": 35222,
+  "ownerShareWei": "900000000000000",
+  "gasLimit": 71692,
+  "effectiveGasPriceWei": "102000000000",
+  "chargedFeeWei": "7312584000000000",
+  "confirmationObservedMs": 2389,
+  "timingSource": "Observed public UI: submission request to successful receipt; not finality",
+  "keyboard": "Held Right 700ms then Up 900ms; one work order collected",
+  "owner": "0xb561475586d95612121d3806A86d930d1a3d414a",
+  "ownerClaimableWei": "216900000000000000"
+}

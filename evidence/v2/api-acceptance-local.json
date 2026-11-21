@@ -1,0 +1,64 @@
+{
+  "at": "2026-11-21T07:12:20.141591+00:00",
+  "scope": "Local production HTTP checks plus unauthenticated public PNG bytes; browser acceptance separate",
+  "records": {
+    "/": {
+      "status": 200
+    },
+    "/play/1": {
+      "status": 200
+    },
+    "/live": {
+      "status": 200
+    },
+    "/orders": {
+      "status": 200
+    },
+    "/earnings": {
+      "status": 200
+    },
+    "live": {
+      "runCount": 240,
+      "settlementCount": 243,
+      "latencySamples": 100,
+      "averageMs": 3239,
+      "catchingUp": true,
+      "indexedThrough": 81515226,
+      "source": "on-chain events; immutable receipt seed plus 15-second process cache",
+      "cacheControl": "public, s-maxage=15, stale-while-revalidate=30"
+    },
+    "bots": {
+      "latestModes": [
+        [
+          100,
+          "hot",
+          100
+        ],
+        [
+          100,
+          "spread",
+          100
+        ]
+      ]
+    },
+    "generation": {
+      "status": 410,
+      "paused": true
+    },
+    "mule": {
+      "publicBytes": 124910,
+      "sha256": "03db298a4353a53541216e7233f35c4c1034f2ba5c4e92e8f6f5d702477b3d95",
+      "unauthenticated": true
+    },
+    "alpaca": {
+      "publicBytes": 139644,
+      "sha256": "22a86b203d813da65ced72e3f062dd5209c56f44a445a2ec80af3e762b243fd9",
+      "unauthenticated": true
+    },
+    "programmer": {
+      "publicBytes": 130691,
+      "sha256": "e56a0c745ae252769e868b26c1383a5eab516bbaa3fff34a88e7b278891846c4",
+      "unauthenticated": true
+    }
+  }
+}

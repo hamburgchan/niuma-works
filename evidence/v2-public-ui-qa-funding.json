@@ -1,0 +1,12 @@
+{
+  "hash": "0xd469d5de8bc03b400a573f2897e3ba2fe4b4ddf5a1ed26f655d0262daac6c760",
+  "sender": "0xb561475586d95612121d3806A86d930d1a3d414a",
+  "recipient": "0x2d5FC86Ccb4dC23AC5c686374C56aB02a139bBBA",
+  "nonce": 23,
+  "amountWei": "30000000000000000",
+  "gasLimit": 21000,
+  "state": "CONFIRMED",
+  "startedAt": "2026-11-21T07:15:59.432505+00:00",
+  "purpose": "V2 public game UI acceptance",
+  "blockNumber": 81516392
+}

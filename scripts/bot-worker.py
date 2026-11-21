@@ -1,5 +1,5 @@
 """Optional loopback-only owner-signed browser trigger for the same local bot engine."""
-import json,time,threading
+import json,time,threading,os
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from eth_account.messages import encode_defunct
 from niuma import ROOT,chain,safe_error
@@ -24,8 +24,12 @@ class Handler(BaseHTTPRequestHandler):
    w,_=chain();d=json.loads((ROOT/'evidence/deployment-v2.json').read_text());a=json.loads((ROOT/'packages/foundry/out/NiumaWorksV2.sol/NiumaWorksV2.json').read_text());c=w.eth.contract(address=d['address'],abi=a['abi'])
    message=f"NIUMA WORKS bot rush\nchainId: 10143\ncontract: {d['address']}\ncount: {n}\nbatchId: {bid}\nissuedAt: {issued}"
    if w.eth.account.recover_message(encode_defunct(text=message),signature=b['signature']).lower()!=c.functions.owner().call().lower():raise ValueError('Owner signature required')
+   request_dir=ROOT.parent/'.bot-runtime/browser-requests';request_dir.mkdir(parents=True,exist_ok=True)
+   if not all(ch in '0123456789abcdef-' for ch in bid):raise ValueError('Invalid request ID')
    with guard:
     if busy or bid in seen:raise ValueError('Busy or original request already accepted')
+    fd=os.open(request_dir/f'{bid}.json',os.O_WRONLY|os.O_CREAT|os.O_EXCL)
+    with os.fdopen(fd,'w') as file:json.dump(dict(requestId=bid,count=n,issuedAt=issued,state='ACCEPTED_ONCE'),file)
     busy=True;seen.add(bid)
    def run():
     global busy

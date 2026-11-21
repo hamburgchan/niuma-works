@@ -12,10 +12,18 @@
   },
   "typescript": "PASS",
   "eslint": "PASS zero errors/warnings after --fix",
-  "productionBuild": "PASS evidence/next-build-v2-release.txt",
+  "productionBuild": "PASS evidence/next-build-v2-published.txt",
   "historicalFailuresPreserved": [
     "evidence/next-build-v2-final.txt"
   ],
   "privateKeyFilesRemaining": 0,
-  "scope": "Local checks only; browser/public acceptance recorded separately"
+  "scope": "Local checks only; browser/public acceptance recorded separately",
+  "coldStartRegression": "PASS evidence/v2/cold-start-gap-regression.json",
+  "broadcastRetryOffline": {
+    "passed": 4,
+    "failed": 0,
+    "scope": "Actual broadcast function AST with mocked HTTP responses; no network, no signing, no funding"
+  },
+  "publicBrowser": "PASS one real desktop V2 game; source evidence/v2/public-play-acceptance.json",
+  "mobileScope": "390px browser viewport layout only; not a physical phone"
 }

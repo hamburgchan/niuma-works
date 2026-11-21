@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-21T07:26:40.139129+00:00",
+  "status": "PASS",
+  "seedEvents": 243,
+  "seedContainsTarget": false,
+  "targetHash": "0xa107465989098092c287591d8c2f021290b75cca411454ae9f64c1f9bf276cde",
+  "targetBlock": 81516571,
+  "targetBeyondOld1600BlockWindow": true,
+  "targetOutsideRecent100Blocks": true,
+  "runCount": 241,
+  "settlementCount": 244,
+  "catchingUp": false,
+  "scope": "Actual local production cold start with original pre-game seed; full missing intervals fetched through Next Data Cache, not only a counter check"
+}

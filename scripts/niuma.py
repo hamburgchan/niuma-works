@@ -44,6 +44,7 @@ def safe_error(error):
     for key, value in os.environ.items():
         if value and re.search(r"PRIVATE_KEY|TOKEN|SECRET", key):
             text = text.replace(value, "[REDACTED]")
+    text = re.sub(r"https?://[^\s\"']+", "[URL]", text)
     return re.sub(r"hf_[A-Za-z0-9]+", "[REDACTED]", text)
 
 
