@@ -1,0 +1,4 @@
+gradio_client==2.7.2
+python-dotenv==1.2.4
+web3==7.16.0
+vercel-blob==0.6.2
