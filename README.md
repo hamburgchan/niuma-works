@@ -4,6 +4,10 @@ Game Jam teams commission a playable 3D character. Monad testnet holds the order
 
 Created after the organizer's start announcement for Monad Blitz Guangzhou, 2026-11-21, using create-eth 2.0.23 (Scaffold-ETH 2, Foundry).
 
+## 比赛合规
+
+主办方已于 10:47 前宣布开赛（参赛者确认）。仓库首次提交时间为 2026-11-21 10:47（北京时间），精确时间 10:47:30+08:00，提交 `541e967db7d9e9a61d2a53f702c5ebbe86d06be6`。产品代码和演示角色均在开赛后制作；赛前临时核实脚本、图片和 sample.glb 未复制进仓库。
+
 ## Current status
 
 Stages 1–2: contract deployed on Monad testnet (10143); three newly generated characters have completed real order, delivery and acceptance. `forge test -vv` passes 17 tests (including 256 fuzz cases); see `evidence/foundry-test.txt`. Full transaction links and GLB hashes: [evidence/orders.md](evidence/orders.md).

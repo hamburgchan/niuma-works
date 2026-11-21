@@ -1,27 +1,7 @@
-//SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.28;
 
-import "./DeployHelpers.s.sol";
-import { DeployYourContract } from "./DeployYourContract.s.sol";
+import { DeployNiumaWorks } from "./DeployNiumaWorks.s.sol";
 
-/**
- * @notice Main deployment script for all contracts
- * @dev Run this when you want to deploy multiple contracts at once
- *
- * Example: yarn deploy # runs this script(without`--file` flag)
- */
-contract DeployScript is ScaffoldETHDeploy {
-  function run() external {
-    // Deploys all your contracts sequentially
-    // Add new deployments here when needed
-
-    
-    DeployYourContract deployYourContract = new DeployYourContract();
-    deployYourContract.run();
-
-
-    // Deploy another contract
-    // DeployMyContract myContract = new DeployMyContract();
-    // myContract.run();
-  }
-}
+/// @notice Testnet-only entry point. Use scripts/deploy.ps1 to avoid redeployment.
+contract DeployScript is DeployNiumaWorks { }

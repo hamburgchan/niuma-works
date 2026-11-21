@@ -4,7 +4,7 @@ This file provides guidance to coding agents working in this repository.
 
 ## NIUMA WORKS contest scope
 
-- The organizer's start announcement was confirmed by the user on 2026-11-21. Stages 1 and 2 are authorized; later stages require their work order.
+- The organizer's start announcement was confirmed by the user on 2026-11-21. Stages 1, 2 and 3 are authorized, including incremental Vercel production deployments. MOJO submission still requires review.
 - Use this Scaffold-ETH 2 Foundry layout, Monad testnet (10143), and the existing burner connector. Do not replace these with another stack.
 - Use local MONSKILLS routing from D:/monad/.agents/skills/monskill/SKILL.md before relevant local topic skills.
 - Read private keys only from local environment files. Never print, commit, or send them to any service. Only sign Monad testnet transactions.
