@@ -111,6 +111,11 @@ export function BotRush() {
       busyRef.current = false;
     }
   }
+  const timedRows = batch?.rows.filter(row => row.sentAt !== undefined && row.elapsedMs !== undefined) || [];
+  const broadcastSpanMs =
+    batch && timedRows.length === batch.count
+      ? Math.max(...timedRows.map(row => row.sentAt! + row.elapsedMs!)) - Math.min(...timedRows.map(row => row.sentAt!))
+      : null;
   const shown =
     progress ||
     (batch?.blocks
@@ -255,7 +260,8 @@ export function BotRush() {
             RPC P95（含网络往返） <strong>{batch.p95Ms ?? "—"} ms</strong>
           </span>
           <span>
-            总耗时 <strong>{(batch.totalMs / 1000).toFixed(1)} s</strong>
+            广播总耗时（含网络往返）{" "}
+            <strong>{broadcastSpanMs === null ? "—" : (broadcastSpanMs / 1000).toFixed(3)} s</strong>
           </span>
           <span>
             RPC 错误 / 重发{" "}
@@ -268,7 +274,7 @@ export function BotRush() {
       {batch && (
         <details>
           <summary>
-            本批交易明细：{batch.successful}/{batch.count} 成功 · 总耗时 {(batch.totalMs / 1000).toFixed(1)}s
+            本批交易明细：{batch.successful}/{batch.count} 成功 · 批次处理 {(batch.totalMs / 1000).toFixed(1)}s
           </summary>
           <ol className="bot-results">
             {batch.rows.map(row => (

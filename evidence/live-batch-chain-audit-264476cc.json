@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-21T09:14:10.430207+00:00",
+  "scope": "Independent read-only official RPC header and complete receipt readback; no new transactions",
+  "batchId": "0x264476cc1896f22d0b967f0b4515748659ce694430632cde0c1bafe430b295aa",
+  "successful": 100,
+  "blocks": [
+    {
+      "number": 81536841,
+      "timestamp": 1795251882,
+      "count": 20,
+      "allOriginalReceiptsSuccess": true
+    },
+    {
+      "number": 81536842,
+      "timestamp": 1795251882,
+      "count": 20,
+      "allOriginalReceiptsSuccess": true
+    },
+    {
+      "number": 81536843,
+      "timestamp": 1795251884,
+      "count": 20,
+      "allOriginalReceiptsSuccess": true
+    },
+    {
+      "number": 81536845,
+      "timestamp": 1795251884,
+      "count": 20,
+      "allOriginalReceiptsSuccess": true
+    },
+    {
+      "number": 81536849,
+      "timestamp": 1795251885,
+      "count": 20,
+      "allOriginalReceiptsSuccess": true
+    }
+  ],
+  "blockCount": 5,
+  "chainSpanSeconds": 3,
+  "assertions": "PASS: all 100 original hashes in stated blocks, successful receipts, matching canonical block hashes and timestamps"
+}
