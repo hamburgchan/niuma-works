@@ -75,5 +75,10 @@ try {
     Set-Content -LiteralPath (Join-Path $evidenceRoot 'verification-response.json') -Value $verification.Content -Encoding utf8
     Write-Output "Verification HTTP $($verification.StatusCode)"
     Write-Output $verification.Content
+    $verificationResult = $verification.Content | ConvertFrom-Json
+    if ($verification.StatusCode -eq 200 -and $verificationResult.success) {
+        $deployment.verification = 'VERIFIED'
+        $deployment | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $deploymentPath -Encoding utf8
+    } else { throw 'Deployment succeeded, but source verification did not succeed. Use -VerifyOnly after investigating.' }
     Write-Output ($deployment | ConvertTo-Json -Depth 5)
 } finally { Pop-Location }

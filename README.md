@@ -6,7 +6,11 @@ Created after the organizer's start announcement for Monad Blitz Guangzhou, 2026
 
 ## Current status
 
-Stage 1A is pushed. Stage 1B contract and deployment script are implemented: `forge test -vv` passes 17 tests (including 256 fuzz cases). Deployment is pending valid local credentials; no completed orders are claimed yet. See `evidence/foundry-test.txt`.
+Stage 1 is deployed on Monad testnet (10143). `forge test -vv` passes 17 tests (including 256 fuzz cases); see `evidence/foundry-test.txt`. Generation and real character orders are in progress.
+
+- Contract: [`0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb`](https://testnet.monadexplorer.com/address/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb)
+- Deployment: [`0xd70b1d03a9cb0d7adc979a085c0fce451ca89d2390a0082baa5477fbf439208a`](https://testnet.monadexplorer.com/tx/0xd70b1d03a9cb0d7adc979a085c0fce451ca89d2390a0082baa5477fbf439208a)
+- Verification API: 2/2 succeeded; Monadscan verified, MonadVision partial match. Exact response: `evidence/verification-response.json`.
 
 The generation path is FLUX.1-schnell -> TRELLIS. Uploaded GLB is the fallback. Pre-start verification code and assets are excluded.
 

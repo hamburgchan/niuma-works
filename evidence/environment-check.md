@@ -17,4 +17,6 @@ Checked 2026-11-21 after competition start.
 | Operator | 0x9A291f35836992494904Ee5De83DfAABcF7876aD | 5 MON |
 | Buyer | 0xb561475586d95612121d3806A86d930d1a3d414a | 5 MON |
 
+The user corrected all three private key fields. A fresh derivation from the corrected keys returned exactly the three public addresses above; their balances were still 5 MON each before deployment.
+
 Chain ID is checked again before broadcast. Payouts and treasury default to the deployer address, as instructed by the user; the operator and buyer use distinct keys.

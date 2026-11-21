@@ -1,0 +1,45 @@
+Compiling 3 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.14s
+Compiler run successful!
+2026-11-21T03:01:59.159384Z  WARN foundry_evm_traces::debug::sources: failed to parse contract definitions for lib/forge-std/src/StdAssertions.sol
+2026-11-21T03:01:59.160322Z  WARN foundry_evm_traces::debug::sources: failed to parse contract definitions for lib/forge-std/src/StdError.sol
+2026-11-21T03:01:59.160583Z  WARN foundry_evm_traces::debug::sources: failed to parse contract definitions for lib/forge-std/src/StdInvariant.sol
+2026-11-21T03:01:59.161260Z  WARN foundry_evm_traces::debug::sources: failed to parse contract definitions for lib/forge-std/src/StdToml.sol
+2026-11-21T03:01:59.161581Z  WARN foundry_evm_traces::debug::sources: failed to parse contract definitions for lib/forge-std/src/Test.sol
+2026-11-21T03:01:59.162539Z  WARN foundry_evm_traces::debug::sources: failed to parse contract definitions for test/NiumaWorks.t.sol
+2026-11-21T03:01:59.164962Z  WARN foundry_evm_traces::debug::sources: failed to parse contract definitions for test/YourContract.t.sol
+Warning: Detected artifacts built from source files that no longer exist. Run `forge clean` to make sure builds are in sync with project files.
+ - D:/monad/niuma-works/packages/foundry\foundry-pp/DeployHelper28.sol
+ - D:/monad/niuma-works/packages/foundry\foundry-pp/DeployHelper29.sol
+ - D:/monad/niuma-works/packages/foundry\foundry-pp/DeployHelper27.sol
+2026-11-21T03:02:06.404783Z  WARN foundry_fork_db::cache: Failed to read cache file err=Os { code: 2, kind: NotFound, message: "系统找不到指定的文件。" } path="C:\\Users\\丘梦婷\\.foundry\\cache\\rpc\\monad-testnet\\81468523"
+Script ran successfully.
+
+== Return ==
+deployed: contract NiumaWorks 0x8ecF351db2eA99aa32BEf4bA2686Fd0bFefF8abB
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 10143
+
+Estimated max fee per gas: 203 gwei
+Estimated base fee per gas: 100 gwei
+Estimated max priority fee per gas: 3 gwei
+
+Estimated total gas used for script: 2192132
+
+Estimated amount required: 0.445002796 MON
+
+==========================
+
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: D:/monad/niuma-works/packages/foundry\broadcast\DeployNiumaWorks.s.sol\10143\run-latest.json
+
+Sensitive values saved to: D:/monad/niuma-works/packages/foundry/cache\DeployNiumaWorks.s.sol\10143\run-latest.json
+
