@@ -8,7 +8,10 @@ export const deployment = deployedContracts[10143].NiumaWorks;
 export const access = process.env.BLOB_ACCESS === "private" ? "private" : "public";
 export const client = createPublicClient({
   chain: monadTestnet,
-  transport: http(process.env.MONAD_RPC_URL || "https://testnet-rpc.monad.xyz"),
+  transport: http(process.env.MONAD_RPC_URL || "https://testnet-rpc.monad.xyz", {
+    batch: { wait: 30, batchSize: 100 },
+    retryCount: 0,
+  }),
 });
 
 export function orderId(value: string) {

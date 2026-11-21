@@ -112,6 +112,11 @@ export function BotRush() {
                   <span>
                     🤖 #{row.index} · 工号 {row.characterId} · {row.stars} 单 · {row.state}
                   </span>
+                  {row.fundingHash && (
+                    <a className="link" href={`${EXPLORER}/tx/${row.fundingHash}`} target="_blank" rel="noreferrer">
+                      充值交易 ↗
+                    </a>
+                  )}
                   {row.hash && (
                     <a className="link" href={`${EXPLORER}/tx/${row.hash}`} target="_blank" rel="noreferrer">
                       结算交易 ↗

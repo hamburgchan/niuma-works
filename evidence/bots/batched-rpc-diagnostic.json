@@ -1,0 +1,160 @@
+{
+  "at": "2026-11-21T05:41:08.966407+00:00",
+  "scope": "READ_ONLY: 30 eth_estimateGas calls in one HTTP batch. No signing, no broadcast, no financial retry.",
+  "httpStatus": 200,
+  "successfulEstimates": 30,
+  "errors": [],
+  "results": [
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 1
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 2
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c20",
+      "id": 3
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 4
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 5
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c43",
+      "id": 6
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c43",
+      "id": 7
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 8
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c43",
+      "id": 9
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c20",
+      "id": 10
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c43",
+      "id": 11
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c20",
+      "id": 12
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 13
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 14
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c20",
+      "id": 15
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c20",
+      "id": 16
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c43",
+      "id": 17
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c20",
+      "id": 18
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 19
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 20
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c20",
+      "id": 21
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 22
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 23
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c20",
+      "id": 24
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 25
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 26
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c43",
+      "id": 27
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c20",
+      "id": 28
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12ba5",
+      "id": 29
+    },
+    {
+      "jsonrpc": "2.0",
+      "result": "0x12c20",
+      "id": 30
+    }
+  ],
+  "originalFinancialBatchStatus": "FAILED: 0 finishRun broadcasts; unchanged"
+}

@@ -1,0 +1,315 @@
+{
+  "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+  "count": 30,
+  "startedAt": 1795239278178,
+  "phase": "complete",
+  "rows": [
+    {
+      "index": 1,
+      "address": "0x68Fc2E349d59277FcABC8e319C28039bbED6C1Ed",
+      "characterId": 5,
+      "stars": 3,
+      "timeMs": 30717,
+      "state": "FAILED",
+      "fundingHash": "0x86b9ed62acba31863d191b4dfa6d514bd430afc5ce9c5b159c777fa4679583e2",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 2,
+      "address": "0x6fd30CAD8894f3e86783c54c65DD8610a461D296",
+      "characterId": 6,
+      "stars": 3,
+      "timeMs": 17145,
+      "state": "FAILED",
+      "fundingHash": "0x357a265dcbf529b01265ee4defb07572497096776cbd6b4293279299f1cd7cd1",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 3,
+      "address": "0x0Ad09C3b068d24ed31bd68897E86bDf9052D4cAb",
+      "characterId": 7,
+      "stars": 5,
+      "timeMs": 44661,
+      "state": "FAILED",
+      "fundingHash": "0x546d7c70eb35464e7a36f0ad276b6dbc67519264a8f108a6ae9f1740f0ee88ce",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 4,
+      "address": "0xF2FC70993CFFEe3C47fb7a63cbC0CFE4F267ed49",
+      "characterId": 5,
+      "stars": 3,
+      "timeMs": 16487,
+      "state": "FAILED",
+      "fundingHash": "0x72777a79a1ef29f41896553b9b1b2ad4810450877d751dbaaac057129cffb4f1",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 5,
+      "address": "0x60471438c96335CA293E4Dec6Abe33F1DC432018",
+      "characterId": 6,
+      "stars": 3,
+      "timeMs": 18848,
+      "state": "FAILED",
+      "fundingHash": "0xd43f34474aef80ff40c0be62ebe37d90fd0d8b81293448a1da1c2674ccfd045e",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 6,
+      "address": "0xb3B85d4030e4ec50569dB405Aa7fD6538fCDeA06",
+      "characterId": 7,
+      "stars": 3,
+      "timeMs": 50494,
+      "state": "FAILED",
+      "fundingHash": "0x0a89267639d19bd551e932d1196f530ba04ff17c4bda346c4f58f6ddb18f2595",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 7,
+      "address": "0xfD26DF78E4D5eAa75b28aa8d324f6e3452fd28c7",
+      "characterId": 5,
+      "stars": 5,
+      "timeMs": 46571,
+      "state": "FAILED",
+      "fundingHash": "0xc1d2d571cc7eb4b79b9536a9492449f8158e3dc340613c49a1f559b9144a917a",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 8,
+      "address": "0x38F239ca2e473E92dF622560eaB91865Cc7e237A",
+      "characterId": 6,
+      "stars": 4,
+      "timeMs": 31330,
+      "state": "FAILED",
+      "fundingHash": "0x29bb24f021c3d5677c5d2915cb475a04e232f84bd38becdfdd473840dad1b3b8",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 9,
+      "address": "0x8E76DbBE436786eB73cE6ccF41C32268702C4a8c",
+      "characterId": 7,
+      "stars": 3,
+      "timeMs": 49100,
+      "state": "FAILED",
+      "fundingHash": "0xf40185da0c1c03ac1281c8924c36370b4a5b5149dfb4e18c82aada5c06a76b81",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 10,
+      "address": "0x15BcD8a65E34FBb44224F26E75A3C3A360AaFa73",
+      "characterId": 5,
+      "stars": 6,
+      "timeMs": 30226,
+      "state": "FAILED",
+      "fundingHash": "0x874cfc1e0a275b024e4337177b861c4a80eb7d8a783ecad79674a25b73b66c78",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 11,
+      "address": "0xc739F4C8D234d9A8D4254038E6E20cd1C8A998d6",
+      "characterId": 6,
+      "stars": 6,
+      "timeMs": 38081,
+      "state": "FAILED",
+      "fundingHash": "0xf93fc469c96d89661d351f8e0780624f5c43dc7cadb5af7246a31a0fadb9a432",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 12,
+      "address": "0xca25207a6E6DdFEAECfcC99ED3868473E0883751",
+      "characterId": 7,
+      "stars": 4,
+      "timeMs": 55058,
+      "state": "FAILED",
+      "fundingHash": "0xda8cac8bd85a2cfbe7608623db2f745be30def2ec764c22bb52b02a99e95a7ca",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 13,
+      "address": "0x4925dd1fB3b1F4C55469f4947516533A9e62c022",
+      "characterId": 5,
+      "stars": 3,
+      "timeMs": 25473,
+      "state": "FAILED",
+      "fundingHash": "0x4abd8c87f25b70cb01068f550a82c6af7302c2f8b51bff560ff3290420152557",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 14,
+      "address": "0x1dB0F8159dA9653901d0Ab4dfba2ec589013D6b2",
+      "characterId": 6,
+      "stars": 5,
+      "timeMs": 30068,
+      "state": "FAILED",
+      "fundingHash": "0xb5ce1f5b05e5b67c11f93e211d7075e51915f812c1d72c35ea0f9f3d763e1dfc",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 15,
+      "address": "0x97acAE0b8Ea894d9018C25F474FEF19054fc781C",
+      "characterId": 7,
+      "stars": 6,
+      "timeMs": 37833,
+      "state": "FAILED",
+      "fundingHash": "0xdfe3e160390cdc80568f2c6f2d212d6b4cc35e0bb7812e65d7e4ce7f2de440a7",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 16,
+      "address": "0x53dB37CC1807a83Ca5760A8f9912640D23b22A9D",
+      "characterId": 5,
+      "stars": 6,
+      "timeMs": 28384,
+      "state": "FAILED",
+      "fundingHash": "0xcbe4cf74d6fd8bb3ce80465e772abdec65609c0f93adf8572d5abb362cf9d2d3",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 17,
+      "address": "0x336f5B69Ff62c29E0d5Ecbd2d4F99238B86702A9",
+      "characterId": 6,
+      "stars": 6,
+      "timeMs": 27948,
+      "state": "FAILED",
+      "fundingHash": "0x70a05e9d81cc01a7278273d19c2d550740b374397edd04f45fe80d27bfe8d18a",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 18,
+      "address": "0x4305C0159B6D100517856525c34E04B8c1585C33",
+      "characterId": 7,
+      "stars": 4,
+      "timeMs": 26109,
+      "state": "FAILED",
+      "fundingHash": "0x97a5d7863055589cf65c4e2afed286a746a51e974090fcdfef272447b5462918",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 19,
+      "address": "0x0eEDb95D9BC12a6cF12c1C9A1389B96B7397fDeb",
+      "characterId": 5,
+      "stars": 3,
+      "timeMs": 17327,
+      "state": "FAILED",
+      "fundingHash": "0x48b851b3c61c55b7e32fe18ca5fb70cc0b0de1d447e4034df628552ef11684ed",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 20,
+      "address": "0xDE502119C8d2aF0d56D00eb14BAeC36ADbfafC26",
+      "characterId": 6,
+      "stars": 5,
+      "timeMs": 42841,
+      "state": "FAILED",
+      "fundingHash": "0xba61e80febcf39a35332b390b147462a946b552d0c01ba09e8c113ed57137ac3",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 21,
+      "address": "0xFC9C8D9cAFE9d7a1753fC491Ef36c91d8ED93b26",
+      "characterId": 7,
+      "stars": 5,
+      "timeMs": 57465,
+      "state": "FAILED",
+      "fundingHash": "0x500a32e521a9f106875f62224ee28e12fdabc2d054daf82d6c9ce739c76ee007",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 22,
+      "address": "0xa52F763Ad9adBc3f0311C8b7fAD9d4b4E7cb9A97",
+      "characterId": 5,
+      "stars": 4,
+      "timeMs": 16686,
+      "state": "FAILED",
+      "fundingHash": "0x49ae03a439ea98a83e61c997484351a8d350c23c124134c70141a51d919913b8",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 23,
+      "address": "0x7e4F20AAEcD6c4EF6B3105c2b5EB5F84FE58cB07",
+      "characterId": 6,
+      "stars": 4,
+      "timeMs": 41806,
+      "state": "FAILED",
+      "fundingHash": "0x2085fc6d977a786c5dae2305899efab4f774d1058c2d59586b81dda1c669e628",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 24,
+      "address": "0x27A9529c1aC34F72Fd749eCB215903eB0720B1Ba",
+      "characterId": 7,
+      "stars": 5,
+      "timeMs": 31001,
+      "state": "FAILED",
+      "fundingHash": "0xd12b72f54514a7e6f966d299c56455b84694e11674e848391f9c0ef5e030f873",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 25,
+      "address": "0xb42f53Cd614516827Ac801240d447E5B19aCAB65",
+      "characterId": 5,
+      "stars": 3,
+      "timeMs": 46373,
+      "state": "FAILED",
+      "fundingHash": "0xe0fdf59a7ffc485824cd2519c1023e2f0af4c1258cdd6cf7e31074d1d1ba942d",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 26,
+      "address": "0x83D3dCB11907AB81994aeE089f139e22dCe2ecd4",
+      "characterId": 6,
+      "stars": 5,
+      "timeMs": 24843,
+      "state": "FAILED",
+      "fundingHash": "0x1d6bbda59398d7a7b719b0a3a52b9454a2f067640f90eba12bf8daa344d9e6cc",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 27,
+      "address": "0x0b35216dC5f8453B37330A46d1587440a6b64648",
+      "characterId": 7,
+      "stars": 3,
+      "timeMs": 18933,
+      "state": "FAILED",
+      "fundingHash": "0x99e83bc9096c5d5da77f255cb80249c775be38244cff9e955d77360e936c834f",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 28,
+      "address": "0x0d4688790690B5b7F5377A9d64275478050AC6B6",
+      "characterId": 5,
+      "stars": 6,
+      "timeMs": 49592,
+      "state": "FAILED",
+      "fundingHash": "0x7ec7069061b7bd9dd0be37e8988e8f1e670b1b98014fcb1f2600166a02e84dce",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 29,
+      "address": "0xBD9dE6CF70fd10acDCdc594cfa0d94a1C06348b4",
+      "characterId": 6,
+      "stars": 3,
+      "timeMs": 39346,
+      "state": "FAILED",
+      "fundingHash": "0x5c5d5f7a4e25dd2b7fbc9f3e4a4e664c6c1ef659f2759fdffe1dc2cbeec949bb",
+      "reason": "HTTP request failed."
+    },
+    {
+      "index": 30,
+      "address": "0x2b243159F633a4Fa78c6B76BcB56C43809705753",
+      "characterId": 7,
+      "stars": 5,
+      "timeMs": 30984,
+      "state": "FAILED",
+      "fundingHash": "0x3aea60e4d48c56be2a50960c0b0923cd70be2ed4bfb396129ea3aed1826152b4",
+      "reason": "HTTP request failed."
+    }
+  ],
+  "sent": 0,
+  "successful": 0,
+  "failed": 30,
+  "unknown": 0,
+  "averageMs": null,
+  "totalMs": 219416,
+  "finishedAt": 1795239497594
+}

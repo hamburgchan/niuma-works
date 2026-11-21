@@ -1,0 +1,9 @@
+PARTIAL LOG captured from tool output. This was a failed build, not a pass.
+Next.js 16.2.12 (Turbopack)
+Compiled successfully in 17.7s
+Finished TypeScript in 25.0s
+Collecting page data using 7 workers
+Build error occurred:
+Failed to read packages/nextjs/app/api/blob-upload/route.ts: ENOENT
+Cause: the retired, uncommitted GLB upload route was removed while this build was still running.
+The later build is recorded separately in next-build-paper-bots.txt.

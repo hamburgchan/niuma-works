@@ -1,0 +1,40 @@
+▲ Next.js 16.2.12 (Turbopack)
+
+  Creating an optimized production build ...
+/*! 🌼 daisyUI 5.5.19 */
+✓ Compiled successfully in 28.1s
+  Running TypeScript ...
+  Finished TypeScript in 34.5s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/13) ...
+  Generating static pages using 7 workers (3/13) 
+  Generating static pages using 7 workers (6/13) 
+  Generating static pages using 7 workers (9/13) 
+✓ Generating static pages using 7 workers (13/13) in 824ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/bots
+├ ƒ /api/characters/[characterId]/asset
+├ ƒ /api/faucet
+├ ƒ /api/live
+├ ƒ /api/orders/[orderId]
+├ ƒ /api/orders/[orderId]/start
+├ ƒ /api/runs/latency
+├ ○ /blockexplorer
+├ ● /blockexplorer/address/[address]
+│ └ /blockexplorer/address/0x0000000000000000000000000000000000000000
+├ ● /blockexplorer/transaction/[txHash]
+│ └ /blockexplorer/transaction/0x0000000000000000000000000000000000000000
+├ ○ /debug
+├ ○ /live
+├ ○ /play
+└ ƒ /play/[characterId]
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

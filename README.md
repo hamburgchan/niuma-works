@@ -52,6 +52,12 @@ Measured order gas costs at 102 gwei: order 0.024372492–0.026294988 MON, deliv
 
 ## Demo limitations
 
+## 机器人雇主实测
+
+`pwsh -File scripts/bot-rush.ps1 -N 30`；网页备选入口为 `/live` 的“放出 30 个机器人雇主”，仅 owner 签名可启动。模拟成绩明确标记“🤖 机器人雇主”，不冒充真人游戏。
+
+N=5：5 笔 finishRun 全部成功，平均 1255ms，总耗时 45.186s。N=30：30 笔充值成功，但广播前 RPC 准备均报 `HTTP request failed.`，finishRun 发出 0、成功 0、失败 30，总耗时 219.416s，**未重试**。HTTP 合批修正后只有只读 30 次预估通过，不能声称 30 笔真实结算通过。原始逐笔记录和资金回执保留在 `evidence/bots/`，详见 [机器人运行说明](docs/bot-rush.md)。
+
 Run scores are reported by the client and are not cheat resistant. Procedural motions are presets, not generated skeletal animation. Only Monad testnet is in scope.
 
 旧订单 1：链上登记的地址为私有，已用订单 4 替代。订单 4 曾登记同一份开赛后生成的土豆工人 GLB 的 public URL。两者现在均已被纸片人方案替换，不在演示中出现。

@@ -1,0 +1,62 @@
+{
+  "batchId": "f9bc8523-eb79-4ed2-979e-cf744f41ecb8",
+  "count": 5,
+  "startedAt": 1795239036846,
+  "phase": "blocked",
+  "rows": [
+    {
+      "index": 1,
+      "address": "0x013804bf77427c9b0ABe283f5f40E939c6eE03Ea",
+      "characterId": 5,
+      "stars": 4,
+      "timeMs": 15745,
+      "state": "FAILED",
+      "reason": "Pre-funding startup failed: absent control blob was checked by error.name rather than instanceof. No funding or finishRun broadcast; temporary keys discarded."
+    },
+    {
+      "index": 2,
+      "address": "0x7E19AC249B9B09473cdc824A6aDEA9bCaD186Af5",
+      "characterId": 6,
+      "stars": 4,
+      "timeMs": 35506,
+      "state": "FAILED",
+      "reason": "Pre-funding startup failed: absent control blob was checked by error.name rather than instanceof. No funding or finishRun broadcast; temporary keys discarded."
+    },
+    {
+      "index": 3,
+      "address": "0x4B7C62c15068D0f7c939B71d24EF571272da4f6B",
+      "characterId": 7,
+      "stars": 5,
+      "timeMs": 58799,
+      "state": "FAILED",
+      "reason": "Pre-funding startup failed: absent control blob was checked by error.name rather than instanceof. No funding or finishRun broadcast; temporary keys discarded."
+    },
+    {
+      "index": 4,
+      "address": "0xDA3B3b36d0ce8ac93a213f3738b8Dd04D3ec4A0B",
+      "characterId": 5,
+      "stars": 6,
+      "timeMs": 51995,
+      "state": "FAILED",
+      "reason": "Pre-funding startup failed: absent control blob was checked by error.name rather than instanceof. No funding or finishRun broadcast; temporary keys discarded."
+    },
+    {
+      "index": 5,
+      "address": "0x2ef5E41b6dd7064bCcA442B360361A634eb7acdB",
+      "characterId": 6,
+      "stars": 6,
+      "timeMs": 41690,
+      "state": "FAILED",
+      "reason": "Pre-funding startup failed: absent control blob was checked by error.name rather than instanceof. No funding or finishRun broadcast; temporary keys discarded."
+    }
+  ],
+  "sent": 0,
+  "successful": 0,
+  "failed": 5,
+  "unknown": 0,
+  "averageMs": null,
+  "totalMs": 109844,
+  "finishedAt": 1795239146690,
+  "verifiedAt": "2026-11-21T05:32:26.690030+00:00",
+  "verifiedNoFunding": true
+}

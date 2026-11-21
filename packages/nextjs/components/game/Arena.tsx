@@ -264,7 +264,6 @@ export function Arena(props: Props) {
           actor.position.addScaledVector(direction, 4.3);
           actor.position.x = THREE.MathUtils.clamp(actor.position.x, -7.7, 7.7);
           actor.position.z = THREE.MathUtils.clamp(actor.position.z, -7.7, 7.7);
-          actor.rotation.y = Math.atan2(direction.x, direction.z);
         }
         for (const star of stars) {
           const dx = actor.position.x - beforeX,

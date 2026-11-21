@@ -1,0 +1,80 @@
+{
+  "batchId": "b3401c8b-12f0-442a-85fc-cc8318798aef",
+  "count": 5,
+  "startedAt": 1795239178469,
+  "phase": "complete",
+  "rows": [
+    {
+      "index": 1,
+      "address": "0xd7e0D23B1d3725a8cfB1918e397bBF299Fa7366d",
+      "characterId": 5,
+      "stars": 3,
+      "timeMs": 40970,
+      "state": "CONFIRMED",
+      "fundingHash": "0x879b1a08d491f556df8472612d6fc10044a8013b373e23d02501f429bdd77691",
+      "hash": "0x10035d84b55386dff5569325c858264f26e7fb63df41e63da5c67eface804661",
+      "gasLimit": "103141",
+      "submittedAt": 1795239216631,
+      "elapsedMs": 1596
+    },
+    {
+      "index": 2,
+      "address": "0xC53d161b85D34c2850d51Aba506a64EBc78d232e",
+      "characterId": 6,
+      "stars": 5,
+      "timeMs": 29335,
+      "state": "CONFIRMED",
+      "fundingHash": "0xe9ff2a33a79e4cd6060c6e989f2f5b26f614ec6072d0aa872f769850c70b9c5b",
+      "hash": "0xaf5b77f72189eebbbac5d0205d03d5991a123a8f28f974bf6c003f9748a63ad4",
+      "gasLimit": "103141",
+      "submittedAt": 1795239218185,
+      "elapsedMs": 1561
+    },
+    {
+      "index": 3,
+      "address": "0x4d4B1A3e59DA0B0Cd93cfe2520962354228079C7",
+      "characterId": 7,
+      "stars": 3,
+      "timeMs": 18325,
+      "state": "CONFIRMED",
+      "fundingHash": "0x9cc8472e764771d2654ed15ec18b1a3ae6535740e02fd9c94f13334fe2400139",
+      "hash": "0x08619fee6019be7f061d19eb9fc5036829ceac4a699c66ca7d0b99919ac4629a",
+      "gasLimit": "103141",
+      "submittedAt": 1795239218998,
+      "elapsedMs": 1857
+    },
+    {
+      "index": 4,
+      "address": "0x1b4CeAD162564A52067D9672ce871C0d137E76c4",
+      "characterId": 5,
+      "stars": 5,
+      "timeMs": 41622,
+      "state": "CONFIRMED",
+      "fundingHash": "0xb67a5b9c7ddb6aff754a836b0c3fb96928944c88b75e53b74039d8b839507cbd",
+      "hash": "0x8497170bf66902d7f8f69185f90129a2173a8f5ecd41e36cfac0bb55951ca8b1",
+      "gasLimit": "103141",
+      "submittedAt": 1795239217394,
+      "elapsedMs": 663
+    },
+    {
+      "index": 5,
+      "address": "0xa7bD450C17ae8EbA77af304eD33935C6480675FD",
+      "characterId": 6,
+      "stars": 6,
+      "timeMs": 21838,
+      "state": "CONFIRMED",
+      "fundingHash": "0x665ef797428fc096ba868e7b3a39eddfc323b9fe61bd9a094b808ef06bb4b074",
+      "hash": "0xb7422a2a28f45ee50cca604b3ee9c6719c42e0b51b48a3941a6aaa3a88d4575e",
+      "gasLimit": "103141",
+      "submittedAt": 1795239219763,
+      "elapsedMs": 600
+    }
+  ],
+  "sent": 5,
+  "successful": 5,
+  "failed": 0,
+  "unknown": 0,
+  "averageMs": 1255,
+  "totalMs": 45186,
+  "finishedAt": 1795239223655
+}

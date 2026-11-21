@@ -1,0 +1,336 @@
+{
+  "at": "2026-11-21T05:41:26.832494+00:00",
+  "chainId": 10143,
+  "status": "PASS_RECEIPT_AUDIT_WITH_PRESERVED_BATCH_FAILURE",
+  "batchCount": 2,
+  "fundingReceiptCount": 35,
+  "finishRunReceiptCount": 5,
+  "confirmationTimingScope": "Measured by robot process; not chain finality or load capacity evidence",
+  "rows": [
+    {
+      "batchId": "b3401c8b-12f0-442a-85fc-cc8318798aef",
+      "hash": "0x10035d84b55386dff5569325c858264f26e7fb63df41e63da5c67eface804661",
+      "fundingHash": "0x879b1a08d491f556df8472612d6fc10044a8013b373e23d02501f429bdd77691",
+      "address": "0xd7e0D23B1d3725a8cfB1918e397bBF299Fa7366d",
+      "characterId": 5,
+      "status": true,
+      "blockNumber": 81497139,
+      "chargedFeeWei": "10520382000000000",
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "b3401c8b-12f0-442a-85fc-cc8318798aef",
+      "hash": "0xaf5b77f72189eebbbac5d0205d03d5991a123a8f28f974bf6c003f9748a63ad4",
+      "fundingHash": "0xe9ff2a33a79e4cd6060c6e989f2f5b26f614ec6072d0aa872f769850c70b9c5b",
+      "address": "0xC53d161b85D34c2850d51Aba506a64EBc78d232e",
+      "characterId": 6,
+      "status": true,
+      "blockNumber": 81497144,
+      "chargedFeeWei": "10520382000000000",
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "b3401c8b-12f0-442a-85fc-cc8318798aef",
+      "hash": "0x08619fee6019be7f061d19eb9fc5036829ceac4a699c66ca7d0b99919ac4629a",
+      "fundingHash": "0x9cc8472e764771d2654ed15ec18b1a3ae6535740e02fd9c94f13334fe2400139",
+      "address": "0x4d4B1A3e59DA0B0Cd93cfe2520962354228079C7",
+      "characterId": 7,
+      "status": true,
+      "blockNumber": 81497147,
+      "chargedFeeWei": "10520382000000000",
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "b3401c8b-12f0-442a-85fc-cc8318798aef",
+      "hash": "0x8497170bf66902d7f8f69185f90129a2173a8f5ecd41e36cfac0bb55951ca8b1",
+      "fundingHash": "0xb67a5b9c7ddb6aff754a836b0c3fb96928944c88b75e53b74039d8b839507cbd",
+      "address": "0x1b4CeAD162564A52067D9672ce871C0d137E76c4",
+      "characterId": 5,
+      "status": true,
+      "blockNumber": 81497141,
+      "chargedFeeWei": "10520382000000000",
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "b3401c8b-12f0-442a-85fc-cc8318798aef",
+      "hash": "0xb7422a2a28f45ee50cca604b3ee9c6719c42e0b51b48a3941a6aaa3a88d4575e",
+      "fundingHash": "0x665ef797428fc096ba868e7b3a39eddfc323b9fe61bd9a094b808ef06bb4b074",
+      "address": "0xa7bD450C17ae8EbA77af304eD33935C6480675FD",
+      "characterId": 6,
+      "status": true,
+      "blockNumber": 81497149,
+      "chargedFeeWei": "10520382000000000",
+      "ownerShareWei": "900000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x86b9ed62acba31863d191b4dfa6d514bd430afc5ce9c5b159c777fa4679583e2",
+      "address": "0x68Fc2E349d59277FcABC8e319C28039bbED6C1Ed",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x357a265dcbf529b01265ee4defb07572497096776cbd6b4293279299f1cd7cd1",
+      "address": "0x6fd30CAD8894f3e86783c54c65DD8610a461D296",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x546d7c70eb35464e7a36f0ad276b6dbc67519264a8f108a6ae9f1740f0ee88ce",
+      "address": "0x0Ad09C3b068d24ed31bd68897E86bDf9052D4cAb",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x72777a79a1ef29f41896553b9b1b2ad4810450877d751dbaaac057129cffb4f1",
+      "address": "0xF2FC70993CFFEe3C47fb7a63cbC0CFE4F267ed49",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0xd43f34474aef80ff40c0be62ebe37d90fd0d8b81293448a1da1c2674ccfd045e",
+      "address": "0x60471438c96335CA293E4Dec6Abe33F1DC432018",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x0a89267639d19bd551e932d1196f530ba04ff17c4bda346c4f58f6ddb18f2595",
+      "address": "0xb3B85d4030e4ec50569dB405Aa7fD6538fCDeA06",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0xc1d2d571cc7eb4b79b9536a9492449f8158e3dc340613c49a1f559b9144a917a",
+      "address": "0xfD26DF78E4D5eAa75b28aa8d324f6e3452fd28c7",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x29bb24f021c3d5677c5d2915cb475a04e232f84bd38becdfdd473840dad1b3b8",
+      "address": "0x38F239ca2e473E92dF622560eaB91865Cc7e237A",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0xf40185da0c1c03ac1281c8924c36370b4a5b5149dfb4e18c82aada5c06a76b81",
+      "address": "0x8E76DbBE436786eB73cE6ccF41C32268702C4a8c",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x874cfc1e0a275b024e4337177b861c4a80eb7d8a783ecad79674a25b73b66c78",
+      "address": "0x15BcD8a65E34FBb44224F26E75A3C3A360AaFa73",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0xf93fc469c96d89661d351f8e0780624f5c43dc7cadb5af7246a31a0fadb9a432",
+      "address": "0xc739F4C8D234d9A8D4254038E6E20cd1C8A998d6",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0xda8cac8bd85a2cfbe7608623db2f745be30def2ec764c22bb52b02a99e95a7ca",
+      "address": "0xca25207a6E6DdFEAECfcC99ED3868473E0883751",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x4abd8c87f25b70cb01068f550a82c6af7302c2f8b51bff560ff3290420152557",
+      "address": "0x4925dd1fB3b1F4C55469f4947516533A9e62c022",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0xb5ce1f5b05e5b67c11f93e211d7075e51915f812c1d72c35ea0f9f3d763e1dfc",
+      "address": "0x1dB0F8159dA9653901d0Ab4dfba2ec589013D6b2",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0xdfe3e160390cdc80568f2c6f2d212d6b4cc35e0bb7812e65d7e4ce7f2de440a7",
+      "address": "0x97acAE0b8Ea894d9018C25F474FEF19054fc781C",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0xcbe4cf74d6fd8bb3ce80465e772abdec65609c0f93adf8572d5abb362cf9d2d3",
+      "address": "0x53dB37CC1807a83Ca5760A8f9912640D23b22A9D",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x70a05e9d81cc01a7278273d19c2d550740b374397edd04f45fe80d27bfe8d18a",
+      "address": "0x336f5B69Ff62c29E0d5Ecbd2d4F99238B86702A9",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x97a5d7863055589cf65c4e2afed286a746a51e974090fcdfef272447b5462918",
+      "address": "0x4305C0159B6D100517856525c34E04B8c1585C33",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x48b851b3c61c55b7e32fe18ca5fb70cc0b0de1d447e4034df628552ef11684ed",
+      "address": "0x0eEDb95D9BC12a6cF12c1C9A1389B96B7397fDeb",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0xba61e80febcf39a35332b390b147462a946b552d0c01ba09e8c113ed57137ac3",
+      "address": "0xDE502119C8d2aF0d56D00eb14BAeC36ADbfafC26",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x500a32e521a9f106875f62224ee28e12fdabc2d054daf82d6c9ce739c76ee007",
+      "address": "0xFC9C8D9cAFE9d7a1753fC491Ef36c91d8ED93b26",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x49ae03a439ea98a83e61c997484351a8d350c23c124134c70141a51d919913b8",
+      "address": "0xa52F763Ad9adBc3f0311C8b7fAD9d4b4E7cb9A97",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x2085fc6d977a786c5dae2305899efab4f774d1058c2d59586b81dda1c669e628",
+      "address": "0x7e4F20AAEcD6c4EF6B3105c2b5EB5F84FE58cB07",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0xd12b72f54514a7e6f966d299c56455b84694e11674e848391f9c0ef5e030f873",
+      "address": "0x27A9529c1aC34F72Fd749eCB215903eB0720B1Ba",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0xe0fdf59a7ffc485824cd2519c1023e2f0af4c1258cdd6cf7e31074d1d1ba942d",
+      "address": "0xb42f53Cd614516827Ac801240d447E5B19aCAB65",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x1d6bbda59398d7a7b719b0a3a52b9454a2f067640f90eba12bf8daa344d9e6cc",
+      "address": "0x83D3dCB11907AB81994aeE089f139e22dCe2ecd4",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x99e83bc9096c5d5da77f255cb80249c775be38244cff9e955d77360e936c834f",
+      "address": "0x0b35216dC5f8453B37330A46d1587440a6b64648",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x7ec7069061b7bd9dd0be37e8988e8f1e670b1b98014fcb1f2600166a02e84dce",
+      "address": "0x0d4688790690B5b7F5377A9d64275478050AC6B6",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x5c5d5f7a4e25dd2b7fbc9f3e4a4e664c6c1ef659f2759fdffe1dc2cbeec949bb",
+      "address": "0xBD9dE6CF70fd10acDCdc594cfa0d94a1C06348b4",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    },
+    {
+      "batchId": "b4477613-1a3a-4451-bb44-dd5dbf9f51dd",
+      "fundingHash": "0x3aea60e4d48c56be2a50960c0b0923cd70be2ed4bfb396129ea3aed1826152b4",
+      "address": "0x2b243159F633a4Fa78c6B76BcB56C43809705753",
+      "fundingStatus": true,
+      "finishRunBroadcast": false,
+      "reason": "HTTP request failed.",
+      "remainingBalanceWei": "12000000000000000"
+    }
+  ]
+}

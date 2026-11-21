@@ -30,14 +30,25 @@ let pending: Promise<Cache & { latestBlock: number }> | undefined;
 async function refresh() {
   const { value, etag } = await cache();
   const latestBlock = Number(await client.getBlockNumber({ cacheTime: 0 }));
-  // Bounded RPC work per request; the durable cursor catches up across requests.
-  for (let batch = 0; batch < 16 && value.cursor <= latestBlock; batch++) {
-    const end = Math.min(value.cursor + 99, latestBlock);
-    const logs = await client.getLogs({
-      address: deployment.address,
-      fromBlock: BigInt(value.cursor),
-      toBlock: BigInt(end),
-    });
+  // Read recent events even while the historical cursor is catching up. Each
+  // RPC query remains <=100 blocks; transport batches the independent reads.
+  const ranges = Array.from(
+    { length: Math.min(16, Math.max(0, Math.ceil((latestBlock - value.cursor + 1) / 100))) },
+    (_, i) => ({
+      start: value.cursor + i * 100,
+      end: Math.min(value.cursor + i * 100 + 99, latestBlock),
+    }),
+  );
+  const chunks = await Promise.all(
+    [...ranges, { start: Math.max(deployment.deployedOnBlock, latestBlock - 99), end: latestBlock }].map(range =>
+      client.getLogs({
+        address: deployment.address,
+        fromBlock: BigInt(range.start),
+        toBlock: BigInt(range.end),
+      }),
+    ),
+  );
+  for (const logs of chunks) {
     for (const log of logs) {
       try {
         const decoded = decodeEventLog({ abi: deployment.abi, data: log.data, topics: log.topics });
@@ -56,8 +67,9 @@ async function refresh() {
         /* Other contract events are outside this feed. */
       }
     }
-    value.cursor = end + 1;
   }
+  if (ranges.length) value.cursor = ranges[ranges.length - 1].end + 1;
+  value.events.sort((a, b) => a.blockNumber - b.blockNumber || a.logIndex - b.logIndex);
   try {
     await putState(PATH, JSON.stringify(value), etag);
   } catch (error) {

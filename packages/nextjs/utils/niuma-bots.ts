@@ -1,11 +1,22 @@
 import { BlobNotFoundError, put } from "@vercel/blob";
 import { randomInt } from "node:crypto";
 import "server-only";
-import { type Hash, encodeFunctionData, keccak256, parseEther, verifyMessage } from "viem";
+import { type Hash, createPublicClient, encodeFunctionData, http, keccak256, parseEther, verifyMessage } from "viem";
 import { generatePrivateKey, privateKeyToAccount } from "viem/accounts";
+import { monadTestnet } from "viem/chains";
 import { DEMO_CHARACTERS } from "~~/utils/niuma";
 import { fundBot } from "~~/utils/niuma-faucet";
-import { access, client, deployment, freshBlob, putState, readRecord } from "~~/utils/niuma-server";
+import { access, deployment, freshBlob, putState, readRecord } from "~~/utils/niuma-server";
+
+// Coalesce concurrent reads and broadcasts into JSON-RPC batches, rather than
+// opening 30 separate HTTP requests against the public endpoint. Never retry RPC.
+const client = createPublicClient({
+  chain: monadTestnet,
+  transport: http(process.env.MONAD_RPC_URL || "https://testnet-rpc.monad.xyz", {
+    batch: { wait: 30, batchSize: 100 },
+    retryCount: 0,
+  }),
+});
 
 export const BOT_ROOT = `niuma/${deployment.address.toLowerCase()}/bots`;
 export type BotRow = {
