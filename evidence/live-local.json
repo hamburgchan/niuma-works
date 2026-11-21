@@ -1,0 +1,249 @@
+{
+  "events": [
+    {
+      "id": "0x67b53795d2c42431294c5fad128399969fd0ff5898af9fd932d0c634c6feb573:34",
+      "hash": "0x67b53795d2c42431294c5fad128399969fd0ff5898af9fd932d0c634c6feb573",
+      "blockNumber": 81488352,
+      "logIndex": 34,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "4",
+        "player": "0xD4FaB6129F14470E7C46f8cD6f59c1aBc9c489d2",
+        "stars": 0,
+        "timeMs": "60000",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xe7b78a0f74bbb9d4edf8f6dfc22b62bba96567b104ff13c5d2cac46b711aae57:36",
+      "hash": "0xe7b78a0f74bbb9d4edf8f6dfc22b62bba96567b104ff13c5d2cac46b711aae57",
+      "blockNumber": 81483261,
+      "logIndex": 36,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xB7503F45f3602B1Fae19C693Ee13B9699567fBE7",
+        "stars": 6,
+        "timeMs": "21763",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x3ed7b7b178c03487c3dc5c6f7ee7969ffc3a844477c5423b45183d894b1624ee:3",
+      "hash": "0x3ed7b7b178c03487c3dc5c6f7ee7969ffc3a844477c5423b45183d894b1624ee",
+      "blockNumber": 81482207,
+      "logIndex": 3,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "4",
+        "player": "0xCebD7f5A3003ba1C50a905358D074281E4C7517D",
+        "stars": 0,
+        "timeMs": "60000",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xdba2bd7f99d1bfcdf75ad12ad178356258c47c1b9b29248483c7dfd3b0e04b2a:76",
+      "hash": "0xdba2bd7f99d1bfcdf75ad12ad178356258c47c1b9b29248483c7dfd3b0e04b2a",
+      "blockNumber": 81481442,
+      "logIndex": 76,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "4",
+        "player": "0x2d5FC86Ccb4dC23AC5c686374C56aB02a139bBBA",
+        "stars": 1,
+        "timeMs": "53056",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x6cbbd280a7ed0926d78f79d972373ccfd99e89cb8f8aa05460059d5eae7b79a7:1",
+      "hash": "0x6cbbd280a7ed0926d78f79d972373ccfd99e89cb8f8aa05460059d5eae7b79a7",
+      "blockNumber": 81477148,
+      "logIndex": 1,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "4",
+        "player": "0xD4FaB6129F14470E7C46f8cD6f59c1aBc9c489d2",
+        "stars": 1,
+        "timeMs": "25956",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x4f4de5502bbf2bb8d31d17f5c1e3d142590cb652b354caca2c2e342c5a2fd96e:82",
+      "hash": "0x4f4de5502bbf2bb8d31d17f5c1e3d142590cb652b354caca2c2e342c5a2fd96e",
+      "blockNumber": 81474015,
+      "logIndex": 82,
+      "event": "Paid",
+      "args": {
+        "orderId": "4",
+        "recipients": [
+          "0xF7D425b71b7CAFC4553A99fF99bB8eC76672aD02",
+          "0x0C682dcE86e98585194977e2abBe63956cc4065F",
+          "0x45B5802923aD6e25F8EABcC49D141853e7A81265",
+          "0x613E15917Ab21dd7357369e625b3C78294A87ECa"
+        ],
+        "amounts": [
+          "5000000000000000",
+          "2000000000000000",
+          "2000000000000000",
+          "1000000000000000"
+        ]
+      }
+    },
+    {
+      "id": "0x835966121cfb1b6f7a0eca92f27dfa34dc2ad0c8f73c76f65c1ea54582eb4752:62",
+      "hash": "0x835966121cfb1b6f7a0eca92f27dfa34dc2ad0c8f73c76f65c1ea54582eb4752",
+      "blockNumber": 81471134,
+      "logIndex": 62,
+      "event": "Paid",
+      "args": {
+        "orderId": "3",
+        "recipients": [
+          "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+          "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+          "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+          "0x88e79c388E1EaA6fc0AB876456D75037598F16e4"
+        ],
+        "amounts": [
+          "5000000000000000",
+          "2000000000000000",
+          "2000000000000000",
+          "1000000000000000"
+        ]
+      }
+    },
+    {
+      "id": "0xabf41afc20853d5e96281b01c961be76fb3f83ff1f4b7913e874bc16b20f8f45:1",
+      "hash": "0xabf41afc20853d5e96281b01c961be76fb3f83ff1f4b7913e874bc16b20f8f45",
+      "blockNumber": 81470779,
+      "logIndex": 1,
+      "event": "Paid",
+      "args": {
+        "orderId": "2",
+        "recipients": [
+          "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+          "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+          "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+          "0x88e79c388E1EaA6fc0AB876456D75037598F16e4"
+        ],
+        "amounts": [
+          "5000000000000000",
+          "2000000000000000",
+          "2000000000000000",
+          "1000000000000000"
+        ]
+      }
+    },
+    {
+      "id": "0x502b91f3f9a18b51cbdc835cd93be1b7e5348d4f3c7c5a610d4cdb3487bbb20e:1",
+      "hash": "0x502b91f3f9a18b51cbdc835cd93be1b7e5348d4f3c7c5a610d4cdb3487bbb20e",
+      "blockNumber": 81470047,
+      "logIndex": 1,
+      "event": "Paid",
+      "args": {
+        "orderId": "1",
+        "recipients": [
+          "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+          "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+          "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+          "0x88e79c388E1EaA6fc0AB876456D75037598F16e4"
+        ],
+        "amounts": [
+          "5000000000000000",
+          "2000000000000000",
+          "2000000000000000",
+          "1000000000000000"
+        ]
+      }
+    }
+  ],
+  "rankings": [
+    {
+      "id": "0xe7b78a0f74bbb9d4edf8f6dfc22b62bba96567b104ff13c5d2cac46b711aae57:36",
+      "hash": "0xe7b78a0f74bbb9d4edf8f6dfc22b62bba96567b104ff13c5d2cac46b711aae57",
+      "blockNumber": 81483261,
+      "logIndex": 36,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "3",
+        "player": "0xB7503F45f3602B1Fae19C693Ee13B9699567fBE7",
+        "stars": 6,
+        "timeMs": "21763",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x6cbbd280a7ed0926d78f79d972373ccfd99e89cb8f8aa05460059d5eae7b79a7:1",
+      "hash": "0x6cbbd280a7ed0926d78f79d972373ccfd99e89cb8f8aa05460059d5eae7b79a7",
+      "blockNumber": 81477148,
+      "logIndex": 1,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "4",
+        "player": "0xD4FaB6129F14470E7C46f8cD6f59c1aBc9c489d2",
+        "stars": 1,
+        "timeMs": "25956",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0xdba2bd7f99d1bfcdf75ad12ad178356258c47c1b9b29248483c7dfd3b0e04b2a:76",
+      "hash": "0xdba2bd7f99d1bfcdf75ad12ad178356258c47c1b9b29248483c7dfd3b0e04b2a",
+      "blockNumber": 81481442,
+      "logIndex": 76,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "4",
+        "player": "0x2d5FC86Ccb4dC23AC5c686374C56aB02a139bBBA",
+        "stars": 1,
+        "timeMs": "53056",
+        "ownerShare": "900000000000000"
+      }
+    },
+    {
+      "id": "0x3ed7b7b178c03487c3dc5c6f7ee7969ffc3a844477c5423b45183d894b1624ee:3",
+      "hash": "0x3ed7b7b178c03487c3dc5c6f7ee7969ffc3a844477c5423b45183d894b1624ee",
+      "blockNumber": 81482207,
+      "logIndex": 3,
+      "event": "RunFinished",
+      "args": {
+        "characterId": "4",
+        "player": "0xCebD7f5A3003ba1C50a905358D074281E4C7517D",
+        "stars": 0,
+        "timeMs": "60000",
+        "ownerShare": "900000000000000"
+      }
+    }
+  ],
+  "runCount": 5,
+  "laborLeaders": [
+    {
+      "characterId": 3,
+      "shifts": 1,
+      "fullAttendance": 1,
+      "ownerWagesWei": "900000000000000"
+    },
+    {
+      "characterId": 4,
+      "shifts": 4,
+      "fullAttendance": 0,
+      "ownerWagesWei": "3600000000000000"
+    }
+  ],
+  "settlementCount": 9,
+  "latency": {
+    "0x67b53795d2c42431294c5fad128399969fd0ff5898af9fd932d0c634c6feb573": 1485,
+    "0xe7b78a0f74bbb9d4edf8f6dfc22b62bba96567b104ff13c5d2cac46b711aae57": 1149,
+    "0x3ed7b7b178c03487c3dc5c6f7ee7969ffc3a844477c5423b45183d894b1624ee": 1481,
+    "0xdba2bd7f99d1bfcdf75ad12ad178356258c47c1b9b29248483c7dfd3b0e04b2a": 1496,
+    "0x6cbbd280a7ed0926d78f79d972373ccfd99e89cb8f8aa05460059d5eae7b79a7": 2569
+  },
+  "latencySamples": 5,
+  "averageMs": 1636,
+  "indexedThrough": 81489743,
+  "latestBlock": 81490496,
+  "catchingUp": true,
+  "updatedAt": "2026-11-21T04:58:33.361Z"
+}

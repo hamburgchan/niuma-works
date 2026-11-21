@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-21T04:58:21.356432+00:00",
+  "scope": "One mobile-size simulated browser plus one real phone, not two real phones",
+  "runs": [
+    {
+      "device": "Claude 内置浏览器，手机尺寸模拟",
+      "deviceSource": "User report; physical device identity is not independently observable from the chain",
+      "hash": "0x3ed7b7b178c03487c3dc5c6f7ee7969ffc3a844477c5423b45183d894b1624ee",
+      "status": "CONFIRMED",
+      "blockNumber": 81482207,
+      "event": {
+        "characterId": 4,
+        "player": "0xCebD7f5A3003ba1C50a905358D074281E4C7517D",
+        "stars": 0,
+        "timeMs": 60000,
+        "ownerShare": 900000000000000
+      },
+      "browserReportedMs": 1481
+    },
+    {
+      "device": "真实手机",
+      "deviceSource": "User report; physical device identity is not independently observable from the chain",
+      "hash": "0xe7b78a0f74bbb9d4edf8f6dfc22b62bba96567b104ff13c5d2cac46b711aae57",
+      "status": "CONFIRMED",
+      "blockNumber": 81483261,
+      "event": {
+        "characterId": 3,
+        "player": "0xB7503F45f3602B1Fae19C693Ee13B9699567fBE7",
+        "stars": 6,
+        "timeMs": 21763,
+        "ownerShare": 900000000000000
+      },
+      "browserReportedMs": 1149
+    }
+  ]
+}
