@@ -82,7 +82,8 @@ export function FaucetClaim() {
           {error}
         </p>
       )}
-      <p className="small-note">每地址一次；每网络每小时最多 6 次。总额度 0.9 MON。</p>
+      <p className="small-note">每地址一次；每网络每小时最多 60 次。总额度 0.9 MON。</p>
+      <p className="small-note">每班约 0.0096 MON（含 gas），领取一次可以上 3 班。实际以链上费用为准。</p>
     </div>
   );
 }

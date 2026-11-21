@@ -1,4 +1,4 @@
-import { BlobNotFoundError, get, put } from "@vercel/blob";
+import { BlobNotFoundError, get, head, put } from "@vercel/blob";
 import "server-only";
 import { createPublicClient, http, keccak256, stringToHex, verifyMessage } from "viem";
 import { monadTestnet } from "viem/chains";
@@ -20,6 +20,57 @@ export function blobPath(id: bigint, name: string) {
   return `niuma/${deployment.address.toLowerCase()}/orders/${id}/${name}`;
 }
 
+export async function freshBlob(path: string) {
+  if (access === "private") return get(path, { access, useCache: false });
+  const metadata = await head(path);
+  const versionPath = `${path}.versions/${Buffer.from(metadata.etag).toString("hex")}.json`;
+  try {
+    const version = await head(versionPath);
+    const snapshot = await get(version.url, { access });
+    if (snapshot?.statusCode === 200) {
+      snapshot.blob.etag = metadata.etag;
+      return snapshot;
+    }
+  } catch (error) {
+    if (!(error instanceof BlobNotFoundError)) throw error;
+  }
+  const result = await get(`${metadata.url}?v=${encodeURIComponent(metadata.etag)}`, { access, useCache: false });
+  if (result?.statusCode === 200) {
+    if (result.blob.etag.replace(/^W\//, "") !== metadata.etag)
+      throw new Error("Blob version is refreshing; retry later");
+    result.blob.etag = metadata.etag;
+  }
+  return result;
+}
+
+// The mutable control object provides atomic CAS. Immutable version bodies avoid
+// public Blob's up-to-60-second CDN delay when reading a new control ETag.
+export async function putState(path: string, body: string, etag?: string) {
+  const written = await put(path, body, {
+    access,
+    contentType: "application/json",
+    allowOverwrite: !!etag,
+    ...(etag ? { ifMatch: etag } : {}),
+    cacheControlMaxAge: 60,
+  });
+  const versionPath = `${path}.versions/${Buffer.from(written.etag).toString("hex")}.json`;
+  try {
+    await put(versionPath, body, {
+      access,
+      contentType: "application/json",
+      allowOverwrite: false,
+      cacheControlMaxAge: 60,
+    });
+  } catch (error) {
+    try {
+      await head(versionPath);
+    } catch {
+      throw error;
+    }
+  }
+  return written;
+}
+
 export async function readOrder(id: bigint) {
   if ((await client.getChainId()) !== 10143) throw new Error("Monad testnet only");
   const count = await client.readContract({ ...deployment, functionName: "orderCount" });
@@ -29,7 +80,7 @@ export async function readOrder(id: bigint) {
 
 export async function readRecord(path: string): Promise<Record<string, unknown> | null> {
   try {
-    const result = await get(path, { access, useCache: false });
+    const result = await freshBlob(path);
     if (!result || result.statusCode !== 200) return null;
     return JSON.parse(await new Response(result.stream).text());
   } catch (error) {

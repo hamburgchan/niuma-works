@@ -1,13 +1,13 @@
-import { BlobNotFoundError, BlobPreconditionFailedError, get, put } from "@vercel/blob";
+import { BlobNotFoundError, BlobPreconditionFailedError } from "@vercel/blob";
 import { createHmac } from "node:crypto";
 import "server-only";
 import { type Hash, getAddress, isAddress, keccak256, parseEther, verifyMessage } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
-import { access, client, deployment } from "~~/utils/niuma-server";
+import { client, deployment, freshBlob, putState } from "~~/utils/niuma-server";
 
 const AMOUNT = parseEther("0.03");
 const CAP = parseEther("0.9");
-const PER_IP_HOUR = 6;
+const PER_IP_HOUR = 60;
 const PATH = `niuma/${deployment.address.toLowerCase()}/faucet/ledger-v1.json`;
 type Claim = {
   hash: Hash;
@@ -26,23 +26,18 @@ type Ledger = {
 
 async function readLedger(): Promise<{ state: Ledger; etag: string }> {
   try {
-    const result = await get(PATH, { access, useCache: false });
+    const result = await freshBlob(PATH);
     if (result?.statusCode === 200)
       return { state: JSON.parse(await new Response(result.stream).text()), etag: result.blob.etag };
   } catch (error) {
     if (!(error instanceof BlobNotFoundError)) throw error;
   }
   try {
-    await put(PATH, JSON.stringify({ reservedWei: "0", nextNonce: 0, addresses: {}, windows: {} }), {
-      access,
-      contentType: "application/json",
-      allowOverwrite: false,
-      cacheControlMaxAge: 60,
-    });
+    await putState(PATH, JSON.stringify({ reservedWei: "0", nextNonce: 0, addresses: {}, windows: {} }));
   } catch {
     /* Another request may initialize it first. */
   }
-  const result = await get(PATH, { access, useCache: false });
+  const result = await freshBlob(PATH);
   if (!result || result.statusCode !== 200) throw new Error("Faucet ledger unavailable");
   return { state: JSON.parse(await new Response(result.stream).text()), etag: result.blob.etag };
 }
@@ -134,13 +129,7 @@ export async function claimFaucet(addressInput: unknown, signature: unknown, req
     state.windows[window] = (state.windows[window] || 0) + 1;
     // Original hash/nonce and budget reservation become durable BEFORE broadcast.
     try {
-      await put(PATH, JSON.stringify(state), {
-        access,
-        contentType: "application/json",
-        allowOverwrite: true,
-        ifMatch: etag,
-        cacheControlMaxAge: 60,
-      });
+      await putState(PATH, JSON.stringify(state), etag);
     } catch (error) {
       if (error instanceof BlobPreconditionFailedError) continue;
       throw error;

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Address } from "@scaffold-ui/components";
-import { type Hash, formatEther } from "viem";
+import { type Hash, formatEther, parseEventLogs } from "viem";
 import { monadTestnet } from "viem/chains";
 import { useAccount, useBalance, useConnect, usePublicClient, useSwitchChain } from "wagmi";
 import { FaucetClaim } from "~~/components/game/FaucetClaim";
@@ -25,6 +25,7 @@ type RunRecord = RunResult & {
   elapsedMs?: number;
   gasLimit?: string;
   feeWei?: string;
+  ownerShareWei?: string;
   nonce: number;
   blockNumber: string;
 };
@@ -180,6 +181,11 @@ export function PlayClient({ characterId }: { characterId: number }) {
               confirmedAt: Date.now(),
               elapsedMs: Date.now() - saved.startedAt,
               feeWei: (gas * receipt.effectiveGasPrice).toString(),
+              ownerShareWei: parseEventLogs({
+                abi: NIUMA.abi,
+                logs: receipt.logs,
+                eventName: "RunFinished",
+              })[0]?.args.ownerShare.toString(),
             };
             persist(completed);
             const history = JSON.parse(localStorage.getItem("niuma-run-history-v1") || "[]");
@@ -229,8 +235,8 @@ export function PlayClient({ characterId }: { characterId: number }) {
     <div className="play-page">
       <div className="play-heading">
         <div>
-          <p className="eyebrow">60 秒 · 六颗星 · 一次结算</p>
-          <h1>{CHARACTER_NAMES[characterId] || `角色 #${characterId}`}的收星小场</h1>
+          <p className="eyebrow">一班 60 秒 · 六张工单 · 一笔工资结算</p>
+          <h1>{CHARACTER_NAMES[characterId] || `新牛马 #${characterId}`}，该上工了。</h1>
         </div>
         <div className="character-switch" aria-label="切换角色">
           {DEMO_CHARACTERS.map(id => (
@@ -245,10 +251,12 @@ export function PlayClient({ characterId }: { characterId: number }) {
         </div>
       </div>
       <div className="play-layout">
-        <section className="game-section" aria-label="收星游戏">
+        <section className="game-section" aria-label="打工一班">
           {data && data[2] ? (
             <Arena
               url={data[2]}
+              employeeName={CHARACTER_NAMES[characterId] || "新牛马"}
+              characterId={characterId}
               sha256={data[1]}
               playing={playing}
               runKey={runKey}
@@ -279,7 +287,7 @@ export function PlayClient({ characterId }: { characterId: number }) {
                 蹦跳
               </button>
             </div>
-            <span>收满六颗星或 60 秒结束</span>
+            <span>领完六张工单或 60 秒下班</span>
           </div>
         </section>
         <aside className="play-panel">
@@ -303,21 +311,21 @@ export function PlayClient({ characterId }: { characterId: number }) {
           <FaucetClaim />
           <dl className="game-facts">
             <div>
-              <dt>每局游玩费</dt>
+              <dt>每班工资支出</dt>
               <dd>{fee.data !== undefined ? formatEther(fee.data) : "…"} MON + gas</dd>
             </div>
             <div>
-              <dt>角色主人分成</dt>
+              <dt>老板收到</dt>
               <dd>{ownerBps.data !== undefined ? `${Number(ownerBps.data) / 100}%` : "…"}</dd>
             </div>
             <div>
-              <dt>本角色已玩</dt>
-              <dd>{data ? data[6].toString() : "…"} 局</dd>
+              <dt>累计班次</dt>
+              <dd>{data ? data[6].toString() : "…"} 班</dd>
             </div>
           </dl>
           {playing ? (
             <button className="btn btn-primary full-width" onClick={() => setFinishSignal(value => value + 1)}>
-              结束本局并结算
+              下班并发工资
             </button>
           ) : (
             <button
@@ -325,7 +333,7 @@ export function PlayClient({ characterId }: { characterId: number }) {
               disabled={!ready || !isBurner || busy || blocked}
               onClick={start}
             >
-              {busy ? "正在处理…" : blocked ? "等待上一局确认" : "开始收星"}
+              {busy ? "正在处理…" : blocked ? "等待上一班工资确认" : "上工"}
             </button>
           )}
           {cost && !playing && (
@@ -334,14 +342,14 @@ export function PlayClient({ characterId }: { characterId: number }) {
           {record && (
             <div className="run-receipt" role="status">
               <strong>
-                {record.stars} 星 · {(record.timeMs / 1000).toFixed(1)} 秒
+                本班完成 {record.stars} 单 · {(record.timeMs / 1000).toFixed(1)} 秒
               </strong>
               <p>
                 {
                   {
                     submitting: "正在提交本局…",
                     pending: "交易已发出，等待回执…",
-                    confirmed: "本局已上链",
+                    confirmed: `工资 +${record.ownerShareWei ? formatEther(BigInt(record.ownerShareWei)) : "—"} MON 已发给老板`,
                     unknown: "提交状态待核实",
                     reverted: "交易执行失败",
                   }[record.status]
@@ -359,7 +367,7 @@ export function PlayClient({ characterId }: { characterId: number }) {
               )}
               {record.elapsedMs !== undefined && (
                 <p>
-                  确认耗时 {record.elapsedMs} ms<small>提交请求 → 成功回执</small>
+                  到账 {record.elapsedMs} ms<small>提交请求 → 成功回执；工资记入老板可提余额</small>
                 </p>
               )}
               {blocked && (
@@ -374,7 +382,7 @@ export function PlayClient({ characterId }: { characterId: number }) {
               {error}
             </p>
           )}
-          <p className="small-note">Monad 测试网。成绩由客户端上报，不防作弊。移动与收星不发交易。</p>
+          <p className="small-note">Monad 测试网。工单数由客户端上报，不防作弊。移动与领工单不发交易。</p>
         </aside>
       </div>
     </div>

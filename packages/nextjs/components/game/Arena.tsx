@@ -15,6 +15,8 @@ type Props = {
   finishSignal: number;
   onReady: () => void;
   onFinish: (result: RunResult) => void;
+  employeeName: string;
+  characterId: number;
 };
 const STAR_POSITIONS = [
   [-4, -3],
@@ -25,23 +27,46 @@ const STAR_POSITIONS = [
   [-6, 0],
 ];
 
-function starGeometry() {
-  const shape = new THREE.Shape();
-  for (let i = 0; i < 10; i++) {
-    const angle = (i * Math.PI) / 5 + Math.PI / 2;
-    const radius = i % 2 ? 0.18 : 0.38;
-    const x = Math.cos(angle) * radius,
-      y = Math.sin(angle) * radius;
-    if (i === 0) shape.moveTo(x, y);
-    else shape.lineTo(x, y);
-  }
-  shape.closePath();
-  return new THREE.ExtrudeGeometry(shape, { depth: 0.12, bevelEnabled: false });
+function labelTexture(text: string) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 512;
+  canvas.height = 96;
+  const ctx = canvas.getContext("2d")!;
+  ctx.fillStyle = "#292d25";
+  ctx.fillRect(0, 0, 512, 96);
+  ctx.fillStyle = "#fff5d9";
+  ctx.fillRect(5, 5, 502, 86);
+  ctx.fillStyle = "#292d25";
+  ctx.font = "bold 34px sans-serif";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, 256, 49, 480);
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  return texture;
+}
+function paperTexture() {
+  const canvas = document.createElement("canvas");
+  canvas.width = 80;
+  canvas.height = 96;
+  const ctx = canvas.getContext("2d")!;
+  ctx.fillStyle = "#292d25";
+  ctx.fillRect(7, 3, 66, 90);
+  ctx.fillStyle = "#fff8df";
+  ctx.fillRect(11, 7, 58, 82);
+  ctx.fillStyle = "#e9bd56";
+  ctx.fillRect(45, 7, 24, 20);
+  ctx.fillStyle = "#777b62";
+  for (let i = 0; i < 4; i++) ctx.fillRect(20, 36 + i * 11, i === 3 ? 25 : 40, 4);
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.magFilter = THREE.NearestFilter;
+  texture.colorSpace = THREE.SRGBColorSpace;
+  return texture;
 }
 
 export function Arena(props: Props) {
   const host = useRef<HTMLDivElement>(null);
-  const controls = useRef(new Set<string>());
+  const controls = useRef(createKeyboardInput());
   const latest = useRef(props);
   useEffect(() => {
     latest.current = props;
@@ -67,7 +92,7 @@ export function Arena(props: Props) {
     renderer.shadowMap.enabled = true;
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     element.appendChild(renderer.domElement);
-    renderer.domElement.setAttribute("aria-label", "3D 收星场地，使用方向键或屏幕方向按钮移动");
+    renderer.domElement.setAttribute("aria-label", "3D 打工工坊，使用方向键或屏幕方向按钮移动并领取工单");
     const scene = new THREE.Scene();
     scene.background = new THREE.Color("#eee9db");
     scene.fog = new THREE.Fog("#eee9db", 18, 38);
@@ -105,14 +130,33 @@ export function Arena(props: Props) {
     }
     const actor = new THREE.Group();
     scene.add(actor);
-    let model: THREE.Group | undefined;
-    const stars = STAR_POSITIONS.map(([x, z]) => {
-      const mesh = new THREE.Mesh(
-        starGeometry(),
-        new THREE.MeshStandardMaterial({ color: 0xf6c651, roughness: 0.6, metalness: 0.12 }),
+    const badge = new THREE.Sprite(
+      new THREE.SpriteMaterial({ map: labelTexture(`${props.employeeName}  #${props.characterId}`), depthTest: false }),
+    );
+    badge.scale.set(2.6, 0.49, 1);
+    badge.position.y = 2.05;
+    actor.add(badge);
+    for (const [i, pet] of ["donkey", "horse", "cow"].entries()) {
+      const map = new THREE.TextureLoader().load(`/pets/${pet}.png`);
+      map.colorSpace = THREE.SRGBColorSpace;
+      map.magFilter = THREE.NearestFilter;
+      const colleague = new THREE.Sprite(new THREE.SpriteMaterial({ map }));
+      colleague.scale.set(1.9, 2.4, 1);
+      colleague.position.set(-6 + i * 6, 1.2, -6.5);
+      scene.add(colleague);
+      const title = new THREE.Sprite(
+        new THREE.SpriteMaterial({ map: labelTexture(["驴 · 造身体", "马 · 教走路", "牛 · 发工牌"][i]) }),
       );
+      title.scale.set(2.25, 0.42, 1);
+      title.position.set(-6 + i * 6, 2.7, -6.5);
+      scene.add(title);
+    }
+    let model: THREE.Group | undefined;
+    const documentTexture = paperTexture();
+    const stars = STAR_POSITIONS.map(([x, z]) => {
+      const mesh = new THREE.Sprite(new THREE.SpriteMaterial({ map: documentTexture }));
+      mesh.scale.set(0.7, 0.84, 1);
       mesh.position.set(x, 0.7, z);
-      mesh.castShadow = true;
       scene.add(mesh);
       return mesh;
     });
@@ -126,7 +170,8 @@ export function Arena(props: Props) {
     const observer = new ResizeObserver(resize);
     observer.observe(element);
     resize();
-    const keyboard = createKeyboardInput();
+    const keyboard = controls.current;
+    keyboard.clear(performance.now());
     const keyDown = (event: KeyboardEvent) => {
       const target = event.target;
       if (
@@ -139,11 +184,10 @@ export function Arena(props: Props) {
       }
     };
     const keyUp = (event: KeyboardEvent) => {
-      keyboard.up(event.code);
+      keyboard.up(event.code, performance.now());
     };
     const clear = () => {
-      controls.current.clear();
-      keyboard.clear();
+      keyboard.clear(performance.now());
     };
     const visibility = () => {
       if (document.hidden) clear();
@@ -199,6 +243,7 @@ export function Arena(props: Props) {
       const dt = Math.min((time - previous) / 1000, 0.05);
       previous = time;
       const state = latest.current;
+      const movement = keyboard.consume(time);
       if (state.playing && run.current.key !== state.runKey) {
         run.current = { key: state.runKey, start: time, ended: false, stars: 0, signal: state.finishSignal };
         actor.position.set(0, 0, 0);
@@ -207,21 +252,31 @@ export function Arena(props: Props) {
       }
       let moving = false;
       if (state.playing && !run.current.ended) {
-        const keys = controls.current;
-        const x = Number(keys.has("d") || keyboard.has("d", time)) - Number(keys.has("a") || keyboard.has("a", time));
-        const z = Number(keys.has("s") || keyboard.has("s", time)) - Number(keys.has("w") || keyboard.has("w", time));
+        const beforeX = actor.position.x,
+          beforeZ = actor.position.z;
+        const { x, z } = movement;
         moving = !!(x || z);
         if (moving) {
-          const direction = new THREE.Vector3(x, 0, z).normalize();
-          actor.position.addScaledVector(direction, dt * 4.3);
+          const direction = new THREE.Vector3(x, 0, z);
+          actor.position.addScaledVector(direction, 4.3);
           actor.position.x = THREE.MathUtils.clamp(actor.position.x, -7.7, 7.7);
           actor.position.z = THREE.MathUtils.clamp(actor.position.z, -7.7, 7.7);
           actor.rotation.y = Math.atan2(direction.x, direction.z);
         }
         for (const star of stars) {
+          const dx = actor.position.x - beforeX,
+            dz = actor.position.z - beforeZ,
+            lengthSquared = dx * dx + dz * dz;
+          const t = lengthSquared
+            ? THREE.MathUtils.clamp(
+                ((star.position.x - beforeX) * dx + (star.position.z - beforeZ) * dz) / lengthSquared,
+                0,
+                1,
+              )
+            : 0;
           if (
             star.visible &&
-            Math.hypot(star.position.x - actor.position.x, star.position.z - actor.position.z) < 0.85
+            Math.hypot(star.position.x - (beforeX + dx * t), star.position.z - (beforeZ + dz * t)) < 0.85
           ) {
             star.visible = false;
             run.current.stars++;
@@ -238,7 +293,7 @@ export function Arena(props: Props) {
         model.rotation.z = moving && state.motion === "waddle" ? Math.sin(time * 0.016) * 0.13 : 0;
         actor.position.y = moving && state.motion === "hop" ? Math.abs(Math.sin(time * 0.012)) * 0.25 : 0;
       }
-      for (const star of stars) star.rotation.y = time * 0.001;
+      for (const star of stars) star.position.y = 0.7 + Math.sin(time * 0.003 + star.position.x) * 0.08;
       camera.position.lerp(new THREE.Vector3(actor.position.x, 7.5, actor.position.z + 10), Math.min(1, dt * 6));
       camera.lookAt(actor.position.x, 0.4, actor.position.z);
       renderer.render(scene, camera);
@@ -257,6 +312,10 @@ export function Arena(props: Props) {
       document.removeEventListener("visibilitychange", visibility);
       clear();
       scene.traverse(object => {
+        if (object instanceof THREE.Sprite) {
+          object.material.map?.dispose();
+          object.material.dispose();
+        }
         if (object instanceof THREE.Mesh) {
           object.geometry.dispose();
           for (const material of Array.isArray(object.material) ? object.material : [object.material]) {
@@ -268,7 +327,7 @@ export function Arena(props: Props) {
       renderer.dispose();
       renderer.domElement.remove();
     };
-  }, [props.url, props.sha256]);
+  }, [props.url, props.sha256, props.employeeName, props.characterId]);
 
   const direction = (key: string, label: string) => (
     <button
@@ -278,11 +337,11 @@ export function Arena(props: Props) {
       onPointerDown={event => {
         event.preventDefault();
         event.currentTarget.setPointerCapture(event.pointerId);
-        controls.current.add(key);
+        controls.current.down(`Touch${key.toUpperCase()}`, performance.now());
       }}
-      onPointerUp={() => controls.current.delete(key)}
-      onPointerCancel={() => controls.current.delete(key)}
-      onLostPointerCapture={() => controls.current.delete(key)}
+      onPointerUp={() => controls.current.up(`Touch${key.toUpperCase()}`, performance.now())}
+      onPointerCancel={() => controls.current.up(`Touch${key.toUpperCase()}`, performance.now())}
+      onLostPointerCapture={() => controls.current.up(`Touch${key.toUpperCase()}`, performance.now())}
     >
       {{ w: "↑", a: "←", s: "↓", d: "→" }[key]}
     </button>
@@ -292,10 +351,11 @@ export function Arena(props: Props) {
       <div ref={host} className="arena-canvas" />
       <div className="arena-hud">
         <span>
-          ★ {hud.stars}
-          <small> / 6</small>
+          ▤ {hud.stars}
+          <small> / 6 单</small>
         </span>
         <span>
+          <small>下班倒计时 </small>
           {hud.seconds}
           <small> 秒</small>
         </span>
