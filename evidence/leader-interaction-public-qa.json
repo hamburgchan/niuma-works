@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-21T08:45:17.292978+00:00",
+  "actor": "Codex automated desktop browser; not human/physical-phone acceptance",
+  "hash": "0x2daf01468808262be371f8dc623d7036d959e6d039dadb076f3d99692309cd4e",
+  "status": 1,
+  "blockNumber": 81530845,
+  "stars": 0,
+  "timeMs": 60000,
+  "observedConfirmationMs": 2810,
+  "leaderCollision": "UI showed 听领导画饼中…（1 秒） after held Up input",
+  "gasLimit": 71679,
+  "effectiveGasPriceWei": "102000000000"
+}

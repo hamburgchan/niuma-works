@@ -1,10 +1,11 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { QRCodeSVG } from "qrcode.react";
 import { formatEther } from "viem";
 import { BotRush } from "~~/components/BotRush";
 import { CHARACTER_NAMES, DEMO_CHARACTERS, EXPLORER, shortAddress } from "~~/utils/niuma";
+import type { BatchProgress } from "~~/utils/niuma-bots";
 import type { LiveEvent } from "~~/utils/niuma-live";
 
 type Feed = {
@@ -21,6 +22,15 @@ type Feed = {
   laborLeaders: { characterId: number; shifts: number; fullAttendance: number; ownerWagesWei: string }[];
 };
 export function LiveBoard() {
+  const observedReceipts = useRef(new Map<string, LiveEvent>());
+  const feedElement = useRef<HTMLOListElement>(null);
+  const mergeReceipts = useCallback(
+    (events: LiveEvent[]) =>
+      [...new Map([...events, ...observedReceipts.current.values()].map(event => [event.id, event])).values()]
+        .sort((a, b) => b.blockNumber - a.blockNumber || b.logIndex - a.logIndex)
+        .slice(0, 100),
+    [],
+  );
   const [data, setData] = useState<Feed | null>(null),
     [error, setError] = useState(""),
     [origin, setOrigin] = useState("");
@@ -32,6 +42,7 @@ export function LiveBoard() {
       });
       if (!response.ok) throw new Error();
       const next: Feed = await response.json();
+      next.events = mergeReceipts(next.events);
       // Only attach local browser timing to an event already verified by the chain feed.
       try {
         const history: { hash?: string; elapsedMs?: number; status?: string }[] = JSON.parse(
@@ -58,7 +69,35 @@ export function LiveBoard() {
     } catch {
       setError("暂时无法更新，保留上次已确认的结果。");
     }
-  }, []);
+  }, [mergeReceipts]);
+  useEffect(() => {
+    const receive = (event: Event) => {
+      const detail = (event as CustomEvent<BatchProgress>).detail;
+      let changed = false;
+      for (const receipt of detail.receipts) {
+        if (receipt.status !== "success" || !receipt.event) continue;
+        const { logIndex, ...args } = receipt.event;
+        const id = `${receipt.hash}:${logIndex}`;
+        if (observedReceipts.current.has(id)) continue;
+        observedReceipts.current.set(id, {
+          id,
+          hash: receipt.hash as `0x${string}`,
+          blockNumber: receipt.blockNumber,
+          logIndex,
+          event: "RunFinished",
+          args,
+          robotEmployer: true,
+        });
+        changed = true;
+      }
+      if (changed) {
+        setData(previous => (previous ? { ...previous, events: mergeReceipts(previous.events) } : previous));
+        requestAnimationFrame(() => feedElement.current?.scrollTo({ top: 0 }));
+      }
+    };
+    window.addEventListener("niuma-bot-receipts", receive);
+    return () => window.removeEventListener("niuma-bot-receipts", receive);
+  }, [mergeReceipts]);
   useEffect(() => {
     setOrigin(window.location.origin);
     const accelerated = new URLSearchParams(window.location.search).get("fast") === "1";
@@ -78,6 +117,7 @@ export function LiveBoard() {
           ● {error ? "重连中" : data?.catchingUp ? "正在同步历史" : `每 ${fast ? 3 : 15} 秒更新`}
         </span>
       </div>
+      <BotRush />
       <div className="live-stats">
         <div>
           <small>累计班次</small>
@@ -88,7 +128,7 @@ export function LiveBoard() {
           <strong>{data?.settlementCount ?? "—"}</strong>
         </div>
         <div>
-          <small>平均到账耗时</small>
+          <small>RPC 平均（含网络往返）</small>
           <strong>
             {data?.averageMs ?? "—"}
             <em> ms</em>
@@ -122,7 +162,7 @@ export function LiveBoard() {
           <h2>工资流水</h2>
           {!data && <p>正在读取真实链上事件…</p>}
           {data?.events.length === 0 && <p>还没有工资结算，第一班等你来。</p>}
-          <ol className="event-feed">
+          <ol className="event-feed" ref={feedElement}>
             {data?.events.map(event => (
               <li key={event.id} className={event.event === "Paid" ? "event-paid" : "event-run"}>
                 <span className="event-icon" aria-hidden="true">
@@ -162,7 +202,6 @@ export function LiveBoard() {
           </ol>
         </section>
       </div>
-      <BotRush />
       <section className="leaderboards">
         <h2>劳模榜</h2>
         <p className="small-note">全勤 = 一班完成六张工单；工资为已记入包工头可提余额的累计金额。</p>

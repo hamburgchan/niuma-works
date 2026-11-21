@@ -1,3 +1,4 @@
+import type { Hash } from "viem";
 import batches from "~~/contracts/botResults.json";
 import { authorize, latestServerBatch, safeReason, serverRush } from "~~/utils/demo-bank-server";
 import { deployment, json } from "~~/utils/niuma-server";
@@ -22,6 +23,18 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     if (!authorize(body.code)) return json({ error: "演示口令不正确" }, 403);
+    if (body.action === "prepare")
+      return json({ prepared: await serverRush(body.count ?? 100, { prepareOnly: true }) });
+    if (body.action === "run") {
+      if (!/^0x[0-9a-fA-F]{64}$/.test(body.batchId || "") || !/^0x[0-9a-fA-F]{64}$/.test(body.fundingHash || ""))
+        return json({ error: "Original batch and funding hash required" }, 400);
+      return json({
+        batch: await serverRush(body.count ?? 100, {
+          expectedBatchId: body.batchId as Hash,
+          fundingHash: body.fundingHash as Hash,
+        }),
+      });
+    }
     return json({ batch: await serverRush(body.count ?? 100) });
   } catch (error) {
     const message = error instanceof Error ? error.message : "";

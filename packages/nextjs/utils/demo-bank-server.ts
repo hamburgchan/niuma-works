@@ -20,7 +20,8 @@ import { privateKeyToAccount } from "viem/accounts";
 import { monadTestnet } from "viem/chains";
 import bankConfig from "~~/contracts/demoBank.json";
 import robotSeed from "~~/contracts/serverRobotSeed.json";
-import type { BotBatch, BotRow } from "~~/utils/niuma-bots";
+import { findFunding, fundingData, observeBatch } from "~~/utils/bot-observer";
+import type { BatchProgress, BotBatch, BotRow, PreparedBatch } from "~~/utils/niuma-bots";
 import { client, deployment } from "~~/utils/niuma-server";
 
 export const bank = { address: bankConfig.address as Address, abi: bankConfig.abi };
@@ -54,7 +55,7 @@ function signer() {
     wallet: createWalletClient({
       account,
       chain: monadTestnet,
-      transport: http(process.env.MONAD_RPC_URL || "https://testnet-rpc.monad.xyz"),
+      transport: http(process.env.MONAD_RPC_URL || "https://testnet-rpc.monad.xyz", { retryCount: 0, timeout: 8000 }),
     }),
   };
 }
@@ -211,7 +212,10 @@ export async function latestServerBatch() {
 export const cachedServerBatch = unstable_cache(latestServerBatch, ["latest-demo-batch", bank.address], {
   revalidate: 15,
 });
-export async function serverRush(count: number) {
+export async function serverRush(
+  count: number,
+  options: { prepareOnly?: boolean; expectedBatchId?: Hash; fundingHash?: Hash } = {},
+) {
   const invocationStart = Date.now();
   if (!Number.isInteger(count) || count < 1 || count > 100) throw new Error("单批只能为 1–100 个");
   const { account } = signer();
@@ -227,9 +231,13 @@ export async function serverRush(count: number) {
           () => client.readContract({ ...bank, functionName: "batch", args: [id] }),
           metrics,
         )) as ChainBatch);
+  if (options.expectedBatchId && id !== options.expectedBatchId)
+    throw new Error("Requested batch is not the current batch");
+  if (options.expectedBatchId && record && record.result !== "0x") return unpack<BotBatch>(record.result);
   const resumed = !!record && record.result === "0x";
   let plan: Plan;
-  let fundingHash: Hash | undefined;
+  let fundingHash: Hash | undefined = options.fundingHash;
+  let fundingBlock: number | undefined;
   if (resumed) {
     plan = unpack<Plan>(record!.plan);
     count = plan.count;
@@ -273,7 +281,17 @@ export async function serverRush(count: number) {
       metrics,
     );
     fundingHash = funding.hash;
+    fundingBlock = Number(funding.receipt.blockNumber);
   }
+  const prepared: PreparedBatch =
+    fundingHash && fundingBlock !== undefined
+      ? { batchId: id, count, fundingHash, fundingBlock }
+      : fundingHash
+        ? await fundingData(fundingHash)
+        : await findFunding(id);
+  if (prepared.batchId !== id || prepared.count !== count) throw new Error("Funding batch mismatch");
+  fundingHash = prepared.fundingHash as Hash;
+  if (options.prepareOnly) return prepared;
   const rows = Array.from({ length: count }, (_, i) => rowFor(id, i));
   const raw = await Promise.all(rows.map(row => signedRun(id, row, plan)));
   rows.forEach((row, i) => {
@@ -281,65 +299,64 @@ export async function serverRush(count: number) {
     row.fundingHash = fundingHash;
   });
   const started = Date.now();
-  const receiptMap = new Map<string, Awaited<ReturnType<typeof client.getTransactionReceipt>>>();
   const attempted = new Set<number>();
-  // Limit admission concurrency; all retries send the original signed bytes.
-  for (let start = 0; start < rows.length; start += 2) {
-    if (Date.now() - invocationStart > 230000) break;
-    await Promise.all(
-      rows.slice(start, start + 2).map(async row => {
-        try {
-          if (resumed) {
-            const previous = await client.getTransactionReceipt({ hash: row.hash as Hash }).catch(() => null);
-            if (previous) {
-              attempted.add(row.index);
-              receiptMap.set(row.hash!, previous);
-              row.state = previous.status === "success" ? "CONFIRMED" : "FAILED";
-              row.reason = previous.status === "success" ? undefined : "CHAIN_REVERT";
-              row.blockNumber = Number(previous.blockNumber);
-              return;
-            }
-          }
-          attempted.add(row.index);
-          await broadcast(raw[row.index], metrics);
-          row.state = "BROADCAST";
-        } catch (error) {
-          row.state = "UNKNOWN";
-          row.reason = safeReason(error);
-        }
-      }),
-    );
+  let progress: BatchProgress | undefined;
+  function acceptReceipts(value: BatchProgress) {
+    progress = value;
+    const byHash = new Map(value.receipts.map(receipt => [receipt.hash, receipt]));
+    for (const row of rows) {
+      const receipt = byHash.get(row.hash!);
+      if (!receipt) continue;
+      attempted.add(row.index);
+      row.blockNumber = receipt.blockNumber;
+      row.state = receipt.status === "success" ? "CONFIRMED" : "FAILED";
+      row.reason = receipt.status === "success" ? undefined : "CHAIN_REVERT";
+      if (row.sentAt !== undefined && receipt.observedAt >= row.sentAt) row.elapsedMs = receipt.observedAt - row.sentAt;
+    }
   }
-  for (let poll = 0; poll < 35; ++poll) {
-    if (Date.now() - invocationStart > 260000) break;
-    const unresolved = rows.filter(row => row.state !== "CONFIRMED" && row.state !== "FAILED");
-    if (!unresolved.length) break;
-    const beforeRpcErrors = metrics.rpc;
-    for (let offset = 0; offset < unresolved.length; offset += 10) {
+  try {
+    acceptReceipts(await observeBatch(fundingHash));
+  } catch {
+    /* Poll the same durable batch below. */
+  }
+  let broadcasting = true;
+  const broadcaster = (async () => {
+    for (let offset = 0; offset < rows.length; offset += 20) {
+      if (Date.now() - invocationStart > 210000) break;
       await Promise.all(
-        unresolved.slice(offset, offset + 10).map(async row => {
+        rows.slice(offset, offset + 20).map(async row => {
+          if (row.state === "CONFIRMED" || row.state === "FAILED") return;
+          row.sentAt = Date.now();
+          attempted.add(row.index);
           try {
-            const receipt = await client.getTransactionReceipt({ hash: row.hash as Hash });
-            receiptMap.set(row.hash!, receipt);
-            row.blockNumber = Number(receipt.blockNumber);
-            row.state = receipt.status === "success" ? "CONFIRMED" : "FAILED";
-            row.elapsedMs = resumed ? undefined : Date.now() - started;
-            row.reason = receipt.status === "success" ? undefined : "CHAIN_REVERT";
+            await broadcast(raw[row.index], metrics);
+            if (row.state !== "CONFIRMED" && row.state !== "FAILED") row.state = "BROADCAST";
           } catch (error) {
-            const reason = safeReason(error);
-            if (["RPC_HTTP_429", "RPC_TIMEOUT", "RPC_CONNECTION"].includes(reason)) metrics.rpc++;
+            if (row.state !== "CONFIRMED" && row.state !== "FAILED") {
+              row.state = "UNKNOWN";
+              row.reason = safeReason(error);
+            }
           }
         }),
       );
-      if (offset + 10 < unresolved.length) await delay(150);
     }
-    if (rows.some(row => row.state !== "CONFIRMED" && row.state !== "FAILED"))
-      await delay(metrics.rpc > beforeRpcErrors ? Math.min(8000, 1000 * 2 ** Math.min(poll, 3)) : 1000);
+  })().finally(() => {
+    broadcasting = false;
+  });
+  while (Date.now() - invocationStart < 255000) {
+    try {
+      acceptReceipts(await observeBatch(fundingHash));
+    } catch (error) {
+      if (["RPC_HTTP_429", "RPC_TIMEOUT", "RPC_CONNECTION"].includes(safeReason(error))) metrics.rpc++;
+    }
+    if (!broadcasting && rows.every(row => row.state === "CONFIRMED" || row.state === "FAILED")) break;
+    await delay(350);
   }
+  await broadcaster;
   for (const row of rows)
-    if (!["CONFIRMED", "FAILED"].includes(row.state)) {
+    if (row.state !== "CONFIRMED" && row.state !== "FAILED") {
       row.state = "UNKNOWN";
-      row.reason ||= "原交易回执未找到；保留批次，仅可恢复原签名交易";
+      row.reason ||= "原签名交易回执未确认；仅恢复本批次";
     }
   const samples = rows
     .filter(row => row.elapsedMs !== undefined && row.state === "CONFIRMED")
@@ -368,10 +385,14 @@ export async function serverRush(count: number) {
     failed: rows.filter(row => row.state === "FAILED").length,
     unknown: rows.filter(row => row.state === "UNKNOWN").length,
     averageMs: samples.length ? Math.round(samples.reduce((a, b) => a + b, 0) / samples.length) : null,
+    timingSamples: samples.length,
     p95Ms: samples.length ? samples[Math.ceil(samples.length * 0.95) - 1] : null,
     totalMs: Date.now() - plan.createdAt,
     settlementSpanMs: Date.now() - started,
     maxSameBlock: Math.max(0, ...blocks.values()),
+    blockCount: progress?.blockCount,
+    chainSpanSeconds: progress?.chainSpanSeconds,
+    blocks: progress?.blocks,
     rpcFailureCount: metrics.rpc,
     chainFailureCount: rows.filter(row => row.state === "FAILED").length,
     transactionResubmissions: metrics.retries,
@@ -380,15 +401,16 @@ export async function serverRush(count: number) {
       .reduce(
         (sum, row) =>
           sum +
-          (receiptMap.has(row.hash!)
-            ? BigInt(plan.gasLimits[row.index]) * receiptMap.get(row.hash!)!.effectiveGasPrice
+          (progress?.receipts.find(r => r.hash === row.hash)
+            ? BigInt(plan.gasLimits[row.index]) *
+              BigInt(progress.receipts.find(r => r.hash === row.hash)!.effectiveGasPrice)
             : 0n),
         0n,
       )
       .toString(),
     resumed,
     fundingHash,
-    timingNote: "服务端广播屏障至回执观察，含公共 RPC 与轮询延迟；恢复批次不补造历史计时",
+    timingNote: "每笔实际 sentAt 至真实回执首次观察，含网络往返与350ms轮询；恢复前已确认的交易不补造计时",
   };
   // Unresolved batches remain locked and recoverable. Never label them failed
   // merely because an RPC request or the serverless invocation timed out.

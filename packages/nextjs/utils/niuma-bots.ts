@@ -9,6 +9,7 @@ export type BotRow = {
   hash?: string;
   reason?: string;
   elapsedMs?: number;
+  sentAt?: number;
   blockNumber?: number;
 };
 export type BotBatch = {
@@ -23,6 +24,7 @@ export type BotBatch = {
   failed: number;
   unknown: number;
   averageMs: number | null;
+  timingSamples?: number;
   totalMs: number;
   p95Ms?: number | null;
   maxSameBlock?: number;
@@ -33,4 +35,33 @@ export type BotBatch = {
   transactionResubmissions?: number;
   rpcReadRetries?: number;
   settlementSpanMs?: number;
+  blockCount?: number;
+  chainSpanSeconds?: number;
+  blocks?: { number: number; timestamp: number; hashes: string[]; count: number }[];
+};
+export type PreparedBatch = { batchId: string; count: number; fundingHash: string; fundingBlock: number };
+export type BatchProgress = {
+  batchId: string;
+  count: number;
+  confirmed: number;
+  successful: number;
+  failed: number;
+  blockCount: number;
+  chainSpanSeconds: number;
+  blocks: NonNullable<BotBatch["blocks"]>;
+  receipts: {
+    hash: string;
+    blockNumber: number;
+    status: "success" | "reverted";
+    observedAt: number;
+    effectiveGasPrice: string;
+    event?: {
+      characterId: string;
+      player: string;
+      stars: string;
+      timeMs: string;
+      ownerShare: string;
+      logIndex: number;
+    };
+  }[];
 };

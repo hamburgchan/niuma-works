@@ -124,6 +124,15 @@
   background: #e1ead3;
   box-shadow: 5px 5px 0 #292d25;
 }
+.batch-chain-summary { border-top: 2px solid #292d25; margin-top: 24px; padding: 20px 0; }
+.batch-chain-summary > strong { font-size: clamp(22px,3vw,38px); display: block; line-height: 1.4; }
+.batch-chain-summary p { font-size: 22px; font-weight: 800; }
+.block-wall { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+.block-cell { border: 2px solid #292d25; background: #fff5d9; padding: 12px; min-width: 128px; max-width: 220px; }
+.block-cell > strong, .block-cell > span { display: block; font-size: 13px; }
+.block-cell > div { display: grid; grid-template-columns: repeat(10,10px); gap: 3px; margin-top: 10px; }
+.block-cell a { width: 10px; height: 10px; background: #526f39; display: block; }
+.live-stats > div:last-child strong { font-size: 24px; }
 .leader-stun {
   position: absolute;
   left: 50%;
