@@ -23,9 +23,6 @@ function Archive({ employee, stats }: { employee: (typeof DEMO_EMPLOYEES)[number
   });
   return (
     <article className="employee-card">
-      <p className="eyebrow">
-        EMPLOYEE #{employee.id} · {order?.[3] === 2 ? "✓ 已入职" : "核对链上状态中"}
-      </p>
       <h2>{employee.name}</h2>
       <p>{employee.prompt}</p>
       {character ? (
@@ -51,6 +48,10 @@ function Archive({ employee, stats }: { employee: (typeof DEMO_EMPLOYEES)[number
       </dl>
       <details>
         <summary>链上凭证</summary>
+        <p className="eyebrow">
+          EMPLOYEE #{employee.id} · {order?.[3] === 2 ? "✓ 已入职" : "核对链上状态中"}
+        </p>
+
         <p className={verified ? "hash-pass" : "small-note"}>
           {verified ? "✓ 浏览器 SHA-256 与链上交付一致" : "正在核对 SHA-256…"}
         </p>

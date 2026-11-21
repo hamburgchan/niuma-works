@@ -136,7 +136,7 @@ async function refresh() {
     latestBlock,
     catchingUp: runs.length !== onChainRuns,
     updatedAt: new Date().toISOString(),
-    source: "on-chain events; immutable receipt seed plus 15-second process cache",
+    source: "on-chain events; immutable receipt seed, persistent closed block ranges, 3/15-second refresh",
     timingPersistence: "Browser samples are process-local; robot samples are published evidence",
   };
 }

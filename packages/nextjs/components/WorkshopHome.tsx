@@ -92,11 +92,8 @@ export function WorkshopHome() {
       </section>
       <section className="market-terms">
         <h2>一班工作，给进货老板发工资。</h2>
-        <p>
-          每班游玩费 0.001 测试 MON；90% 记入进货老板的可提余额，10% 在 sweep
-          时统一记入平台。移动与领工单不上链，下班只结算一笔。
-        </p>
-        <p>每班约 0.0096 MON（含 gas），领取一次测试币可以上约 3 班，以实际估算为准。</p>
+        <p>每班游玩费 0.001 测试 MON；90% 记入进货老板的可提工资，10% 属于平台。移动与领工单不上链，下班只结算一笔。</p>
+        <p>每班约 0.0096 MON（含 gas），领取 0.02 MON 开工费约可上 1–2 班，以实际估算为准。</p>
       </section>
       <footer className="work-footer">
         <span>牛马批发部 · Monad Blitz 广州 · 2026</span>

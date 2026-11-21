@@ -1,6 +1,6 @@
 # NIUMA WORKS · 牛马批发部
 
-三名纸片新牛马在 three.js 工坊里打一班工，六张工单、一笔链上工资。培养费托管，交付 PNG 指纹登记，验收后按 50/20/20/10 分给驴、马、牛和平台；每局给进货老板记入 90% 工资。
+今天当牛马，明天收分成。三名纸片新牛马在 three.js 工坊里打一班工，六张工单、一笔链上工资。培养费托管，交付 PNG 指纹登记，验收后按 50/20/20/10 分给驴、马、牛和平台；每局给进货老板记入 90% 工资。
 
 公网：[牛马批发部](https://niuma-works.vercel.app) · [上工](https://niuma-works.vercel.app/play/1) · [工资大屏](https://niuma-works.vercel.app/live) · [入职档案](https://niuma-works.vercel.app/orders) · [老板工资条](https://niuma-works.vercel.app/earnings)
 
@@ -14,9 +14,9 @@
 
 骡丝钉 #1、驼延症 #2、码喽 #3，均为 NIUMA WORKS 团队自拟描述，来源 **chatgpt 手动生成**。三张立绘经四边保守 flood fill 去背景、最近邻缩放，高 512px，分别 124910、139644、130691 字节。羊驼内部米白卷毛与程序员贴纸边保留。原文件字节与 SHA-256 不变，存于 `/chars/<sha256>.png`，V2 链上 URI 直接登记公开静态地址。每名员工重新 order → deliver → approve，三笔交易、四方金额与无鉴权下载校验见 `evidence/v2/orders/1.json` 至 `3.json`。浏览器独立重算 SHA-256 并与链上核对。
 
-**项目运行不依赖 Vercel Blob；现场不做生成。** Hobby 存储用量超限，用户确认到 2026-12-21 才恢复。进货页现为“新牛马入职档案”，输入框显示“暂停进货”；API 返回 410，不调用 Pollinations。生成 worker 已停用。页面、动态大屏与订单 API 均不读取 Blob。`/live` 使用真实链上事件，附只读链上扫描生成的种子、按闭合区块段保存的 Next Data Cache、15 秒进程缓存与 CDN 缓存；浏览器每 15 秒更新，无额外事件 watcher。
+**项目运行不依赖 Vercel Blob；现场不做生成。** Hobby 存储用量超限，用户确认到 2026-12-21 才恢复。进货页现为“新牛马入职档案”，不提供新的现场进货；旧的生成 API 返回 410，不调用 Pollinations。生成 worker 已停用。页面、动态大屏与订单 API 均不读取 Blob。`/live` 使用真实链上事件，附只读链上扫描生成的种子、按闭合区块段保存的 Next Data Cache、15 秒进程缓存与 CDN 缓存；浏览器默认每 15 秒更新，`/live?fast=1` 每 3 秒刷新，实时区块缓存同步缩短；无额外事件 watcher。
 
-自动领币暂时暂停：旧的防重支付账本在 Blob，当前不会用无持久化的 serverless 内存代替。请向页面显示的临时钱包预充测试 MON，或连接已有测试币的钱包。历史每班约 0.0096 MON；V2 冷启动首局约 0.0122 MON，后续依状态变化，开工前会按当前 gas 估算。0.03 MON 约 2–3 班。
+临时钱包可领取 **0.02 MON 开工费**：每地址一次、滚动一小时最多 60 次、累计上限 1.5 MON。由部署钱包出资，经独立的 `NiumaDemoBank` 账本转拨；它不修改业务 V2，地址 `0xf89Eb0B40E3C243Fc27a76cB9d9e65170aEF97cD`。额度与防重在链上保存，不依赖 Blob 或 serverless 内存。额度耗尽后显示官方水龙头与复制地址按钮。每班历史约 0.0096 MON，V2 首局可能约 0.0122 MON；0.02 MON 约 1–2 班，开工前按当前 gas 估算。
 
 ## V2 结算设计与验证
 
@@ -24,7 +24,7 @@ V1 源码与链上记录保留。V2 的订单、托管、验收四方分账、�
 
 平台费在 `sweepTreasury()` 按未结算局数记入平台可提余额；更新费率或收款人前先按旧配置 sweep，保留整数舍入的精确金额。sweep 是记账，平台再提现才进入钱包。当前 sweep 和合并提现需遍历角色，仅验证本次三角色规模，未证明生产规模可扩展性。
 
-Foundry：V1 16 项、V2 18 项，共 **34 passed / 0 failed**，含 fuzz、平台精确 sweep、费率/收款人切换、工资精确提现与重复提现拦截。见 `evidence/foundry-v2-test.txt`。没有安全审计或防作弊声明。
+Foundry：V1 16 项、V2 18 项，原业务合约共 **34 passed / 0 failed**，含 fuzz、平台精确 sweep、费率/收款人切换、工资精确提现与重复提现拦截。见 `evidence/foundry-v2-test.txt`。没有安全审计或防作弊声明。
 
 ## 打工高峰压力测试
 
@@ -43,11 +43,19 @@ Foundry：V1 16 项、V2 18 项，共 **34 passed / 0 failed**，含 fuzz、平�
 
 HTTP 429、连接失败/超时：有限退避，只可重发完全相同的已签名原交易；记录 HTTP 与逐交易重发次数，不创建新 nonce。RPC 层错误与链上 status=0 分开；未知结果只查原哈希。临时私钥在 **仓库外** `D:/monad/.bot-runtime/` 保存，所有交易成功或明确失败后删除；未知状态保留。四个完成批次的密钥文件均已删除。
 
-网页“放出 30 个机器人雇主”是备选：先在本机运行 `scripts/bot-worker.py`，用 owner 钱包签名；仅监听 127.0.0.1:8787 并校验来源、签名、时间与批次去重。浏览器可能要求本地网络权限。CLI 为演示主路径；网页触发未完成公网端到端验收。机器人结果文件需 push 后才发布到其他设备；大屏链上工资事件照常更新。
+### 网页批发上工（服务端）
+
+`/live` 的“批发 100 只牛马上工”使用服务端 `DEMO_CODE` 校验，口令只由演示负责人输入，不需要连接 owner 钱包或启动本机 worker。单批最多 100 个，每 10 分钟最多一批，冷却及未决批次锁由独立账本执行。服务端一次原子转拨，每钱包 0.013 MON；随机上报 3–6 单、15–60 秒，轮换三名员工，gas 估算 +10%。并发广播控制为 2，只对 HTTP 429/连接/超时退避重发相同原签名，链上失败与 RPC 错误分开报告。
+
+本地临时口令端到端验收：**100 发出 / 100 成功 / 0 失败 / 0 待核，平均 22138 ms，全流程 25850 ms，RPC 错误及重发均 0**。计时包含此服务端实现的广播排队和回执轮询，与前述 CLI 的分批 RPC 方法不同，不能据此推断链性能变差。错误口令 403、数量 101 拦截、0.02 MON 领币、重复地址拦截、十分钟冷却、持久结果回读均通过，见 `evidence/server-demo-acceptance.json`。生产真实口令由用户本人复验，不宣称本地口令测试替代该步骤。
+
+钱包密钥只在服务端内存中以域隔离 HMAC 推导，不保存或返回密钥；原始签名所需参数在充值时写入链上批次计划。服务中断后可用同一部署密钥重建完全相同的交易，未知状态只恢复原批次，不创建新钱包。完成结果压缩后保存链上；大屏通过资金账本事件识别机器人。**批次未解决前不要轮换部署密钥或升级推导规则**。全新进程已重建 100 个地址和原交易哈希，全部匹配，见 `evidence/server-batch-recovery-audit.json`。这是恢复能力核对，不是新的压力批次。
+
+独立账本 6 项测试，加原业务合约 34 项，总计 **40 passed / 0 failed**，见 `evidence/demo-bank-tests.txt`。本地旧 worker 保留历史用途，公网按钮已不再依赖它。
 
 ## 运行
 
-Node >=20.18.3、Corepack Yarn、Foundry、Python venv。本机凭证文件 `D:/monad/.env` 在仓库之外。Web 运行不需要 HF、Blob 或服务器私钥；只有本地链上脚本读取部署/买家/operator 密钥，绝不输出。仅 Monad 测试网 10143。
+Node >=20.18.3、Corepack Yarn、Foundry、Python venv。本机凭证文件 `D:/monad/.env` 在仓库之外。Web 浏览不需要 HF、Blob 或钱包密钥；服务端领币与批发上工需要 `DEPLOYER_PRIVATE_KEY`，批发接口额外需要 `DEMO_CODE`，可选 `MONAD_RPC_URL`。全部为服务端变量，不能加 `NEXT_PUBLIC_`。本地交易脚本另读取买家/operator 密钥，绝不输出。仅 Monad 测试网 10143。
 
 ```powershell
 corepack yarn install
@@ -57,8 +65,7 @@ pwsh -File scripts/start-local.ps1 -Production
 # 在已确认预算后，运行一批；每次调用会创建新批次，勿把它当作失败批次恢复命令
 pwsh -File scripts/bot-rush.ps1 -N 20 -Mode hot
 pwsh -File scripts/bot-rush.ps1 -N 20 -Mode spread
-# 网页备选的本机 worker
-.venv/Scripts/python -X utf8 scripts/bot-worker.py
+# 公网网页批发在 /live 输入 DEMO_CODE；无需本地 worker
 ```
 
 `scripts/deploy-v2.py`、`verify-v2.py`、`import-v2-demos.py` 为已执行的版本化步骤，原交易标记保留，不清空标记重复部署/下单。`publish-chain-feed.py` 只读生成事件种子，不发交易。`export-contract.mjs` 从 V2 的实际部署证据导出 ABI，Scaffold hook 名称仍为 NiumaWorks。
@@ -75,8 +82,15 @@ V1 订单 1–6 属于历史记录，其中已交付的 Blob 地址因额度超�
 
 游戏成绩由客户端上报，不防作弊；waddle/hop/squash 是预制纸片动作，不是 AI 骨骼动画。现场不做生成，所有资金都是测试 MON。所有未收集到的计时显示为未知，浏览器计时在当前设备保留并可附到同设备大屏的已确认事件；已采集的公测计时随证据发布。其他设备未采集的计时仍显示未知，机器人计时随原始证据发布。
 
-公网 V2 浏览器操控验收（由编码代理操作）：`0xa107465989098092c287591d8c2f021290b75cca411454ae9f64c1f9bf276cde`，1 单、35222ms、提交到成功回执 2389ms、老板 +0.0009 MON；原回执见 `evidence/v2/public-play-acceptance.json`。这是桌面浏览器，不冒充真实手机验收。四组压力结果仍为 240 笔，额外这局使当前 V2 累计 241 班。全部压力交易链接见 `evidence/stress-transactions.md`。
+公网 V2 浏览器操控验收（由编码代理操作）：`0xa107465989098092c287591d8c2f021290b75cca411454ae9f64c1f9bf276cde`，1 单、35222ms、提交到成功回执 2389ms、老板 +0.0009 MON；原回执见 `evidence/v2/public-play-acceptance.json`。这是桌面浏览器，不冒充真实手机验收。四组压力结果仍为 240 笔，该历史快照使当时 V2 累计 241 班；后续服务端测试另新增 100 班，实时总数以链上为准。全部压力交易链接见 `evidence/stress-transactions.md`。
 
 冷启动漏读回归通过：使用修复前243事件种子（不含该局浏览器交易），目标区块同时位于旧1600块窗口与最近100块之外，新API仍补齐到241班/244笔，见 `evidence/v2/cold-start-gap-regression.json`。累计班次另与链上角色局数核对，不以部分事件数冒充完整总数。
 
 重发分支另有4项离线测试通过（提取实际广播函数，模拟429/连接错误/400/already-known，不签名不联网），见 `evidence/v2/broadcast-retry-tests.txt`；四组真实网络测试重发均为0，不能把离线测试当作真实限流复现。
+
+
+## 最终体验与提交材料
+
+品牌为牛马批发部，员工展示名为骡丝钉、驼延症、码喽，领导为驴组长、马经理、牛总。仅修改展示名，不修改角色 ID、原始提示词、交付字节或链上记录。领导慢速巡逻，接触时随机画饼并让员工停住一秒。档案默认只展示形象、描述、累计班次和老板工资；交易、SHA-256 与四方分账位于默认折叠的链上凭证区，来源只在 README 说明。
+
+`submission/` 包含 512×512 LOGO、首页和大屏截图、200 字以内介绍及交接检查表。材料仅准备，**没有向 MOJO 提交**；由 Claude 先向用户展示并确认后提交。新功能截止 17:15，材料目标 18:00，活动截止 18:30（北京时间）。
