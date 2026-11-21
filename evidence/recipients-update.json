@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-21T03:30:40.940439+00:00",
+  "operatorUnchanged": "0x9A291f35836992494904Ee5De83DfAABcF7876aD",
+  "donkey": "0xF7D425b71b7CAFC4553A99fF99bB8eC76672aD02",
+  "horse": "0x0C682dcE86e98585194977e2abBe63956cc4065F",
+  "cow": "0x45B5802923aD6e25F8EABcC49D141853e7A81265",
+  "treasury": "0x613E15917Ab21dd7357369e625b3C78294A87ECa",
+  "transaction": {
+    "hash": "0x44b1a74e4f6b957374a759e3506b097e35a7c2e1441207e067e7f16fbd8220b3",
+    "sender": "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+    "nonce": 1,
+    "gasLimit": 42839,
+    "valueWei": "0",
+    "startedAt": "2026-11-21T03:30:34.023494+00:00",
+    "state": "CONFIRMED",
+    "blockNumber": 81473926,
+    "gasUsed": 42839,
+    "effectiveGasPriceWei": "102000000000",
+    "confirmedAt": "2026-11-21T03:30:35.964146+00:00",
+    "chargedFeeWei": "4369578000000000"
+  },
+  "status": "PASS"
+}

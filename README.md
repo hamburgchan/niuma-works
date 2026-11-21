@@ -48,4 +48,4 @@ Measured order gas costs at 102 gwei: order 0.024372492–0.026294988 MON, deliv
 
 Run scores are reported by the client and are not cheat resistant. Procedural motions are presets, not generated skeletal animation. Only Monad testnet is in scope.
 
-Order 1 was delivered to the original private Blob store before the store switch. Its immutable chain URI remains private; the new public mirror matches the on-chain hash exactly. `/api/characters/1/asset` resolves that mirror. Orders 2–3 directly use public chain URIs. All three GLBs pass GLTFLoader geometry parsing and embedded texture decoding; browser WebGL rendering and gameplay have not been tested yet.
+旧订单 1：链上登记的地址为私有，已用订单 4 替代，演示时不使用订单 1。订单 4 重新登记同一份开赛后生成的土豆工人 GLB，链上 URL 为 public，无鉴权下载 SHA-256 与链上一致。当前演示角色为 4、2、3。
