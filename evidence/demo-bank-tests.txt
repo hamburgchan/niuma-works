@@ -1,0 +1,55 @@
+Compiling 1 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.58s
+Compiler run successful!
+
+Ran 18 tests for test/NiumaWorksV2.t.sol:NiumaWorksV2Test
+[PASS] testCancelReturnsEntireOriginalPriceAsWithdrawableBalance() (gas: 472719)
+[PASS] testCannotSettleTwiceOrDeliverTwice() (gas: 710984)
+[PASS] testCharacterWagesWithdrawExactlyOnceAndAggregate() (gas: 1672577)
+[PASS] testCompleteOrderAndExactSplit() (gas: 740578)
+[PASS] testDeliveryAllowedAtDeadlineNotAfter() (gas: 760426)
+[PASS] testFundedTermsCannotChange() (gas: 727421)
+[PASS] testFuzzSplitConservesWeiAndRemainder(uint96) (runs: 256, μ: 740908, ~: 746524)
+[PASS] testInvalidEconomicsAndRecipients() (gas: 118315)
+[PASS] testOnlyBuyerCanApprove() (gas: 535512)
+[PASS] testOnlyOperatorCanDeliverOrCancel() (gas: 338295)
+[PASS] testOrderAmountAndDeadline() (gas: 72645)
+[PASS] testRefundAtDeadlineRejectedThenAllowedAfter() (gas: 408550)
+[PASS] testRefundCannotTakeDeliveredFunds() (gas: 536438)
+[PASS] testRunPaymentsAndBestScore() (gas: 1005967)
+[PASS] testRunRejectsWrongFeeStarsAndUnpaidCharacter() (gas: 792538)
+[PASS] testSweepExactAndIdempotentAcrossEconomicsAndRecipients() (gas: 1234227)
+[PASS] testWithdrawAndDoubleWithdraw() (gas: 729356)
+[PASS] testZeroStarFirstRunAndEqualScoreTie() (gas: 862913)
+Suite result: ok. 18 passed; 0 failed; 0 skipped; finished in 44.76ms (48.28ms CPU time)
+
+Ran 6 tests for test/NiumaDemoBank.t.sol:NiumaDemoBankTest
+[PASS] testBatchFundingCooldownAndUnresolvedGuard() (gas: 469163)
+[PASS] testCountCap() (gas: 62645)
+[PASS] testGrantOnceAndExactAmount() (gas: 214096)
+[PASS] testNonOwnerCannotSpend() (gas: 33703)
+[PASS] testRecipientFailureRollsBackClaim() (gas: 151114)
+[PASS] testSlidingHourAndTotalCap() (gas: 10685839)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 45.57ms (23.13ms CPU time)
+
+Ran 16 tests for test/NiumaWorks.t.sol:NiumaWorksTest
+[PASS] testCancelReturnsEntireOriginalPriceAsWithdrawableBalance() (gas: 467994)
+[PASS] testCannotSettleTwiceOrDeliverTwice() (gas: 710782)
+[PASS] testCompleteOrderAndExactSplit() (gas: 740720)
+[PASS] testDeliveryAllowedAtDeadlineNotAfter() (gas: 760358)
+[PASS] testFundedTermsCannotChange() (gas: 718051)
+[PASS] testFuzzSplitConservesWeiAndRemainder(uint96) (runs: 256, μ: 738359, ~: 743953)
+[PASS] testInvalidEconomicsAndRecipients() (gas: 98102)
+[PASS] testOnlyBuyerCanApprove() (gas: 535422)
+[PASS] testOnlyOperatorCanDeliverOrCancel() (gas: 338294)
+[PASS] testOrderAmountAndDeadline() (gas: 72689)
+[PASS] testRefundAtDeadlineRejectedThenAllowedAfter() (gas: 408726)
+[PASS] testRefundCannotTakeDeliveredFunds() (gas: 536524)
+[PASS] testRunPaymentsAndBestScore() (gas: 973931)
+[PASS] testRunRejectsWrongFeeStarsAndUnpaidCharacter() (gas: 792448)
+[PASS] testWithdrawAndDoubleWithdraw() (gas: 720133)
+[PASS] testZeroStarFirstRunAndEqualScoreTie() (gas: 891312)
+Suite result: ok. 16 passed; 0 failed; 0 skipped; finished in 47.02ms (48.50ms CPU time)
+
+Ran 3 test suites in 51.02ms (137.35ms CPU time): 40 tests passed, 0 failed, 0 skipped (40 total tests)
+2026-11-21T08:05:43.518940Z  WARN evm::traces: failed to flush signature cache err=failed to create file "C:\\Users\\丘梦婷\\.foundry\\cache\\signatures": 拒绝访问。 (os error 5)

@@ -24,9 +24,12 @@ export function LiveBoard() {
   const [data, setData] = useState<Feed | null>(null),
     [error, setError] = useState(""),
     [origin, setOrigin] = useState("");
+  const [fast, setFast] = useState(false);
   const refresh = useCallback(async () => {
     try {
-      const response = await fetch("/api/live", { cache: "no-store" });
+      const response = await fetch(`/api/live${window.location.search.includes("fast=1") ? "?fast=1" : ""}`, {
+        cache: "no-store",
+      });
       if (!response.ok) throw new Error();
       const next: Feed = await response.json();
       // Only attach local browser timing to an event already verified by the chain feed.
@@ -58,8 +61,10 @@ export function LiveBoard() {
   }, []);
   useEffect(() => {
     setOrigin(window.location.origin);
+    const accelerated = new URLSearchParams(window.location.search).get("fast") === "1";
+    setFast(accelerated);
     void refresh();
-    const timer = setInterval(refresh, 15000);
+    const timer = setInterval(refresh, accelerated ? 3000 : 15000);
     return () => clearInterval(timer);
   }, [refresh]);
   return (
@@ -70,7 +75,7 @@ export function LiveBoard() {
           <h1>老板，工资到账了。</h1>
         </div>
         <span className="live-indicator">
-          ● {error ? "重连中" : data?.catchingUp ? "正在同步历史" : "每 15 秒更新"}
+          ● {error ? "重连中" : data?.catchingUp ? "正在同步历史" : `每 ${fast ? 3 : 15} 秒更新`}
         </span>
       </div>
       <div className="live-stats">

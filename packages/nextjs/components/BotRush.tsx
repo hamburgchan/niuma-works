@@ -1,15 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import { formatEther } from "viem";
-import { useAccount, useSignMessage } from "wagmi";
-import { useScaffoldReadContract } from "~~/hooks/scaffold-eth";
-import { EXPLORER, NIUMA } from "~~/utils/niuma";
+import { EXPLORER } from "~~/utils/niuma";
 import type { BotBatch } from "~~/utils/niuma-bots";
 
 export function BotRush() {
-  const { address, chainId } = useAccount();
-  const { signMessageAsync } = useSignMessage();
-  const { data: owner } = useScaffoldReadContract({ contractName: "NiumaWorks", functionName: "owner", watch: false });
+  const [code, setCode] = useState("");
   const [batch, setBatch] = useState<BotBatch | null>(null),
     [comparisons, setComparisons] = useState<BotBatch[]>([]),
     [error, setError] = useState(""),
@@ -35,24 +31,19 @@ export function BotRush() {
     setBusy(true);
     setError("");
     try {
-      if (chainId !== 10143 || address?.toLowerCase() !== owner?.toLowerCase())
-        throw new Error("请用 owner 钱包连接 Monad 测试网，并先启动本机 worker");
-      const count = 30,
-        batchId = crypto.randomUUID(),
-        issuedAt = Date.now();
-      const signature = await signMessageAsync({
-        message: `NIUMA WORKS bot rush\nchainId: 10143\ncontract: ${NIUMA.address}\ncount: ${count}\nbatchId: ${batchId}\nissuedAt: ${issuedAt}`,
-      });
-      const response = await fetch("http://127.0.0.1:8787/bots", {
+      const response = await fetch("/api/bots", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ count, batchId, issuedAt, signature }),
+        body: JSON.stringify({ count: 100, code }),
       });
       const d = await response.json();
-      if (!response.ok) throw new Error(d.error || "本机 worker 无法启动");
-      setError("本机 worker 已开始。请查看终端；失败不创建新交易。浏览器可能需要允许本地网络访问。");
+      if (!response.ok) throw new Error(d.error || "批次暂未确认，请恢复原批次");
+      setBatch(d.batch);
+      setError(
+        `本批发出 ${d.batch.sent}，成功 ${d.batch.successful}，链上失败 ${d.batch.failed}，待核 ${d.batch.unknown}；平均 ${d.batch.averageMs ?? "—"} ms，总耗时 ${(d.batch.totalMs / 1000).toFixed(1)} 秒`,
+      );
     } catch (e) {
-      setError(e instanceof Error ? e.message : "请检查本机 worker 及浏览器本地网络权限");
+      setError(e instanceof Error ? e.message : "服务端暂未返回，请恢复原批次");
     } finally {
       setBusy(false);
     }
@@ -64,19 +55,22 @@ export function BotRush() {
           <p className="eyebrow">ROBOT EMPLOYERS / PUBLIC RPC</p>
           <h2>打工高峰</h2>
         </div>
-        <button
-          className="btn btn-primary"
-          disabled={busy || !address || address.toLowerCase() !== owner?.toLowerCase()}
-          onClick={release}
-        >
-          {busy ? "请求本机 worker…" : "放出 30 个机器人雇主"}
+        <button className="btn btn-primary" disabled={busy || !code} onClick={release}>
+          {busy ? "牛马批量上工中…" : batch?.phase === "UNRESOLVED" ? "恢复原批次" : "批发 100 只牛马上工"}
         </button>
       </div>
-      <p>
-        机器人上报随机 3–6 单、15–60 秒，不实际操作游戏。主路径：本机 <code>scripts/bot-rush.ps1 -N 100 -Mode hot</code>
-        ；网页按钮需要本机 <code>scripts/bot-worker.py</code> 与 owner 签名。每钱包预充 0.013
-        MON；签名相同的交易才可退避重发。
-      </p>
+      <label>
+        演示口令{" "}
+        <input
+          className="input input-bordered"
+          type="password"
+          autoComplete="off"
+          value={code}
+          onChange={event => setCode(event.target.value)}
+          placeholder="由演示负责人输入"
+        />
+      </label>
+      <p>每 10 分钟最多一批，每批最多 100 个机器人雇主。机器人上报 3–6 单、15–60 秒，不实际操作游戏。</p>
       <div className="table-wrapper">
         <table className="table">
           <thead>
@@ -119,6 +113,34 @@ export function BotRush() {
         峰值按成功交易的区块时间秒分组；到账计时含公共 RPC 与轮询延迟。此处不是 Monad
         吞吐上限或最终性证明。最近结果为本机脚本发布的链上回执证据。
       </p>
+      {batch && (
+        <div className="bot-stats" aria-label="最近批次统计">
+          <span>
+            发出 <strong>{batch.sent}</strong>
+          </span>
+          <span>
+            成功 <strong>{batch.successful}</strong>
+          </span>
+          <span>
+            链上失败 <strong>{batch.failed}</strong>
+          </span>
+          <span>
+            待核 <strong>{batch.unknown}</strong>
+          </span>
+          <span>
+            平均确认 <strong>{batch.averageMs ?? "—"} ms</strong>
+          </span>
+          <span>
+            总耗时 <strong>{(batch.totalMs / 1000).toFixed(1)} s</strong>
+          </span>
+          <span>
+            RPC 错误 / 重发{" "}
+            <strong>
+              {batch.rpcFailureCount ?? "—"} / {batch.transactionResubmissions ?? "—"}
+            </strong>
+          </span>
+        </div>
+      )}
       {batch && (
         <details>
           <summary>

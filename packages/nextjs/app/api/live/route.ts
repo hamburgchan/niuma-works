@@ -3,10 +3,15 @@ import { json } from "~~/utils/niuma-server";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    return Response.json(await liveData(), {
-      headers: { "Cache-Control": "public, s-maxage=15, stale-while-revalidate=30" },
+    const fast = new URL(request.url).searchParams.get("fast") === "1";
+    return Response.json(await liveData(fast), {
+      headers: {
+        "Cache-Control": fast
+          ? "public, s-maxage=3, stale-while-revalidate=3"
+          : "public, s-maxage=15, stale-while-revalidate=30",
+      },
     });
   } catch (error) {
     console.error(

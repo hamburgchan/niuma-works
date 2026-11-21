@@ -4,6 +4,7 @@ import { type Hash, decodeEventLog } from "viem";
 import batches from "~~/contracts/botResults.json";
 import humanTimings from "~~/contracts/humanTimings.json";
 import seed from "~~/contracts/liveSeed.json";
+import { latestServerBatch, serverRobotAddresses } from "~~/utils/demo-bank-server";
 import { DEMO_CHARACTERS, DEMO_EMPLOYEES } from "~~/utils/niuma";
 import { client, deployment } from "~~/utils/niuma-server";
 
@@ -59,7 +60,7 @@ async function readRange(start: number, end: number): Promise<LiveEvent[]> {
 // Next Data Cache persists closed block ranges across serverless instances; no Blob SDK/store.
 const closedRange = unstable_cache(readRange, ["niuma-v2-event-ranges", deployment.address], { revalidate: 3600 });
 async function refresh() {
-  const latestBlock = Number(await client.getBlockNumber({ cacheTime: 10000 }));
+  const latestBlock = Number(await client.getBlockNumber({ cacheTime: 2000 }));
   const first =
     seed.contract.toLowerCase() === deployment.address.toLowerCase()
       ? Math.max(seed.cursor, deployment.deployedOnBlock)
@@ -97,10 +98,16 @@ async function refresh() {
       .flatMap(b => b.rows.map(r => r.hash?.toLowerCase()).filter(Boolean)),
   );
   const runs = all.filter(e => e.event === "RunFinished");
+  const [serverRobots, serverBatch] = await Promise.all([serverRobotAddresses(latestBlock), latestServerBatch()]);
+  for (const row of serverBatch?.rows || [])
+    if (row.hash && row.elapsedMs && row.state === "CONFIRMED") latency.set(row.hash.toLowerCase(), row.elapsedMs);
   const recentEvents = all
     .slice(-100)
     .reverse()
-    .map(e => ({ ...e, robotEmployer: robots.has(e.hash.toLowerCase()) }));
+    .map(e => ({
+      ...e,
+      robotEmployer: robots.has(e.hash.toLowerCase()) || serverRobots.has(String(e.args.player).toLowerCase()),
+    }));
   const timings: Record<string, number> = {};
   for (const e of recentEvents) {
     const ms = latency.get(e.hash.toLowerCase());
@@ -133,8 +140,8 @@ async function refresh() {
     timingPersistence: "Browser samples are process-local; robot samples are published evidence",
   };
 }
-export async function liveData() {
-  if (cached && Date.now() < expires) return cached;
+export async function liveData(fast = false) {
+  if (cached && Date.now() < expires && (!fast || expires - Date.now() > 12000)) return cached;
   if (!pending)
     pending = refresh()
       .then(value => {

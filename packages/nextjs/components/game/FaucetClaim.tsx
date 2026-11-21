@@ -1,19 +1,83 @@
 "use client";
-import { useAccount } from "wagmi";
+import { useEffect, useState } from "react";
+import { getAddress } from "viem";
+import { useAccount, useSignMessage } from "wagmi";
 
 export function FaucetClaim() {
   const { address, connector } = useAccount();
+  const { signMessageAsync } = useSignMessage();
+  const [claimed, setClaimed] = useState(false),
+    [busy, setBusy] = useState(false),
+    [message, setMessage] = useState(""),
+    [exhausted, setExhausted] = useState(false);
+  useEffect(() => {
+    setClaimed(false);
+    setMessage("");
+    setExhausted(false);
+    if (!address) return;
+    const abort = new AbortController();
+    void fetch(`/api/faucet?address=${address}`, { signal: abort.signal })
+      .then(r => r.json())
+      .then(d => {
+        if (!abort.signal.aborted) {
+          setClaimed(!!d.claimed);
+          setExhausted(
+            d.remainingWei !== undefined && (BigInt(d.remainingWei) < 20000000000000000n || d.hourRemaining === 0),
+          );
+        }
+      })
+      .catch(() => {});
+    return () => abort.abort();
+  }, [address]);
+  async function claim() {
+    if (!address) return;
+    setBusy(true);
+    setMessage("");
+    try {
+      const recipient = getAddress(address),
+        issuedAt = Date.now();
+      const signature = await signMessageAsync({
+        message: `NIUMA WORKS opening grant\nchainId: 10143\naddress: ${recipient}\nissuedAt: ${issuedAt}`,
+      });
+      const response = await fetch("/api/faucet", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ address: recipient, issuedAt, signature }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "领币暂未确认，请刷新额度");
+      setClaimed(!!data.claimed);
+      setExhausted(data.state === "EXHAUSTED");
+      setMessage(
+        data.state === "CONFIRMED"
+          ? "✓ 0.02 MON 开工费已到账"
+          : data.state === "ALREADY_CLAIMED"
+            ? "这个地址已经领过开工费"
+            : "本时段额度用完了，请使用官方水龙头",
+      );
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "领币暂未确认");
+    } finally {
+      setBusy(false);
+    }
+  }
   if (!address || !/burner/i.test(connector?.id || "")) return null;
   return (
     <div className="faucet-claim">
-      <p>自动领币暂时暂停。请向当前临时钱包预充测试 MON 后上工。</p>
+      <button className="btn btn-primary full-width" onClick={claim} disabled={busy || claimed || exhausted}>
+        {busy ? "领取中…" : claimed ? "本地址已领取开工费" : "领 0.02 MON 开工费"}
+      </button>
+      {message && <p role="status">{message}</p>}
       <code className="receipt-hash">{address}</code>
       <button className="btn btn-outline full-width" onClick={() => navigator.clipboard.writeText(address)}>
         复制临时钱包地址
       </button>
+      <a className="link" href="https://testnet.monad.xyz" target="_blank" rel="noreferrer">
+        {exhausted ? "额度用完，前往官方水龙头 ↗" : "还需要测试币？官方水龙头 ↗"}
+      </a>
       <p className="small-note">
-        历史参考：每班约 0.0096 MON（含 gas）；V2 首班实测约 0.0122 MON。0.03 MON 约可上 2–3 班，页面开工前会按当前 gas
-        重新估算。
+        每地址一次，每小时共 60 次，总额度 1.5 MON。每班约 0.0096 MON（含 gas），0.02 MON 约可上 1–2 班；开工前按当前
+        gas 估算。
       </p>
     </div>
   );
