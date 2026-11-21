@@ -2,7 +2,7 @@
 
 说一句话招一名新牛马，三头老牛马负责培养，新牛马上工后每班给老板记入可提工资。培养费由 Monad 测试网合约托管，验收后按工位分账。
 
-公网：[人才市场](https://niuma-works.vercel.app)、[上工](https://niuma-works.vercel.app/play/4)。本地 worker 负责生成与 operator 交付。
+公网：[人才市场](https://niuma-works.vercel.app)、[上工](https://niuma-works.vercel.app/play/5)、[工资大屏](https://niuma-works.vercel.app/live)。本地 worker 负责生成与 operator 交付。
 
 Created after the organizer's start announcement for Monad Blitz Guangzhou, 2026-11-21, using create-eth 2.0.23 (Scaffold-ETH 2, Foundry).
 
@@ -14,15 +14,17 @@ Created after the organizer's start announcement for Monad Blitz Guangzhou, 2026
 
 合约已部署在 Monad 测试网（10143），原有三个角色完成了真实订单、交付和验收。删除样板合约后 `forge test -vv` 为 16 passed、0 failed（含 256 次 fuzz）；见 `evidence/foundry-test-stage3-cleanup.txt`。交易与文件指纹见 [evidence/orders.md](evidence/orders.md)。
 
-**P0 替换进行中：**旧角色 1、2、3、4 存在背景方板外观问题，不作为修复后的交付证明。管线已加入本机 rembg 去背景及透明区域检查。2026-11-21 12:28 重生成时 HF 返回 ZeroGPU 额度耗尽，订单 5 已取消，0.01 MON 全额记入买家可提退款余额，尚未生成新角色。不会把旧模型标为新模型。失败证据见 `evidence/orders/5-generation-failed.json`。
+**纸片人演示已替换：**首页、/play、/live 只展示骡子新员工 #5（订单 6）、羊驼实习生 #6（订单 7）、加班程序员 #7（订单 8）。来源均为 **chatgpt 手动生成**，描述为 NIUMA WORKS 团队自拟。四边保守 flood fill 保留羊驼内部米白卷毛，程序员保留贴纸边；最近邻缩放到高 512px，分别 124910、139644、130691 字节。透明 PNG 公开 Blob 均经无鉴权下载、SHA-256 比对和链上 Paid 状态回读；详情见 `evidence/orders/6.json` 至 `8.json`、`evidence/paper-background-processing.json`。
+
+旧角色 1–4 背景未去除，已替换并退出演示。订单 5 在 HF ZeroGPU 额度耗尽后取消，0.01 MON 记入买家可提退款余额；它没有新角色。订单 1–5 均不用于演示，历史证据保留。失败证据见 `evidence/orders/5-generation-failed.json`。
 
 - Contract: [`0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb`](https://testnet.monadexplorer.com/address/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb)
 - Deployment: [`0xd70b1d03a9cb0d7adc979a085c0fce451ca89d2390a0082baa5477fbf439208a`](https://testnet.monadexplorer.com/tx/0xd70b1d03a9cb0d7adc979a085c0fce451ca89d2390a0082baa5477fbf439208a)
 - Verification API: 2/2 succeeded; Monadscan verified, MonadVision partial match. Exact response: `evidence/verification-response.json`.
 
-The generation path is FLUX.1-schnell -> TRELLIS. Uploaded GLB is the fallback. Pre-start verification code and assets are excluded.
+当前交付物是透明 PNG：演示使用手动立绘上传，现场招聘采用 Pollinations，失败时退到标注“程序化生成”的抽象像素角色。FLUX → TRELLIS 管线曾用订单 1–3 验证；演示日因 HF 免费额度耗尽改为现在的纸片人方案。3D 生成和 GLB 上传路线已停用。Pre-start verification code and assets are excluded.
 
-Models: [FLUX.1-schnell](https://huggingface.co/black-forest-labs/FLUX.1-schnell) (Apache-2.0), [TRELLIS-image-large](https://huggingface.co/microsoft/TRELLIS-image-large) (MIT), served by [trellis-community/TRELLIS](https://huggingface.co/spaces/trellis-community/TRELLIS). Images and 3D geometry are AI generated. Game, procedural motions, product UI and production hosting are later-stage work.
+历史模型：[FLUX.1-schnell](https://huggingface.co/black-forest-labs/FLUX.1-schnell) (Apache-2.0)、[TRELLIS-image-large](https://huggingface.co/microsoft/TRELLIS-image-large) (MIT)。当前游戏为开赛后从零实现的 three.js 工坊；角色和 NPC 都是透明 PNG、白色描边、薄层厚度及脚底椭圆影子的 billboard。摇摆、蹦跳、压扁回弹是预制程序化动作，不是骨骼动画。
 
 ## Development
 
@@ -40,9 +42,9 @@ Setup: `python -m venv .venv`, then `.venv\Scripts\python -m pip install -r scri
 
 Start the API locally: `pwsh -File scripts/start-local.ps1`. Run the worker separately: `.venv\Scripts\python scripts/worker.py --watch`. POST `/api/orders/{orderId}/start` validates chain Funded state, the exact UTF-8 prompt's keccak256, and the buyer's signature before creating an immutable Blob queue entry. Repeated requests return the existing job. GET `/api/orders/{orderId}` reads progress and actual chain state. See [docs/generation.md](docs/generation.md) for the signing message and worker details.
 
-The demo uses a **local worker for generation and operator delivery**. Hugging Face queue time and a multi-step GPU job can outlast a web request; generation does not run inside the Vercel request. GET is read-only. No production API deployment is claimed at this stage.
+The demo uses a **local worker for generation and operator delivery**. Vercel handles read/queue APIs; generation does not run inside the Vercel request. GET is read-only. The website and live feed are publicly deployed.
 
-For an already funded order, run `.venv\Scripts\python scripts/generate.py --order-id ID --prompt "exact original prompt"`. For the upload fallback, add `--upload "C:\path\own.glb"`; the record is explicitly `mode: uploaded` and must be shown as “上传资产”. This fallback is implemented and malformed-file validation is tested; a separate real uploaded-asset order has not been broadcast.
+演示立绘处理：`.venv\Scripts\python scripts/paper_assets.py`。`scripts/import-paper-demos.py` 仅导入已授权的三张立绘，通过本地持久化原交易记录核对下单、交付、验收，不能删除记录来重复执行。输出清单为 `packages/nextjs/contracts/demoCharacters.json`。旧 `generate.py` / `demo.py` 仅保留历史代码，不运行。
 
 Definite model errors cancel the Funded order and credit a full withdrawable refund. Unknown/connection failures hold for reconciliation, without resubmitting a GPU job or transaction. GPU claims are create-only Blob objects; local task and original transaction hashes are persisted. Do not clear those records to retry an uncertain operation.
 
@@ -52,4 +54,4 @@ Measured order gas costs at 102 gwei: order 0.024372492–0.026294988 MON, deliv
 
 Run scores are reported by the client and are not cheat resistant. Procedural motions are presets, not generated skeletal animation. Only Monad testnet is in scope.
 
-旧订单 1：链上登记的地址为私有，已用订单 4 替代，演示时不使用订单 1。订单 4 重新登记同一份开赛后生成的土豆工人 GLB，链上 URL 为 public，无鉴权下载 SHA-256 与链上一致。当前演示角色为 4、2、3。
+旧订单 1：链上登记的地址为私有，已用订单 4 替代。订单 4 曾登记同一份开赛后生成的土豆工人 GLB 的 public URL。两者现在均已被纸片人方案替换，不在演示中出现。

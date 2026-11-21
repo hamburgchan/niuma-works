@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { DEMO_CHARACTERS } from "~~/utils/niuma";
 
 export function NiumaHeader() {
   const pathname = usePathname();
@@ -23,7 +24,7 @@ export function NiumaHeader() {
         <Link href="/live" aria-current={pathname === "/live" ? "page" : undefined}>
           大屏
         </Link>
-        <Link href="/play/4" aria-current={pathname.startsWith("/play") ? "page" : undefined}>
+        <Link href={`/play/${DEMO_CHARACTERS[0]}`} aria-current={pathname.startsWith("/play") ? "page" : undefined}>
           试玩
         </Link>
       </nav>

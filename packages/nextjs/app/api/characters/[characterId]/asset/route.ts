@@ -25,7 +25,7 @@ export async function GET(_request: Request, context: { params: Promise<{ charac
     if (!result || result.statusCode !== 200) return json({ error: "Asset unavailable" }, 404);
     return new Response(result.stream, {
       headers: {
-        "Content-Type": "model/gltf-binary",
+        "Content-Type": uri.endsWith(".png") ? "image/png" : "application/octet-stream",
         "Cache-Control": "public, max-age=3600, immutable",
         "X-Content-SHA256": character[1],
         "X-Content-Type-Options": "nosniff",

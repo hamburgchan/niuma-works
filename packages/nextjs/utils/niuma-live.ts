@@ -1,11 +1,13 @@
 import { BlobNotFoundError, BlobPreconditionFailedError, put } from "@vercel/blob";
 import "server-only";
 import { type Hash, decodeEventLog } from "viem";
+import { DEMO_CHARACTERS, DEMO_EMPLOYEES } from "~~/utils/niuma";
 import { access, client, deployment, freshBlob, putState, readRecord } from "~~/utils/niuma-server";
 
 const ROOT = `niuma/${deployment.address.toLowerCase()}/live`;
 const PATH = `${ROOT}/events-v1.json`;
 export type LiveEvent = {
+  robotEmployer?: boolean;
   id: string;
   hash: Hash;
   blockNumber: number;
@@ -70,7 +72,22 @@ export async function liveData() {
       pending = undefined;
     });
   const data = await pending;
-  const recent = data.events.slice(-30).reverse();
+  const demoEvents = data.events.filter(event =>
+    event.event === "RunFinished"
+      ? DEMO_CHARACTERS.includes(Number(event.args.characterId))
+      : DEMO_EMPLOYEES.some(employee => employee.orderId === Number(event.args.orderId)),
+  );
+  const recent = await Promise.all(
+    demoEvents
+      .slice(-60)
+      .reverse()
+      .map(async event => ({
+        ...event,
+        robotEmployer:
+          event.event === "RunFinished" &&
+          !!(await readRecord(`niuma/${deployment.address.toLowerCase()}/bots/runs/${event.hash}.json`)),
+      })),
+  );
   const timings = await Promise.all(
     recent.map(async event => ({ hash: event.hash, value: await readRecord(`${ROOT}/latency/${event.hash}.json`) })),
   );
@@ -78,7 +95,7 @@ export async function liveData() {
   timings.forEach(item => {
     if (typeof item.value?.elapsedMs === "number") latency[item.hash] = item.value.elapsedMs;
   });
-  const runs = data.events.filter(event => event.event === "RunFinished");
+  const runs = demoEvents.filter(event => event.event === "RunFinished");
   const labor = new Map<
     string,
     { characterId: number; shifts: number; fullAttendance: number; ownerWagesWei: string }
@@ -110,7 +127,7 @@ export async function liveData() {
     ),
     runCount: runs.length,
     laborLeaders: [...labor.values()].sort((a, b) => b.fullAttendance - a.fullAttendance || b.shifts - a.shifts),
-    settlementCount: data.events.length,
+    settlementCount: demoEvents.length,
     latency,
     latencySamples: samples.length,
     averageMs: samples.length ? Math.round(samples.reduce((a, b) => a + b, 0) / samples.length) : null,

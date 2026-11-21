@@ -1,0 +1,9 @@
+{
+  "batchId": "f9bc8523-eb79-4ed2-979e-cf744f41ecb8",
+  "count": 5,
+  "status": "NOT_STARTED",
+  "reason": "Next dev compilation: fundBot export missing after lint-staged restoration. HTTP 500 occurred before the route handler executed.",
+  "fundingTransactions": 0,
+  "finishRunTransactions": 0,
+  "action": "Fix compilation, read original batch ID, then start the same previously unstarted batch. Never retry a failed or unknown payment."
+}

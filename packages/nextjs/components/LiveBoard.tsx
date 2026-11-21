@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { QRCodeSVG } from "qrcode.react";
 import { formatEther } from "viem";
+import { BotRush } from "~~/components/BotRush";
 import { useScaffoldWatchContractEvent } from "~~/hooks/scaffold-eth";
 import { CHARACTER_NAMES, DEMO_CHARACTERS, EXPLORER, shortAddress } from "~~/utils/niuma";
 import type { LiveEvent } from "~~/utils/niuma-live";
@@ -78,7 +79,7 @@ export function LiveBoard() {
             {data?.averageMs ?? "—"}
             <em> ms</em>
           </strong>
-          <small>{data?.latencySamples ?? "—"} 个客户端计时样本</small>
+          <small>{data?.latencySamples ?? "—"} 个提交到回执计时样本</small>
         </div>
       </div>
       <div className="live-grid">
@@ -117,6 +118,7 @@ export function LiveBoard() {
                   {event.event === "RunFinished" ? (
                     <>
                       <strong>
+                        {event.robotEmployer && "🤖 机器人雇主 · "}
                         {CHARACTER_NAMES[Number(event.args.characterId)] || `工号 #${event.args.characterId}`} 完成{" "}
                         {event.args.stars} 单
                       </strong>
@@ -146,6 +148,7 @@ export function LiveBoard() {
           </ol>
         </section>
       </div>
+      <BotRush />
       <section className="leaderboards">
         <h2>劳模榜</h2>
         <p className="small-note">全勤 = 一班完成六张工单；工资为已记入老板可提余额的累计金额。</p>
@@ -184,7 +187,7 @@ export function LiveBoard() {
         </div>
       </section>
       <p className="small-note">
-        工单数由客户端上报，不防作弊。到账计时为浏览器提交请求到成功回执，非链最终性指标。工资进入合约可提余额；未采集值保留为空。
+        工单数由客户端上报，不防作弊。到账计时为浏览器或机器人进程提交请求到成功回执，非链最终性指标。工资进入合约可提余额；未采集值保留为空。
         {data && ` 已同步至区块 ${data.indexedThrough}。`}
       </p>
       {error && (

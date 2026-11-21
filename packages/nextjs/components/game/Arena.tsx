@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { paperFigure, paperShadow } from "./paper-figure";
 import * as THREE from "three";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { createKeyboardInput } from "~~/utils/game-input";
 import type { RunResult } from "~~/utils/niuma";
 
@@ -11,7 +11,7 @@ type Props = {
   sha256: string;
   playing: boolean;
   runKey: number;
-  motion: "waddle" | "hop";
+  motion: "waddle" | "hop" | "squash";
   finishSignal: number;
   onReady: () => void;
   onFinish: (result: RunResult) => void;
@@ -130,6 +130,9 @@ export function Arena(props: Props) {
     }
     const actor = new THREE.Group();
     scene.add(actor);
+    const shadow = paperShadow(1.1);
+    scene.add(shadow);
+    const colleagues: THREE.Group[] = [];
     const badge = new THREE.Sprite(
       new THREE.SpriteMaterial({ map: labelTexture(`${props.employeeName}  #${props.characterId}`), depthTest: false }),
     );
@@ -137,13 +140,20 @@ export function Arena(props: Props) {
     badge.position.y = 2.05;
     actor.add(badge);
     for (const [i, pet] of ["donkey", "horse", "cow"].entries()) {
-      const map = new THREE.TextureLoader().load(`/pets/${pet}.png`);
-      map.colorSpace = THREE.SRGBColorSpace;
-      map.magFilter = THREE.NearestFilter;
-      const colleague = new THREE.Sprite(new THREE.SpriteMaterial({ map }));
-      colleague.scale.set(1.9, 2.4, 1);
-      colleague.position.set(-6 + i * 6, 1.2, -6.5);
-      scene.add(colleague);
+      new THREE.TextureLoader().load(`/pets/${pet}.png`, map => {
+        if (disposed) {
+          map.dispose();
+          return;
+        }
+        const colleague = paperFigure(map.image, 2.4);
+        map.dispose();
+        colleague.position.set(-6 + i * 6, 0, -6.5);
+        colleagues.push(colleague);
+        scene.add(colleague);
+        const colleagueShadow = paperShadow(1.5);
+        colleagueShadow.position.set(-6 + i * 6, -0.045, -6.5);
+        scene.add(colleagueShadow);
+      });
       const title = new THREE.Sprite(
         new THREE.SpriteMaterial({ map: labelTexture(["驴 · 造身体", "马 · 教走路", "牛 · 发工牌"][i]) }),
       );
@@ -200,26 +210,19 @@ export function Arena(props: Props) {
     async function load() {
       try {
         const response = await fetch(props.url, { signal: abort.signal });
-        if (!response.ok) throw new Error("GLB 下载失败");
+        if (!response.ok) throw new Error("透明 PNG 下载失败");
         const bytes = await response.arrayBuffer();
         const digest = Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", bytes)))
           .map(v => v.toString(16).padStart(2, "0"))
           .join("");
         if (digest !== props.sha256.replace(/^0x/, "")) throw new Error("文件 SHA-256 与链上记录不一致，已停止载入");
-        const gltf = await new GLTFLoader().parseAsync(bytes, "");
-        if (disposed) return;
-        model = gltf.scene;
-        const box = new THREE.Box3().setFromObject(model),
-          size = box.getSize(new THREE.Vector3()),
-          center = box.getCenter(new THREE.Vector3());
-        model.scale.setScalar(1.6 / Math.max(size.y, 0.01));
-        model.position.set(-center.x * model.scale.x, -box.min.y * model.scale.y, -center.z * model.scale.z);
-        model.traverse(object => {
-          if (object instanceof THREE.Mesh) {
-            object.castShadow = true;
-            object.receiveShadow = true;
-          }
-        });
+        const bitmap = await createImageBitmap(new Blob([bytes], { type: "image/png" }));
+        if (disposed) {
+          bitmap.close();
+          return;
+        }
+        model = paperFigure(bitmap, 1.8);
+        bitmap.close();
         actor.add(model);
         setReady(true);
         latest.current.onReady();
@@ -290,9 +293,20 @@ export function Arena(props: Props) {
           end(time);
       }
       if (model) {
-        model.rotation.z = moving && state.motion === "waddle" ? Math.sin(time * 0.016) * 0.13 : 0;
-        actor.position.y = moving && state.motion === "hop" ? Math.abs(Math.sin(time * 0.012)) * 0.25 : 0;
+        model.quaternion.copy(camera.quaternion);
+        model.rotateZ(moving && state.motion === "waddle" ? Math.sin(time * 0.016) * 0.1 : 0);
+        const bounce = Math.abs(Math.sin(time * 0.012));
+        model.position.y = moving
+          ? state.motion === "waddle"
+            ? Math.abs(Math.sin(time * 0.016)) * 0.035
+            : bounce * 0.22
+          : 0;
+        const squash = moving && state.motion === "squash" ? Math.max(0, 1 - bounce * 4) * 0.17 : 0;
+        model.scale.set(1 + squash, 1 - squash, 1);
       }
+      shadow.position.x = actor.position.x;
+      shadow.position.z = actor.position.z;
+      for (const colleague of colleagues) colleague.quaternion.copy(camera.quaternion);
       for (const star of stars) star.position.y = 0.7 + Math.sin(time * 0.003 + star.position.x) * 0.08;
       camera.position.lerp(new THREE.Vector3(actor.position.x, 7.5, actor.position.z + 10), Math.min(1, dt * 6));
       camera.lookAt(actor.position.x, 0.4, actor.position.z);

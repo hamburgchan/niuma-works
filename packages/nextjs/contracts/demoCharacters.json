@@ -1,0 +1,41 @@
+[
+  {
+    "id": 5,
+    "orderId": 6,
+    "name": "骡子新员工",
+    "slug": "mule",
+    "url": "https://pucrpvafibawmypd.public.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/6/chatgpt-manual/03db298a4353a53541216e7233f35c4c1034f2ba5c4e92e8f6f5d702477b3d95.png",
+    "sha256": "03db298a4353a53541216e7233f35c4c1034f2ba5c4e92e8f6f5d702477b3d95",
+    "source": "NIUMA WORKS 团队自拟",
+    "generationSource": "chatgpt 手动生成",
+    "assetType": "png",
+    "bytes": 124910,
+    "approveHash": "0xe5ecbe17c5485361f646f43c241305fcf81a9d9b387557ce97e6009edb336c97"
+  },
+  {
+    "id": 6,
+    "orderId": 7,
+    "name": "羊驼实习生",
+    "slug": "alpaca",
+    "url": "https://pucrpvafibawmypd.public.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/7/chatgpt-manual/22a86b203d813da65ced72e3f062dd5209c56f44a445a2ec80af3e762b243fd9.png",
+    "sha256": "22a86b203d813da65ced72e3f062dd5209c56f44a445a2ec80af3e762b243fd9",
+    "source": "NIUMA WORKS 团队自拟",
+    "generationSource": "chatgpt 手动生成",
+    "assetType": "png",
+    "bytes": 139644,
+    "approveHash": "0x61da253492db7c207e5472e5fcf2c3672b6be30ba2f1696aa904efb18def4fe5"
+  },
+  {
+    "id": 7,
+    "orderId": 8,
+    "name": "加班程序员",
+    "slug": "programmer",
+    "url": "https://pucrpvafibawmypd.public.blob.vercel-storage.com/niuma/0x8ecf351db2ea99aa32bef4ba2686fd0bfeff8abb/orders/8/chatgpt-manual/e56a0c745ae252769e868b26c1383a5eab516bbaa3fff34a88e7b278891846c4.png",
+    "sha256": "e56a0c745ae252769e868b26c1383a5eab516bbaa3fff34a88e7b278891846c4",
+    "source": "NIUMA WORKS 团队自拟",
+    "generationSource": "chatgpt 手动生成",
+    "assetType": "png",
+    "bytes": 130691,
+    "approveHash": "0xfbbc2acd32745c970b6a2011960a27a19b82ca16b94c862bc00dbf3855e2bc56"
+  }
+]

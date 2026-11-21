@@ -9,7 +9,7 @@ import { monadTestnet } from "viem/chains";
 import { useAccount, useBalance, useConnect, usePublicClient, useSwitchChain } from "wagmi";
 import { FaucetClaim } from "~~/components/game/FaucetClaim";
 import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
-import { CHARACTER_NAMES, DEMO_CHARACTERS, EXPLORER, NIUMA, type RunResult } from "~~/utils/niuma";
+import { CHARACTER_NAMES, DEMO_CHARACTERS, DEMO_EMPLOYEES, EXPLORER, NIUMA, type RunResult } from "~~/utils/niuma";
 import { getParsedError } from "~~/utils/scaffold-eth";
 
 const Arena = dynamic(() => import("./Arena").then(module => module.Arena), { ssr: false });
@@ -54,7 +54,7 @@ export function PlayClient({ characterId }: { characterId: number }) {
     [playing, setPlaying] = useState(false),
     [runKey, setRunKey] = useState(0),
     [finishSignal, setFinishSignal] = useState(0);
-  const [motion, setMotion] = useState<"waddle" | "hop">("waddle"),
+  const [motion, setMotion] = useState<"waddle" | "hop" | "squash">("waddle"),
     [record, setRecord] = useState<RunRecord | null>(null),
     [error, setError] = useState(""),
     [busy, setBusy] = useState(false),
@@ -287,11 +287,22 @@ export function PlayClient({ characterId }: { characterId: number }) {
                 蹦跳
               </button>
             </div>
+            <button
+              className={`btn btn-sm ${motion === "squash" ? "btn-primary" : "btn-outline"}`}
+              onClick={() => setMotion("squash")}
+              aria-pressed={motion === "squash"}
+            >
+              压扁回弹
+            </button>
             <span>领完六张工单或 60 秒下班</span>
           </div>
         </section>
         <aside className="play-panel">
           <div className="panel-label">本机临时钱包</div>
+          <p className="small-note">
+            来源：{DEMO_EMPLOYEES.find(item => item.id === characterId)?.generationSource || "用户委托"} · 透明 PNG
+            纸片人
+          </p>
           {!address || !isBurner ? (
             <>
               <p>创建一个留在本机浏览器的测试钱包，用它结算每一局。</p>
@@ -339,7 +350,7 @@ export function PlayClient({ characterId }: { characterId: number }) {
           {cost && !playing && (
             <p className="small-note">本局预计总额约 {Number(cost).toFixed(5)} MON，以实际 gas 为准。</p>
           )}
-          {record && (
+          {record && (record.characterId === characterId || blocked) && (
             <div className="run-receipt" role="status">
               <strong>
                 本班完成 {record.stars} 单 · {(record.timeMs / 1000).toFixed(1)} 秒

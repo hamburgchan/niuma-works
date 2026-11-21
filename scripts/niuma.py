@@ -124,6 +124,9 @@ def blob_path(order_id, name):
 
 def publish_progress(record):
     from vercel.blob.sync import put_blob
-    public = {k: v for k, v in record.items() if k not in {"imagePath", "glbPath", "gradioResults"}}
-    result = put_blob(blob_path(record["orderId"], "progress.json"), json.dumps(public, ensure_ascii=False).encode(), access=BLOB_ACCESS, content_type="application/json", allow_overwrite=True, cache_control_max_age=60)
+    public = {k: v for k, v in record.items() if k not in {"imagePath", "glbPath", "pngPath", "sourcePath", "gradioResults"}}
+    body = json.dumps(public, ensure_ascii=False).encode()
+    path = blob_path(record["orderId"], "progress.json")
+    result = put_blob(path, body, access=BLOB_ACCESS, content_type="application/json", allow_overwrite=True, cache_control_max_age=60)
+    put_blob(path + ".versions/" + result.etag.encode().hex() + ".json", body, access=BLOB_ACCESS, content_type="application/json", allow_overwrite=False, cache_control_max_age=60)
     return result.url

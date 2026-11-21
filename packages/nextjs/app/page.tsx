@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { WorkshopHome } from "~~/components/WorkshopHome";
 
 export default function Home() {
-  redirect("/play/4");
+  return <WorkshopHome />;
 }

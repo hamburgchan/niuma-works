@@ -22,7 +22,55 @@ type Ledger = {
   nextNonce: number;
   addresses: Record<string, Claim>;
   windows: Record<string, number>;
+  botFunding?: Record<string, { hash: Hash; nonce: number; address: `0x${string}`; amountWei: string }>;
 };
+
+// Share the faucet's CAS nonce reservation when funding robot wallets.
+export async function fundBot(address: `0x${string}`, batchId: string, index: number) {
+  const key = process.env.DEPLOYER_PRIVATE_KEY || process.env.FAUCET_PRIVATE_KEY;
+  if (!key || !/^0x[a-fA-F0-9]{64}$/.test(key)) throw new Error("DEPLOYER_PRIVATE_KEY missing");
+  const account = privateKeyToAccount(key as Hash);
+  if ((await client.getChainId()) !== 10143) throw new Error("Monad testnet only");
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const { state, etag } = await readLedger();
+    const id = `${batchId}:${index}`;
+    if (state.botFunding?.[id]) throw new Error("Original bot funding already reserved; no retry");
+    const nonce = Math.max(
+      state.nextNonce,
+      await client.getTransactionCount({ address: account.address, blockTag: "pending" }),
+    );
+    const gasPrice = await client.getGasPrice(),
+      amount = parseEther("0.012");
+    const raw = await account.signTransaction({
+      chainId: 10143,
+      type: "eip1559",
+      to: address,
+      value: amount,
+      gas: 21000n,
+      nonce,
+      maxFeePerGas: gasPrice,
+      maxPriorityFeePerGas: 2_000_000_000n,
+    });
+    const hash = keccak256(raw);
+    state.botFunding ||= {};
+    state.botFunding[id] = { hash, nonce, address, amountWei: amount.toString() };
+    state.nextNonce = nonce + 1;
+    try {
+      await putState(PATH, JSON.stringify(state), etag);
+    } catch (error) {
+      if (error instanceof BlobPreconditionFailedError) continue;
+      throw error;
+    }
+    try {
+      await client.sendRawTransaction({ serializedTransaction: raw });
+      const receipt = await client.waitForTransactionReceipt({ hash, timeout: 25000, pollingInterval: 800 });
+      return { hash, state: receipt.status === "success" ? "CONFIRMED" : "REVERTED" };
+    } catch {
+      return { hash, state: "UNKNOWN" };
+    }
+  }
+  throw new Error("Funding nonce ledger busy; no payment broadcast");
+}
 
 async function readLedger(): Promise<{ state: Ledger; etag: string }> {
   try {
