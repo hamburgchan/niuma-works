@@ -1,0 +1,28 @@
+Compiling 2 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.58s
+Compiler run successful!
+
+Ran 1 test for test/YourContract.t.sol:YourContractTest
+[PASS] testMessageOnDeployment() (gas: 8859)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 625.00µs (70.80µs CPU time)
+
+Ran 16 tests for test/NiumaWorks.t.sol:NiumaWorksTest
+[PASS] testCancelReturnsEntireOriginalPriceAsWithdrawableBalance() (gas: 467994)
+[PASS] testCannotSettleTwiceOrDeliverTwice() (gas: 710782)
+[PASS] testCompleteOrderAndExactSplit() (gas: 740720)
+[PASS] testDeliveryAllowedAtDeadlineNotAfter() (gas: 760358)
+[PASS] testFundedTermsCannotChange() (gas: 718051)
+[PASS] testFuzzSplitConservesWeiAndRemainder(uint96) (runs: 256, μ: 741235, ~: 743965)
+[PASS] testInvalidEconomicsAndRecipients() (gas: 98102)
+[PASS] testOnlyBuyerCanApprove() (gas: 535422)
+[PASS] testOnlyOperatorCanDeliverOrCancel() (gas: 338294)
+[PASS] testOrderAmountAndDeadline() (gas: 72689)
+[PASS] testRefundAtDeadlineRejectedThenAllowedAfter() (gas: 408726)
+[PASS] testRefundCannotTakeDeliveredFunds() (gas: 536524)
+[PASS] testRunPaymentsAndBestScore() (gas: 973931)
+[PASS] testRunRejectsWrongFeeStarsAndUnpaidCharacter() (gas: 792448)
+[PASS] testWithdrawAndDoubleWithdraw() (gas: 720133)
+[PASS] testZeroStarFirstRunAndEqualScoreTie() (gas: 891312)
+Suite result: ok. 16 passed; 0 failed; 0 skipped; finished in 28.62ms (41.74ms CPU time)
+
+Ran 2 test suites in 31.49ms (29.24ms CPU time): 17 tests passed, 0 failed, 0 skipped (17 total tests)
