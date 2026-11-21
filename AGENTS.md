@@ -15,7 +15,7 @@ This file provides guidance to coding agents working in this repository.
 - Do not call the creative mentor again today. Do not invent the description or identity of another onsite team.
 - Stage files explicitly, never git add -A. Keep .env* ignored except .env.example.
 - V2 + hot/spread stress-test hard stop: 2026-11-21 15:45 Asia/Shanghai; stop unfinished work then and retain the runnable version.
-- Deadline: 2026-11-21 18:30 Asia/Shanghai. Stop new features at 16:30; prepare submission by 18:00. Submission requires the user's review of concrete materials.
+- Deadline: 2026-11-21 18:30 Asia/Shanghai. Latest user instruction: stop new features at 17:15; prepare submission/ by 18:00. Do not submit; Claude must show concrete materials to the user for confirmation.
 
 ## Project Overview
 

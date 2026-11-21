@@ -9,7 +9,7 @@ import { monadTestnet } from "viem/chains";
 import { useAccount, useBalance, useConnect, usePublicClient, useSwitchChain } from "wagmi";
 import { FaucetClaim } from "~~/components/game/FaucetClaim";
 import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
-import { CHARACTER_NAMES, DEMO_CHARACTERS, DEMO_EMPLOYEES, EXPLORER, NIUMA, type RunResult } from "~~/utils/niuma";
+import { CHARACTER_NAMES, DEMO_CHARACTERS, EXPLORER, NIUMA, type RunResult } from "~~/utils/niuma";
 import { getParsedError } from "~~/utils/scaffold-eth";
 
 const Arena = dynamic(() => import("./Arena").then(module => module.Arena), { ssr: false });
@@ -34,7 +34,6 @@ const STORAGE = `niuma-current-run-${NIUMA.address.toLowerCase()}`;
 export function PlayClient({
   characterId,
   employeeName,
-  generationSource,
 }: {
   characterId: number;
   employeeName?: string;
@@ -308,11 +307,7 @@ export function PlayClient({
         </section>
         <aside className="play-panel">
           <div className="panel-label">本机临时钱包</div>
-          <p className="small-note">
-            来源：
-            {generationSource || DEMO_EMPLOYEES.find(item => item.id === characterId)?.generationSource || "用户委托"} ·
-            透明 PNG 纸片人
-          </p>
+
           {!address || !isBurner ? (
             <>
               <p>创建一个留在本机浏览器的测试钱包，用它结算每一局。</p>

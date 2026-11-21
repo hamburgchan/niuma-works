@@ -25,18 +25,13 @@ function Employee({ employee }: { employee: (typeof DEMO_EMPLOYEES)[number] }) {
         <span>{order ? (order[3] === 2 ? "✓ 已入职" : "待验收") : "读取链上状态…"}</span>
       </div>
       {data ? (
-        <PaperPreview url={data[2]} sha256={data[1]} name={employee.name} />
+        <PaperPreview url={data[2]} sha256={data[1]} name={employee.name} proofCollapsed />
       ) : (
         <div className="paper-image" aria-busy="true">
           读取链上交付…
         </div>
       )}
       <h3>{employee.name}</h3>
-      <p className="small-note">
-        来源：{employee.generationSource}
-        <br />
-        {employee.source}
-      </p>
       <div className="card-actions">
         <Link href={`/play/${employee.id}`} className="btn btn-primary">
           雇它上一班 →
@@ -57,7 +52,7 @@ export function WorkshopHome() {
           <h1>牛马人才市场</h1>
           <p className="market-tagline">三头老牛马，培养下一代牛马。</p>
           <p>
-            驴造身体，马教走路，牛发工牌。
+            今天当牛马，明天收分成。
             <br />
             雇新牛马上工，六张工单，一笔工资。
           </p>
@@ -73,9 +68,9 @@ export function WorkshopHome() {
         </div>
         <div className="station-wall" aria-label="三头老牛马工位墙">
           {[
-            { pet: "donkey", name: "驴", role: "造身体", line: "身体造好了，精神没造好。" },
-            { pet: "horse", name: "马", role: "教走路", line: "会摇摆，会蹦，不想动。" },
-            { pet: "cow", name: "牛", role: "发工牌", line: "工牌一挂，正式上班。" },
+            { pet: "donkey", name: "驴", role: "组长", line: "身体造好了，精神没造好。" },
+            { pet: "horse", name: "马", role: "经理", line: "会摇摆，会蹦，不想动。" },
+            { pet: "cow", name: "牛", role: "总经理", line: "工牌一挂，正式上班。" },
           ].map((pet, i) => (
             <article className={`old-employee old-employee-${i}`} key={pet.pet}>
               <span>
@@ -117,10 +112,6 @@ export function WorkshopHome() {
           时统一记入平台。移动与领工单不上链，下班只结算一笔。
         </p>
         <p>每班约 0.0096 MON（含 gas），领取一次测试币可以上约 3 班，以实际估算为准。</p>
-        <p>
-          立绘为 chatgpt 手动生成、四边 flood fill 去背景的透明 PNG；动作是预制程序化动作。文件 SHA-256
-          可由浏览器与链上记录核对。
-        </p>
       </section>
       <footer className="work-footer">
         <span>牛马人才市场 · Monad Blitz 广州 · 2026</span>

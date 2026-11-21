@@ -7,11 +7,13 @@ export function PaperPreview({
   sha256,
   name,
   onVerified,
+  proofCollapsed = false,
 }: {
   url: string;
   sha256: string;
   name: string;
   onVerified?: (valid: boolean) => void;
+  proofCollapsed?: boolean;
 }) {
   const [state, setState] = useState({ image: "", message: "正在下载透明 PNG 并核对文件指纹…", valid: false });
   useEffect(() => {
@@ -72,9 +74,11 @@ export function PaperPreview({
       <div className="paper-image">
         {state.image && <Image src={state.image} alt={name} width={263} height={512} unoptimized />}
       </div>
-      <p className={state.valid ? "hash-pass" : "small-note"} role="status">
-        {state.message}
-      </p>
+      {!proofCollapsed && (
+        <p className={state.valid ? "hash-pass" : "small-note"} role="status">
+          {state.message}
+        </p>
+      )}
     </div>
   );
 }
