@@ -324,7 +324,7 @@ export function PlayClient({
               </p>
             </>
           )}
-          <FaucetClaim />
+          <FaucetClaim onFunded={() => void balance.refetch()} />
           <dl className="game-facts">
             <div>
               <dt>每班工资支出</dt>

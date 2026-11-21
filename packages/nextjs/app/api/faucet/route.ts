@@ -24,6 +24,13 @@ export async function POST(request: Request) {
       return json({ error: "临时钱包签名不匹配" }, 403);
     return json(await grant(recipient));
   } catch (error) {
-    return json({ error: `开工费暂未确认：${safeReason(error)}。请先刷新额度，勿更换地址重复申请。` }, 503);
+    const hash = (error as { hash?: string })?.hash;
+    return json(
+      {
+        error: `开工费暂未确认：${safeReason(error)}。请先核对领取结果，勿更换地址重复申请。`,
+        ...(hash ? { hash } : {}),
+      },
+      503,
+    );
   }
 }

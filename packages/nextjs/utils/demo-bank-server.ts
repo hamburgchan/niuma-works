@@ -25,6 +25,16 @@ import { client, deployment } from "~~/utils/niuma-server";
 export const bank = { address: bankConfig.address as Address, abi: bankConfig.abi };
 const zero = `0x${"0".repeat(64)}` as Hash;
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+async function readWithBackoff<T>(read: () => Promise<T>): Promise<T> {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      return await read();
+    } catch (error) {
+      if (attempt >= 3 || !["RPC_HTTP_429", "RPC_TIMEOUT", "RPC_CONNECTION"].includes(safeReason(error))) throw error;
+      await delay(750 * 2 ** attempt);
+    }
+  }
+}
 type Plan = { count: number; gasPrice: string; gasLimits: string[]; createdAt: number; mode: "spread" };
 type ChainBatch = { startedAt: bigint; count: number; plan: Hex; result: Hex };
 const pack = (value: unknown) => toHex(deflateSync(Buffer.from(JSON.stringify(value))));
@@ -80,21 +90,33 @@ export async function broadcast(raw: Hex, metrics?: { rpc: number; retries: numb
 async function ownerTransaction(functionName: string, args: readonly unknown[], value = 0n) {
   const { account, wallet } = signer();
   const data = encodeFunctionData({ abi: bank.abi, functionName, args });
-  const estimate = await client.estimateGas({ account, to: bank.address, data, value });
+  const estimate = await readWithBackoff(() => client.estimateGas({ account, to: bank.address, data, value }));
   const gas = (estimate * 110n + 99n) / 100n;
-  const request = await wallet.prepareTransactionRequest({ account, to: bank.address, data, value, gas });
+  const request = await readWithBackoff(() =>
+    wallet.prepareTransactionRequest({ account, to: bank.address, data, value, gas }),
+  );
   const raw = await wallet.signTransaction(request);
-  const hash = await broadcast(raw);
-  const receipt = await client.waitForTransactionReceipt({ hash, timeout: 45000, pollingInterval: 1000 });
+  const hash = keccak256(raw);
+  let receipt: Awaited<ReturnType<typeof client.getTransactionReceipt>>;
+  try {
+    await broadcast(raw);
+    receipt = await readWithBackoff(() =>
+      client.waitForTransactionReceipt({ hash, timeout: 12000, pollingInterval: 1200 }),
+    );
+  } catch (error) {
+    throw Object.assign(new Error(safeReason(error)), { hash });
+  }
   if (receipt.status !== "success") throw new Error("CHAIN_REVERT");
   return { hash, receipt };
 }
 export async function faucetStatus(address?: Address) {
-  const [distributed, hourRemaining, claimed] = await Promise.all([
-    client.readContract({ ...bank, functionName: "distributed" }),
-    client.readContract({ ...bank, functionName: "remainingThisHour" }),
-    address ? client.readContract({ ...bank, functionName: "claimed", args: [address] }) : false,
-  ]);
+  const [distributed, hourRemaining, claimed] = await readWithBackoff(() =>
+    Promise.all([
+      client.readContract({ ...bank, functionName: "distributed" }),
+      client.readContract({ ...bank, functionName: "remainingThisHour" }),
+      address ? client.readContract({ ...bank, functionName: "claimed", args: [address] }) : false,
+    ]),
+  );
   return {
     enabled: true,
     amountWei: parseEther("0.02").toString(),
@@ -112,7 +134,9 @@ export async function grant(address: Address) {
     return { ...status, state: "EXHAUSTED" };
   const tx = await ownerTransaction("grant", [address], parseEther("0.02"));
   return {
-    ...(await faucetStatus(address)),
+    enabled: true,
+    amountWei: parseEther("0.02").toString(),
+    claimed: true,
     state: "CONFIRMED",
     hash: tx.hash,
     blockNumber: Number(tx.receipt.blockNumber),
