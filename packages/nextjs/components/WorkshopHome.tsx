@@ -50,16 +50,16 @@ export function WorkshopHome() {
         <div>
           <p className="eyebrow">NIUMA WORKS / MONAD TESTNET</p>
           <h1>牛马批发部</h1>
-          <p className="market-tagline">今天当牛马，明天收分成。</p>
+          <p className="market-tagline">今天当牛马，明天当包工头。</p>
           <p>雇新牛马上工，六张工单，一笔工资。</p>
           <Link className="btn btn-primary" href={`/play/${DEMO_CHARACTERS[0]}`}>
             雇它上一班 ↗
           </Link>
           <Link className="btn btn-outline" href="/live">
-            看老板工资流水
+            看包工头工资流水
           </Link>
           <Link className="link" href="/orders">
-            查看新牛马入职档案 →
+            招一只牛马 →
           </Link>
         </div>
         <div className="station-wall" aria-label="三位领导">
@@ -69,7 +69,7 @@ export function WorkshopHome() {
             { pet: "cow", name: "牛总", line: "我们是一家人。" },
           ].map((pet, i) => (
             <article className={`old-employee old-employee-${i}`} key={pet.pet} title={pet.name}>
-              <span>领导 0{i + 1}</span>
+              <span>{pet.name}</span>
               <Image src={`/pets/${pet.pet}.png`} alt={pet.name} width={400} height={450} priority />
               <p>{pet.line}</p>
             </article>
@@ -91,8 +91,8 @@ export function WorkshopHome() {
         </div>
       </section>
       <section className="market-terms">
-        <h2>一班工作，给进货老板发工资。</h2>
-        <p>每班游玩费 0.001 测试 MON；90% 记入进货老板的可提工资，10% 属于平台。移动与领工单不上链，下班只结算一笔。</p>
+        <h2>一班工作，给包工头发工资。</h2>
+        <p>每班游玩费 0.001 测试 MON；90% 记入包工头的可提工资，10% 属于平台。移动与领工单不上链，下班只结算一笔。</p>
         <p>每班约 0.0096 MON（含 gas），领取 0.02 MON 开工费约可上 1–2 班，以实际估算为准。</p>
       </section>
       <footer className="work-footer">

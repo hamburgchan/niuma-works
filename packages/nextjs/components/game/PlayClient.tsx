@@ -294,14 +294,14 @@ export function PlayClient({
               >
                 蹦跳
               </button>
+              <button
+                className={`btn btn-sm ${motion === "squash" ? "btn-primary" : "btn-outline"}`}
+                onClick={() => setMotion("squash")}
+                aria-pressed={motion === "squash"}
+              >
+                压扁回弹
+              </button>
             </div>
-            <button
-              className={`btn btn-sm ${motion === "squash" ? "btn-primary" : "btn-outline"}`}
-              onClick={() => setMotion("squash")}
-              aria-pressed={motion === "squash"}
-            >
-              压扁回弹
-            </button>
             <span>领完六张工单或 60 秒下班</span>
           </div>
         </section>
@@ -331,7 +331,7 @@ export function PlayClient({
               <dd>{fee.data !== undefined ? formatEther(fee.data) : "…"} MON + gas</dd>
             </div>
             <div>
-              <dt>老板收到</dt>
+              <dt>包工头收到</dt>
               <dd>{ownerBps.data !== undefined ? `${Number(ownerBps.data) / 100}%` : "…"}</dd>
             </div>
             <div>
@@ -365,7 +365,7 @@ export function PlayClient({
                   {
                     submitting: "正在提交本局…",
                     pending: "交易已发出，等待回执…",
-                    confirmed: `工资 +${record.ownerShareWei ? formatEther(BigInt(record.ownerShareWei)) : "—"} MON 已发给进货老板`,
+                    confirmed: `工资 +${record.ownerShareWei ? formatEther(BigInt(record.ownerShareWei)) : "—"} MON 已发给包工头`,
                     unknown: "提交状态待核实",
                     reverted: "交易执行失败",
                   }[record.status]
@@ -383,7 +383,7 @@ export function PlayClient({
               )}
               {record.elapsedMs !== undefined && (
                 <p>
-                  到账 {record.elapsedMs} ms<small>提交请求 → 成功回执；工资记入老板可提余额</small>
+                  到账 {record.elapsedMs} ms<small>提交请求 → 成功回执；工资记入包工头可提余额</small>
                 </p>
               )}
               {blocked && (

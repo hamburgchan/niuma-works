@@ -31,5 +31,6 @@ export type BotBatch = {
   rpcFailureCount?: number;
   chainFailureCount?: number;
   transactionResubmissions?: number;
+  rpcReadRetries?: number;
   settlementSpanMs?: number;
 };

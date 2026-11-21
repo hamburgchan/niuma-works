@@ -26,8 +26,17 @@ export async function POST(request: Request) {
   } catch (error) {
     const message = error instanceof Error ? error.message : "";
     const expected = /^(每 10 分钟|单批只能|部署钱包余额不足|0.013 MON 不足|DEMO_CODE 未配置)/.test(message);
+    if (expected) return json({ error: message }, 503);
+    const hash = (error as { hash?: string })?.hash;
+    const latest = await latestServerBatch().catch(() => null);
+    const fundingState = latest?.phase === "UNRESOLVED" ? "FUNDED" : hash || !latest ? "UNKNOWN" : "NOT_FUNDED";
     return json(
-      { error: expected ? message : `批次未完全确认：${safeReason(error)}。请点击恢复原批次，勿另建钱包。` },
+      {
+        error: `${safeReason(error)}。${fundingState === "NOT_FUNDED" ? "未建立新的充值批次；请稍后重试。" : fundingState === "FUNDED" ? "原批次已充值，请恢复原批次；不会再次充值。" : "正在核对原批次；请刷新批次状态后再操作。"}`,
+        fundingState,
+        ...(hash ? { hash } : {}),
+        ...(latest?.phase === "UNRESOLVED" ? { batch: latest } : {}),
+      },
       503,
     );
   }

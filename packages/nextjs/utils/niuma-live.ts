@@ -4,7 +4,7 @@ import { type Hash, decodeEventLog } from "viem";
 import batches from "~~/contracts/botResults.json";
 import humanTimings from "~~/contracts/humanTimings.json";
 import seed from "~~/contracts/liveSeed.json";
-import { latestServerBatch, serverRobotAddresses } from "~~/utils/demo-bank-server";
+import { cachedServerBatch, serverRobotAddresses } from "~~/utils/demo-bank-server";
 import { DEMO_CHARACTERS, DEMO_EMPLOYEES } from "~~/utils/niuma";
 import { client, deployment } from "~~/utils/niuma-server";
 
@@ -98,7 +98,7 @@ async function refresh() {
       .flatMap(b => b.rows.map(r => r.hash?.toLowerCase()).filter(Boolean)),
   );
   const runs = all.filter(e => e.event === "RunFinished");
-  const [serverRobots, serverBatch] = await Promise.all([serverRobotAddresses(latestBlock), latestServerBatch()]);
+  const [serverRobots, serverBatch] = await Promise.all([serverRobotAddresses(latestBlock), cachedServerBatch()]);
   for (const row of serverBatch?.rows || [])
     if (row.hash && row.elapsedMs && row.state === "CONFIRMED") latency.set(row.hash.toLowerCase(), row.elapsedMs);
   const recentEvents = all

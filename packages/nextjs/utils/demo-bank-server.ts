@@ -19,18 +19,23 @@ import {
 import { privateKeyToAccount } from "viem/accounts";
 import { monadTestnet } from "viem/chains";
 import bankConfig from "~~/contracts/demoBank.json";
+import robotSeed from "~~/contracts/serverRobotSeed.json";
 import type { BotBatch, BotRow } from "~~/utils/niuma-bots";
 import { client, deployment } from "~~/utils/niuma-server";
 
 export const bank = { address: bankConfig.address as Address, abi: bankConfig.abi };
 const zero = `0x${"0".repeat(64)}` as Hash;
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-async function readWithBackoff<T>(read: () => Promise<T>): Promise<T> {
+type RpcMetrics = { rpc: number; retries: number; readRetries: number };
+async function readWithBackoff<T>(read: () => Promise<T>, metrics?: RpcMetrics): Promise<T> {
   for (let attempt = 0; ; attempt++) {
     try {
       return await read();
     } catch (error) {
-      if (attempt >= 3 || !["RPC_HTTP_429", "RPC_TIMEOUT", "RPC_CONNECTION"].includes(safeReason(error))) throw error;
+      const retryable = ["RPC_HTTP_429", "RPC_TIMEOUT", "RPC_CONNECTION"].includes(safeReason(error));
+      if (metrics && retryable) metrics.rpc++;
+      if (attempt >= 3 || !retryable) throw error;
+      if (metrics) metrics.readRetries++;
       await delay(750 * 2 ** attempt);
     }
   }
@@ -87,21 +92,23 @@ export async function broadcast(raw: Hex, metrics?: { rpc: number; retries: numb
   }
   return hash;
 }
-async function ownerTransaction(functionName: string, args: readonly unknown[], value = 0n) {
+async function ownerTransaction(functionName: string, args: readonly unknown[], value = 0n, metrics?: RpcMetrics) {
   const { account, wallet } = signer();
   const data = encodeFunctionData({ abi: bank.abi, functionName, args });
-  const estimate = await readWithBackoff(() => client.estimateGas({ account, to: bank.address, data, value }));
+  const estimate = await readWithBackoff(() => client.estimateGas({ account, to: bank.address, data, value }), metrics);
   const gas = (estimate * 110n + 99n) / 100n;
-  const request = await readWithBackoff(() =>
-    wallet.prepareTransactionRequest({ account, to: bank.address, data, value, gas }),
+  const request = await readWithBackoff(
+    () => wallet.prepareTransactionRequest({ account, to: bank.address, data, value, gas }),
+    metrics,
   );
   const raw = await wallet.signTransaction(request);
   const hash = keccak256(raw);
   let receipt: Awaited<ReturnType<typeof client.getTransactionReceipt>>;
   try {
-    await broadcast(raw);
-    receipt = await readWithBackoff(() =>
-      client.waitForTransactionReceipt({ hash, timeout: 12000, pollingInterval: 1200 }),
+    await broadcast(raw, metrics);
+    receipt = await readWithBackoff(
+      () => client.waitForTransactionReceipt({ hash, timeout: 12000, pollingInterval: 1200 }),
+      metrics,
     );
   } catch (error) {
     throw Object.assign(new Error(safeReason(error)), { hash });
@@ -181,9 +188,11 @@ async function signedRun(id: Hash, row: BotRow, plan: Plan) {
   });
 }
 export async function latestServerBatch() {
-  const id = (await client.readContract({ ...bank, functionName: "latestBatch" })) as Hash;
+  const id = (await readWithBackoff(() => client.readContract({ ...bank, functionName: "latestBatch" }))) as Hash;
   if (id === zero) return null;
-  const record = (await client.readContract({ ...bank, functionName: "batch", args: [id] })) as ChainBatch;
+  const record = (await readWithBackoff(() =>
+    client.readContract({ ...bank, functionName: "batch", args: [id] }),
+  )) as ChainBatch;
   if (record.result !== "0x") return unpack<BotBatch>(record.result);
   return {
     batchId: id,
@@ -199,12 +208,25 @@ export async function latestServerBatch() {
     totalMs: 0,
   } as BotBatch;
 }
+export const cachedServerBatch = unstable_cache(latestServerBatch, ["latest-demo-batch", bank.address], {
+  revalidate: 15,
+});
 export async function serverRush(count: number) {
+  const invocationStart = Date.now();
   if (!Number.isInteger(count) || count < 1 || count > 100) throw new Error("单批只能为 1–100 个");
   const { account } = signer();
-  let id = (await client.readContract({ ...bank, functionName: "latestBatch" })) as Hash;
-  let record =
-    id === zero ? null : ((await client.readContract({ ...bank, functionName: "batch", args: [id] })) as ChainBatch);
+  const metrics: RpcMetrics = { rpc: 0, retries: 0, readRetries: 0 };
+  let id = (await readWithBackoff(
+    () => client.readContract({ ...bank, functionName: "latestBatch" }),
+    metrics,
+  )) as Hash;
+  const record =
+    id === zero
+      ? null
+      : ((await readWithBackoff(
+          () => client.readContract({ ...bank, functionName: "batch", args: [id] }),
+          metrics,
+        )) as ChainBatch);
   const resumed = !!record && record.result === "0x";
   let plan: Plan;
   let fundingHash: Hash | undefined;
@@ -212,27 +234,32 @@ export async function serverRush(count: number) {
     plan = unpack<Plan>(record!.plan);
     count = plan.count;
   } else {
-    const last = await client.readContract({ ...bank, functionName: "lastBatchAt" });
+    const last = await readWithBackoff(() => client.readContract({ ...bank, functionName: "lastBatchAt" }), metrics);
     if (Date.now() / 1000 < Number(last) + 600) throw new Error("每 10 分钟最多一批，请稍后再试");
-    const balance = await client.getBalance({ address: account.address });
+    const balance = await readWithBackoff(() => client.getBalance({ address: account.address }), metrics);
     if (balance < parseEther((count * 0.013 + 2).toFixed(3))) throw new Error("部署钱包余额不足，未充值");
     id = toHex(randomBytes(32));
-    const gasPrice = await client.getGasPrice();
+    const gasPrice = await readWithBackoff(() => client.getGasPrice(), metrics);
     const rows = Array.from({ length: count }, (_, i) => rowFor(id, i));
-    // V2 finishRun does not read/write player-specific storage. Estimating with
-    // the funded deployer executes the identical branch without funding first.
-    const estimates = await Promise.all(
-      rows.map(row =>
-        client.estimateContractGas({
-          ...deployment,
-          account,
-          functionName: "finishRun",
-          args: [BigInt(row.characterId), row.stars, BigInt(row.timeMs)],
-          value: parseEther("0.001"),
-        }),
-      ),
+    // One worst-branch estimate per character avoids a burst of 100 identical
+    // RPC simulations. V2 has no player storage; 6 stars / 1 ms takes the most
+    // expensive possible best-score branch. Each limit still adds only 10%.
+    const estimates = await readWithBackoff(
+      () =>
+        Promise.all(
+          [1, 2, 3].map(characterId =>
+            client.estimateContractGas({
+              ...deployment,
+              account,
+              functionName: "finishRun",
+              args: [BigInt(characterId), 6, 1n],
+              value: parseEther("0.001"),
+            }),
+          ),
+        ),
+      metrics,
     );
-    const gasLimits = estimates.map(value => ((value * 110n + 99n) / 100n).toString());
+    const gasLimits = rows.map(row => ((estimates[row.characterId - 1] * 110n + 99n) / 100n).toString());
     if (gasLimits.some(gas => BigInt(gas) * gasPrice + parseEther("0.001") > parseEther("0.013")))
       throw new Error("0.013 MON 不足以覆盖本批 gas，未充值");
     plan = { count, mode: "spread", gasPrice: gasPrice.toString(), gasLimits, createdAt: Date.now() };
@@ -243,9 +270,9 @@ export async function serverRush(count: number) {
       "startBatch",
       [id, rows.map(row => getAddress(row.address)), pack(plan)],
       parseEther((count * 0.013).toFixed(3)),
+      metrics,
     );
     fundingHash = funding.hash;
-    record = (await client.readContract({ ...bank, functionName: "batch", args: [id] })) as ChainBatch;
   }
   const rows = Array.from({ length: count }, (_, i) => rowFor(id, i));
   const raw = await Promise.all(rows.map(row => signedRun(id, row, plan)));
@@ -253,17 +280,19 @@ export async function serverRush(count: number) {
     row.hash = keccak256(raw[i]);
     row.fundingHash = fundingHash;
   });
-  const metrics = { rpc: 0, retries: 0 },
-    started = Date.now();
+  const started = Date.now();
   const receiptMap = new Map<string, Awaited<ReturnType<typeof client.getTransactionReceipt>>>();
+  const attempted = new Set<number>();
   // Limit admission concurrency; all retries send the original signed bytes.
   for (let start = 0; start < rows.length; start += 2) {
+    if (Date.now() - invocationStart > 230000) break;
     await Promise.all(
       rows.slice(start, start + 2).map(async row => {
         try {
           if (resumed) {
             const previous = await client.getTransactionReceipt({ hash: row.hash as Hash }).catch(() => null);
             if (previous) {
+              attempted.add(row.index);
               receiptMap.set(row.hash!, previous);
               row.state = previous.status === "success" ? "CONFIRMED" : "FAILED";
               row.reason = previous.status === "success" ? undefined : "CHAIN_REVERT";
@@ -271,6 +300,7 @@ export async function serverRush(count: number) {
               return;
             }
           }
+          attempted.add(row.index);
           await broadcast(raw[row.index], metrics);
           row.state = "BROADCAST";
         } catch (error) {
@@ -281,24 +311,30 @@ export async function serverRush(count: number) {
     );
   }
   for (let poll = 0; poll < 35; ++poll) {
+    if (Date.now() - invocationStart > 260000) break;
     const unresolved = rows.filter(row => row.state !== "CONFIRMED" && row.state !== "FAILED");
     if (!unresolved.length) break;
-    await Promise.all(
-      unresolved.map(async row => {
-        try {
-          const receipt = await client.getTransactionReceipt({ hash: row.hash as Hash });
-          receiptMap.set(row.hash!, receipt);
-          row.blockNumber = Number(receipt.blockNumber);
-          row.state = receipt.status === "success" ? "CONFIRMED" : "FAILED";
-          row.elapsedMs = resumed ? undefined : Date.now() - started;
-          row.reason = receipt.status === "success" ? undefined : "CHAIN_REVERT";
-        } catch (error) {
-          const reason = safeReason(error);
-          if (["RPC_HTTP_429", "RPC_TIMEOUT", "RPC_CONNECTION"].includes(reason)) metrics.rpc++;
-        }
-      }),
-    );
-    if (rows.some(row => row.state !== "CONFIRMED" && row.state !== "FAILED")) await delay(1000);
+    const beforeRpcErrors = metrics.rpc;
+    for (let offset = 0; offset < unresolved.length; offset += 10) {
+      await Promise.all(
+        unresolved.slice(offset, offset + 10).map(async row => {
+          try {
+            const receipt = await client.getTransactionReceipt({ hash: row.hash as Hash });
+            receiptMap.set(row.hash!, receipt);
+            row.blockNumber = Number(receipt.blockNumber);
+            row.state = receipt.status === "success" ? "CONFIRMED" : "FAILED";
+            row.elapsedMs = resumed ? undefined : Date.now() - started;
+            row.reason = receipt.status === "success" ? undefined : "CHAIN_REVERT";
+          } catch (error) {
+            const reason = safeReason(error);
+            if (["RPC_HTTP_429", "RPC_TIMEOUT", "RPC_CONNECTION"].includes(reason)) metrics.rpc++;
+          }
+        }),
+      );
+      if (offset + 10 < unresolved.length) await delay(150);
+    }
+    if (rows.some(row => row.state !== "CONFIRMED" && row.state !== "FAILED"))
+      await delay(metrics.rpc > beforeRpcErrors ? Math.min(8000, 1000 * 2 ** Math.min(poll, 3)) : 1000);
   }
   for (const row of rows)
     if (!["CONFIRMED", "FAILED"].includes(row.state)) {
@@ -327,7 +363,7 @@ export async function serverRush(count: number) {
     version: "v2",
     phase: rows.some(row => row.state === "UNKNOWN") ? "UNRESOLVED" : "COMPLETE",
     rows,
-    sent: rows.length,
+    sent: attempted.size,
     successful: rows.filter(row => row.state === "CONFIRMED").length,
     failed: rows.filter(row => row.state === "FAILED").length,
     unknown: rows.filter(row => row.state === "UNKNOWN").length,
@@ -339,6 +375,7 @@ export async function serverRush(count: number) {
     rpcFailureCount: metrics.rpc,
     chainFailureCount: rows.filter(row => row.state === "FAILED").length,
     transactionResubmissions: metrics.retries,
+    rpcReadRetries: metrics.readRetries,
     totalGasWei: rows
       .reduce(
         (sum, row) =>
@@ -372,17 +409,15 @@ const closedWalletRange = unstable_cache(bankWalletRange, ["demo-bank-wallet-ran
   revalidate: 3600,
 });
 export async function serverRobotAddresses(latestBlock: number) {
-  const ranges = Array.from(
-    { length: Math.max(0, Math.ceil((latestBlock - bankConfig.deployedOnBlock + 1) / 100)) },
-    (_, i) => ({
-      start: bankConfig.deployedOnBlock + i * 100,
-      end: Math.min(bankConfig.deployedOnBlock + i * 100 + 99, latestBlock),
-    }),
-  );
+  const first = Math.max(bankConfig.deployedOnBlock, robotSeed.cursor);
+  const ranges = Array.from({ length: Math.max(0, Math.ceil((latestBlock - first + 1) / 100)) }, (_, i) => ({
+    start: first + i * 100,
+    end: Math.min(first + i * 100 + 99, latestBlock),
+  }));
   const addresses = await Promise.all(
     ranges.map(({ start, end }) =>
       end < latestBlock - 100 ? closedWalletRange(start, end) : bankWalletRange(start, end),
     ),
   );
-  return new Set(addresses.flat());
+  return new Set([...robotSeed.wallets, ...addresses.flat()]);
 }

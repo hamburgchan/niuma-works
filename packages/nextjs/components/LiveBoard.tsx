@@ -72,7 +72,7 @@ export function LiveBoard() {
       <div className="play-heading">
         <div>
           <p className="eyebrow">NIUMA WORKS / LIVE</p>
-          <h1>老板，工资到账了。</h1>
+          <h1>包工头，工资到账了。</h1>
         </div>
         <span className="live-indicator">
           ● {error ? "重连中" : data?.catchingUp ? "正在同步历史" : `每 ${fast ? 3 : 15} 秒更新`}
@@ -137,7 +137,7 @@ export function LiveBoard() {
                         {event.args.stars} 单
                       </strong>
                       <p>
-                        {(Number(event.args.timeMs) / 1000).toFixed(1)}s · 老板 +
+                        {(Number(event.args.timeMs) / 1000).toFixed(1)}s · 包工头 +
                         {formatEther(BigInt(String(event.args.ownerShare)))} MON
                       </p>
                       <small>
@@ -149,7 +149,7 @@ export function LiveBoard() {
                     </>
                   ) : (
                     <>
-                      <strong>进货单 #{event.args.orderId} 已验收</strong>
+                      <strong>招一只牛马单 #{event.args.orderId} 已验收</strong>
                       <p>驴、马、牛与平台的培养费已分账记入可提余额</p>
                     </>
                   )}
@@ -165,7 +165,7 @@ export function LiveBoard() {
       <BotRush />
       <section className="leaderboards">
         <h2>劳模榜</h2>
-        <p className="small-note">全勤 = 一班完成六张工单；工资为已记入老板可提余额的累计金额。</p>
+        <p className="small-note">全勤 = 一班完成六张工单；工资为已记入包工头可提余额的累计金额。</p>
         <div className="rank-grid">
           {DEMO_CHARACTERS.map(id => (
             <article key={id}>
@@ -184,7 +184,7 @@ export function LiveBoard() {
                         <dd>{item?.shifts ?? 0}</dd>
                       </div>
                       <div>
-                        <dt>老板累计工资</dt>
+                        <dt>包工头累计工资</dt>
                         <dd>{formatEther(BigInt(item?.ownerWagesWei || "0"))} MON</dd>
                       </div>
                     </dl>

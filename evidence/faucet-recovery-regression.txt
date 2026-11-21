@@ -1,0 +1,11 @@
+✔ confirmed grant needs no second RPC state read after payment (3.917ms)
+✔ receipt 429 retries reads, never repeats signing or funding (1.5223ms)
+✔ exhausted receipt retries retain original hash for reconciliation (3.256ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1145.0118

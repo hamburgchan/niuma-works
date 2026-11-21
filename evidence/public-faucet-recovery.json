@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-21T08:33:48.681777+00:00",
+  "recipient": "0x2d5FC86Ccb4dC23AC5c686374C56aB02a139bBBA",
+  "hash": "0x6fb93b12d7f6e3a843ea51a65d2bb8ea9b13d84c80d530024fceedaf25c7ed01",
+  "amountWei": "20000000000000000",
+  "status": 1,
+  "fromAddress": "0x88e79c388E1EaA6fc0AB876456D75037598F16e4",
+  "toLedger": "0xf89Eb0B40E3C243Fc27a76cB9d9e65170aEF97cD",
+  "duplicateGrants": 0,
+  "initialUI": "Payment succeeded, following RPC query returned 429; UI initially unconfirmed. Preserved failure; fixed to trust successful original receipt and provide read-only reconciliation.",
+  "claimed": true,
+  "transactionLink": "https://testnet.monadexplorer.com/tx/0x6fb93b12d7f6e3a843ea51a65d2bb8ea9b13d84c80d530024fceedaf25c7ed01"
+}

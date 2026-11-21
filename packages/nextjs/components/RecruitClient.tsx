@@ -42,7 +42,7 @@ function Archive({ employee, stats }: { employee: (typeof DEMO_EMPLOYEES)[number
           <dd>{stats?.shifts ?? "—"} 班</dd>
         </div>
         <div>
-          <dt>给进货老板挣的工资</dt>
+          <dt>给包工头挣的工资</dt>
           <dd>{stats ? formatEther(BigInt(stats.ownerWagesWei)) : "—"} MON</dd>
         </div>
       </dl>
@@ -106,8 +106,8 @@ export function RecruitClient() {
   }, []);
   return (
     <section className="recruit-page">
-      <p className="eyebrow">EMPLOYEE ARCHIVES / V2</p>
-      <h1>新牛马入职档案</h1>
+      <p className="eyebrow">EMPLOYEE ARCHIVES</p>
+      <h1>招一只牛马</h1>
       <div className="employee-grid">
         {DEMO_EMPLOYEES.map(employee => (
           <Archive key={employee.id} employee={employee} stats={stats.find(s => s.characterId === employee.id)} />

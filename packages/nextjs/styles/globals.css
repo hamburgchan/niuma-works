@@ -955,6 +955,8 @@ textarea:focus-visible {
 .motion-choice {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 .play-panel {
   border: 1.5px solid var(--ink);

@@ -289,8 +289,8 @@ export function Arena(props: Props) {
       const movement = keyboard.consume(time);
       for (const colleague of colleagues) {
         const i = Number(colleague.userData.leaderIndex);
-        colleague.position.x = -5 + i * 5 + Math.sin(time * 0.00035 + i * 2) * 1.2;
-        colleague.position.z = -5.5 + Math.sin(time * 0.00025 + i) * 0.85;
+        colleague.position.x = Math.sin(time * 0.00038 + (i * Math.PI * 2) / 3) * 6;
+        colleague.position.z = Math.sin(time * 0.00055 + (i * Math.PI * 2) / 3) * 5;
         const leaderShadow = colleague.userData.shadow as THREE.Mesh;
         leaderShadow.position.x = colleague.position.x;
         leaderShadow.position.z = colleague.position.z;

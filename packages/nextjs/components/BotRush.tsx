@@ -37,6 +37,7 @@ export function BotRush() {
         body: JSON.stringify({ count: 100, code }),
       });
       const d = await response.json();
+      if (d.batch) setBatch(d.batch);
       if (!response.ok) throw new Error(d.error || "批次暂未确认，请恢复原批次");
       setBatch(d.batch);
       setError(

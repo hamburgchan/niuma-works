@@ -22,7 +22,7 @@ export function NiumaHeader() {
       </Link>
       <nav aria-label="主导航">
         <Link href="/orders" aria-current={pathname === "/orders" ? "page" : undefined}>
-          档案
+          招一只牛马
         </Link>
         <Link href="/live" aria-current={pathname === "/live" ? "page" : undefined}>
           大屏
@@ -31,7 +31,7 @@ export function NiumaHeader() {
           试玩
         </Link>
         <Link href="/earnings" aria-current={pathname === "/earnings" ? "page" : undefined}>
-          工资条
+          账本
         </Link>
       </nav>
       <div className="header-wallet">
