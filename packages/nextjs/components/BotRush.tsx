@@ -42,7 +42,7 @@ export function BotRush() {
     return () => clearInterval(timer);
   }, []);
   useEffect(() => {
-    if (!prepared || (!busy && batch?.phase === "COMPLETE")) return;
+    if (!prepared || (batch && batch.batchId !== prepared.batchId) || (!busy && batch?.phase === "COMPLETE")) return;
     const abort = new AbortController();
     let inflight = false;
     async function refreshProgress() {

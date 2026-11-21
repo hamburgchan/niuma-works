@@ -195,7 +195,10 @@ export async function latestServerBatch() {
     client.readContract({ ...bank, functionName: "batch", args: [id] }),
   )) as ChainBatch;
   if (record.result !== "0x") return unpack<BotBatch>(record.result);
+  const funding = await findFunding(id);
   return {
+    fundingHash: funding.fundingHash,
+    fundingBlock: funding.fundingBlock,
     batchId: id,
     count: Number(record.count),
     phase: "UNRESOLVED",
