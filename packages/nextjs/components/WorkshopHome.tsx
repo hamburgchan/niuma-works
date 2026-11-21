@@ -48,7 +48,9 @@ export function WorkshopHome() {
     <div className="market-home">
       <section className="market-hero" data-enter>
         <div>
-          <p className="market-positioning">链上投币街机：牛马按班出租，每一班在 Monad 上实时分账</p>
+          <p className="market-positioning">
+            角色形象按使用次数收租：一个角色在链上登记一次主人，之后任何人每用一次，租金都在 Monad 上实时打给它的主人。
+          </p>
           <p className="eyebrow">NIUMA WORKS / MONAD TESTNET</p>
           <h1>牛马批发部</h1>
           <p className="market-tagline">今天当牛马，明天当包工头。</p>
